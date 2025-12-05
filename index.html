@@ -1,48 +1,211 @@
-<!-- Intro Section (Improved Professional Card) -->
-<div style="
-    width:85%; 
-    margin:40px auto;
-    background:white;
-    padding:40px;
-    border-radius:18px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
-">
-    <h2 style="text-align:center; font-weight:700; color:#0d1f3f; margin-bottom:30px;">
-        Introduction
-    </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart City Design</title>
 
-    <div style="
-        display:flex;
-        justify-content:space-between;
-        flex-wrap:wrap;
-        text-align:center;
-        gap:30px;
-    ">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        <div style="flex:1; min-width:200px;">
-            <h3 style="font-size:18px; color:#0d1f3f; margin-bottom:8px;">Course</h3>
-            <p style="font-size:15px; color:#444;">Design & Analysis of Algorithms (DAA)</p>
-        </div>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #f5f7fa;
+        color: #222;
+        display: flex;
+    }
 
-        <div style="flex:1; min-width:200px;">
-            <h3 style="font-size:18px; color:#0d1f3f; margin-bottom:8px;">Course Code</h3>
-            <p style="font-size:15px; color:#444;">24ECSC205</p>
-        </div>
+    /* Sidebar */
+    .sidebar {
+        width: 240px;
+        background: #ffffff;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 30px;
+        border-right: 1px solid #ddd;
+    }
 
-        <div style="flex:1; min-width:200px;">
-            <h3 style="font-size:18px; color:#0d1f3f; margin-bottom:8px;">Instructor</h3>
-            <p style="font-size:15px; color:#444;">Prof. Prakash Hegade</p>
-        </div>
+    .sidebar h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+        font-size: 22px;
+        font-weight: 700;
+    }
 
-        <div style="flex:1; min-width:200px;">
-            <h3 style="font-size:18px; color:#0d1f3f; margin-bottom:8px;">University</h3>
-            <p style="font-size:15px; color:#444;">KLE Technological University</p>
-        </div>
+    .sidebar a {
+        display: block;
+        padding: 12px 30px;
+        color: #333;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
+        transition: 0.2s;
+        border-left: 4px solid white;
+    }
 
-        <div style="flex:1; min-width:200px;">
-            <h3 style="font-size:18px; color:#0d1f3f; margin-bottom:8px;">Topic</h3>
-            <p style="font-size:15px; color:#444;">City Design</p>
-        </div>
+    .sidebar a:hover {
+        background: #e9ecef;
+        border-left: 4px solid #333;
+    }
 
+    /* Main Content */
+    .main {
+        margin-left: 240px;
+        padding: 40px;
+        width: calc(100% - 240px);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .tagline {
+        text-align: center;
+        font-size: 18px;
+        margin-top: -5px;
+        color: #555;
+    }
+
+    /* Card */
+    .card {
+        background: black;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px auto;
+        width: 85%;
+        border: 1px solid #e0e0e0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #222;
+        font-weight: 700;
+    }
+
+    .card p {
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        color: #444;
+    }
+
+    /* Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th {
+        background: #333;
+        color: white;
+        padding: 12px;
+        font-size: 17px;
+    }
+
+    td {
+        padding: 12px;
+        background: #fafafa;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    /* Buttons in One Row */
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 35px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 12px 22px;
+        border-radius: 8px;
+        border: none;
+        background: #333;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .btn:hover {
+        background: #555;
+    }
+</style>
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Smart City</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Project</a>
+    <a href="#">Sushant</a>
+    <a href="sunil.html">Sunil</a>
+    <a href="#">Vaishnavi</a>
+    <a href="#">Vijayalaxmi</a>
+    <a href="#">Collabz</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+    <h1>SMART CITY DESIGN</h1>
+    <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
+
+    <!-- Intro -->
+    <div class="card">
+        <h2>Introduction</h2>
+        <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
+        <p><b>Course Code:</b> 24ECSC205</p>
+        <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
+        <p><b>University:</b> KLE Technological University</p>
+        <p><b>Topic:</b> City Design</p>
+    </div>
+
+    <p style="text-align:center; font-size: 17px; width:85%; margin:auto; color:#555;">
+        This project explores how algorithmic problem-solving can improve smart city planning,
+        enabling efficient roads, optimized traffic flow, better resource usage, and automation.
+    </p>
+
+    <!-- Team -->
+    <div class="card">
+        <h2>Team Members</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>USN</th>
+            </tr>
+            <tr><td>Vaishnavi</td><td>01FE24BCS295</td></tr>
+            <tr><td>Vijayalaxmi</td><td>01FE24BCS292</td></tr>
+            <tr><td>Sushant</td><td>01FE24BCS293</td></tr>
+            <tr><td>Sunil</td><td>01FE24BCS296</td></tr>
+        </table>
+    </div>
+
+    <!-- Buttons in One Row -->
+    <div class="btn-container">
+        <a href="vaishnavi.html"><button class="btn">Vaishnavi</button></a>
+        <a href="vijayalaxmi.html"><button class="btn">Vijayalaxmi</button></a>
+        <a href="sushant.html"><button class="btn">Sushant</button></a>
+        <a href="sunil.html"><button class="btn">Sunil</button></a>
     </div>
 </div>
+
+</body>
+</html>   see i dont want  that what u have added what r v and all....i want to keep the course,course code and all thigs same pattern but about project and the name contents in box very attraction proffesionalised attractive manner
