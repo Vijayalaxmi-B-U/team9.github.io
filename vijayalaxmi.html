@@ -37,77 +37,79 @@
     and managing attractions efficiently. This sector demonstrates how smart solutions 
     can make cities more attractive and livable for residents and visitors alike.
   </p>
+  
+</div>
 
-<!-- Single Floating Box -->
+<!-- Floating Accordion Button -->
 <div style="display:flex; justify-content:center; margin:30px 0;">
-  <div class="float-box" onclick="toggleButtons(this)">
-    Tourist Places in City
-    <!-- Container for vertical buttons -->
-    <div class="buttons-container" style="display:none; margin-top:15px;"></div>
+  <div class="accordion">
+    <div class="accordion-btn" onclick="toggleAccordion(this)">
+      Tourist Places in City <span class="arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      <div class="place">→ Cultural Emblem at Lake</div>
+      <div class="place">→ Etruna Studio</div>
+      <div class="place">→ Filmy City Rajpuri</div>
+      <div class="place">→ Vrindhara Palace & National Parks</div>
+    </div>
   </div>
 </div>
 
 <!-- Styles -->
 <style>
-  .float-box {
+  .accordion {
     background-color:#2a2a72;
-    color:#fff;
-    padding:20px 30px;
     border-radius:12px;
-    cursor:pointer;
-    min-width:200px;
+    min-width:250px;
     text-align:center;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
   }
-  .float-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  .accordion:hover {
+    transform: translateY(-8px);
   }
-  .buttons-container {
+  .accordion-btn {
+    padding:20px;
+    font-size:18px;
+    color:#fff;
+    cursor:pointer;
+    user-select:none;
     display:flex;
-    flex-direction:column;
+    justify-content:center;
     align-items:center;
     gap:10px;
   }
-  .place-btn {
-    background-color:#ffcc00;
-    color:#1a1a1a;
-    padding:12px 20px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    width:220px;
-    font-size:16px;
-    transition: background 0.3s;
+  .arrow {
+    transition: transform 0.3s;
   }
-  .place-btn:hover {
-    background-color:#e6b800;
+  .accordion-content {
+    display:none;
+    flex-direction:column;
+    padding:10px 0;
+    background-color:#1a1a1a;
+    border-radius:0 0 12px 12px;
+  }
+  .place {
+    color:#ffcc00;
+    padding:8px 0;
+    font-size:16px;
+    cursor:default;
+    text-align:center;
   }
 </style>
 
 <!-- JS -->
 <script>
-  const touristPlaces = [
-    "Cultural Emblem at Lake",
-    "Etruna Studio",
-    "Filmy City Rajpuri",
-    "Vrindhara Palace & National Parks"
-  ];
+  function toggleAccordion(btn) {
+    const content = btn.nextElementSibling;
+    const arrow = btn.querySelector('.arrow');
 
-  function toggleButtons(box) {
-    const container = box.querySelector('.buttons-container');
-    if (container.style.display === 'none' || container.style.display === '') {
-      container.style.display = 'flex'; // show container
-      container.innerHTML = ''; // clear previous buttons
-      touristPlaces.forEach(place => {
-        const btn = document.createElement('button');
-        btn.innerText = place;
-        btn.className = 'place-btn';
-        container.appendChild(btn);
-      });
+    if(content.style.display === "flex") {
+      content.style.display = "none";
+      arrow.style.transform = "rotate(0deg)";
     } else {
-      container.style.display = 'none'; // hide container
+      content.style.display = "flex";
+      arrow.style.transform = "rotate(180deg)";
     }
   }
 </script>
