@@ -26,7 +26,7 @@ body{
 .bg-city{
   position:fixed;
   inset:0;
-  background-image:url("https://www.gettyimages.in/detail/illustration/futuristic-blue-smart-city-background-royalty-free-illustration/1267063724");
+  background-image:url('city.png') center center fixed;
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
