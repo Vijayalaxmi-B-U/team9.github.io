@@ -4,211 +4,164 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart City Design</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: #f5f7fa;
-        color: #222;
-        display: flex;
-    }
+/* Side Navigation */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: #1a1a1a;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
+}
 
-    /* ---------------- Sidebar (Gradient Improved) ---------------- */
-    .sidebar {
-        width: 240px;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-top: 30px;
-        background: linear-gradient(180deg, #1e3c72, #2a5298);
-        color: white;
-        border-right: none;
-        box-shadow: 3px 0 15px rgba(0,0,0,0.2);
-    }
+.sidebar h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
 
-    .sidebar h2 {
-        text-align: center;
-        font-size: 24px;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 25px;
-    }
+.sidebar a {
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
 
-    .sidebar a {
-        display: block;
-        padding: 12px 30px;
-        color: #e0e7ff;
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 500;
-        transition: 0.3s;
-        border-left: 4px solid transparent;
-    }
+.sidebar a:hover {
+    background: #3d3d3d;
+    padding-left: 40px;
+}
 
-    .sidebar a:hover {
-        background: rgba(255,255,255,0.15);
-        border-left: 4px solid white;
-    }
+/* Main Page */
+.main {
+    margin-left: 240px;
+    padding: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
 
-    /* ---------------- Main Content ---------------- */
-    .main {
-        margin-left: 240px;
-        padding: 40px;
-        width: calc(100% - 240px);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
 
-    h1 {
-        text-align: center;
-        font-size: 36px;
-        font-weight: 700;
-        color: #222;
-    }
+/* Section Cards */
+.section-card {
+    background: white;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 85%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
 
-    .tagline {
-        text-align: center;
-        font-size: 18px;
-        margin-top: -5px;
-        color: #555;
-    }
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
 
-    /* ---------------- Card Design ---------------- */
-    .card {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        margin: 30px auto;
-        width: 85%;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    }
+.section-card h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 15px;
+}
 
-    h2 {
-        text-align: center;
-        color: #222;
-        font-weight: 700;
-    }
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 85%;
+    margin: auto;
+}
 
-    .card p {
-        text-align: center;
-        font-size: 17px;
-        font-weight: 500;
-        color: #444;
-    }
+.team-box {
+    padding: 25px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-    /* ---------------- Table ---------------- */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
+.team-box:hover {
+    transform: translateY(-6px);
+}
 
-    th {
-        background: #333;
-        color: white;
-        padding: 12px;
-        font-size: 17px;
-    }
+/* Gradient boxes */
+.vai { background: linear-gradient(to right, #ff758c, #ff7eb3); }
 
-    td {
-        padding: 12px;
-        background: #fafafa;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-        font-size: 17px;
-        font-weight: 500;
-    }
+.vij { background: linear-gradient(to right, #6a11cb, #2575fc); }
 
-    /* ---------------- Buttons ---------------- */
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 35px;
-        flex-wrap: wrap;
-    }
+.sun { background: linear-gradient(to right, #ff9a44, #fc6076); }
 
-    .btn {
-        padding: 12px 22px;
-        border-radius: 8px;
-        border: none;
-        background: #1e3c72;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.2s;
-        box-shadow: 0 3px 8px rgba(30,60,114,0.4);
-    }
-
-    .btn:hover {
-        background: #2a5298;
-    }
+.sus { background: linear-gradient(to right, #11998e, #38ef7d); }
 </style>
 
 </head>
 <body>
 
-<!-- ---------------- Sidebar ---------------- -->
+<!-- Sidebar -->
 <div class="sidebar">
-    <h2>Smart City</h2>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Project</a>
-    <a href="#">Sushant</a>
-    <a href="#">Sunil</a>
-    <a href="#">Vaishnavi</a>
-    <a href="#">Vijayalaxmi</a>
-    <a href="#">Collabz</a>
+    <h2>Navigation</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="project.html">Project</a>
+    <a href="vijayalaxmi.html">Vijayalaxmi</a>
+    <a href="vaishnavi.html">Vaishnavi</a>
+    <a href="sushant.html">Sushant</a>
+    <a href="sunil.html">Sunil</a>
+    <a href="collabz.html">Collabz</a>
 </div>
 
-<!-- ---------------- MAIN CONTENT ---------------- -->
+<!-- Main Content -->
 <div class="main">
     <h1>SMART CITY DESIGN</h1>
-    <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
 
-    <!-- Intro Section -->
-    <div class="card">
-        <h2>Introduction</h2>
+    <!-- Course Info -->
+    <div class="section-card">
+        <h2>Course Information</h2>
         <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
         <p><b>Course Code:</b> 24ECSC205</p>
         <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
         <p><b>University:</b> KLE Technological University</p>
-        <p><b>Topic:</b> City Design</p>
+        <p><b>Topic:</b> Smart City Design Using Algorithms</p>
     </div>
 
-    <p style="text-align:center; font-size: 17px; width:85%; margin:auto; color:#555;">
-        This project explores how algorithmic problem-solving can improve smart city planning,
-        enabling efficient roads, optimized traffic flow, better resource usage, and automation.
-    </p>
-
-    <!-- Team Section -->
-    <div class="card">
-        <h2>Team Members</h2>
-
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>USN</th>
-            </tr>
-            <tr><td>Vaishnavi</td><td>01FE24BCS295</td></tr>
-            <tr><td>Vijayalaxmi</td><td>01FE24BCS292</td></tr>
-            <tr><td>Sushant</td><td>01FE24BCS293</td></tr>
-            <tr><td>Sunil</td><td>01FE24BCS296</td></tr>
-        </table>
+    <!-- About Section -->
+    <div class="section-card">
+        <h2>About</h2>
+        <p>This project focuses on applying algorithmic techniques to improve modern city infrastructure including transportation, resource allocation, and smart automation.</p>
     </div>
 
-    <!-- Buttons -->
-    <div class="btn-container">
-        <a href="vaishnavi.html"><button class="btn">Vaishnavi</button></a>
-        <a href="vijayalaxmi.html"><button class="btn">Vijayalaxmi</button></a>
-        <a href="sushant.html"><button class="btn">Sushant</button></a>
-        <a href="sunil.html"><button class="btn">Sunil</button></a>
+    <!-- Project Section -->
+    <div class="section-card">
+        <h2>Project Information</h2>
+        <p>Our project explores how algorithms such as Dijkstra, Greedy approaches, and optimization methods can enhance tourism flow, traffic management, smart sensors, and urban decision-making.</p>
     </div>
+
+    <!-- Team Member Boxes -->
+    <h2 style="text-align:center; margin-top:40px;">Team Members</h2>
+
+    <div class="team-grid">
+        <a href="vaishnavi.html" style="text-decoration:none;"><div class="team-box vai">Vaishnavi</div></a>
+        <a href="vijayalaxmi.html" style="text-decoration:none;"><div class="team-box vij">Vijayalaxmi</div></a>
+        <a href="sushant.html" style="text-decoration:none;"><div class="team-box sus">Sushant</div></a>
+        <a href="sunil.html" style="text-decoration:none;"><div class="team-box sun">Sunil</div></a>
+    </div>
+
 </div>
 
 </body>
