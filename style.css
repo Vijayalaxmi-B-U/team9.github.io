@@ -199,3 +199,12 @@ h1{
   .card, .btn-row{ width:92%; }
   .main{ padding: 22px; }
 }
+body {
+    font-family: Arial, sans-serif;
+    background: url("https://images.pexels.com/photos/3584436/pexels-photo-3584436.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
