@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vijayalaxmi - CITY DESIGN</title>
+
 <style>
 /* ---------- GLOBAL ---------- */
 body {
@@ -27,13 +28,21 @@ body {
   z-index: 1;
 }
 .sidebar h2 { color:#ffcc00; text-align:center; }
-.sidebar a { display:block; color:#fff; text-decoration:none; margin:10px 0; padding:8px 10px; border-radius:6px; transition:background 0.3s; }
+.sidebar a { 
+  display:block; 
+  color:#fff; 
+  text-decoration:none; 
+  margin:10px 0; 
+  padding:8px 10px; 
+  border-radius:6px; 
+  transition:background 0.3s; 
+}
 .sidebar a:hover { background-color:#2a2a72; }
 
 /* ---------- MAIN ---------- */
 .main { padding: 30px; margin-left:220px; }
 
-/* ========================= TOURISM CARD ========================= */
+/* ---------- TOURISM CARD ---------- */
 .tourism-card {
   border: 1.5px solid rgb(233, 240, 173); 
   background-color:#1a1a1a;
@@ -47,6 +56,8 @@ body {
 }
 .tourism-card h2 { color:#ffcc00; }
 .tourism-card p { font-size:16px; line-height:1.6; }
+</style>
+
 </head>
 <body>
 
@@ -63,11 +74,14 @@ body {
   <a href="collabz.html">Collabz</a>
 </div>
 
+<!-- ========================= MAIN ========================= -->
 <div class="main">
-  <h1>Vijayalaxmi</h1>
-  <h2 style="text-align:center; color:#ff8800;"><b>TOURISM SECTOR</b></h2>
-   <p style="text-align:center; font-size:3.5em;">
 
+  <h1>Vijayalaxmi</h1>
+
+  <h2 style="text-align:center; color:#ff8800;">
+    <b>TOURISM SECTOR</b>
+  </h2>
 
   <!-- ========================= TOURISM SECTION ========================= -->
   <div class="tourism-card">
@@ -77,15 +91,12 @@ body {
       In smart cities, technology enhances tourist experiences by optimizing routes 
       and managing attractions efficiently.
     </p>
-
   </div>
 
-<script>
-  
- <h2 style="color:#ffcc00; font-family:Poppins; margin-left:40px;">
+  <!-- ---------- CURRENT PROBLEMS SECTION (FIXED) ---------- -->
+  <h2 style="color:#ffcc00; font-family:Poppins; margin-left:40px;">
     CURRENT PROBLEMS IN THE TOURISM SECTOR
-</h2>
-
+  </h2>
 
   <ul style="
     display:inline-block;
@@ -93,7 +104,8 @@ body {
     font-family:Poppins;
     line-height:1.8;
     font-size:16px;
-    margin-top:20px;
+    margin-left:40px;
+    margin-top:10px;
   ">
     <li>Overcrowding</li>
     <li>Long queues</li>
@@ -105,7 +117,6 @@ body {
   </ul>
 
 </div>
-
 
 </body>
 </html>
