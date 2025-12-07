@@ -47,62 +47,6 @@ body {
 }
 .tourism-card h2 { color:#ffcc00; }
 .tourism-card p { font-size:16px; line-height:1.6; }
-
-
-/* ========================= SDG BOX ========================= */
-.sdg-box {
-  background-color:#1a1a1a;
-  color:#ffcc00;
-  padding:20px 25px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
-  max-width:400px;
-  margin:40px auto;
-  position: relative;
-  left:-20px; /* slightly left */
-}
-
-/* SDG Item inside black box */
-.sdg-item {
-  margin:15px 0;
-  padding:10px;
-  cursor:pointer;
-  position:relative;
-}
-
-/* Description container outside the black box */
-.sdg-desc-container {
-  position:absolute;
-  left:420px; /* in front of SDG box */
-  top:0;
-  max-width:400px;
-  display:none;
-  flex-direction:column;
-  gap:10px;
-}
-.sdg-desc-container p {
-  margin:0;
-  background-color:#2a2a2a;
-  color:#ffcc00;
-  padding:10px 15px;
-  border-radius:8px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
-  display:flex;
-  align-items:center;
-  gap:10px;
-  opacity:0;
-  transform:translateX(-20px);
-  animation-fill-mode: forwards;
-}
-.arrow-mark {
-  color:#ff9900;
-  font-size:18px;
-}
-@keyframes slideIn {
-  0% { opacity:0; transform:translateX(-20px); }
-  100% { opacity:1; transform:translateX(0); }
-}
-</style>
 </head>
 <body>
 
@@ -137,55 +81,11 @@ body {
   </div>
 
 <script>
-// ----------- TOURISM BUTTON ----------
-const touristPlaces = [
-  "Cultural Emblem at Lake",
-  "Etruna Studio",
-  "Filmy City Rajpuri",
-  "Vrindhara Palace & National Parks"
-];
-function toggleButtons(box) {
-  const container = box.querySelector('.buttons-container');
-  if(container.style.display==='none' || container.style.display==='') {
-    container.style.display='flex';
-    container.innerHTML='';
-    touristPlaces.forEach(place=>{
-      const btn=document.createElement('button');
-      btn.innerText=place;
-      btn.className='place-btn';
-      container.appendChild(btn);
-    });
-  } else { container.style.display='none'; }
-}
-
-// ----------- SDG HOVER DESCRIPTIONS ----------
-const sdgItems = document.querySelectorAll('.sdg-item');
-const sdgDescContainer = document.getElementById('sdgDescContainer');
-sdgItems.forEach(item=>{
-  item.addEventListener('mouseenter', ()=>{
-    sdgDescContainer.innerHTML='';
-    sdgDescContainer.style.display='flex';
-    const desc1 = document.createElement('p');
-    desc1.style.animation='slideIn 0.5s forwards';
-    desc1.innerHTML='<span class="arrow-mark">➤</span>'+item.dataset.desc1;
-    const desc2 = document.createElement('p');
-    desc2.style.animation='slideIn 0.5s 0.3s forwards';
-    desc2.innerHTML='<span class="arrow-mark">➤</span>'+item.dataset.desc2;
-    sdgDescContainer.appendChild(desc1);
-    sdgDescContainer.appendChild(desc2);
-  });
-  item.addEventListener('mouseleave', ()=>{
-    sdgDescContainer.innerHTML='';
-    sdgDescContainer.style.display='none';
-  });
-});
-</script>
-
-<div style="text-align:center; margin-top:40px;">
-
-  <h2 style="color:#ffcc00; font-family:Poppins;">
+  
+ <h2 style="color:#ffcc00; font-family:Poppins; margin-left:40px;">
     CURRENT PROBLEMS IN THE TOURISM SECTOR
-  </h2>
+</h2>
+
 
   <ul style="
     display:inline-block;
