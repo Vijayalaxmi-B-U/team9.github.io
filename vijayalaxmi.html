@@ -94,6 +94,18 @@ body {
   padding:0;
   list-style:none;
 }
+.problems-section ul li {
+  position:relative; 
+  padding-left:25px; 
+  margin-bottom:12px;
+}
+.problems-section ul li::before {
+  content: '➤';
+  position:absolute;
+  left:0;
+  color:#ffcc00;
+  font-weight:bold;
+}
 .problems-section img {
   width:500px; 
   border-radius:12px; 
@@ -185,7 +197,7 @@ body {
   </h2>
 
   <div class="problems-section">
-      <!-- LEFT SIDE: PROBLEMS -->
+      <!-- LEFT SIDE: PROBLEMS WITH ARROWS -->
       <ul>
           <li>Overcrowding</li>
           <li>Long queues</li>
