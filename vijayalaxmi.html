@@ -47,13 +47,21 @@ body {
 
 /* ---------- MAIN ---------- */
 .main { 
-  padding: 30px; 
   margin-left:220px; 
 }
 
-/* ---------- HEADINGS ---------- */
-h1 { text-align:center; color:#ff8800; margin-bottom:10px; }
-h2 { margin-bottom:20px; }
+/* ---------- PAGE SECTIONS ---------- */
+.section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grey-light { background-color: #2a2a2a; color: #fff; }
+.grey-dark { background-color: #1a1a1a; color: #fff; }
 
 /* ---------- TOURISM CARD ---------- */
 .tourism-card {
@@ -63,19 +71,19 @@ h2 { margin-bottom:20px; }
   padding:40px 20px;
   border-radius:16px;
   max-width:700px;
-  margin:40px auto;
+  margin:20px auto;
   box-shadow:0 8px 20px rgba(0,0,0,0.4);
   text-align:center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .tourism-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(255,204,0,0.5);
+  box-shadow: 0 12px 25px rgba(255,204,0,0.4);
 }
 .tourism-card h2 { color:#ffcc00; }
 .tourism-card p { font-size:16px; line-height:1.6; }
 
-/* ---------- INFO BOX (SDG / INNOVATION) ---------- */
+/* ---------- INFO BOX ---------- */
 .info-box {
   width: 90%;
   max-width:650px;
@@ -83,7 +91,7 @@ h2 { margin-bottom:20px; }
   border:2px solid #ffcc00;
   border-radius:12px;
   padding:25px 30px;
-  margin:30px auto;
+  margin:20px auto;
   color:white;
   line-height:1.7;
   box-shadow:0 0 15px rgba(255,204,0,0.2);
@@ -93,11 +101,7 @@ h2 { margin-bottom:20px; }
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(255,204,0,0.3);
 }
-.info-box h2 {
-  color:#ffcc00;
-  text-align:center;
-  margin-bottom:15px;
-}
+.info-box h2 { color:#ffcc00; text-align:center; margin-bottom:15px; }
 
 /* ---------- PROBLEMS SECTION ---------- */
 .problems-section {
@@ -106,8 +110,8 @@ h2 { margin-bottom:20px; }
   justify-content:space-between; 
   align-items:flex-start; 
   gap:40px;
-  margin:20px auto 50px auto;
   max-width:1100px;
+  width:100%;
 }
 .problems-section ul {
   font-family:Poppins;
@@ -148,7 +152,6 @@ h2 { margin-bottom:20px; }
   justify-content:flex-start;
   align-items:center;
   gap:20px;
-  margin:40px auto;
   flex-wrap:nowrap;
   overflow-x:auto;
   padding:10px;
@@ -173,9 +176,12 @@ h2 { margin-bottom:20px; }
   transform: scale(1.1);
   box-shadow:0 8px 20px rgba(255,204,0,0.5);
 }
-.sub-sectors div span {
-  color:#fff;
-}
+.sub-sectors div span { color:#fff; }
+
+/* ---------- TEXT ---------- */
+h1 { text-align:center; color:#ff8800; margin-bottom:10px; }
+h2 { margin-bottom:20px; text-align:center; color:#ff8800; }
+p { line-height:1.6; font-size:16px; max-width: 800px; margin:10px auto; text-align:justify; }
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
@@ -205,84 +211,82 @@ h2 { margin-bottom:20px; }
 <div class="main">
 
   <h1>Vijayalaxmi</h1>
-  <h2 style="text-align:center; color:#ff8800;"><b>TOURISM SECTOR</b></h2>
 
-  <!-- ========================= TOURISM CARD ========================= -->
-  <div class="tourism-card">
-    <h2>Why I Chose the Tourism Sector</h2>
-    <p>
-      Tourism drives economic growth, creates jobs, and promotes culture. 
-      In smart cities, technology enhances tourist experiences by optimizing routes 
-      and managing attractions efficiently.
-    </p>
+  <!-- ========================= TOURISM CARD SECTION ========================= -->
+  <div class="section grey-light">
+    <div class="tourism-card">
+      <h2>Why I Chose the Tourism Sector</h2>
+      <p>
+        Tourism drives economic growth, creates jobs, and promotes culture. 
+        In smart cities, technology enhances tourist experiences by optimizing routes 
+        and managing attractions efficiently.
+      </p>
+    </div>
   </div>
 
-  <!-- ========================= SDG BOX ========================= -->
-  <div class="info-box">
-    <h2>Tourism Related SDGs</h2>
-    <ul style="list-style:none; padding-left:20px;">
-        <li><b>SDG 8</b> – Decent Work and Economic Growth</li>
-        <li><b>SDG 11</b> – Sustainable Cities and Communities</li>
-        <li><b>SDG 12</b> – Responsible Consumption and Production</li>
-        <li><b>SDG 13</b> – Climate Action</li>
-        <li><b>SDG 14</b> – Life Below Water</li>
-        <li><b>SDG 15</b> – Life on Land</li>
-    </ul>
+  <!-- ========================= SDG SECTION ========================= -->
+  <div class="section grey-dark">
+    <div class="info-box">
+      <h2>Tourism Related SDGs</h2>
+      <ul style="list-style:none; padding-left:20px;">
+          <li><b>SDG 8</b> – Decent Work and Economic Growth</li>
+          <li><b>SDG 11</b> – Sustainable Cities and Communities</li>
+          <li><b>SDG 12</b> – Responsible Consumption and Production</li>
+          <li><b>SDG 13</b> – Climate Action</li>
+          <li><b>SDG 14</b> – Life Below Water</li>
+          <li><b>SDG 15</b> – Life on Land</li>
+      </ul>
+    </div>
   </div>
-
-  <p style="text-align:center; font-size:16px; max-width:800px; margin:20px auto 0 auto;">
-    While tourism has many benefits, it also faces several challenges that need attention.
-  </p>
 
   <!-- ========================= PROBLEMS SECTION ========================= -->
-  <h2 style="color:#ffcc00; font-family:Poppins; margin-top:40px; text-align:center;">
-      CURRENT PROBLEMS IN THE TOURISM SECTOR
-  </h2>
-
-  <div class="problems-section">
-      <!-- LEFT SIDE: PROBLEMS WITH ARROWS -->
+  <div class="section grey-light">
+    <h2>CURRENT PROBLEMS IN THE TOURISM SECTOR</h2>
+    <div class="problems-section">
       <ul>
-          <li>Overcrowding</li>
-          <li>Long queues</li>
-          <li>Safety concerns</li>
-          <li>Lack of digital systems</li>
-          <li>Waste management issues</li>
-          <li>Poor navigation & confusing signs</li>
-          <li>Disconnected local businesses</li>
+        <li>Overcrowding</li>
+        <li>Long queues</li>
+        <li>Safety concerns</li>
+        <li>Lack of digital systems</li>
+        <li>Waste management issues</li>
+        <li>Poor navigation & confusing signs</li>
+        <li>Disconnected local businesses</li>
       </ul>
-
-      <!-- RIGHT SIDE: IMAGE + YOUTUBE LINKS -->
       <div style="display:flex; flex-direction:column; gap:15px;">
-          <img src="crowd.png" alt="Crowd Image">
-          <div class="youtube-links">
-              <a href="#" target="_blank">▶ Overtourism & overcrowding explained – YouTube</a>
-              <a href="#" target="_blank">▶ Waste, congestion & environmental issues – YouTube</a>
-              <a href="#" target="_blank">▶ Tourist management failures & long queues – YouTube</a>
-          </div>
+        <img src="crowd.png" alt="Crowd Image">
+        <div class="youtube-links">
+          <a href="#" target="_blank">▶ Overtourism & overcrowding explained – YouTube</a>
+          <a href="#" target="_blank">▶ Waste, congestion & environmental issues – YouTube</a>
+          <a href="#" target="_blank">▶ Tourist management failures & long queues – YouTube</a>
+        </div>
       </div>
+    </div>
   </div>
 
-  <!-- ========================= WHY INNOVATION IS NEEDED ========================= -->
-  <div class="info-box">
-    <h2>⭐ WHY INNOVATION IS NEEDED</h2>
-    <p style="text-align:justify;">
+  <!-- ========================= WHY INNOVATION ========================= -->
+  <div class="section grey-dark">
+    <div class="info-box">
+      <h2>⭐ WHY INNOVATION IS NEEDED</h2>
+      <p>
         Innovation is needed in the tourism sector to make travel smoother, faster, and safer.
         Traditional systems cannot handle overcrowding, long waits, or lack of real-time information.
         Modern tourists expect digital services, smart navigation, and personalized guidance.
         Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses—making the entire sector more efficient and tourist-friendly.
-    </p>
+      </p>
+    </div>
   </div>
 
   <!-- ========================= SUB-SECTORS ========================= -->
-  <h2 style="text-align:center; color:#ff8800; margin-top:50px;">Tourism Sector Sub-Divisions</h2>
-
-  <div class="sub-sectors">
+  <div class="section grey-light">
+    <h2>Tourism Sector Sub-Divisions</h2>
+    <div class="sub-sectors">
       <div style="background:#222244;"><span>Tourist Info & Nav</span></div>
       <div style="background:#224422;"><span>Accommodation</span></div>
       <div style="background:#444422;"><span>Attractions</span></div>
       <div style="background:#224444;"><span>Safety & Security</span></div>
       <div style="background:#444244;"><span>Cleanliness & Sustainability</span></div>
       <div style="background:#442244;"><span>Local Culture & Shopping</span></div>
+    </div>
   </div>
 
 </div>
