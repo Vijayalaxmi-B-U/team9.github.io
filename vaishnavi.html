@@ -1,35 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vaishnavi - CITY DESIGN</title>
-</head>
-<body>
-  <div class="sidebar">
-  <h2>Smart City</h2>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="project.html">Project</a>
-  <a href="vaishnavi.html">Vaishnavi</a>
-  <a href="vijayalaxmi.html">Vijayalaxmi</a>
-  <a href="sushant.html">Sushant</a>
-  <a href="sunil.html">Sunil</a>
-  <a href="collabz.html">Collabz</a>
-</div>
-<div class="main">
-  <h1>Vaishnavi</h1>
 
-  <h2>City Planning Business Ideas</h2>
-  <ul>
-    <li>Renewable Energy Solutions (Solar, Wind, and Smart Grid Projects)</li>
-    <li>Smart Water Management and Conservation Systems</li>
-    <li>Urban Green Spaces and Landscaping Services</li>
-    <li>Smart Street Lighting and IoT Infrastructure</li>
-    <li>Urban Logistics and Micro-Delivery Services</li>
-    <li>Community Health and Fitness Parks</li>
-  </ul>
+  <style>
+    /* -------- GLOBAL BODY -------- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      background: #000000;
+    }
+
+
+    /* -------- INDUSTRIAL SIDEBAR -------- */
+    .sidebar {
+      width: 260px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      background: linear-gradient(180deg, #0e1113, #1d252b, #0e1113);
+      border-right: 2px solid #3a4b57;
+
+      box-shadow: 3px 0 25px rgba(0, 0, 0, 0.7);
+
+       display: flex;
+    flex-direction: column;   /* Puts content from TOP to BOTTOM */
+    align-items: flex-start;  /* Aligns all text to LEFT */
+    justify-content: flex-start; /* Ensures content starts at TOP */
+
+      padding-top: 40px;
+    }
+
+    .sidebar h2 {
+      color: #023640;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .sidebar a {
+      color: #d7e6f4;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 12px;
+      width: 90%;
+      text-align: left;
+
+      border-left: 4px solid transparent;
+      transition: 0.25s ease-in-out;
+
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .sidebar a:hover {
+      background: rgba(0, 212, 255, 0.1);
+      border-left: 4px solid #00d4ff;
+      color: #00d4ff;
+      text-shadow: 0 0 5px #00d4ff;
+      transform: translateX(5px);
+    }
+
+    /* -------- MAIN CONTENT -------- */
+    .main {
+      margin-left: 260px;
+      padding: 40px;
+      color: white;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #30bcdb;
+      text-align: center;
+      text-shadow: 0 0 15px #000;
+      margin-top: 10px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .divider {
+      width: 200px;
+      height: 4px;
+      background: linear-gradient(to right, #00d4ff, #29ffb1);
+      margin: 0 auto 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00d4ff;
+    }
+
+    h2 {
+       background: rgba(255, 255, 255, 0.85);
+    color: #1a1a1a;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    font-size: xx-large;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Smart City</h2>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">📘 About</a>
+    <a href="project.html">🛠️ Project</a>
+    <a href="vaishnavi.html">👤 Vaishnavi</a>
+    <a href="vijayalaxmi.html">👤 Vijayalaxmi</a>
+    <a href="sushant.html">👤 Sushant</a>
+    <a href="sunil.html">👤 Sunil</a>
+    <a href="collabz.html">🤝 Collabz</a>
   </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>Vaishnavi</h1>
+    <div class="divider"></div>
+  
+    <div style="text-align: center;
+            background: rgba(8, 31, 49, 0.75); 
+            backdrop-filter: blur(3px);
+            border-radius: 10px;">
+  <h2>
+    Industrial Sector
+  </h2>
+  <p style="text-align: center;font-size: x-large;font-family: 'Gill Sans';">
+    The industrial zone of VRITDHARA is planned strategically, utilizing the region’s natural access to water resources, transport networks, and a skilled workforce. The sector focuses on environmentally responsible production where each manufacturing unit follows a structured workflow for energy use, waste sorting, material flow, and emission control. Efficient routing models are used to monitor transportation paths, minimizing fuel consumption and ensuring faster movement of goods.
+  </p>
+  <br>
+</div>
+<br>
+
+<div style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
+">
+
+    <style>
+        .info-box {
+            width: 330px;
+            background: #141414;              /* dark grey matching black theme */
+            border-radius: 16px;
+            padding: 25px;
+
+            border: 1px solid rgba(255,255,255,0.10);   /* soft border */
+            box-shadow: 0 0 12px rgba(0,0,0,0.35);       /* natural soft shadow */
+
+            transition: 0.3s;
+            color: #e8e8e8;
+            font-family: 'Gill Sans', sans-serif;
+        }
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 18px rgba(0,0,0,0.45);
+        }
+        .info-title {
+            font-size: 21px;
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .info-sdg {
+            font-size: 17px;
+            background: rgba(255,255,255,0.06); /* soft subtle grey */
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 10px;
+            color: #d7d7d7;
+        }
+    </style>
+
+<!-- BOX 5 -->
+    <div class="info-box">
+        <div class="info-title">♻️ Smart Industrial Waste Management</div>
+        <div class="info-sdg">✔ SDG 12</div>
+    </div>
+    <!-- BOX 1 -->
+    <div class="info-box">
+        <div class="info-title">⚡ Energy-Optimized Industrial Power Management System</div>
+        <div class="info-sdg">✔ SDG 7, SDG 13</div>
+    </div>
+
+    <!-- BOX 2 -->
+    <div class="info-box">
+        <div class="info-title">💧 Smart Water Usage & Recycling Optimization in Factories</div>
+        <div class="info-sdg">✔ SDG 6, SDG 12</div>
+    </div>
+
+    <!-- BOX 3 -->
+    <div class="info-box">
+        <div class="info-title">🏭 Industrial Air Quality Monitoring & Prediction System</div>
+        <div class="info-sdg">✔ SDG 11, SDG 13</div>
+    </div>
+
+    <!-- BOX 4 -->
+    <div class="info-box">
+        <div class="info-title">🔁 Circular Manufacturing Workflow Optimization</div>
+        <div class="info-sdg">✔ SDG 12</div>
+    </div>
+
+
+</div>
+
+
+<br>
+
+
+
+<div style="width: 90%;
+            padding: 50px;
+            border-radius: 18px;
+
+            /* BLACK BACKGROUND — preserved */
+            background: #000;
+
+            /* Industrial eco-theme styling */
+            border: 1px solid rgba(126, 85, 20, 0.836);
+            box-shadow: 0 0 25px rgba(192, 120, 12, 0.838);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;"
+
+     onmouseover="this.style.transform='translateY(-8px)'; 
+                  this.style.boxShadow='0 0 35px rgba(0,255,120,0.35)'"
+     onmouseout="this.style.transform='translateY(0px)'; 
+                 this.style.boxShadow='0 0 25px rgba(0,255,80,0.15)'">
+
+
+ <h3 style="font-size: xx-large;">
+     ♻️ Smart Industrial Waste Management
+</h3>
+
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Industries generate large volumes of mixed waste. Manual segregation, irregular 
+  collection schedules, and inefficient routing increase operational costs, create 
+  overflow issues, and result in unsafe disposal practices.
+</p>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Algorithms Used
+</h4>
+<ul style="font-size: x-large; line-height: 1.5; font-family: 'Gill Sans';">
+  <li>Sorting methods (Merge Sort / Quick Sort) to rank bins by urgency or fill level.</li>
+  <li>Graph-based routing using Dijkstra’s technique for shortest and most efficient collection paths.</li>
+  <li>Balanced Tree structures (AVL / Red-Black Tree) for rapid storage and retrieval of bin data.</li>
+  <li>Pattern matching (KMP / Brute-force) to detect hazardous waste signatures.</li>
+</ul>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Implementation
+</h4>
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Sensor readings from each bin are inserted into balanced trees, enabling fast access 
+  to high-priority bins in <b>O(log n)</b> time. Sorting methods arrange bins based on 
+  their fill levels or urgency. The industrial area is modeled as a weighted graph, and 
+  Dijkstra’s approach is used to compute the most efficient collection paths. For hazardous 
+  waste detection, sensor patterns are compared using string matching methods like KMP or 
+  brute-force scanning.
+</p>
+
+  <h3 style="
+  font-size: xx-large;">
+     ⚡ Energy-Optimized Industrial Power Management System
+</h3>
+
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Industries waste significant amounts of electricity due to unmanaged machine loads, 
+  uneven distribution, and limited visibility of real-time usage. This not only increases 
+  operational cost but also contributes to higher carbon emissions and system instability.
+</p>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Algorithms Used
+</h4>
+<ul style="font-size: x-large; line-height: 1.5; font-family: 'Gill Sans';">
+  <li>Greedy-based load adjustment to allocate power dynamically across machines.</li>
+  <li>AVL / Red-Black Trees to maintain fast-access records of real-time power draw.</li>
+  <li>Sorting techniques to sequence machines by priority or consumption intensity.</li>
+  <li>Graph traversal methods (DFS/BFS) to scan for overload paths or faulty connections.</li>
+</ul>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Implementation
+</h4>
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Real-time power usage from each machine is continuously stored in balanced trees, 
+  ensuring rapid lookup of the most demanding nodes. Sorting techniques create an ordered 
+  list of machines based on consumption. A greedy mechanism then redistributes or limits 
+  load to maintain stability. To detect issues, graph traversal scans the electrical layout 
+  and highlights overloaded or compromised segments.
+</p>
+
+    <h3 style="
+  font-size: xx-large;">
+     💧 Smart Water Usage & Recycling Optimization in Factories
+</h3>
+
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Factories often suffer from excessive water wastage, ineffective recycling practices, 
+  and limited monitoring of consumption patterns. These inefficiencies increase operational 
+  costs and place substantial stress on local water resources.
+</p>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Algorithms Used
+</h4>
+<ul style="font-size: x-large; line-height: 1.5; font-family: 'Gill Sans';">
+  <li>Brute-force / KMP pattern matching to detect unusual leakage patterns.</li>
+  <li>Sorting techniques (Heap Sort / Merge Sort) to rank water usage across departments.</li>
+  <li>AVL / Red-Black Trees for storing and querying real-time water flow data.</li>
+  <li>Optimized time-complexity strategies for large-scale monitoring systems.</li>
+</ul>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Implementation
+</h4>
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Continuous sensor readings are inserted into balanced trees, ensuring quick access 
+  and updates to flow records. Sorted usage data helps identify departments with excessive 
+  consumption. Leakage is detected by comparing flow signatures through pattern matching 
+  approaches like brute-force or KMP. Efficient algorithms are selected to ensure scalability 
+  across large industrial environments.
+</p>
+
+<!-- ========== NEXT TOPIC ========== -->
+
+ <h3 style="
+  font-size: xx-large;">
+     🏭 Industrial Air Quality Monitoring & Prediction System
+</h3>
+
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Industrial areas often struggle with high levels of smoke, particulate matter, and 
+  chemical pollutants. Manual monitoring is slow, error-prone, and unable to provide 
+  timely warnings, increasing risks for workers and nearby communities.
+</p>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Algorithms Used
+</h4>
+<ul style="font-size: x-large; line-height: 1.5; font-family: 'Gill Sans';">
+  <li>Graph traversal (BFS/DFS) to study airflow and pollutant movement.</li>
+  <li>Sorting approaches to classify pollutant concentrations by severity.</li>
+  <li>Tree structures (BST/AVL) to store and retrieve real-time sensor data.</li>
+  <li>Pattern matching (Brute-force / KMP) for identifying toxic gas combinations.</li>
+</ul>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Implementation
+</h4>
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Air-quality sensors continuously record pollutant levels, which are organized in 
+  BST/AVL structures for rapid querying. Sorting methods categorize readings based 
+  on safety limits. The industrial layout is represented as a graph to study airflow 
+  pathways using BFS/DFS, helping identify pollution sources. Pattern matching checks 
+  for combinations of harmful gases using predefined chemical signatures.
+</p>
+
+<h3 style="
+  font-size: xx-large;">
+     🔁 Circular Manufacturing Workflow Optimization
+</h3>
+
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Manufacturing units often struggle to efficiently reuse materials, track the lifecycle 
+  of components, and manage reverse logistics. Lack of visibility in reusable parts, 
+  delays in returning materials to production, and unoptimized workflow loops increase 
+  overall resource consumption, waste generation, and operational costs.
+</p>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Algorithms Used
+</h4>
+<ul style="font-size: x-large; line-height: 1.5; font-family: 'Gill Sans';">
+  <li>Sorting techniques (Merge Sort / Quick Sort) to prioritize reusable materials based on quality or lifecycle.</li>
+  <li>Graph-based workflow modeling to optimize transitions across production, reuse, refurbishment, and recycling loops.</li>
+  <li>Balanced tree structures (AVL / Red-Black Trees) for storing material history and retrieving lifecycle data quickly.</li>
+  <li>Pattern matching (KMP / Brute-force) to detect repeated defects or failure signatures in returned components.</li>
+</ul>
+
+<h4 style="font-size: x-large; text-decoration: underline; font-family: 'Gill Sans';">
+  Implementation
+</h4>
+<p style="font-size: x-large;font-family: 'Gill Sans';">
+  Material lifecycle attributes such as quality scores, usage cycles, and defect histories 
+  are stored in balanced trees for fast lookup. Components ready for reuse are sorted to 
+  establish priority order. The circular manufacturing loop is represented as a directed 
+  graph, ensuring efficient navigation between production, refurbishment, and recycling 
+  nodes. Pattern matching techniques help identify recurring defect trends in returned parts, 
+  supporting better quality control and process improvements.
+</p>
+
+
+</div>
+
+
+
 </body>
 </html>
