@@ -305,13 +305,13 @@ p { line-height:1.6; font-size:16px; max-width: 800px; margin:10px auto; text-al
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #2a2a2a; /* grey background for full page */
+  background-color: #2a2a2a;
   color: #fff;
 }
 
 .section-grey {
   width: 100%;
-  min-height: 100vh; /* full screen height */
+  min-height: 100vh;
   padding: 60px 40px;
   box-sizing: border-box;
 }
@@ -324,7 +324,7 @@ body {
 
 .section-grey p {
   max-width: 900px;
-  margin: 0 auto 30px auto; /* centers paragraph and adds spacing */
+  margin: 0 auto 30px auto;
   line-height: 1.8;
   font-size: 16px;
   text-align: justify;
@@ -334,52 +334,63 @@ body {
 <body>
 
 <div class="section-grey">
-  <p style="text-align:center; font-size:1.3em;">
 
   <p><b>1. Tourist Info & Navigation</b><br>
-     <b>Aligned SDGs:</b> 9 (Industry, Innovation, and Infrastructure), 11 (Sustainable Cities and Communities)<br>
-     Tourist information and navigation services help visitors explore cities efficiently, reduce overcrowding, 
-     and enhance the overall experience. Smart systems provide guidance, real-time updates, and personalized recommendations.<br>
-     <b>Contributions:</b> Optimizes tourist routes, provides real-time information about attractions and transport, supports smart city infrastructure.
+     <b>Aligned SDGs:</b> 9, 11<br>
+     - Real-time routes, crowd reduction, smart guidance.<br>
+     - Enhances navigation & user experience.<br>
+     <b>Contributions:</b> Optimized routes, live attraction/transport updates.<br>
+     <b>Algorithms Used:</b> Dijkstra, A*, BFS/DFS, Greedy nearest–spot, DP route optimization, Trie/KMP for fast search.
   </p>
 
   <p><b>2. Accommodation</b><br>
-     <b>Aligned SDGs:</b> 11 (Sustainable Cities and Communities), 12 (Responsible Consumption and Production)<br>
-     Accommodation services cater to tourists’ lodging needs while promoting sustainability and comfort. 
-     Smart and eco-friendly hotels reduce environmental impact and enhance the tourist experience.<br>
-     <b>Contributions:</b> Promotes eco-friendly lodging, provides safe and accessible housing, supports local economies.
+     <b>Aligned SDGs:</b> 11, 12<br>
+     - Smart, eco-friendly lodging suggestions.<br>
+     - Supports safe, affordable stays.<br>
+     <b>Contributions:</b> Sustainable hotels, efficient booking, comfort & accessibility.<br>
+     <b>Algorithms Used:</b> Hashing (fast lookup), Heap (best/cheapest room), Sliding Window (date checks), DP (package cost optimization).
   </p>
 
   <p><b>3. Attractions</b><br>
-     <b>Aligned SDGs:</b> 8 (Decent Work and Economic Growth), 11 (Sustainable Cities and Communities)<br>
-     Attractions include cultural, historical, and recreational sites. Technology and smart management improve visitor experience, safety, and accessibility.<br>
-     <b>Contributions:</b> Implements smart ticketing, enhances engagement through AR/VR, boosts local tourism and cultural preservation.
+     <b>Aligned SDGs:</b> 8, 11<br>
+     - Smart ticketing & crowd control.<br>
+     - Enhances cultural & AR/VR experiences.<br>
+     <b>Contributions:</b> Better visitor flow, interactive tours, cultural preservation.<br>
+     <b>Algorithms Used:</b> Greedy (slot allocation), Backtracking (AR paths), Fenwick/Segment Tree (visitor count tracking), Pattern Recognition.
   </p>
 
   <p><b>4. Safety & Security</b><br>
-     <b>Aligned SDGs:</b> 3 (Good Health and Well-being), 11 (Sustainable Cities and Communities)<br>
-     Safety and security services ensure that tourists can explore cities with confidence. Smart monitoring, emergency response, and wearable tech enhance protection.<br>
-     <b>Contributions:</b> Real-time emergency alerts, accident reduction through crowd management, increases tourist trust and satisfaction.
+     <b>Aligned SDGs:</b> 3, 11<br>
+     - Real-time alerts and monitoring.<br>
+     - Better emergency management.<br>
+     <b>Contributions:</b> Crowd safety, faster rescue routing, improved trust.<br>
+     <b>Algorithms Used:</b> BFS/DFS (hazard spread), Dijkstra (quick rescue path), DP (risk scoring), Pattern Detection (anomaly alerts).
   </p>
 
   <p><b>5. Cleanliness & Sustainability</b><br>
-     <b>Aligned SDGs:</b> 11 (Sustainable Cities and Communities), 12 (Responsible Consumption and Production), 13 (Climate Action)<br>
-     Maintaining clean and sustainable environments improves urban livability and tourist experience. Eco-friendly initiatives and smart waste management promote sustainability.<br>
-     <b>Contributions:</b> IoT-enabled waste management, eco-tourism promotion, reduces environmental impact.
+     <b>Aligned SDGs:</b> 11, 12, 13<br>
+     - Smart waste tracking and eco-friendly planning.<br>
+     - Improves city cleanliness & reduces pollution.<br>
+     <b>Contributions:</b> IoT-waste systems, eco-tourism promotion.<br>
+     <b>Algorithms Used:</b> Greedy routing (waste trucks), DP (waste load balancing), Queue/Priority Queue (bin alerts), Fenwick/Segment Tree (pollution data).
   </p>
 
   <p><b>6. Local Culture & Shopping</b><br>
-     <b>Aligned SDGs:</b> 8 (Decent Work and Economic Growth), 11 (Sustainable Cities and Communities)<br>
-     Promoting local culture and shopping allows tourists to experience authentic experiences while supporting local artisans and businesses.<br>
-     <b>Contributions:</b> Marketplaces for handicrafts, cultural workshops and tours, strengthens local economy.
+     <b>Aligned SDGs:</b> 8, 11<br>
+     - Promotes artisans & local markets.<br>
+     - Enhances cultural experience.<br>
+     <b>Contributions:</b> Workshops, local products, economic support.<br>
+     <b>Algorithms Used:</b> Recommendation systems, Trie/KMP (product search), Hash Maps (vendor lookup), Clustering (similar item grouping).
   </p>
 
   <p><b>7. Transportation & Mobility</b><br>
-     <b>Aligned SDGs:</b> 9 (Industry, Innovation, and Infrastructure), 11 (Sustainable Cities and Communities)<br>
-     Efficient transportation systems are key to a smart tourism experience. They reduce congestion, improve accessibility, 
-     and connect tourists to attractions seamlessly.<br>
-     <b>Contributions:</b> Optimizes routes using smart transport algorithms, encourages sustainable mobility, enhances accessibility.
+     <b>Aligned SDGs:</b> 9, 11<br>
+     - Reduces congestion & improves accessibility.<br>
+     - Connects tourists smoothly across the city.<br>
+     <b>Contributions:</b> Smart routing, sustainable mobility options.<br>
+     <b>Algorithms Used:</b> Dijkstra/Floyd-Warshall (multi-route), BFS (network simulation), Priority Queue (taxi/bus assignment), Graph Partitioning, DP (multi-mode travel optimization).
   </p>
+
 </div>
 
 </body>
