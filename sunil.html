@@ -1,3 +1,11 @@
+<!--
+  smart-traffic-management.html
+  Place this file in your GitHub repo (e.g. root or /docs). Simple, single-file page.
+  Instructions:
+  - Replace image placeholders at paths: images/traffic-1.png, images/traffic-2.png, images/traffic-3.png
+  - To add more main ideas: copy a <section class="project-section"> block and update id/title
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -48,71 +56,73 @@
 
   <main class="container">
 
-    <!-- TRAFFIC MANAGEMENT SECTION -->
-    <section id="traffic-management" class="project-section">
-      <div class="section-head">
-        <h2>1. Traffic Management — Interconnected Smart Traffic Signal Network</h2>
-        <div class="meta">Status: Concept / DAA project</div>
-      </div>
+    <!-- TRAFFIC MANAGEMENT SECTION (OUTSIDE CONTAINER) -->
+</main>
 
-      <p><strong>Overview:</strong> In the designed city, traffic signals are connected through a central communication graph. Each signal continuously shares data to enable local planning and cooperative decisions that avoid congestion propagation.</p>
+<section id="traffic-management" class="project-section" style="max-width:980px;margin:24px auto;padding:18px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.06)">
+  <div class="section-head">
+    <h2>1. Traffic Management — Interconnected Smart Traffic Signal Network</h2>
+    <div class="meta">Status: Concept / DAA project</div>
+  </div>
 
-      <h3>Data shared every 2–5 seconds</h3>
-      <ul class="clean">
-        <li>Current traffic density</li>
-        <li>Queue length of vehicles</li>
-        <li>Number of vehicles arriving from each direction</li>
-        <li>Presence of emergency vehicles</li>
-        <li>Abnormal conditions (accidents, roadblocks, VIP movement)</li>
-      </ul>
+  <p><strong>Overview:</strong> In the designed city, traffic signals are connected through a central communication graph. Each signal continuously shares data to enable local planning and cooperative decisions that avoid congestion propagation.</p>
 
-      <h3>System model</h3>
-      <p>The communication network forms a graph where <em>signals</em> are nodes, <em>roads</em> are edges, and edge weights represent congestion level / travel time. This enables situation awareness across the city.</p>
+  <h3>Data shared every 2–5 seconds</h3>
+  <ul class="clean">
+    <li>Current traffic density</li>
+    <li>Queue length of vehicles</li>
+    <li>Number of vehicles arriving from each direction</li>
+    <li>Presence of emergency vehicles</li>
+    <li>Abnormal conditions (accidents, roadblocks, VIP movement)</li>
+  </ul>
 
-      <h3>Predicting traffic build-up &amp; adjusting green time</h3>
-      <p>Each signal uses local and neighboring data to estimate which lane will get congested next, how long vehicles must wait, and whether to extend or reduce green time.</p>
+  <h3>System model</h3>
+  <p>The communication network forms a graph where <em>signals</em> are nodes, <em>roads</em> are edges, and edge weights represent congestion level / travel time. This enables situation awareness across the city.</p>
 
-      <h4>Algorithms used to prioritize lanes</h4>
-      <ul class="clean">
-        <li><strong>Quick Sort / Merge Sort</strong> — sort directions by vehicle density so higher-density directions get earlier service.</li>
-        <li><strong>Heap (priority queue)</strong> — maintain priorities: emergency vehicles first, congested lanes next, low-density lanes last.</li>
-      </ul>
+  <h3>Predicting traffic build-up &amp; adjusting green time</h3>
+  <p>Each signal uses local and neighboring data to estimate which lane will get congested next, how long vehicles must wait, and whether to extend or reduce green time.</p>
 
-      <h3>Cooperative decision-making</h3>
-      <p>Each signal predicts how its release affects adjacent signals. Example: if Signal A releases 100 vehicles, Signal B increases green time to accommodate incoming flow. This reduces pile-ups and sudden congestion spikes.</p>
+  <h4>Algorithms used to prioritize lanes</h4>
+  <ul class="clean">
+    <li><strong>Quick Sort / Merge Sort</strong> — sort directions by vehicle density so higher-density directions get earlier service.</li>
+    <li><strong>Heap (priority queue)</strong> — maintain priorities: emergency vehicles first, congested lanes next, low-density lanes last.</li>
+  </ul>
 
-      <h3>Graph algorithms that help</h3>
-      <ul class="clean">
-        <li><strong>BFS / DFS</strong> — detect blocked paths and reroute traffic.</li>
-        <li><strong>Dijkstra</strong> — predict shortest travel time between signals (used for routing/emergency planning).</li>
-        <li><strong>Bellman-Ford</strong> — handle sudden change in weights (congestion) when negative edges/updates exist.</li>
-        <li><strong>Floyd–Warshall</strong> — all-pairs city-wide congestion predictions (small-medium graphs or summarized grids).</li>
-      </ul>
+  <h3>Cooperative decision-making</h3>
+  <p>Each signal predicts how its release affects adjacent signals. Example: if Signal A releases 100 vehicles, Signal B increases green time to accommodate incoming flow. This reduces pile-ups and sudden congestion spikes.</p>
 
-      <h3>Emergency vehicle priority (Green Corridor)</h3>
-      <p>Flow summary:</p>
-      <ol>
-        <li>Detect emergency via RFID/GPS or camera AI.</li>
-        <li>Alert nearby signals and update graph edge weights on the route.</li>
-        <li>Run Dijkstra to find fastest path to destination (e.g., hospital).</li>
-        <li>Pre-emptively turn route signals green and pause cross traffic via a priority queue.</li>
-      </ol>
+  <h3>Graph algorithms that help</h3>
+  <ul class="clean">
+    <li><strong>BFS / DFS</strong> — detect blocked paths and reroute traffic.</li>
+    <li><strong>Dijkstra</strong> — predict shortest travel time between signals (used for routing/emergency planning).</li>
+    <li><strong>Bellman-Ford</strong> — handle sudden change in weights (congestion) when negative edges/updates exist.</li>
+    <li><strong>Floyd–Warshall</strong> — all-pairs city-wide congestion predictions (small-medium graphs or summarized grids).</li>
+  </ul>
 
-      <h3>Benefits</h3>
-      <ul class="clean">
-        <li>Reduced travel time and queuing delays</li>
-        <li>Improved emergency response times</li>
-        <li>Adaptive, scalable control that coordinates across intersections</li>
-      </ul>
+  <h3>Emergency vehicle priority (Green Corridor)</h3>
+  <p>Flow summary:</p>
+  <ol>
+    <li>Detect emergency via RFID/GPS or camera AI.</li>
+    <li>Alert nearby signals and update graph edge weights on the route.</li>
+    <li>Run Dijkstra to find fastest path to destination (e.g., hospital).</li>
+    <li>Pre-emptively turn route signals green and pause cross traffic via a priority queue.</li>
+  </ol>
 
-      <div class="image-row" aria-hidden="true">
-        <!-- Replace the src paths below with your image files in the repo. Example path: images/traffic-1.png -->
-        <img src="images/traffic-1.png" alt="Traffic sensors placeholder">
-        <img src="images/traffic-2.png" alt="Signal graph placeholder">
-        <img src="images/traffic-3.png" alt="Green corridor placeholder">
-      </div>
+  <h3>Benefits</h3>
+  <ul class="clean">
+    <li>Reduced travel time and queuing delays</li>
+    <li>Improved emergency response times</li>
+    <li>Adaptive, scalable control that coordinates across intersections</li>
+  </ul>
 
-    </section>
+  <div class="image-row" aria-hidden="true">
+    <img src="images/traffic-1.png" alt="Traffic sensors placeholder">
+    <img src="images/traffic-2.png" alt="Signal graph placeholder">
+    <img src="images/traffic-3.png" alt="Green corridor placeholder">
+  </div>
+</section>
+
+<main class="container">
 
     <!-- Placeholder for future projects -->
     <section id="future-projects" class="project-section">
