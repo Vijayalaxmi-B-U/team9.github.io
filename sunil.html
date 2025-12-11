@@ -1,235 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CityPlan — Traffic Management (Algorithmic Solutions)</title>
+  <meta charset="utf-8">">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design & Business Ideas — Smart City</title>
+  <style>
+    :root{--accent:#2b6cb0;--muted:#666;--bg:#f7fafc;--card:#ffffff}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(90deg,var(--accent),#4c9bd6); color:white; padding:28px 20px}
+    .container{max-width:980px;margin:24px auto;padding:0 18px}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:8px 0 0;opacity:.95}
+    nav.top-nav{display:flex;gap:12px;margin-top:16px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.06)}
 
-<style>
-    body{
-        margin:0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: linear-gradient(180deg,#0a1020,#0f1a35);
-        color:#e8eef7;
-        padding:30px;
-    }
-    .container{
-        max-width:1100px;
-        margin:auto;
-    }
-    .title{
-        font-size:32px;
-        font-weight:700;
-        margin-bottom:5px;
-    }
-    .subtitle{
-        color:#9aa9bf;
-        margin-bottom:20px;
-    }
-    .card{
-        background:rgba(255,255,255,0.06);
-        border-radius:12px;
-        padding:20px;
-        margin-bottom:20px;
-        border:1px solid rgba(255,255,255,0.08);
-    }
-    h2{
-        margin-top:0;
-        color:#7edcff;
-        font-size:22px;
-    }
-    h3{
-        margin-bottom:6px;
-        color:#a8ffda;
-    }
-    p{
-        line-height:1.6;
-        margin:8px 0;
-    }
-    ul{
-        margin-top:6px;
-    }
-    code{
-        background:#06101e;
-        padding:4px 8px;
-        border-radius:6px;
-        color:#7ef3c9;
-    }
-</style>
+    /* section cards */
+    .project-section{background:var(--card);border-radius:12px;padding:18px;margin:18px 0;box-shadow:0 6px 18px rgba(20,20,30,0.06)}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .section-head h2{margin:0;font-size:1.1rem}
+    .meta{color:var(--muted);font-size:0.9rem}
+    ul.clean{padding-left:18px}
 
+    /* images */
+    .image-row{display:flex;gap:12px;margin-top:12px}
+    .image-row img{width:100%;max-width:320px;border-radius:8px;border:1px solid #eceff3;background:#f2f6fb}
+
+    /* responsive */
+    @media (max-width:760px){.image-row{flex-direction:column}.container{padding:0 14px}} 
+
+    footer{max-width:980px;margin:30px auto 60px;padding:0 18px;color:var(--muted);font-size:0.9rem}
+    .hint{background:#fff9db;padding:10px;border-left:4px solid #ffd54f;border-radius:6px}
+    code{background:#f4f7fb;padding:2px 6px;border-radius:6px;font-family:monospace}
+  </style>
 </head>
 <body>
-<div class="container">
+  <header>
+    <div class="container">
+      <h1>Design & Business Ideas — Smart City</h1>
+      <p class="lead">Collection of project concepts. Add more project sections below. (This page is ready to host on GitHub Pages.)</p>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#traffic-management">Traffic Management</a>
+        <a href="#future-projects">Future Projects</a>
+        <a href="#notes">Notes</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- HEADER -->
-<div class="title">CityPlan — Traffic Management</div>
-<div class="subtitle">Effective algorithmic solutions (only from allowed list) for smarter, safer, smoother city mobility.</div>
+  <main class="container">
 
+    <!-- TRAFFIC MANAGEMENT SECTION -->
+    <section id="traffic-management" class="project-section">
+      <div class="section-head">
+        <h2>1. Traffic Management — Interconnected Smart Traffic Signal Network</h2>
+        <div class="meta">Status: Concept / DAA project</div>
+      </div>
 
-<!-- SECTION: THEORY -->
-<div class="card">
-<h2>Theory: What Is the Traffic Management Problem?</h2>
-<p>
-Cities struggle with <strong>congestion</strong>, <strong>delays</strong>, <strong>accidents</strong>, and <strong>wasted fuel</strong>.  
-Traffic movement can be viewed as a <strong>graph problem</strong>:
-</p>
-<ul>
-    <li>Intersections → <strong>Nodes</strong></li>
-    <li>Roads → <strong>Edges</strong> with weight (travel time, congestion, distance)</li>
-</ul>
-<p>
-Our goal is to find the <strong>fastest, safest, least congested movement</strong> of vehicles across this graph.  
-We use only algorithms from your allowed list that fit real traffic behaviour.
-</p>
-</div>
+      <p><strong>Overview:</strong> In the designed city, traffic signals are connected through a central communication graph. Each signal continuously shares data to enable local planning and cooperative decisions that avoid congestion propagation.</p>
 
+      <h3>Data shared every 2–5 seconds</h3>
+      <ul class="clean">
+        <li>Current traffic density</li>
+        <li>Queue length of vehicles</li>
+        <li>Number of vehicles arriving from each direction</li>
+        <li>Presence of emergency vehicles</li>
+        <li>Abnormal conditions (accidents, roadblocks, VIP movement)</li>
+      </ul>
 
+      <h3>System model</h3>
+      <p>The communication network forms a graph where <em>signals</em> are nodes, <em>roads</em> are edges, and edge weights represent congestion level / travel time. This enables situation awareness across the city.</p>
 
-<!-- SECTION: ROUTING -->
-<div class="card">
-<h2>1. Shortest Route Calculation</h2>
+      <h3>Predicting traffic build-up &amp; adjusting green time</h3>
+      <p>Each signal uses local and neighboring data to estimate which lane will get congested next, how long vehicles must wait, and whether to extend or reduce green time.</p>
 
-<h3>Problem</h3>
-<p>Drivers need fastest routes based on live congestion. Wrong routing increases traffic jams.</p>
+      <h4>Algorithms used to prioritize lanes</h4>
+      <ul class="clean">
+        <li><strong>Quick Sort / Merge Sort</strong> — sort directions by vehicle density so higher-density directions get earlier service.</li>
+        <li><strong>Heap (priority queue)</strong> — maintain priorities: emergency vehicles first, congested lanes next, low-density lanes last.</li>
+      </ul>
 
-<h3>Algorithms Used</h3>
-<ul>
-    <li><strong>Dijkstra</strong> — best for live travel-time routing</li>
-    <li><strong>Bellman–Ford</strong> — handles dynamic penalties (accidents, delays)</li>
-    <li><strong>Floyd–Warshall</strong> — precomputes all-pairs route matrix for emergency vehicles</li>
-</ul>
+      <h3>Cooperative decision-making</h3>
+      <p>Each signal predicts how its release affects adjacent signals. Example: if Signal A releases 100 vehicles, Signal B increases green time to accommodate incoming flow. This reduces pile-ups and sudden congestion spikes.</p>
 
-<h3>Why these algorithms help</h3>
-<p>They update travel times and compute fastest paths quickly across thousands of intersections.</p>
+      <h3>Graph algorithms that help</h3>
+      <ul class="clean">
+        <li><strong>BFS / DFS</strong> — detect blocked paths and reroute traffic.</li>
+        <li><strong>Dijkstra</strong> — predict shortest travel time between signals (used for routing/emergency planning).</li>
+        <li><strong>Bellman-Ford</strong> — handle sudden change in weights (congestion) when negative edges/updates exist.</li>
+        <li><strong>Floyd–Warshall</strong> — all-pairs city-wide congestion predictions (small-medium graphs or summarized grids).</li>
+      </ul>
 
-<h3>Benefit to City</h3>
-<ul>
-    <li>Faster travel for all</li>
-    <li>Lower fuel consumption</li>
-    <li>Less congestion spread</li>
-</ul>
-</div>
+      <h3>Emergency vehicle priority (Green Corridor)</h3>
+      <p>Flow summary:</p>
+      <ol>
+        <li>Detect emergency via RFID/GPS or camera AI.</li>
+        <li>Alert nearby signals and update graph edge weights on the route.</li>
+        <li>Run Dijkstra to find fastest path to destination (e.g., hospital).</li>
+        <li>Pre-emptively turn route signals green and pause cross traffic via a priority queue.</li>
+      </ol>
 
+      <h3>Benefits</h3>
+      <ul class="clean">
+        <li>Reduced travel time and queuing delays</li>
+        <li>Improved emergency response times</li>
+        <li>Adaptive, scalable control that coordinates across intersections</li>
+      </ul>
 
+      <div class="image-row" aria-hidden="true">
+        <!-- Replace the src paths below with your image files in the repo. Example path: images/traffic-1.png -->
+        <img src="images/traffic-1.png" alt="Traffic sensors placeholder">
+        <img src="images/traffic-2.png" alt="Signal graph placeholder">
+        <img src="images/traffic-3.png" alt="Green corridor placeholder">
+      </div>
 
-<!-- SECTION: SIGNAL TIMING -->
-<div class="card">
-<h2>2. Traffic Signal Optimization</h2>
+    </section>
 
-<h3>Problem</h3>
-<p>Signals often stay green even when no vehicles present → wasted time and long queues.</p>
+    <!-- Placeholder for future projects -->
+    <section id="future-projects" class="project-section">
+      <div class="section-head">
+        <h2>Other Main Ideas (Add more)</h2>
+        <div class="meta">Add new sections below or duplicate this block</div>
+      </div>
 
-<h3>Algorithms Used</h3>
-<ul>
-    <li><strong>AVL Tree</strong> — maintain real-time vehicle counts sorted</li>
-    <li><strong>Heap Sort</strong> — prioritise most congested junctions</li>
-    <li><strong>BFS</strong> — check how congestion spreads to nearby intersections</li>
-</ul>
+      <p>Copy the following structure to add a new idea:</p>
+      <pre><code>&lt;section id="your-id" class="project-section"&gt; ... &lt;/section&gt;</code></pre>
 
-<h3>Why these algorithms help</h3>
-<p>
-AVL tree & heap sort give <strong>fast priority updates</strong>.  
-BFS shows how queues propagate through neighbouring roads.
-</p>
+      <p class="hint">Tip: for GitHub Pages, place images in <code>/images/</code> and reference them exactly by path (e.g. <code>images/traffic-1.png</code>).</p>
 
-<h3>Benefit to City</h3>
-<ul>
-    <li>Shorter waiting time at signals</li>
-    <li>Reduced queue length</li>
-    <li>More predictable traffic flow</li>
-</ul>
-</div>
+    </section>
 
+    <section id="notes" class="project-section">
+      <h2>Notes &amp; Next steps</h2>
+      <ul class="clean">
+        <li>Dataset &amp; sensors: list sensor types and sampling rate (2–5s) before prototyping.</li>
+        <li>Start with a small grid (3x3 intersections) to test algorithms offline/simulated.</li>
+        <li>Use SUMO or a custom simulator for validation before field tests.</li>
+      </ul>
+    </section>
 
+  </main>
 
-<!-- SECTION: INCIDENT & BLOCKAGE -->
-<div class="card">
-<h2>3. Accident & Road Blockage Detection</h2>
+  <footer>
+    <div class="container">
+      <div>Made for: DAA — Design & Analysis of Algorithms projects. File: <code>smart-traffic-management.html</code></div>
+      <div style="margin-top:8px;color:var(--muted)">How to use: commit this file to your repo, push to GitHub. For GitHub Pages enable it on the repository settings or place file in <code>docs/</code> and serve.</div>
+    </div>
+  </footer>
 
-<h3>Problem</h3>
-<p>When a road closes due to accident, the city must quickly check which areas become unreachable.</p>
-
-<h3>Algorithms Used</h3>
-<ul>
-    <li><strong>DFS</strong> — detect unreachable zones</li>
-    <li><strong>Union–Find</strong> — quickly check if the road network is still connected</li>
-    <li><strong>Bellman–Ford</strong> — re-route with updated penalties</li>
-</ul>
-
-<h3>Why these algorithms help</h3>
-<p>DFS + Union-Find instantly detect disconnections and isolated areas.</p>
-
-<h3>Benefit to City</h3>
-<ul>
-    <li>Fast emergency response</li>
-    <li>Better path redirection</li>
-    <li>Lower congestion after accidents</li>
-</ul>
-</div>
-
-
-
-<!-- SECTION: SENSOR NETWORK -->
-<div class="card">
-<h2>4. Traffic Sensor / Camera Network Construction</h2>
-
-<h3>Problem</h3>
-<p>
-Sensors must be installed city-wide with minimum wiring cost and maximum coverage.
-</p>
-
-<h3>Algorithms Used</h3>
-<ul>
-    <li><strong>Prim’s MST</strong> — build minimum wiring cost network</li>
-    <li><strong>Kruskal’s MST</strong> — alternative MST with sorting</li>
-</ul>
-
-<h3>Why these algorithms help</h3>
-<p>MST guarantees <strong>minimum cost sensor network</strong>.</p>
-
-<h3>Benefit to City</h3>
-<ul>
-    <li>Cheaper infrastructure</li>
-    <li>Better monitoring</li>
-    <li>Reduced maintenance cost</li>
-</ul>
-</div>
-
-
-
-<!-- SECTION: DATA MANAGEMENT -->
-<div class="card">
-<h2>5. Sorting & Data Handling</h2>
-<h3>Problem</h3>
-<p>Traffic data (speed, congestion, density) must be sorted quickly for reports and dashboards.</p>
-
-<h3>Algorithms Used</h3>
-<ul>
-    <li><strong>Merge Sort</strong> — stable, fast sorting for large traffic datasets</li>
-    <li><strong>Quick Sort</strong> — fast for live updates</li>
-</ul>
-
-<h3>Benefit to City</h3>
-<ul>
-    <li>Better analytics</li>
-    <li>Faster dashboards for traffic control rooms</li>
-</ul>
-</div>
-
-
-
-<!-- SECTION: SUMMARY -->
-<div class="card">
-<h2>Summary: How Algorithms Improve Real City Life</h2>
-<ul>
-    <li>Reduced congestion through optimal routing</li>
-    <li>Smarter, responsive traffic signals</li>
-    <li>Faster accident response</li>
-    <li>Cheaper and efficient sensor infrastructure</li>
-    <li>Improved emergency vehicle movement</li>
-</ul>
-</div>
-
-</div>
 </body>
 </html>
