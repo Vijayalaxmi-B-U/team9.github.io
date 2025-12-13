@@ -782,3 +782,157 @@ max(DP[i-1][b],
 
   </div>
 </div>
+
+
+<!-- ================= ATTRACTIONS PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">
+    ATTRACTION
+  </h1>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.sub-head{
+  color:#5fd3a2;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+p{
+  color:#cfeee2;
+}
+
+.algo-btn{
+  background:#5fd3a2;
+  color:#1a1a1a;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0 16px 0;
+}
+
+.code-box{
+  display:none;
+  background:#a9e7cb;
+  color:#1a1a1a;
+  padding:16px;
+  border-radius:10px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin-bottom:35px;
+}
+
+.section-grey{
+  background:#2b2b2b;
+  padding:40px 0;
+}
+
+.content{
+  width:80%;
+  margin:auto;
+}
+</style>
+
+<!-- ================= GREY PAGE ================= -->
+<div class="section-grey">
+  <div class="content">
+<!-- INTRO DESCRIPTION -->
+<p>
+Attractions are the heart of tourism. Smart attraction management improves visitor
+experience through efficient ticketing, immersive AR/VR enhancements, and effective
+crowd control. Intelligent systems reduce waiting time, prevent overcrowding, and
+ensure smooth visitor flow while preserving cultural and public spaces.
+</p>
+
+<hr>
+
+<!-- BACKTRACKING -->
+<p class="sub-head">Backtracking – Ticket Slot Allocation</p>
+<p>
+Backtracking explores multiple ticket slot combinations to allocate time slots
+without conflicts during peak tourist hours.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('backtracking')">View Algorithm</button>
+<div class="code-box" id="backtracking">
+Try assigning slot
+If conflict occurs
+  backtrack
+Else
+  confirm slot
+</div>
+
+<hr>
+
+<!-- SEGMENT TREE -->
+<p class="sub-head">Segment Tree – Crowd Monitoring</p>
+<p>
+Segment Trees efficiently track crowd density over time ranges and help authorities
+take quick decisions when limits are exceeded.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('segmentTree')">View Algorithm</button>
+<div class="code-box" id="segmentTree">
+Build tree on crowd data
+Query range for crowd count
+Update when visitors enter or leave
+</div>
+
+<hr>
+
+<!-- FENWICK TREE -->
+<p class="sub-head">Fenwick Tree – Visitor Count Updates</p>
+<p>
+Fenwick Tree supports fast updates and queries of visitor counts at attractions,
+enabling real-time crowd statistics.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('fenwick')">View Algorithm</button>
+<div class="code-box" id="fenwick">
+Update visitor count
+Query prefix sum
+Maintain real-time totals
+</div>
+
+<hr>
+
+<!-- GREEDY -->
+<p class="sub-head">Greedy – Queue & Crowd Control</p>
+<p>
+Greedy strategy always directs tourists to the least crowded attraction to balance
+visitor distribution.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('greedyAttr')">View Algorithm</button>
+<div class="code-box" id="greedyAttr">
+Select attraction with minimum crowd
+Redirect tourists accordingly
+</div>
+
+<hr>
+
+<!-- ML PREDICTION -->
+<p class="sub-head">ML Prediction – Demand Forecasting</p>
+<p>
+Machine Learning predicts visitor demand using historical data to plan staff,
+ticket pricing, and safety measures in advance.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('ml')">View Algorithm</button>
+<div class="code-box" id="ml">
+Collect historical data
+Train prediction model
+Forecast future crowd levels
+</div>
+
+</div>
+</div>
+
