@@ -500,3 +500,168 @@ p {
 </body>
 </html>
 
+
+<!-- ================= TOURIST INFO & NAVIGATION : ALGORITHMS ================= -->
+<div class="section grey-dark">
+
+  <!-- ================= DIJKSTRA ================= -->
+  <div class="info-box">
+    <h2>Shortest Path – Dijkstra Algorithm</h2>
+    <p>
+      Dijkstra’s algorithm finds the shortest route from a source tourist location
+      to all other places in the city. It helps tourists reach destinations faster,
+      reduces unnecessary travel, and improves overall navigation efficiency.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+ALGORITHM Dijkstra(G, s)
+
+Initialize(Q)
+for every vertex v in V do
+  dv ← ∞
+  pv ← null
+  Insert(Q, v, dv)
+
+ds ← 0
+Decrease(Q, s, ds)
+VT ← ∅
+
+for i ← 0 to |V| − 1 do
+  u* ← DeleteMin(Q)
+  VT ← VT ∪ {u*}
+
+  for each u adjacent to u* in V − VT do
+    if du* + w(u*, u) < du then
+      du ← du* + w(u*, u)
+      pu ← u*
+      Decrease(Q, u, du)
+</pre>
+  </div>
+
+  <!-- ================= BFS ================= -->
+  <div class="info-box">
+    <h2>BFS – Nearby Place Exploration</h2>
+    <p>
+      Breadth First Search explores tourist locations level by level from a
+      starting point. It is useful for suggesting nearby attractions and
+      understanding local connectivity.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+BFS(G, s)
+
+Mark s as visited
+Enqueue s
+
+while queue is not empty do
+  u ← Dequeue
+  for each adjacent vertex v of u do
+    if v is not visited then
+      Mark v visited
+      Enqueue v
+</pre>
+  </div>
+
+  <!-- ================= DFS ================= -->
+  <div class="info-box">
+    <h2>DFS – Deep Route Exploration</h2>
+    <p>
+      Depth First Search explores paths deeply before backtracking.
+      It helps in identifying alternative routes and connectivity between
+      tourist locations.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+DFS(G, s)
+
+Mark s as visited
+for each adjacent vertex v of s do
+  if v is not visited then
+    DFS(G, v)
+</pre>
+  </div>
+
+  <!-- ================= TRIE ================= -->
+  <div class="info-box">
+    <h2>Trie – Fast Place Name Search</h2>
+    <p>
+      Trie allows fast prefix-based searching of tourist place names.
+      It improves search speed when users type partial names.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+Insert(word)
+
+for each character c in word do
+  if node[c] does not exist then
+    create node[c]
+  move to node[c]
+
+mark end of word
+</pre>
+  </div>
+
+  <!-- ================= KMP ================= -->
+  <div class="info-box">
+    <h2>KMP – Keyword Matching</h2>
+    <p>
+      KMP efficiently searches keywords inside place descriptions.
+      It avoids repeated comparisons and improves text search performance.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+KMP(text, pattern)
+
+Compute LPS array for pattern
+Compare text and pattern using LPS
+Skip unnecessary comparisons
+</pre>
+  </div>
+
+  <!-- ================= GREEDY ================= -->
+  <div class="info-box">
+    <h2>Greedy – Crowd Reduction</h2>
+    <p>
+      The greedy approach selects the least crowded tourist place at a given time
+      and suggests it as an alternative, helping to reduce overcrowding.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+Select place with minimum crowd value
+Suggest it to tourists
+</pre>
+  </div>
+
+  <!-- ================= DYNAMIC PROGRAMMING ================= -->
+  <div class="info-box">
+    <h2>Dynamic Programming – Travel Planning</h2>
+    <p>
+      Dynamic Programming helps tourists plan visits within limited time by
+      selecting the best combination of places that maximizes enjoyment.
+    </p>
+  </div>
+
+  <div class="info-box">
+<pre>
+DP[i][t] = max enjoyment using i places within time t
+
+DP[i][t] =
+max(DP[i-1][t],
+    value[i] + DP[i-1][t - time[i]])
+</pre>
+  </div>
+
+</div>
+
