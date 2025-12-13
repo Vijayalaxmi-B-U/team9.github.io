@@ -936,3 +936,148 @@ Forecast future crowd levels
 </div>
 </div>
 
+<!-- ================= SAFETY & SECURITY PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="text-align:center;color:#5fd3a2;margin:0;font-size:2.4rem;">
+    Safety & Security – Algorithms
+  </h1>
+</div>
+
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">
+   Safety & Security
+  </h1>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.sub-head{
+  color:#5fd3a2;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+p{
+  color:#cfeee2;
+}
+
+.algo-btn{
+  background:#5fd3a2;
+  color:#1a1a1a;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0 16px 0;
+}
+
+.code-box{
+  display:none;
+  background:#a9e7cb;
+  color:#1a1a1a;
+  padding:16px;
+  border-radius:10px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin-bottom:35px;
+}
+
+.section-grey{
+  background:#2b2b2b;
+  padding:40px 0;
+}
+
+.content{
+  width:80%;
+  margin:auto;
+}
+</style>
+
+<!-- ================= GREY PAGE ================= -->
+<div class="section-grey">
+  <div class="content">
+
+<div class="section-grey">
+<div class="content">
+
+<!-- INTRO DESCRIPTION -->
+<p>
+Safety and security are critical for tourism in smart cities. Real-time monitoring,
+quick emergency response, and efficient crowd control systems ensure the safety of
+tourists. Intelligent algorithms help detect risks early, guide emergency services,
+and manage large crowds during peak tourist seasons.
+</p>
+
+<hr>
+
+<!-- BFS DFS -->
+<p class="sub-head">BFS & DFS – Area Surveillance</p>
+<p>
+BFS and DFS are used to monitor connected areas, enabling authorities to quickly
+detect unsafe zones and navigate through surveillance networks.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('safetyBFSDFS')">View Algorithm</button>
+<div class="code-box" id="safetyBFSDFS">
+Start from control node
+Traverse connected cameras
+Mark visited zones
+Detect unsafe areas
+</div>
+
+<hr>
+
+<!-- SHORTEST PATH TREE -->
+<p class="sub-head">Shortest Path Tree – Emergency Routing</p>
+<p>
+Shortest Path Trees help emergency teams reach incident locations through the
+fastest and safest routes.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('spt')">View Algorithm</button>
+<div class="code-box" id="spt">
+Build shortest path tree
+Select minimum distance routes
+Guide emergency response
+</div>
+
+<hr>
+
+<!-- DP RISK SCORE -->
+<p class="sub-head">Dynamic Programming – Risk Score Evaluation</p>
+<p>
+Dynamic Programming calculates risk scores by combining multiple safety factors
+to prioritize high-risk areas.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('riskDP')">View Algorithm</button>
+<div class="code-box" id="riskDP">
+DP[i] = minimum risk score
+Combine crime, crowd, time factors
+Identify high-risk zones
+</div>
+
+<hr>
+
+<!-- PATTERN DETECTION -->
+<p class="sub-head">Pattern Detection – Threat Identification</p>
+<p>
+Pattern detection algorithms identify suspicious behavior patterns to prevent
+potential security threats.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('pattern')">View Algorithm</button>
+<div class="code-box" id="pattern">
+Collect behavior data
+Match with known patterns
+Trigger alert if matched
+</div>
+
+</div>
+</div>
