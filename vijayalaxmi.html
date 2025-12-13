@@ -698,3 +698,161 @@ max(DP[i-1][t],
 
   </div>
 </div>
+
+
+<!-- ================= ACCOMMODATION PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">
+    ACCOMMODATION
+  </h1>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.sub-head{
+  color:#5fd3a2;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+p{
+  color:#cfeee2;
+}
+
+.algo-btn{
+  background:#5fd3a2;
+  color:#1a1a1a;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0 16px 0;
+}
+
+.code-box{
+  display:none;
+  background:#a9e7cb;
+  color:#1a1a1a;
+  padding:16px;
+  border-radius:10px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin-bottom:35px;
+}
+
+.section-grey{
+  background:#2b2b2b;
+  padding:40px 0;
+}
+
+.content{
+  width:80%;
+  margin:auto;
+}
+</style>
+
+<!-- ================= GREY PAGE ================= -->
+<div class="section-grey">
+  <div class="content">
+
+    <!-- INTRO DESCRIPTION -->
+    <p>
+      Accommodation is a core pillar of tourism. Comfortable, safe, and eco-friendly
+      stays improve tourist satisfaction, extend visit duration, and boost the local
+      economy. Smart accommodation systems reduce booking conflicts, ensure
+      accessibility, and promote sustainable resource usage in smart cities.
+    </p>
+
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
+
+    <!-- HASHING -->
+    <p class="sub-head">Hashing – Smart Booking System</p>
+    <p>
+      Hashing enables instant room availability checks and prevents double
+      bookings by mapping room IDs to their current status.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('hashing')">View Code</button>
+    <div class="code-box" id="hashing">
+Insert(roomID, status) into HashTable
+Search(roomID)
+if status == available
+  confirm booking
+else
+  show alternative rooms
+    </div>
+
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
+
+    <!-- UNION FIND -->
+    <p class="sub-head">Union-Find – Room & Building Management</p>
+    <p>
+      Union-Find groups connected rooms or hotel blocks, helping manage large
+      accommodations and ensuring efficient allocation during peak demand.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('unionfind')">View Code</button>
+    <div class="code-box" id="unionfind">
+MakeSet(room)
+Union(roomA, roomB)
+Find(room)
+Check if rooms belong to same block
+    </div>
+
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
+
+    <!-- HEAP -->
+    <p class="sub-head">Heap – Best Room Selection</p>
+    <p>
+      Heaps prioritize rooms based on price, rating, or availability,
+      allowing tourists to quickly select the most suitable option.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('heapAcc')">View Code</button>
+    <div class="code-box" id="heapAcc">
+Insert(room, priority)
+ExtractMin()   // lowest price or best rating
+    </div>
+
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
+
+    <!-- SLIDING WINDOW -->
+    <p class="sub-head">Sliding Window – Demand Analysis</p>
+    <p>
+      Sliding Window analyzes booking trends over fixed time intervals
+      to predict peak demand and optimize pricing strategies.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('windowAcc')">View Code</button>
+    <div class="code-box" id="windowAcc">
+windowSum = sum(bookings[0..k-1])
+for i = k to n
+  windowSum += bookings[i]
+  windowSum -= bookings[i-k]
+    </div>
+
+    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
+
+    <!-- DYNAMIC PROGRAMMING -->
+    <p class="sub-head">Dynamic Programming – Optimal Stay Planning</p>
+    <p>
+      Dynamic Programming helps tourists choose the best accommodation
+      within a fixed budget while maximizing comfort and stay duration.
+    </p>
+
+    <button class="algo-btn" onclick="toggleCode('dpAcc')">View Code</button>
+    <div class="code-box" id="dpAcc">
+DP[i][b] = maximum comfort
+DP[i][b] =
+max(DP[i-1][b],
+    comfort[i] + DP[i-1][b - cost[i]])
+    </div>
+
+  </div>
+</div>
