@@ -240,6 +240,157 @@ p { line-height:1.6; font-size:16px; max-width: 800px; margin:10px auto; text-al
     </div>
   </div>
 
+  <!-- ================= VRITDHARA TOURISM HEADING ================= -->
+<div style="background:#121212; padding:50px 0 40px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ff9800;
+    font-size:2.6rem;
+    margin:0;
+    letter-spacing:1px;
+    text-shadow:0 0 12px rgba(255,152,0,0,0.6);
+  ">
+    Discover Vritdhara
+  </h1>
+
+  <p style="text-align:center;color:#cfcfcf;margin-top:12px;">
+    Culture • Cinema • Heritage • Nature
+  </p>
+</div>
+
+<!-- ================= GREY PAGE ================= -->
+<div style="background:#2a2a2a; padding:60px 20px;">
+  <div style="
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:35px;
+    justify-items:center;
+  ">
+
+    <!-- CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          🛕
+          <h3>Cultural Emblem</h3>
+        </div>
+        <div class="flip-back">
+          Located at the center of the lake, the Cultural Emblem represents the
+          cultural identity and heritage of Vritdhara.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          🎬
+          <h3>Eterna Studio (Rajapuri)</h3>
+        </div>
+        <div class="flip-back">
+          Eterna Studio is a large film city in Rajapuri, offering studio tours,
+          film shoots, and cinematic experiences.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          🏰
+          <h3>Vrithdhara Palace</h3>
+        </div>
+        <div class="flip-back">
+          Vrithdhara Palace showcases royal architecture and stands as a symbol
+          of heritage and historical pride.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          🌿
+          <h3>National Park</h3>
+        </div>
+        <div class="flip-back">
+          The National Park promotes eco-tourism, wildlife conservation, and a
+          peaceful natural experience.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.flip-card{
+  perspective:1000px;
+  width:230px;
+}
+
+.flip-inner{
+  width:100%;
+  height:210px;
+  position:relative;
+  transition:transform 0.8s ease;
+  transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-inner{
+  transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  text-align:center;
+  backface-visibility:hidden;
+}
+
+/* FRONT */
+.flip-front{
+  background:#1f1f1f;
+  border:2px solid #ff9800;   /* ORANGE BORDER */
+  color:#ff9800;              /* ORANGE TEXT */
+  font-size:2rem;
+  box-shadow:0 0 16px rgba(255,152,0,0.35);
+}
+
+.flip-front h3{
+  font-size:1.05rem;
+  margin-top:12px;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* BACK */
+.flip-back{
+  background:#ff9800;         /* ORANGE BACK */
+  color:#1a1a1a;
+  transform:rotateY(180deg);
+  font-size:0.95rem;
+  line-height:1.5;
+}
+</style>
+
+
   <!-- ========================= PROBLEMS SECTION ========================= -->
   <div class="section grey-light">
     <h2>CURRENT PROBLEMS IN THE TOURISM SECTOR</h2>
