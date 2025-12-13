@@ -1370,3 +1370,165 @@ Analyze clusters
 
 </div>
 </div>
+
+    <!-- ================= TRANSPORTATION & MOBILITY PAGE HEADING ================= -->
+
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">TRANSPORTATION & MOBILITY
+  </h1>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.sub-head{
+  color:#5fd3a2;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+p{
+  color:#cfeee2;
+}
+
+.algo-btn{
+  background:#5fd3a2;
+  color:#1a1a1a;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0 16px 0;
+}
+
+.code-box{
+  display:none;
+  background:#a9e7cb;
+  color:#1a1a1a;
+  padding:16px;
+  border-radius:10px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin-bottom:35px;
+}
+
+.section-grey{
+  background:#2b2b2b;
+  padding:40px 0;
+}
+
+.content{
+  width:80%;
+  margin:auto;
+}
+</style>
+
+<!-- ================= GREY PAGE ================= -->
+<div class="section-grey">
+  <div class="content">
+
+<!-- INTRO DESCRIPTION -->
+<p>
+Transportation and mobility are essential for smooth tourist movement and city
+connectivity. Smart transportation systems reduce congestion, improve travel
+efficiency, and promote sustainable mobility through optimized routing and
+intelligent traffic management.
+</p>
+
+<hr>
+
+<!-- DIJKSTRA -->
+<p class="sub-head">Dijkstra – Shortest Route Planning</p>
+<p>
+Dijkstra’s algorithm finds the shortest path between tourist locations, reducing
+travel time and fuel consumption.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('transDijkstra')">View Algorithm</button>
+<div class="code-box" id="transDijkstra">
+Initialize distances to infinity
+Set source distance to zero
+Relax edges repeatedly
+Select shortest unvisited node
+</div>
+
+<hr>
+
+<!-- FLOYD WARSHALL -->
+<p class="sub-head">Floyd–Warshall – All-Pairs Connectivity</p>
+<p>
+Floyd–Warshall computes shortest paths between all locations, supporting city-wide
+route optimization and transit planning.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('floyd')">View Algorithm</button>
+<div class="code-box" id="floyd">
+Initialize distance matrix
+Update distances via intermediate nodes
+Find shortest paths between all pairs
+</div>
+
+<hr>
+
+<!-- BFS -->
+<p class="sub-head">BFS – Nearby Transport Exploration</p>
+<p>
+BFS explores nearby transit stations level-by-level, helping tourists quickly
+identify closest transport options.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('transBFS')">View Algorithm</button>
+<div class="code-box" id="transBFS">
+Mark start node visited
+Visit all adjacent nodes
+Explore level by level
+</div>
+
+<hr>
+
+<!-- PRIORITY QUEUE -->
+<p class="sub-head">Priority Queue – Traffic Optimization</p>
+<p>
+Priority Queues manage transport requests based on urgency, congestion, or time
+constraints for efficient scheduling.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('pqTrans')">View Algorithm</button>
+<div class="code-box" id="pqTrans">
+Insert routes with priority
+Extract highest priority route
+Update traffic flow
+</div>
+
+<hr>
+
+<!-- GRAPH PARTITIONING -->
+<p class="sub-head">Graph Partitioning – Congestion Control</p>
+<p>
+Graph Partitioning divides transport networks into regions, reducing congestion and
+balancing traffic loads.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('partition')">View Algorithm</button>
+<div class="code-box" id="partition">
+Divide graph into subgraphs
+Minimize edge crossings
+Balance traffic load
+</div>
+
+<hr>
+
+<!-- DYNAMIC PROGRAMMING -->
+<p class="sub-head">Dynamic Programming – Optimal Travel Planning</p>
+<p>
+Dynamic Programming optimizes travel schedules by minimizing cost and time while
+considering multiple travel constraints.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('dpTrans')">View Algorithm</button>
+<div class="code-box" id="dpTrans">
