@@ -1215,3 +1215,158 @@ Update sensor readings
 </div>
 </div>
 
+
+
+
+
+
+<!-- ================= LOCAL CULTURE & SHOPPING PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
+
+<div style="background:#121212; padding:40px 0 30px 0;">
+  <h1 style="
+    text-align:center;
+    color:#ffcc00;
+    margin:0;
+    font-size:2.4rem;
+  ">LOCAL CULTURE & SHOPPING
+  </h1>
+</div>
+
+<!-- ================= STYLES ================= -->
+<style>
+.sub-head{
+  color:#5fd3a2;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+p{
+  color:#cfeee2;
+}
+
+.algo-btn{
+  background:#5fd3a2;
+  color:#1a1a1a;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0 16px 0;
+}
+
+.code-box{
+  display:none;
+  background:#a9e7cb;
+  color:#1a1a1a;
+  padding:16px;
+  border-radius:10px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin-bottom:35px;
+}
+
+.section-grey{
+  background:#2b2b2b;
+  padding:40px 0;
+}
+
+.content{
+  width:80%;
+  margin:auto;
+}
+</style>
+
+<!-- ================= GREY PAGE ================= -->
+<div class="section-grey">
+  <div class="content">
+<!-- INTRO DESCRIPTION -->
+<p>
+Local culture and shopping play a vital role in tourism by supporting artisans,
+preserving traditions, and boosting the local economy. Smart cultural platforms
+connect tourists with authentic experiences, local markets, and handcrafted
+products while improving discoverability and engagement.
+</p>
+
+<hr>
+
+<!-- RECOMMENDATION SYSTEM -->
+<p class="sub-head">Recommendation System – Personalized Shopping</p>
+<p>
+Recommends cultural events, handicrafts, and local shops based on tourist interests,
+previous visits, and popular trends.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('recommendCulture')">View Algorithm</button>
+<div class="code-box" id="recommendCulture">
+Collect user preferences
+Analyze past interactions
+Generate ranked recommendations
+</div>
+
+<hr>
+
+<!-- TRIE -->
+<p class="sub-head">Trie – Local Shop & Craft Search</p>
+<p>
+Trie enables fast prefix-based searching of shop names, cultural events, and artisan
+products in tourist applications.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('trieCulture')">View Algorithm</button>
+<div class="code-box" id="trieCulture">
+Insert shop and product names
+Search using prefix
+Display matching results
+</div>
+
+<hr>
+
+<!-- KMP -->
+<p class="sub-head">KMP – Cultural Keyword Matching</p>
+<p>
+KMP efficiently matches keywords like festival names or craft types in large cultural
+databases and descriptions.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('kmpCulture')">View Algorithm</button>
+<div class="code-box" id="kmpCulture">
+Compute LPS array
+Match pattern in cultural text
+Return occurrences
+</div>
+
+<hr>
+
+<!-- HASH MAPS -->
+<p class="sub-head">Hash Maps – Artisan & Product Mapping</p>
+<p>
+Hash Maps store artisan IDs and their products, enabling quick lookups and efficient
+inventory tracking.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('hashCulture')">View Algorithm</button>
+<div class="code-box" id="hashCulture">
+Insert artisanID → product list
+Search artisanID
+Retrieve products
+</div>
+
+<hr>
+
+<!-- CLUSTERING -->
+<p class="sub-head">Clustering – Market & Tourist Behavior Analysis</p>
+<p>
+Clustering groups tourists and shopping areas based on preferences and behavior,
+helping improve market planning and promotions.
+</p>
+
+<button class="algo-btn" onclick="toggleCode('clusterCulture')">View Algorithm</button>
+<div class="code-box" id="clusterCulture">
+Group tourists by interests
+Group shops by category
+Analyze clusters
+</div>
+
+</div>
+</div>
