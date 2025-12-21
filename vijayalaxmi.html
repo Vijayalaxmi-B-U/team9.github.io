@@ -670,22 +670,36 @@ p {
         margin: 30px 0 20px;
     }
 
-    /* Grey Page (Page-like breadth) */
+    /* Grey Theme */
+    .grey-light {
+        background-color: #2a2a2a;
+        color: #ffffff;
+    }
+
+    .grey-dark {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    /* Page Container */
     .page {
         width: 72%;
         min-height: 90vh;
         margin: auto;
-        background-color: #e0e0e0;
         padding: 40px 50px;
         box-sizing: border-box;
+        border-radius: 12px;
     }
 
     h2 {
-        color: #7fbf7f; /* pastel green */
+        color: #9ad19a; /* pastel green */
     }
 
     h3 {
-        color: #3f6f3f; /* pastel dark green */
+        color: #6fbf6f; /* pastel dark green */
         margin-top: 28px;
     }
 
@@ -721,12 +735,12 @@ p {
         border-radius: 10px;
     }
 
-    /* Flow Styling */
+    /* Flow Points */
     .flow p {
         margin: 10px 0;
     }
 
-    /* Minimal Aesthetic Algorithm Button */
+    /* Minimal Algorithm Button */
     .accordion {
         background-color: #3f6f3f;
         color: white;
@@ -743,7 +757,7 @@ p {
     /* Algorithm Panel */
     .panel {
         display: none;
-        background-color: #f5f5f5;
+        background-color: #1a1a1a;
         padding: 20px;
         border-radius: 10px;
         margin-top: 12px;
@@ -751,7 +765,8 @@ p {
     }
 
     pre {
-        background-color: #ffffff;
+        background-color: #000000;
+        color: #ffffff;
         padding: 16px;
         border-radius: 8px;
         overflow-x: auto;
@@ -764,7 +779,7 @@ p {
 
 <h1>Tourism and Navigation System</h1>
 
-<div class="page">
+<div class="page grey-light">
 
     <!-- SDG Section -->
     <h2>1. Tourist Info & Navigation</h2>
@@ -776,56 +791,59 @@ p {
     </ul>
 
     <!-- Overview -->
-    <h3>Tourism and Navigation Overview</h3>
-    <p>
-        A Tourism and Navigation System is a smart digital solution designed to help tourists easily locate attractions,
-        accommodations, and essential services while navigating through a city efficiently. In real time, the system uses
-        GPS to detect the tourist’s current location and displays it on an interactive digital map along with nearby points
-        of interest such as monuments, hotels, restaurants, hospitals, and transport facilities. For route planning,
-        Dijkstra’s algorithm is used to compute the shortest and most efficient path between the tourist’s location and the
-        selected destination, ensuring minimum distance or travel time.
-    </p>
+    <div class="grey-dark">
+        <h3>Tourism and Navigation Overview</h3>
+        <p>
+            A Tourism and Navigation System is a smart digital solution designed to help tourists easily locate attractions,
+            accommodations, and essential services while navigating through a city efficiently. In real time, the system uses
+            GPS to detect the tourist’s current location and displays it on an interactive digital map along with nearby points
+            of interest such as monuments, hotels, restaurants, hospitals, and transport facilities. For route planning,
+            Dijkstra’s algorithm is used to compute the shortest and most efficient path between the tourist’s location and the
+            selected destination, ensuring minimum distance or travel time.
+        </p>
+    </div>
 
     <!-- Flow Section -->
-    <h3>Flow of Dijkstra Algorithm in Real-Time Tourist Navigation</h3>
+    <div class="grey-dark">
+        <h3>Flow of Dijkstra Algorithm in Real-Time Tourist Navigation</h3>
 
-    <div class="row">
+        <div class="row">
 
-        <!-- Flow Left -->
-        <div class="left flow">
-            <p>📍 <strong>Step 1: Tourist Location Detection</strong><br>
-               GPS captures the tourist’s current location and sets it as the source vertex (s).</p>
+            <div class="left flow">
+                <p>📍 <strong>Step 1: Tourist Location Detection</strong><br>
+                   GPS captures the tourist’s current location and sets it as the source vertex (s).</p>
 
-            <p>🏛️ <strong>Step 2: Destination Selection</strong><br>
-               Tourist selects a destination such as an attraction or hotel.</p>
+                <p>🏛️ <strong>Step 2: Destination Selection</strong><br>
+                   Tourist selects a destination such as an attraction or hotel.</p>
 
-            <p>🗺️ <strong>Step 3: City Map as Graph</strong><br>
-               Intersections → Vertices (V), Roads → Edges (E), Distance/Time → Weights.</p>
+                <p>🗺️ <strong>Step 3: City Map as Graph</strong><br>
+                   Intersections → Vertices (V), Roads → Edges (E), Distance/Time → Weights.</p>
 
-            <p>⚙️ <strong>Step 4: Algorithm Execution</strong><br>
-               Dijkstra’s algorithm computes the shortest path.</p>
+                <p>⚙️ <strong>Step 4: Algorithm Execution</strong><br>
+                   Dijkstra’s algorithm computes the shortest path.</p>
 
-            <p>🧭 <strong>Step 5: Route Visualization</strong><br>
-               Optimal route displayed with distance and directions.</p>
+                <p>🧭 <strong>Step 5: Route Visualization</strong><br>
+                   Optimal route displayed with distance and directions.</p>
 
-            <p>🔄 <strong>Step 6: Real-Time Updates</strong><br>
-               Route recalculated if traffic or deviation occurs.</p>
+                <p>🔄 <strong>Step 6: Real-Time Updates</strong><br>
+                   Route recalculated if traffic or deviation occurs.</p>
+            </div>
+
+            <div class="right">
+                <img src="tourist-navigation-flow.png" alt="Tourist Navigation Flow">
+                <p><em>Tourist Navigation System Flow Diagram</em></p>
+            </div>
+
         </div>
-
-        <!-- Image Right -->
-        <div class="right">
-            <img src="tourist-navigation-flow.png" alt="Tourist Navigation Flow">
-            <p><em>Tourist Navigation System Flow Diagram</em></p>
-        </div>
-
     </div>
 
     <!-- Algorithm Section -->
-    <h3>Dijkstra Algorithm</h3>
+    <div class="grey-dark">
+        <h3>Dijkstra Algorithm</h3>
 
-    <button class="accordion">View Dijkstra Algorithm</button>
+        <button class="accordion">View Dijkstra Algorithm</button>
 
-    <div class="panel">
+        <div class="panel">
 <pre>
 ALGORITHM Dijkstra(G, s)
 // Dijkstra’s algorithm for single source shortest path
@@ -855,6 +873,7 @@ for i ← 0 to |V| − 1 do
             pu ← u*
             Decrease(Q, u, du)
 </pre>
+        </div>
     </div>
 
 </div>
@@ -871,8 +890,6 @@ acc.onclick = function () {
 
 </body>
 </html>
-
-
 
 
 <!-- ================= ACCOMMODATION PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
