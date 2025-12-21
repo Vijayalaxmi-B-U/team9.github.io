@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,9 @@
         border-radius: 8px;
         transition: background 0.3s;
     }
-    .navbar a:hover { background-color: #3949ab; }
+    .navbar a:hover {
+        background-color: #3949ab;
+    }
     .collapse-btn {
         background-color: #3949ab;
         color: #fff;
@@ -117,8 +120,14 @@
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
-    .highlight-box h3 { margin-top: 10px; font-size: 1.2rem; }
-    .highlight-box p { font-size: 16px; margin-top: 8px; }
+    .highlight-box h3 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+    .highlight-box p {
+        font-size: 16px;
+        margin-top: 8px;
+    }
 
     /* Problems Section */
     .problems-section {
@@ -184,44 +193,9 @@
         margin: 15px auto;
         max-width: 800px;
     }
-    .usecase-step { margin-bottom: 10px; font-size: 16px; }
-
-    /* Accordion */
-    .accordion {
-        background-color: #3f6f3f;
-        color: white;
-        cursor: pointer;
-        padding: 12px 18px;
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        font-size: 1rem;
-        border-radius: 8px;
-        transition: background-color 0.3s;
-        margin-top: 15px;
-    }
-    .accordion:hover { background-color: #2e5030; }
-    .panel {
-        display: none;
-        overflow: hidden;
-        background-color: #f4f4f4;
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 8px;
-    }
-    .panel pre { margin: 0; font-size: 0.95rem; }
-
-    /* Grey heading between white pages */
-    .grey-heading {
-        background-color: #e0e0e0;
-        padding: 20px 40px;
-        border-radius: 12px;
-        width: fit-content;
-        text-align: center;
-        color: #ff8800;
-        font-size: 2.6rem;
-        margin: 40px auto;
+    .usecase-step { 
+        margin-bottom: 10px; 
+        font-size: 16px; 
     }
 
     /* Responsive */
@@ -233,6 +207,18 @@
         .sub-sectors { flex-direction: column; align-items: center; }
         .navbar { flex-direction: column; align-items: flex-start; }
         .navbar a { margin-left: 0; margin-top: 8px; }
+    }
+
+    /* Grey heading between white pages */
+    .grey-heading {
+        background-color: #e0e0e0;
+        padding: 20px 40px;
+        border-radius: 12px;
+        width: fit-content;
+        text-align: center;
+        color: #ff8800;
+        font-size: 2.6rem;
+        margin: 40px auto;
     }
 </style>
 </head>
@@ -251,21 +237,38 @@
     <button class="collapse-btn">Collapse</button>
 </div>
 
-<!-- Main Heading -->
-<h1 class="main-heading">Tourism </h1>
-
+<!-- First White Page -->
 <div class="page">
+    <h1 class="main-heading">Tourism</h1>
+
     <h2>Why I Chose the Tourism Sector</h2>
-    <p>Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, technology enhances tourist experiences by optimizing routes and managing attractions efficiently.</p>
+    <p>
+        Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
+        technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
+    </p>
 
     <h2>Discover Vritdhara</h2>
-    <p style="text-align:center; font-style:italic; margin-bottom:30px;">Culture • Cinema • Heritage • Nature</p>
+    <p style="text-align:center; font-style:italic; margin-bottom:30px;">
+        Culture • Cinema • Heritage • Nature
+    </p>
 
     <div class="highlights">
-        <div class="highlight-box">🛕<h3>Cultural Emblem</h3><p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p></div>
-        <div class="highlight-box">🎬<h3>Eterna Studio (Rajapuri)</h3><p>A large film city offering studio tours, film shoots, and cinematic experiences.</p></div>
-        <div class="highlight-box">🏰<h3>Vrithdhara Palace</h3><p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p></div>
-        <div class="highlight-box">🌿<h3>National Park</h3><p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p></div>
+        <div class="highlight-box">
+            🛕<h3>Cultural Emblem</h3>
+            <p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p>
+        </div>
+        <div class="highlight-box">
+            🎬<h3>Eterna Studio (Rajapuri)</h3>
+            <p>A large film city offering studio tours, film shoots, and cinematic experiences.</p>
+        </div>
+        <div class="highlight-box">
+            🏰<h3>Vrithdhara Palace</h3>
+            <p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p>
+        </div>
+        <div class="highlight-box">
+            🌿<h3>National Park</h3>
+            <p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p>
+        </div>
     </div>
 
     <h2>Current Problems in the Tourism Sector</h2>
@@ -290,7 +293,12 @@
     </div>
 
     <h2>Why Innovation is Needed</h2>
-    <p>Innovation is needed in the tourism sector to make travel smoother, faster, and safer. Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. Modern tourists expect digital services, smart navigation, and personalized guidance. Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.</p>
+    <p>
+        Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
+        Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. 
+        Modern tourists expect digital services, smart navigation, and personalized guidance. 
+        Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.
+    </p>
 
     <h2>Tourism Sector Sub-Divisions</h2>
     <div class="sub-sectors">
@@ -309,10 +317,21 @@
 <!-- Second White Page -->
 <div class="page">
     <h3>1. Introduction and Problem Statement</h3>
-    <p>Tourism plays a major role in economic development, but tourists often face difficulties navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns, and inefficient routing can negatively impact the tourist experience. The Tourism and Navigation System aims to solve these problems by providing accurate, efficient, and reliable navigation assistance.</p>
+    <p>
+        Tourism plays a major role in economic development, but tourists often face difficulties
+        navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns,
+        and inefficient routing can negatively impact the tourist experience. The Tourism and
+        Navigation System aims to solve these problems by providing accurate, efficient, and
+        reliable navigation assistance.
+    </p>
 
     <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
-    <p>Before applying any algorithm, the system is designed based on real tourist behavior. A tourist typically plans destinations, arrives in the city, navigates between locations, seeks assistance when needed, and finally provides feedback. This behavioral flow forms the conceptual foundation of the system.</p>
+    <p>
+        Before applying any algorithm, the system is designed based on real tourist behavior.
+        A tourist typically plans destinations, arrives in the city, navigates between locations,
+        seeks assistance when needed, and finally provides feedback. This behavioral flow
+        forms the conceptual foundation of the system.
+    </p>
     <ul>
         <li>Destination planning before arrival</li>
         <li>Live location detection using GPS</li>
@@ -322,18 +341,28 @@
     </ul>
 
     <h3>3. System Architecture</h3>
-    <p>The system consists of a tourist interface, GPS module, digital city map database, and a navigation engine. The navigation engine processes routing requests and provides optimized routes in real time.</p>
+    <p>
+        The system consists of a tourist interface, GPS module, digital city map database,
+        and a navigation engine. The navigation engine processes routing requests and
+        provides optimized routes in real time.
+    </p>
 
     <h3>4. Graph-Based Data Representation</h3>
-    <p>The city map is modeled as a weighted graph where intersections represent vertices, roads represent edges, and distance or travel time acts as weights. This structure enables efficient shortest-path computation.</p>
+    <p>
+        The city map is modeled as a weighted graph where intersections represent vertices,
+        roads represent edges, and distance or travel time acts as weights. This structure
+        enables efficient shortest-path computation.
+    </p>
 
     <h3>Role of Dijkstra’s Algorithm</h3>
-    <p>Dijkstra’s algorithm calculates the shortest path from the tourist’s current location to the selected destination by considering distances or travel time as weights.</p>
+    <p>
+        Dijkstra’s algorithm calculates the shortest path from the tourist’s current location
+        to the selected destination by considering distances or travel time as weights.
+    </p>
 
-    <!-- Accordion Algorithm Box -->
-<h3>5. Dijkstra Algorithm Implementation</h3>
-<button class="accordion">View Dijkstra Algorithm</button>
-<div class="panel">
+    <h3>5. Dijkstra Algorithm Implementation</h3>
+    <button class="accordion">View Dijkstra Algorithm</button>
+    <div class="panel">
 <pre>
 ALGORITHM Dijkstra(G, s)
 for each vertex v in V
@@ -348,59 +377,13 @@ while unvisited vertices exist
             dist[v] ← dist[u] + w(u,v)
             parent[v] ← u
 </pre>
-</div>
-
-<style>
-.accordion {
-    background-color: #3f6f3f;
-    color: white;
-    cursor: pointer;
-    padding: 10px 14px;      /* smaller padding */
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    font-size: 0.95rem;      /* slightly smaller font */
-    border-radius: 6px;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-.accordion:hover {
-    background-color: #2e5030;
-}
-
-.panel {
-    display: none;
-    overflow: hidden;
-    background-color: #f4f4f4;
-    padding: 12px;           /* reduced padding */
-    border-radius: 6px;
-    margin-top: 6px;
-}
-
-.panel pre {
-    margin: 0;
-    font-size: 0.85rem;      /* smaller code font */
-}
-</style>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-for (var i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-</script>
+    </div>
 
     <h3>6. Real-Time Working of the Algorithm</h3>
-    <p>As the tourist moves, the system continuously updates location data. If deviations or changes occur, the algorithm is re-executed to ensure optimal navigation.</p>
+    <p>
+        As the tourist moves, the system continuously updates location data. If deviations
+        or changes occur, the algorithm is re-executed to ensure optimal navigation.
+    </p>
 
     <h3>7. SDG Alignment</h3>
     <ul>
@@ -419,8 +402,12 @@ for (var i = 0; i < acc.length; i++) {
 
     <h3>9. Tourist Interaction Flow Diagram</h3>
     <div style="margin-top:20px; text-align:center;">
-        <img src="tourist and navigation.png" alt="Tourist Navigation Interaction Flow" style="width:100%; max-width:900px; border-radius:12px;">
-        <p style="font-style:italic; margin-top:8px;">Figure:Tourist Navigation System – User Interaction Flow</p>
+        <img src="tourist and navigation.png" 
+             alt="Tourist Navigation Interaction Flow"
+             style="width:100%; max-width:900px; border-radius:12px;">
+        <p style="font-style:italic; margin-top:8px;">
+            Figure:Tourist Navigation System – User Interaction Flow
+        </p>
     </div>
 
     <h3>10. Advantages and Limitations</h3>
@@ -439,23 +426,11 @@ for (var i = 0; i < acc.length; i++) {
     </ul>
 
     <h3>11. Future Enhancement</h3>
-    <p>Future improvements may include traffic prediction, AI-assisted personalization, integration with accommodation services, and emergency response optimization.</p>
+    <p>
+        Future improvements may include traffic prediction, AI-assisted personalization,
+        integration with accommodation services, and emergency response optimization.
+    </p>
 </div>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-for (var i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-</script>
 
 </body>
 </html>
