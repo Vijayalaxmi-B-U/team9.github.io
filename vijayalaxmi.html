@@ -17,40 +17,39 @@
     /* Navbar */
     .navbar {
         width: 100%;
-        background-color: #1a237e;
+        background-color: #7ec8e3; /* light blue background */
         display: flex;
         align-items: center;
-        padding: 12px 30px;
+        padding: 16px 40px; /* increased height and padding */
         box-sizing: border-box;
-        flex-wrap: wrap;
+        position: fixed;   /* fixed on screen */
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .navbar h2 {
         color: #ffffff;
         margin: 0;
-        font-size: 1.6rem;
+        font-size: 1.8rem;  /* slightly bigger */
         flex: 1;
     }
     .navbar a {
         color: #ffffff;
         text-decoration: none;
-        margin-left: 15px;
-        font-size: 1rem;
-        padding: 8px 12px;
+        margin-left: 20px; /* increased spacing */
+        font-size: 1.1rem; /* slightly bigger */
+        padding: 10px 16px; /* bigger clickable area */
         border-radius: 8px;
         transition: background 0.3s;
     }
     .navbar a:hover {
-        background-color: #3949ab;
+        background-color: #57b7e1; /* slightly darker on hover */
     }
-    .collapse-btn {
-        background-color: #3949ab;
-        color: #fff;
-        border: none;
-        padding: 6px 12px;
-        border-radius: 6px;
-        cursor: pointer;
-        margin-left: 10px;
-        font-size: 0.9rem;
+
+    /* To prevent content from going under navbar */
+    .content {
+        padding-top: 100px; /* same as navbar height + some spacing */
     }
 
     /* Headings and paragraphs */
@@ -88,12 +87,13 @@
 
     /* White page container */
     .page {
-        width: 75%;
+        width: 80%;  /* slightly increased width */
         margin: auto;
         padding: 40px 50px;
         background-color: #ffffff;
         border-radius: 12px;
         box-sizing: border-box;
+        margin-bottom: 40px;
     }
 
     /* Highlights */
@@ -216,8 +216,9 @@
         .problems-section { flex-direction: column; }
         .problems-list, .crowd-image { flex: 1 1 100%; }
         .sub-sectors { flex-direction: column; align-items: center; }
-        .navbar { flex-direction: column; align-items: flex-start; }
+        .navbar { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
         .navbar a { margin-left: 0; margin-top: 8px; }
+        .page { width: 90%; padding: 20px; }
     }
 
     /* Grey heading between white pages */
@@ -231,6 +232,7 @@
         font-size: 2.6rem;
         margin: 40px auto;
     }
+
 </style>
 </head>
 <body>
@@ -245,136 +247,139 @@
     <a href="vijayalakshmi.html">Vijayalakshmi</a>
     <a href="sunil.html">Sunil</a>
     <a href="sushant.html">Sushant</a>
-    <button class="collapse-btn">Collapse</button>
+    <a href="#">Collabz</a>
 </div>
 
-<!-- Tourism Heading outside the page -->
-<h1 class="main-heading">Tourism</h1>
+<!-- All content wrapped in .content to avoid navbar overlap -->
+<div class="content">
 
-<!-- First White Page -->
-<div class="page">
+    <!-- Tourism Heading outside the page -->
+    <h1 class="main-heading">Tourism</h1>
 
-    <h2>Why I Chose the Tourism Sector</h2>
-    <p>
-        Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
-        technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
-    </p>
+    <!-- First White Page -->
+    <div class="page">
 
-    <h2>Discover Vritdhara</h2>
-    <p style="text-align:center; font-style:italic; margin-bottom:30px;">
-        Culture • Cinema • Heritage • Nature
-    </p>
+        <h2>Why I Chose the Tourism Sector</h2>
+        <p>
+            Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
+            technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
+        </p>
 
-    <div class="highlights">
-        <div class="highlight-box">
-            🛕<h3>Cultural Emblem</h3>
-            <p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p>
+        <h2>Discover Vritdhara</h2>
+        <p style="text-align:center; font-style:italic; margin-bottom:30px;">
+            Culture • Cinema • Heritage • Nature
+        </p>
+
+        <div class="highlights">
+            <div class="highlight-box">
+                🛕<h3>Cultural Emblem</h3>
+                <p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p>
+            </div>
+            <div class="highlight-box">
+                🎬<h3>Eterna Studio (Rajapuri)</h3>
+                <p>A large film city offering studio tours, film shoots, and cinematic experiences.</p>
+            </div>
+            <div class="highlight-box">
+                🏰<h3>Vrithdhara Palace</h3>
+                <p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p>
+            </div>
+            <div class="highlight-box">
+                🌿<h3>National Park</h3>
+                <p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p>
+            </div>
         </div>
-        <div class="highlight-box">
-            🎬<h3>Eterna Studio (Rajapuri)</h3>
-            <p>A large film city offering studio tours, film shoots, and cinematic experiences.</p>
+
+        <h2>Current Problems in the Tourism Sector</h2>
+        <div class="problems-section">
+            <div class="problems-list">
+                <ul>
+                    <li>Overcrowding</li>
+                    <li>Long queues</li>
+                    <li>Safety concerns</li>
+                    <li>Lack of digital systems</li>
+                    <li>Waste management issues</li>
+                    <li>Poor navigation & confusing signs</li>
+                    <li>Disconnected local businesses</li>
+                </ul>
+            </div>
+            <div class="crowd-image">
+                <img src="crowd.png" alt="Crowd Image">
+                <a href="#">▶ Overtourism & overcrowding explained – YouTube</a>
+                <a href="#">▶ Waste, congestion & environmental issues – YouTube</a>
+                <a href="#">▶ Tourist management failures & long queues – YouTube</a>
+            </div>
         </div>
-        <div class="highlight-box">
-            🏰<h3>Vrithdhara Palace</h3>
-            <p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p>
-        </div>
-        <div class="highlight-box">
-            🌿<h3>National Park</h3>
-            <p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p>
+
+        <h2>Why Innovation is Needed</h2>
+        <p>
+            Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
+            Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. 
+            Modern tourists expect digital services, smart navigation, and personalized guidance. 
+            Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.
+        </p>
+
+        <h2>Tourism Sector Sub-Divisions</h2>
+        <div class="sub-sectors">
+            <div>Tourist Info & Navigation</div>
+            <div>Accommodation</div>
+            <div>Attractions</div>
+            <div>Safety & Security</div>
+            <div>Cleanliness & Sustainability</div>
+            <div>Local Culture & Shopping</div>
         </div>
     </div>
 
-    <h2>Current Problems in the Tourism Sector</h2>
-    <div class="problems-section">
-        <div class="problems-list">
-            <ul>
-                <li>Overcrowding</li>
-                <li>Long queues</li>
-                <li>Safety concerns</li>
-                <li>Lack of digital systems</li>
-                <li>Waste management issues</li>
-                <li>Poor navigation & confusing signs</li>
-                <li>Disconnected local businesses</li>
-            </ul>
-        </div>
-        <div class="crowd-image">
-            <img src="crowd.png" alt="Crowd Image">
-            <a href="#">▶ Overtourism & overcrowding explained – YouTube</a>
-            <a href="#">▶ Waste, congestion & environmental issues – YouTube</a>
-            <a href="#">▶ Tourist management failures & long queues – YouTube</a>
-        </div>
-    </div>
+    <!-- Grey Heading -->
+    <h1 class="grey-heading">Tourism & Navigation System</h1>
 
-    <h2>Why Innovation is Needed</h2>
-    <p>
-        Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
-        Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. 
-        Modern tourists expect digital services, smart navigation, and personalized guidance. 
-        Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.
-    </p>
+    <!-- Second White Page -->
+    <div class="page">
+        <h3>1. Introduction and Problem Statement</h3>
+        <p>
+            Tourism plays a major role in economic development, but tourists often face difficulties
+            navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns,
+            and inefficient routing can negatively impact the tourist experience. The Tourism and
+            Navigation System aims to solve these problems by providing accurate, efficient, and
+            reliable navigation assistance.
+        </p>
 
-    <h2>Tourism Sector Sub-Divisions</h2>
-    <div class="sub-sectors">
-        <div>Tourist Info & Navigation</div>
-        <div>Accommodation</div>
-        <div>Attractions</div>
-        <div>Safety & Security</div>
-        <div>Cleanliness & Sustainability</div>
-        <div>Local Culture & Shopping</div>
-    </div>
-</div>
+        <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
+        <p>
+            Before applying any algorithm, the system is designed based on real tourist behavior.
+            A tourist typically plans destinations, arrives in the city, navigates between locations,
+            seeks assistance when needed, and finally provides feedback. This behavioral flow
+            forms the conceptual foundation of the system.
+        </p>
+        <ul>
+            <li>Destination planning before arrival</li>
+            <li>Live location detection using GPS</li>
+            <li>Navigation between tourist spots</li>
+            <li>Safety and emergency access</li>
+            <li>Experience feedback</li>
+        </ul>
 
-<!-- Grey Heading -->
-<h1 class="grey-heading">Tourism & Navigation System</h1>
+        <h3>3. System Architecture</h3>
+        <p>
+            The system consists of a tourist interface, GPS module, digital city map database,
+            and a navigation engine. The navigation engine processes routing requests and
+            provides optimized routes in real time.
+        </p>
 
-<!-- Second White Page -->
-<div class="page">
-    <h3>1. Introduction and Problem Statement</h3>
-    <p>
-        Tourism plays a major role in economic development, but tourists often face difficulties
-        navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns,
-        and inefficient routing can negatively impact the tourist experience. The Tourism and
-        Navigation System aims to solve these problems by providing accurate, efficient, and
-        reliable navigation assistance.
-    </p>
+        <h3>4. Graph-Based Data Representation</h3>
+        <p>
+            The city map is modeled as a weighted graph where intersections represent vertices,
+            roads represent edges, and distance or travel time acts as weights. This structure
+            enables efficient shortest-path computation.
+        </p>
 
-    <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
-    <p>
-        Before applying any algorithm, the system is designed based on real tourist behavior.
-        A tourist typically plans destinations, arrives in the city, navigates between locations,
-        seeks assistance when needed, and finally provides feedback. This behavioral flow
-        forms the conceptual foundation of the system.
-    </p>
-    <ul>
-        <li>Destination planning before arrival</li>
-        <li>Live location detection using GPS</li>
-        <li>Navigation between tourist spots</li>
-        <li>Safety and emergency access</li>
-        <li>Experience feedback</li>
-    </ul>
+        <h3>Role of Dijkstra’s Algorithm</h3>
+        <p>
+            Dijkstra’s algorithm calculates the shortest path from the tourist’s current location
+            to the selected destination by considering distances or travel time as weights.
+        </p>
 
-    <h3>3. System Architecture</h3>
-    <p>
-        The system consists of a tourist interface, GPS module, digital city map database,
-        and a navigation engine. The navigation engine processes routing requests and
-        provides optimized routes in real time.
-    </p>
-
-    <h3>4. Graph-Based Data Representation</h3>
-    <p>
-        The city map is modeled as a weighted graph where intersections represent vertices,
-        roads represent edges, and distance or travel time acts as weights. This structure
-        enables efficient shortest-path computation.
-    </p>
-
-    <h3>Role of Dijkstra’s Algorithm</h3>
-    <p>
-        Dijkstra’s algorithm calculates the shortest path from the tourist’s current location
-        to the selected destination by considering distances or travel time as weights.
-    </p>
-
-    <h3>5. Dijkstra Algorithm Implementation</h3>
-    <div class="algorithm-box">
+        <h3>5. Dijkstra Algorithm Implementation</h3>
+        <div class="algorithm-box">
 ALGORITHM Dijkstra(G, s)
 for each vertex v in V
     dist[v] ← ∞
@@ -387,60 +392,61 @@ while unvisited vertices exist
         if dist[u] + w(u,v) < dist[v]
             dist[v] ← dist[u] + w(u,v)
             parent[v] ← u
-    </div>
+        </div>
 
-    <h3>6. Real-Time Working of the Algorithm</h3>
-    <p>
-        As the tourist moves, the system continuously updates location data. If deviations
-        or changes occur, the algorithm is re-executed to ensure optimal navigation.
-    </p>
+        <h3>6. Real-Time Working of the Algorithm</h3>
+        <p>
+            As the tourist moves, the system continuously updates location data. If deviations
+            or changes occur, the algorithm is re-executed to ensure optimal navigation.
+        </p>
 
-    <h3>7. SDG Alignment</h3>
-    <ul>
-        <li><strong>SDG 9:</strong> Innovation and Infrastructure</li>
-        <li><strong>SDG 11:</strong> Sustainable Cities</li>
-    </ul>
+        <h3>7. SDG Alignment</h3>
+        <ul>
+            <li><strong>SDG 9:</strong> Innovation and Infrastructure</li>
+            <li><strong>SDG 11:</strong> Sustainable Cities</li>
+        </ul>
 
-    <h3>8. Use Case Scenario (Tourist Navigation)</h3>
-    <div class="usecase-box">
-        <div class="usecase-step">📍 <strong>Step 1:</strong> Tourist arrives at Vritdhara Railway Station</div>
-        <div class="usecase-step">📱 <strong>Step 2:</strong> Selects a destination: Vrithdhara Palace</div>
-        <div class="usecase-step">🗺️ <strong>Step 3:</strong> City graph is accessed for navigation</div>
-        <div class="usecase-step">🧮 <strong>Step 4:</strong> Dijkstra computes shortest route</div>
-        <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guides the tourist</div>
-    </div>
+        <h3>8. Use Case Scenario (Tourist Navigation)</h3>
+        <div class="usecase-box">
+            <div class="usecase-step">📍 <strong>Step 1:</strong> Tourist arrives at Vritdhara Railway Station</div>
+            <div class="usecase-step">📱 <strong>Step 2:</strong> Selects a destination: Vrithdhara Palace</div>
+            <div class="usecase-step">🗺️ <strong>Step 3:</strong> City graph is accessed for navigation</div>
+            <div class="usecase-step">🧮 <strong>Step 4:</strong> Dijkstra computes shortest route</div>
+            <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guides the tourist</div>
+        </div>
 
-    <h3>9. Tourist Interaction Flow Diagram</h3>
-    <div style="margin-top:20px; text-align:center;">
-        <img src="tourist and navigation.png" 
-             alt="Tourist Navigation Interaction Flow"
-             style="width:100%; max-width:900px; border-radius:12px;">
-        <p style="font-style:italic; margin-top:8px;">
-            Figure:Tourist Navigation System – User Interaction Flow
+        <h3>9. Tourist Interaction Flow Diagram</h3>
+        <div style="margin-top:20px; text-align:center;">
+            <img src="tourist and navigation.png" 
+                 alt="Tourist Navigation Interaction Flow"
+                 style="width:100%; max-width:900px; border-radius:12px;">
+            <p style="font-style:italic; margin-top:8px;">
+                Figure:Tourist Navigation System – User Interaction Flow
+            </p>
+        </div>
+
+        <h3>10. Advantages and Limitations</h3>
+        <p><strong>Advantages:</strong></p>
+        <ul>
+            <li>Optimal route selection</li>
+            <li>Reduced travel time</li>
+            <li>Improved tourist safety</li>
+            <li>Transparent algorithm logic</li>
+        </ul>
+        <p><strong>Limitations:</strong></p>
+        <ul>
+            <li>Requires GPS and internet</li>
+            <li>Less efficient for extremely large maps</li>
+            <li>Limited dynamic traffic handling</li>
+        </ul>
+
+        <h3>11. Future Enhancement</h3>
+        <p>
+            Future improvements may include traffic prediction, AI-assisted personalization,
+            integration with accommodation services, and emergency response optimization.
         </p>
     </div>
 
-    <h3>10. Advantages and Limitations</h3>
-    <p><strong>Advantages:</strong></p>
-    <ul>
-        <li>Optimal route selection</li>
-        <li>Reduced travel time</li>
-        <li>Improved tourist safety</li>
-        <li>Transparent algorithm logic</li>
-    </ul>
-    <p><strong>Limitations:</strong></p>
-    <ul>
-        <li>Requires GPS and internet</li>
-        <li>Less efficient for extremely large maps</li>
-        <li>Limited dynamic traffic handling</li>
-    </ul>
-
-    <h3>11. Future Enhancement</h3>
-    <p>
-        Future improvements may include traffic prediction, AI-assisted personalization,
-        integration with accommodation services, and emergency response optimization.
-    </p>
 </div>
-
 </body>
 </html>
