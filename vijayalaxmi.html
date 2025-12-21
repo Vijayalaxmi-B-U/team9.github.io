@@ -58,11 +58,11 @@
     }
 
     /* Main heading OUTSIDE white page */
-.main-heading {
+h1, .main-heading {
+    font-size: 2.6rem;   /* largest heading */
     text-align: center;
-    font-size: 2.6rem; /* decreased */
     color: #ff8800;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 /* White page */
@@ -75,36 +75,38 @@
     box-sizing: border-box;
 }
 
+/* Section headings */
 h2 {
-    color: #3f6f3f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    font-size: 2.2rem;   /* slightly smaller than h1 */
     text-align: center;
-    font-size: 1.6rem; /* decreased */
-}
-
-h3 {
     color: #3f6f3f;
-    margin-top: 30px;
-    font-size: 2rem; /* adjusted for readability */
+    margin: 20px 0 15px 0;
 }
 
+/* Sub-headings inside sections */
+h3 {
+    font-size: 1.8rem;   /* smaller than h2, readable */
+    color: #3f6f3f;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
 p {
+    font-size: 22px;      /* readable */
+    line-height: 1.9;     /* good spacing */
     text-align: justify;
-    line-height: 2.1;   /* better spacing */
-    font-size: 20px;    /* readable */
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     color: #1a1a1a;
 }
 
-
-    ul {
-        margin-left: 25px;
-        line-height: 1.9;
-        margin-bottom: 20px;
-        font-size: 20px; /* increased */
-        color: #1a1a1a;
-    }
+/* Lists */
+ul {
+    font-size: 18px;      /* match paragraph */
+    line-height: 1.8;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
 
     /* Highlight Boxes */
     .highlights {
