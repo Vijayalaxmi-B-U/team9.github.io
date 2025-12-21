@@ -3,761 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vijayalaxmi - CITY DESIGN</title>
+<title>Vijayalakshmi - Tourism Sector</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* ---------- GLOBAL ---------- */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #fff;
-}
-
-/* ---------- SIDEBAR ---------- */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #1a1a1a;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-  z-index: 1;
-}
-.sidebar h2 { 
-  color:#ffcc00; 
-  text-align:center; 
-  margin-bottom:30px;
-}
-.sidebar a { 
-  display:block; 
-  color:#fff; 
-  text-decoration:none; 
-  margin:10px 0; 
-  padding:8px 10px; 
-  border-radius:6px; 
-  transition: all 0.3s ease; 
-}
-.sidebar a:hover { 
-  background-color:#2a2a72; 
-  transform: scale(1.05);
-}
-
-/* ---------- MAIN ---------- */
-.main { 
-  margin-left:220px; 
-}
-
-/* ---------- PAGE SECTIONS ---------- */
-.section {
-  width: 100%;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.grey-light { background-color: #2a2a2a; color: #fff; }
-.grey-dark { background-color: #1a1a1a; color: #fff; }
-
-/* ---------- TOURISM CARD ---------- */
-.tourism-card {
-  border: 1.5px solid rgb(233, 240, 173); 
-  background-color:#1a1a1a;
-  color:#f8f8f8;
-  padding:40px 20px;
-  border-radius:16px;
-  max-width:700px;
-  margin:20px auto;
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
-  text-align:center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.tourism-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(255,204,0,0.4);
-}
-.tourism-card h2 { color:#ffcc00; }
-.tourism-card p { font-size:16px; line-height:1.6; }
-
-/* ---------- INFO BOX ---------- */
-.info-box {
-  width: 90%;
-  max-width:650px;
-  background:#1a1a1a;
-  border:2px solid #ffcc00;
-  border-radius:12px;
-  padding:25px 30px;
-  margin:20px auto;
-  color:white;
-  line-height:1.7;
-  box-shadow:0 0 15px rgba(255,204,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.info-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,204,0,0.3);
-}
-.info-box h2 { color:#ffcc00; text-align:center; margin-bottom:15px; }
-
-/* ---------- PROBLEMS SECTION ---------- */
-.problems-section {
-  display:flex; 
-  flex-wrap:wrap;
-  justify-content:space-between; 
-  align-items:flex-start; 
-  gap:40px;
-  max-width:1100px;
-  width:100%;
-}
-.problems-section ul {
-  font-family:Poppins;
-  line-height:1.8;
-  font-size:18px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.problems-section ul li {
-  position:relative; 
-  padding-left:25px; 
-  margin-bottom:12px;
-}
-.problems-section ul li::before {
-  content: '➤';
-  position:absolute;
-  left:0;
-  color:#ffcc00;
-  font-weight:bold;
-}
-.problems-section img {
-  width:100%;
-  max-width:500px; 
-  border-radius:12px; 
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-.problems-section .youtube-links a {
-  color:#00aaff; 
-  text-decoration:underline; 
-  display:block;
-  margin-bottom:8px;
-}
-
-/* ---------- SUB-SECTORS ---------- */
-.sub-sectors {
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  gap:20px;
-  flex-wrap:nowrap;
-  overflow-x:auto;
-  padding:10px;
-  scroll-behavior:smooth;
-}
-.sub-sectors div {
-  border-radius:50%; 
-  width:120px; 
-  height:120px; 
-  display:flex; 
-  align-items:center; 
-  justify-content:center; 
-  text-align:center; 
-  padding:10px; 
-  font-weight:bold; 
-  box-shadow:0 5px 15px rgba(255,204,0,0.3);
-  flex-shrink:0;
-  cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.sub-sectors div:hover {
-  transform: scale(1.1);
-  box-shadow:0 8px 20px rgba(255,204,0,0.5);
-}
-.sub-sectors div span { color:#fff; }
-
-/* ---------- TEXT ---------- */
-h1 { text-align:center; color:#ff8800; margin-bottom:10px; }
-h2 { margin-bottom:20px; text-align:center; color:#ff8800; }
-p { line-height:1.6; font-size:16px; max-width: 800px; margin:10px auto; text-align:justify; }
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:900px){
-  .main { margin-left:0; padding:20px; }
-  .sidebar { width:100%; height:auto; position:relative; padding:10px; display:flex; flex-wrap:wrap; justify-content:center; }
-  .sidebar a { margin:5px; }
-  .problems-section { flex-direction:column; align-items:center; }
-}
-</style>
-</head>
-<body>
-
-<!-- ========================= SIDEBAR ========================= -->
-<div class="sidebar">
-  <h2>Smart City</h2>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="project.html">Project</a>
-  <a href="vaishnavi.html">Vaishnavi</a>
-  <a href="vijayalaxmi.html">Vijayalaxmi</a>
-  <a href="sushant.html">Sushant</a>
-  <a href="sunil.html">Sunil</a>
-  <a href="collabz.html">Collabz</a>
-</div>
-
-<!-- ========================= MAIN ========================= -->
-<div class="main">
-
- <h1>Vijayalaxmi</h1>
-  <h2 style="text-align:center; color:#ffcc00; margin-bottom:30px;">Tourism Sector</h2>
-
-  <!-- ========================= TOURISM CARD SECTION ========================= -->
-  <div class="section grey-light">
-    <div class="tourism-card">
-      <h2>Why I Chose the Tourism Sector</h2>
-      <p>
-        Tourism drives economic growth, creates jobs, and promotes culture. 
-        In smart cities, technology enhances tourist experiences by optimizing routes 
-        and managing attractions efficiently.
-      </p>
-    </div>
-  </div>
-
-  <!-- ========================= SDG SECTION ========================= -->
-  <div class="section grey-dark">
-    <div class="info-box">
-      <h2>Tourism Related SDGs</h2>
-      <ul style="list-style:none; padding-left:20px;">
-          <li><b>SDG 8</b> – Decent Work and Economic Growth</li>
-          <li><b>SDG 11</b> – Sustainable Cities and Communities</li>
-          <li><b>SDG 12</b> – Responsible Consumption and Production</li>
-          <li><b>SDG 13</b> – Climate Action</li>
-          <li><b>SDG 14</b> – Life Below Water</li>
-          <li><b>SDG 15</b> – Life on Land</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ================= VRITDHARA TOURISM HEADING ================= -->
-<div style="background:#121212; padding:50px 0 40px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ff9800;
-    font-size:2.6rem;
-    margin:0;
-    letter-spacing:1px;
-    text-shadow:0 0 12px rgba(255,152,0,0,0.6);
-  ">
-    Discover Vritdhara
-  </h1>
-
-  <p style="text-align:center;color:#cfcfcf;margin-top:12px;">
-    Culture • Cinema • Heritage • Nature
-  </p>
-</div>
-
-<!-- ================= GREY PAGE ================= -->
-<div style="background:#2a2a2a; padding:60px 20px;">
-  <div style="
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:35px;
-    justify-items:center;
-  ">
-
-    <!-- CARD 1 -->
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          🛕
-          <h3>Cultural Emblem</h3>
-        </div>
-        <div class="flip-back">
-          Located at the center of the lake, the Cultural Emblem represents the
-          cultural identity and heritage of Vritdhara.
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          🎬
-          <h3>Eterna Studio (Rajapuri)</h3>
-        </div>
-        <div class="flip-back">
-          Eterna Studio is a large film city in Rajapuri, offering studio tours,
-          film shoots, and cinematic experiences.
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          🏰
-          <h3>Vrithdhara Palace</h3>
-        </div>
-        <div class="flip-back">
-          Vrithdhara Palace showcases royal architecture and stands as a symbol
-          of heritage and historical pride.
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="flip-card">
-      <div class="flip-inner">
-        <div class="flip-front">
-          🌿
-          <h3>National Park</h3>
-        </div>
-        <div class="flip-back">
-          The National Park promotes eco-tourism, wildlife conservation, and a
-          peaceful natural experience.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.flip-card{
-  perspective:1000px;
-  width:230px;
-}
-
-.flip-inner{
-  width:100%;
-  height:210px;
-  position:relative;
-  transition:transform 0.8s ease;
-  transform-style:preserve-3d;
-}
-
-.flip-card:hover .flip-inner{
-  transform:rotateY(180deg);
-}
-
-.flip-front,
-.flip-back{
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:16px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  text-align:center;
-  backface-visibility:hidden;
-}
-
-/* FRONT */
-.flip-front{
-  background:#1f1f1f;
-  border:2px solid #ff9800;   /* ORANGE BORDER */
-  color:#ff9800;              /* ORANGE TEXT */
-  font-size:2rem;
-  box-shadow:0 0 16px rgba(255,152,0,0.35);
-}
-
-.flip-front h3{
-  font-size:1.05rem;
-  margin-top:12px;
-  min-height:44px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* BACK */
-.flip-back{
-  background:#ff9800;         /* ORANGE BACK */
-  color:#1a1a1a;
-  transform:rotateY(180deg);
-  font-size:0.95rem;
-  line-height:1.5;
-}
-</style>
-
-
-  <!-- ========================= PROBLEMS SECTION ========================= -->
-  <div class="section grey-light">
-    <h2>CURRENT PROBLEMS IN THE TOURISM SECTOR</h2>
-    <div class="problems-section">
-      <ul>
-        <li>Overcrowding</li>
-        <li>Long queues</li>
-        <li>Safety concerns</li>
-        <li>Lack of digital systems</li>
-        <li>Waste management issues</li>
-        <li>Poor navigation & confusing signs</li>
-        <li>Disconnected local businesses</li>
-      </ul>
-      <div style="display:flex; flex-direction:column; gap:15px;">
-        <img src="crowd.png" alt="Crowd Image">
-        <div class="youtube-links">
-          <a href="#" target="_blank">▶ Overtourism & overcrowding explained – YouTube</a>
-          <a href="#" target="_blank">▶ Waste, congestion & environmental issues – YouTube</a>
-          <a href="#" target="_blank">▶ Tourist management failures & long queues – YouTube</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================= WHY INNOVATION ========================= -->
-  <div class="section grey-dark">
-    <div class="info-box">
-      <h2>⭐ WHY INNOVATION IS NEEDED</h2>
-      <p>
-        Innovation is needed in the tourism sector to make travel smoother, faster, and safer.
-        Traditional systems cannot handle overcrowding, long waits, or lack of real-time information.
-        Modern tourists expect digital services, smart navigation, and personalized guidance.
-        Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses—making the entire sector more efficient and tourist-friendly.
-      </p>
-    </div>
-  </div>
-
-  <!-- ========================= SUB-SECTORS ========================= -->
-  <div class="section grey-light">
-    <h2>Tourism Sector Sub-Divisions</h2>
-    <div class="sub-sectors">
-      <div style="background:#222244;"><span>Tourist Info & Nav</span></div>
-      <div style="background:#224422;"><span>Accommodation</span></div>
-      <div style="background:#444422;"><span>Attractions</span></div>
-      <div style="background:#224444;"><span>Safety & Security</span></div>
-      <div style="background:#444244;"><span>Cleanliness & Sustainability</span></div>
-      <div style="background:#442244;"><span>Local Culture & Shopping</span></div>
-    </div>
-  </div>
-
-</div>
-</body>
-</html>
-
-<!-- ========================= ALL SUB-SECTORS IN ONE SIMPLE GREY PAGE ========================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #2a2a2a;
-  color: #fff;
-}
-.section-grey {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px 30px;
-  display: flex;
-  justify-content: center;     /* Center the paragraph block */
-  align-items: flex-start;
-  box-sizing: border-box;
-}
-.content {
-  max-width: 700px;            /* Paragraph stays centered */
-  text-align: left;            /* TEXT NOT CENTERED */
-  line-height: 1.7;
-}
-b {
-  color: #ffcc00;
-}
-p {
-  margin-bottom: 20px;
-}
-</style>
-</head>
-<body>
-
-<div class="section-grey">
-  <div class="content">
-
-    <p><b>1. Tourist Info & Navigation</b><br>
-    Aligned SDGs: 9, 11<br>
-    • Real-time routes & updates<br>
-    • Reduces overcrowding<br>
-    • Improves navigation<br>
-    <b>Algorithms:</b> Dijkstra, A*, BFS/DFS, KMP, Trie, Greedy, Dynamic Programming
-    </p>
-
-    <p><b>2. Accommodation</b><br>
-    Aligned SDGs: 11, 12<br>
-    • Safe, eco-friendly stays<br>
-    • Smart booking<br>
-    • Better comfort & accessibility<br>
-    <b>Algorithms:</b> Hashing, Union-Find, Heap, Sliding Window, DP
-    </p>
-
-    <p><b>3. Attractions</b><br>
-    Aligned SDGs: 8, 11<br>
-    • Smart ticketing<br>
-    • AR/VR enhancement<br>
-    • Crowd management<br>
-    <b>Algorithms:</b> Backtracking, Segment Tree, Fenwick Tree, Greedy, ML Prediction
-    </p>
-
-    <p><b>4. Safety & Security</b><br>
-    Aligned SDGs: 3, 11<br>
-    • Real-time alerts<br>
-    • Crowd control<br>
-    • Emergency response<br>
-    <b>Algorithms:</b> BFS/DFS, Shortest Path Tree, DP Risk Score, Pattern Detection
-    </p>
-
-    <p><b>5. Cleanliness & Sustainability</b><br>
-    Aligned SDGs: 11, 12, 13<br>
-    • Smart waste bins<br>
-    • Eco-friendly tourism<br>
-    • Pollution reduction<br>
-    <b>Algorithms:</b> Greedy Routing, DP Load Balance, Priority Queue, Segment Tree
-    </p>
-
-    <p><b>6. Local Culture & Shopping</b><br>
-    Aligned SDGs: 8, 11<br>
-    • Supports artisans<br>
-    • Cultural experience<br>
-    • Boosts local economy<br>
-    <b>Algorithms:</b> Recommendation System, Trie, KMP, Hash Maps, Clustering
-    </p>
-
-    <p><b>7. Transportation & Mobility</b><br>
-    Aligned SDGs: 9, 11<br>
-    • Reduces congestion<br>
-    • Smooth connectivity<br>
-    • Sustainable travel<br>
-    <b>Algorithms:</b> Dijkstra, Floyd-Warshall, BFS, Priority Queue, Graph Partitioning, DP
-    </p>
-
-  </div>
-</div>
-
-</body>
-</html>
-
-
-<!-- ========================= REFLECTIONS ========================= -->
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-   REFLECTION
-  </h1>
-</div>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg:#2a2a2a;
-    --panel:#3a3a3a;
-    --accent:#ffcc00;
-    --text:#ffffff;
-  }
-  html,body{
-    height:100%;
-    margin:0;
-    background:var(--bg);
-    font-family:'Poppins',sans-serif;
-    color:var(--text);
-  }
-
-  .grey-page{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:var(--panel);
-    padding:40px;
-    box-sizing:border-box;
-    text-align:center;
-  }
-
-  .grey-card{
-    max-width:900px;
-    width:100%;
-    padding:40px 30px;
-  }
-
-  h1{
-    font-size:3rem;
-    margin:0 0 20px 0;
-    font-weight:600;
-    color:var(--accent);
-    letter-spacing:1px;
-  }
-
-  .content{
-    font-size:1.1rem;
-    line-height:1.7;
-    margin-top:10px;
-  }
-
-  .content p{
-    margin:0 0 18px 0;
-  }
-
-  @media(max-width:600px){
-    h1{font-size:2.2rem;}
-    .content{font-size:1rem;}
-  }
-</style>
-</head>
-
-<body>
-
-
-      <p><b>Nature & Algorithms:</b> Cycles show iteration, layered growth shows recursion, and ant movement reflects backtracking.</p>
-
-      <p><b>Efficiency:</b> Time and space complexity help choose fast, scalable algorithms. Key growth rates: O(1), O(log n), O(n), O(n²).</p>
-
-      <p><b>Design Principles:</b> Balanced trees, DFS/BFS strategies, and sorting techniques helped understand how structure improves efficiency.</p>
-
-      <p><b>Hierarchical Structures:</b> Trees like BST, AVL, Red-Black, Heaps, and Tries organize data efficiently for searching, sorting, and indexing.</p>
-
-      <p><b>Array Queries:</b> Segment Trees, BIT, and lookup tables speed up repeated range queries and updates on large datasets.</p>
-
-      <p><b>Trees vs Graphs:</b> Trees represent hierarchy; graphs model networks. Traversed using DFS, BFS, and used in systems like GPS.</p>
-
-      <p><b>Sorting & Searching:</b> Algorithms like Merge/Quick Sort and Binary Search connect to real tasks such as ranking, filtering, and searching.</p>
-
-      <p><b>Graph Algorithms:</b> MST saves cost in networks; shortest-path (Dijkstra) powers maps, routing, and logistics.</p>
-
-      <p><b>Design Techniques:</b> Backtracking, divide-and-conquer, brute force, string matching, and shortest-path algorithms solve a wide range of problems.</p>
-
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
-<!-- ================= PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Tourism and Navigation System</title>
-
 <style>
     body {
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        background-color: #e0e0e0;
+        color: #1a1a1a;
     }
 
-    /* Main Heading */
-    h1 {
+    /* Navbar on top */
+    .navbar {
+        width: 100%;
+        background-color: #1a237e; /* deep blue */
+        display: flex;
+        align-items: center;
+        padding: 12px 30px;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+
+    .navbar h2 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 1.6rem; /* slightly smaller */
+        flex: 1;
+    }
+
+    .navbar a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 15px;
+        font-size: 1rem;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+        background-color: #3949ab;
+    }
+
+    .collapse-btn {
+        background-color: #3949ab;
+        color: #fff;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Main heading OUTSIDE white page */
+    .main-heading {
         text-align: center;
-        color: orange;
-        margin: 30px 0 20px;
+        font-size: 2.6rem; /* decreased */
+        color: #ff8800;
+        margin: 20px 0;
     }
 
-    /* Grey Theme */
-    .grey-light {
-        background-color: #2a2a2a;
-        color: #ffffff;
-    }
-
-    .grey-dark {
-        background-color: #1a1a1a;
-        color: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
-
-    /* Page Container */
+    /* White page */
     .page {
-        width: 72%;
-        min-height: 90vh;
+        width: 75%;
         margin: auto;
         padding: 40px 50px;
-        box-sizing: border-box;
+        background-color: #ffffff;
         border-radius: 12px;
+        box-sizing: border-box;
     }
 
     h2 {
-        color: #9ad19a; /* pastel green */
+        color: #3f6f3f;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.8rem; /* decreased */
     }
 
     h3 {
-        color: #6fbf6f; /* pastel dark green */
-        margin-top: 28px;
+        color: #3f6f3f;
+        margin-top: 30px;
+        font-size: 1.6rem; /* decreased */
     }
 
     p {
         text-align: justify;
-        line-height: 1.6;
+        line-height: 2;
+        font-size: 18px; /* increased slightly */
+        margin-bottom: 20px;
+        color: #1a1a1a;
     }
 
     ul {
-        margin-left: 20px;
+        margin-left: 25px;
+        line-height: 1.9;
+        margin-bottom: 20px;
+        font-size: 18px; /* increased */
+        color: #1a1a1a;
     }
 
-    /* Two Column Layout */
-    .row {
+    /* Highlight Boxes */
+    .highlights {
         display: flex;
-        gap: 30px;
-        margin-top: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .highlight-box {
+        flex: 1 1 calc(25% - 20px);
+        background-color: #fff4cc;
+        color: #1a1a1a;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        min-width: 200px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .highlight-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .highlight-box h3 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+
+    .highlight-box p {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    /* Problems Section */
+    .problems-section {
+        display: flex;
+        justify-content: space-between;
         align-items: flex-start;
+        gap: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
     }
 
-    .left {
-        width: 55%;
+    .problems-list {
+        flex: 1 1 45%;
     }
 
-    .right {
-        width: 45%;
+    .crowd-image {
+        flex: 1 1 45%;
         text-align: center;
     }
 
-    .right img {
+    .crowd-image img {
         width: 100%;
-        max-width: 360px;
-        border-radius: 10px;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        margin-bottom: 10px;
     }
 
-    /* Flow Points */
-    .flow p {
-        margin: 10px 0;
+    .crowd-image a {
+        display: block;
+        margin-bottom: 8px;
+        color: #00aaff;
+        text-decoration: underline;
     }
 
-    /* Minimal Algorithm Button */
+    /* Sub-Sectors */
+    .sub-sectors {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 10px;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+    }
+
+    .sub-sectors div {
+        background-color: #000000;
+        color: #fff;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .sub-sectors div:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Accordion */
     .accordion {
         background-color: #3f6f3f;
         color: white;
         cursor: pointer;
         padding: 8px 18px;
         border: none;
-        font-size: 14px;
+        font-size: 15px;
         border-radius: 22px;
-        width: fit-content;
-        min-width: 210px;
+        min-width: 220px;
         margin-top: 15px;
+        transition: 0.3s;
     }
 
-    /* Algorithm Panel */
+    .accordion:hover {
+        background-color: #2f5a2f;
+    }
+
     .panel {
         display: none;
-        background-color: #1a1a1a;
+        background-color: #f5f5f5;
         padding: 20px;
         border-radius: 10px;
         margin-top: 12px;
@@ -765,12 +236,254 @@ p {
     }
 
     pre {
-        background-color: #000000;
-        color: #ffffff;
+        background-color: #ffffff;
         padding: 16px;
         border-radius: 8px;
         overflow-x: auto;
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    .usecase-box {
+        background-color: #ffffff;
+        padding: 22px;
+        border-left: 6px solid #3f6f3f;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .usecase-step {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    /* Responsive */
+    @media(max-width:900px){
+        .highlights { flex-direction: column; align-items: center; }
+        .highlight-box { width: 80%; }
+        .problems-section { flex-direction: column; }
+        .problems-list, .crowd-image { flex: 1 1 100%; }
+        .sub-sectors { flex-direction: column; align-items: center; }
+        .navbar { flex-direction: column; align-items: flex-start; }
+        .navbar a { margin-left: 0; margin-top: 8px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>Vijayalakshmi – Smart City</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="project.html">Project</a>
+    <a href="vaishnavi.html">Vaishnavi</a>
+    <a href="vijayalakshmi.html">Vijayalakshmi</a>
+    <a href="sunil.html">Sunil</a>
+    <a href="sushant.html">Sushant</a>
+    <button class="collapse-btn">Collapse</button>
+</div>
+
+<!-- Main Heading OUTSIDE white page -->
+<h1 class="main-heading">Tourism Sector</h1>
+
+<!-- White Page -->
+<div class="page">
+
+    <!-- Why Tourism -->
+    <h2>Why I Chose the Tourism Sector</h2>
+    <p>
+        Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
+        technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
+    </p>
+
+    <!-- Discover Vritdhara -->
+    <h2>Discover Vritdhara</h2>
+    <p style="text-align:center; font-style:italic; margin-bottom:30px;">
+        Culture • Cinema • Heritage • Nature
+    </p>
+
+    <!-- Highlights Boxes -->
+    <div class="highlights">
+        <div class="highlight-box">
+            🛕
+            <h3>Cultural Emblem</h3>
+            <p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p>
+        </div>
+        <div class="highlight-box">
+            🎬
+            <h3>Eterna Studio (Rajapuri)</h3>
+            <p>A large film city offering studio tours, film shoots, and cinematic experiences.</p>
+        </div>
+        <div class="highlight-box">
+            🏰
+            <h3>Vrithdhara Palace</h3>
+            <p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p>
+        </div>
+        <div class="highlight-box">
+            🌿
+            <h3>National Park</h3>
+            <p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p>
+        </div>
+    </div>
+
+    <!-- Problems + Crowd Image -->
+    <h2>Current Problems in the Tourism Sector</h2>
+    <div class="problems-section">
+        <div class="problems-list">
+            <ul>
+                <li>Overcrowding</li>
+                <li>Long queues</li>
+                <li>Safety concerns</li>
+                <li>Lack of digital systems</li>
+                <li>Waste management issues</li>
+                <li>Poor navigation & confusing signs</li>
+                <li>Disconnected local businesses</li>
+            </ul>
+        </div>
+        <div class="crowd-image">
+            <img src="crowd.png" alt="Crowd Image">
+            <a href="#" target="_blank">▶ Overtourism & overcrowding explained – YouTube</a>
+            <a href="#" target="_blank">▶ Waste, congestion & environmental issues – YouTube</a>
+            <a href="#" target="_blank">▶ Tourist management failures & long queues – YouTube</a>
+        </div>
+    </div>
+
+    <!-- Why Innovation -->
+    <h2>Why Innovation is Needed</h2>
+    <p>
+        Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
+        Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. 
+        Modern tourists expect digital services, smart navigation, and personalized guidance. 
+        Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.
+    </p>
+
+    <!-- Sub-Sectors -->
+    <h2>Tourism Sector Sub-Divisions</h2>
+    <div class="sub-sectors">
+        <div>Tourist Info & Navigation</div>
+        <div>Accommodation</div>
+        <div>Attractions</div>
+        <div>Safety & Security</div>
+        <div>Cleanliness & Sustainability</div>
+        <div>Local Culture & Shopping</div>
+    </div>
+
+</div>
+
+<script>
+const acc = document.querySelector(".accordion");
+const panel = document.querySelector(".panel");
+
+if(acc){
+    acc.onclick = function () {
+        panel.style.display =
+            panel.style.display === "block" ? "none" : "block";
+    };
+}
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tourism and Navigation System</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0; /* light grey */
+    }
+
+    h1 {
+        text-align: center;
+        color: orange;
+        margin: 30px 0 20px;
+        font-size: 2.8rem; /* slightly bigger */
+    }
+
+    .page {
+        width: 72%;
+        min-height: 90vh;
+        margin: auto;
+        background-color: #ffffff; /* inner white page */
+        padding: 40px 50px;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    h3 {
+        color: #3f6f3f; /* dark pastel */
+        margin-top: 30px;
+        font-size: 1.8rem; /* slightly bigger */
+    }
+
+    p {
+        text-align: justify;
+        line-height: 1.9;
+        font-size: 17px; /* slightly bigger */
+    }
+
+    ul {
+        margin-left: 22px;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    /* Accordion Button */
+    .accordion {
+        background-color: #3f6f3f;
+        color: white;
+        cursor: pointer;
+        padding: 8px 18px;
+        border: none;
+        font-size: 15px;
+        border-radius: 22px;
+        min-width: 220px;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+
+    .accordion:hover {
+        background-color: #2f5a2f;
+    }
+
+    /* Algorithm Panel */
+    .panel {
+        display: none;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 12px;
+        width: 95%;
+    }
+
+    pre {
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 14px; /* slightly bigger */
+    }
+
+    /* Use Case Card */
+    .usecase-box {
+        background-color: #ffffff;
+        padding: 22px;
+        border-left: 6px solid #3f6f3f;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .usecase-step {
+        margin-bottom: 10px;
+        font-size: 16px; /* slightly bigger */
     }
 </style>
 </head>
@@ -779,102 +492,163 @@ p {
 
 <h1>Tourism and Navigation System</h1>
 
-<div class="page grey-light">
+<div class="page">
 
-    <!-- SDG Section -->
-    <h2>1. Tourist Info & Navigation</h2>
-    <p><strong>Aligned SDGs:</strong> 9, 11</p>
+    <!-- 1 -->
+    <h3>1. Introduction and Problem Statement</h3>
+    <p>
+        Tourism plays a major role in economic development, but tourists often face difficulties
+        navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns,
+        and inefficient routing can negatively impact the tourist experience. The Tourism and
+        Navigation System aims to solve these problems by providing accurate, efficient, and
+        reliable navigation assistance.
+    </p>
+
+    <!-- 2 -->
+    <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
+    <p>
+        Before applying any algorithm, the system is designed based on real tourist behavior.
+        A tourist typically plans destinations, arrives in the city, navigates between locations,
+        seeks assistance when needed, and finally provides feedback. This behavioral flow
+        forms the conceptual foundation of the system.
+    </p>
+
     <ul>
-        <li>Real-time routes & updates</li>
-        <li>Reduces overcrowding</li>
-        <li>Improves navigation</li>
+        <li>Destination planning before arrival</li>
+        <li>Live location detection using GPS</li>
+        <li>Navigation between tourist spots</li>
+        <li>Safety and emergency access</li>
+        <li>Experience feedback</li>
     </ul>
 
-    <!-- Overview -->
-    <div class="grey-dark">
-        <h3>Tourism and Navigation Overview</h3>
-        <p>
-            A Tourism and Navigation System is a smart digital solution designed to help tourists easily locate attractions,
-            accommodations, and essential services while navigating through a city efficiently. In real time, the system uses
-            GPS to detect the tourist’s current location and displays it on an interactive digital map along with nearby points
-            of interest such as monuments, hotels, restaurants, hospitals, and transport facilities. For route planning,
-            Dijkstra’s algorithm is used to compute the shortest and most efficient path between the tourist’s location and the
-            selected destination, ensuring minimum distance or travel time.
-        </p>
-    </div>
+    <!-- 3 -->
+    <h3>3. System Architecture</h3>
+    <p>
+        The system consists of a tourist interface, GPS module, digital city map database,
+        and a navigation engine. The navigation engine processes routing requests and
+        provides optimized routes in real time.
+    </p>
 
-    <!-- Flow Section -->
-    <div class="grey-dark">
-        <h3>Flow of Dijkstra Algorithm in Real-Time Tourist Navigation</h3>
+    <!-- 4 -->
+    <h3>4. Graph-Based Data Representation</h3>
+    <p>
+        The city map is modeled as a weighted graph where intersections represent vertices,
+        roads represent edges, and distance or travel time acts as weights. This structure
+        enables efficient shortest-path computation.
+    </p>
 
-        <div class="row">
+    <!-- INSERTED ROLE OF DIJKSTRA -->
+    <h3>Role of Dijkstra’s Algorithm in Tourism and Navigation</h3>
+    <p>
+        Tourism in a smart city heavily depends on efficient navigation, as tourists frequently
+        move between hotels, attractions, transport hubs, and essential services. To ensure
+        a smooth travel experience, the system must always guide tourists through the
+        shortest and safest routes while minimizing travel time and congestion.
+    </p>
 
-            <div class="left flow">
-                <p>📍 <strong>Step 1: Tourist Location Detection</strong><br>
-                   GPS captures the tourist’s current location and sets it as the source vertex (s).</p>
+    <p>
+        This requirement is fulfilled using Dijkstra’s algorithm, which calculates the shortest
+        path from the tourist’s current location to the selected destination by considering road
+        distances or travel time as weights. By modeling the city as a weighted graph,
+        Dijkstra’s algorithm ensures optimal routing, reduces unnecessary travel, avoids
+        overcrowded paths, and enhances tourist satisfaction.
+    </p>
 
-                <p>🏛️ <strong>Step 2: Destination Selection</strong><br>
-                   Tourist selects a destination such as an attraction or hotel.</p>
+    <!-- 5 -->
+    <h3>5. Dijkstra Algorithm Implementation</h3>
+    <p>
+        Dijkstra’s algorithm computes the shortest path from a source node to all other nodes
+        in a weighted graph. In this system, it guarantees optimal route selection.
+    </p>
 
-                <p>🗺️ <strong>Step 3: City Map as Graph</strong><br>
-                   Intersections → Vertices (V), Roads → Edges (E), Distance/Time → Weights.</p>
+    <button class="accordion">View Dijkstra Algorithm</button>
 
-                <p>⚙️ <strong>Step 4: Algorithm Execution</strong><br>
-                   Dijkstra’s algorithm computes the shortest path.</p>
-
-                <p>🧭 <strong>Step 5: Route Visualization</strong><br>
-                   Optimal route displayed with distance and directions.</p>
-
-                <p>🔄 <strong>Step 6: Real-Time Updates</strong><br>
-                   Route recalculated if traffic or deviation occurs.</p>
-            </div>
-
-            <div class="right">
-                <img src="tourist-navigation-flow.png" alt="Tourist Navigation Flow">
-                <p><em>Tourist Navigation System Flow Diagram</em></p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Algorithm Section -->
-    <div class="grey-dark">
-        <h3>Dijkstra Algorithm</h3>
-
-        <button class="accordion">View Dijkstra Algorithm</button>
-
-        <div class="panel">
+    <div class="panel">
 <pre>
 ALGORITHM Dijkstra(G, s)
-// Dijkstra’s algorithm for single source shortest path
-// Input: A weighted connected graph G(V, E) with non-negative weights and its vertex s
-// Output: the length dv of a shortest path from s to v and its penultimate vertex pv
-// for every vertex v in V
 
-Initialize(Q)          // Initialize vertex priority queue to empty
+for each vertex v in V
+    dist[v] ← ∞
+    parent[v] ← null
 
-for every vertex v in V do
-    dv ← ∞
-    pv ← null
-    Insert(Q, v, dv)   // Initialize vertex priority in priority queue
+dist[s] ← 0
 
-ds ← 0
-Decrease(Q, s, ds)     // Update priority of s with ds
+while unvisited vertices exist
+    u ← vertex with minimum dist
+    mark u as visited
 
-VT ← Ø
-
-for i ← 0 to |V| − 1 do
-    u* ← DeleteMin(Q)
-    VT ← VT ∪ {u*}
-
-    for every vertex u in V − VT that is adjacent to u* do
-        if du* + w(u*, u) < du then
-            du ← du* + w(u*, u)
-            pu ← u*
-            Decrease(Q, u, du)
+    for each neighbor v of u
+        if dist[u] + w(u,v) < dist[v]
+            dist[v] ← dist[u] + w(u,v)
+            parent[v] ← u
 </pre>
-        </div>
     </div>
+
+    <!-- 6 -->
+    <h3>6. Real-Time Working of the Algorithm</h3>
+    <p>
+        As the tourist moves, the system continuously updates location data. If deviations
+        or changes occur, the algorithm is re-executed to ensure optimal navigation.
+    </p>
+
+    <!-- 7 -->
+    <h3>7. SDG Alignment</h3>
+    <ul>
+        <li><strong>SDG 9:</strong> Innovation and Infrastructure</li>
+        <li><strong>SDG 11:</strong> Sustainable Cities</li>
+    </ul>
+
+    <!-- 8 -->
+    <h3>8. Use Case Scenario (Tourist Navigation)</h3>
+
+    <div class="usecase-box">
+        <div class="usecase-step">📍 <strong>Step 1:</strong> Tourist arrives at a railway station</div>
+        <div class="usecase-step">📱 <strong>Step 2:</strong> Selects a historical monument</div>
+        <div class="usecase-step">🗺️ <strong>Step 3:</strong> City graph is accessed</div>
+        <div class="usecase-step">🧮 <strong>Step 4:</strong> Dijkstra computes shortest route</div>
+        <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guidance</div>
+    </div>
+
+    <h3>Tourist Interaction Flow Diagram</h3>
+     
+    <p>
+    This diagram visually represents how a tourist interacts with the navigation
+    system before algorithmic routing begins.
+   </p>
+
+   <div style="margin-top:20px; text-align:center;">
+    <img src="ADD-YOUR-IMAGE-HERE.png" 
+         alt="Tourist Navigation Interaction Flow"
+         style="width:70%; max-width:500px; border-radius:12px;">
+    <p style="font-style:italic; margin-top:8px;">
+        Figure: Tourist Navigation System – User Interaction Flow
+    </p>
+</div>
+
+    <!-- 9 -->
+    <h3>9. Advantages and Limitations</h3>
+
+    <p><strong>Advantages:</strong></p>
+    <ul>
+        <li>Optimal route selection</li>
+        <li>Reduced travel time</li>
+        <li>Improved tourist safety</li>
+        <li>Transparent algorithm logic</li>
+    </ul>
+
+    <p><strong>Limitations:</strong></p>
+    <ul>
+        <li>Requires GPS and internet</li>
+        <li>Less efficient for extremely large maps</li>
+        <li>Limited dynamic traffic handling</li>
+    </ul>
+
+    <!-- 10 -->
+    <h3>10. Future Enhancement</h3>
+    <p>
+        Future improvements may include traffic prediction, AI-assisted personalization,
+        integration with accommodation services, and emergency response optimization.
+    </p>
 
 </div>
 
@@ -890,911 +664,3 @@ acc.onclick = function () {
 
 </body>
 </html>
-
-
-<!-- ================= ACCOMMODATION PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-    ACCOMMODATION
-  </h1>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-p{
-  color:#cfeee2;
-}
-
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
-
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
-
-.section-grey{
-  background:#2b2b2b;
-  padding:40px 0;
-}
-
-.content{
-  width:80%;
-  margin:auto;
-}
-</style>
-
-<!-- ================= GREY PAGE ================= -->
-<div class="section-grey">
-  <div class="content">
-
-    <!-- INTRO DESCRIPTION -->
-    <p>
-      Accommodation is a core pillar of tourism. Comfortable, safe, and eco-friendly
-      stays improve tourist satisfaction, extend visit duration, and boost the local
-      economy. Smart accommodation systems reduce booking conflicts, ensure
-      accessibility, and promote sustainable resource usage in smart cities.
-    </p>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- HASHING -->
-    <p class="sub-head">Hashing – Smart Booking System</p>
-    <p>
-      Hashing enables instant room availability checks and prevents double
-      bookings by mapping room IDs to their current status.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('hashing')">View Algorithm</button>
-    <div class="code-box" id="hashing">
-Insert(roomID, status) into HashTable
-Search(roomID)
-if status == available
-  confirm booking
-else
-  show alternative rooms
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- UNION FIND -->
-    <p class="sub-head">Union-Find – Room & Building Management</p>
-    <p>
-      Union-Find groups connected rooms or hotel blocks, helping manage large
-      accommodations and ensuring efficient allocation during peak demand.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('unionfind')">View Algorithm</button>
-    <div class="code-box" id="unionfind">
-MakeSet(room)
-Union(roomA, roomB)
-Find(room)
-Check if rooms belong to same block
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- HEAP -->
-    <p class="sub-head">Heap – Best Room Selection</p>
-    <p>
-      Heaps prioritize rooms based on price, rating, or availability,
-      allowing tourists to quickly select the most suitable option.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('heapAcc')">View Algorithm</button>
-    <div class="code-box" id="heapAcc">
-Insert(room, priority)
-ExtractMin()   // lowest price or best rating
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- SLIDING WINDOW -->
-    <p class="sub-head">Sliding Window – Demand Analysis</p>
-    <p>
-      Sliding Window analyzes booking trends over fixed time intervals
-      to predict peak demand and optimize pricing strategies.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('windowAcc')">View Algorithm</button>
-    <div class="code-box" id="windowAcc">
-windowSum = sum(bookings[0..k-1])
-for i = k to n
-  windowSum += bookings[i]
-  windowSum -= bookings[i-k]
-    </div>
-
-    <hr style="border:0;height:1px;background:#444;margin:35px 0;">
-
-    <!-- DYNAMIC PROGRAMMING -->
-    <p class="sub-head">Dynamic Programming – Optimal Stay Planning</p>
-    <p>
-      Dynamic Programming helps tourists choose the best accommodation
-      within a fixed budget while maximizing comfort and stay duration.
-    </p>
-
-    <button class="algo-btn" onclick="toggleCode('dpAcc')">View Algorithm</button>
-    <div class="code-box" id="dpAcc">
-DP[i][b] = maximum comfort
-DP[i][b] =
-max(DP[i-1][b],
-    comfort[i] + DP[i-1][b - cost[i]])
-    </div>
-
-  </div>
-</div>
-
-
-<!-- ================= ATTRACTIONS PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-    ATTRACTION
-  </h1>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-p{
-  color:#cfeee2;
-}
-
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
-
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
-
-.section-grey{
-  background:#2b2b2b;
-  padding:40px 0;
-}
-
-.content{
-  width:80%;
-  margin:auto;
-}
-</style>
-
-<!-- ================= GREY PAGE ================= -->
-<div class="section-grey">
-  <div class="content">
-<!-- INTRO DESCRIPTION -->
-<p>
-Attractions are the heart of tourism. Smart attraction management improves visitor
-experience through efficient ticketing, immersive AR/VR enhancements, and effective
-crowd control. Intelligent systems reduce waiting time, prevent overcrowding, and
-ensure smooth visitor flow while preserving cultural and public spaces.
-</p>
-
-<hr>
-
-<!-- BACKTRACKING -->
-<p class="sub-head">Backtracking – Ticket Slot Allocation</p>
-<p>
-Backtracking explores multiple ticket slot combinations to allocate time slots
-without conflicts during peak tourist hours.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('backtracking')">View Algorithm</button>
-<div class="code-box" id="backtracking">
-Try assigning slot
-If conflict occurs
-  backtrack
-Else
-  confirm slot
-</div>
-
-<hr>
-
-<!-- SEGMENT TREE -->
-<p class="sub-head">Segment Tree – Crowd Monitoring</p>
-<p>
-Segment Trees efficiently track crowd density over time ranges and help authorities
-take quick decisions when limits are exceeded.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('segmentTree')">View Algorithm</button>
-<div class="code-box" id="segmentTree">
-Build tree on crowd data
-Query range for crowd count
-Update when visitors enter or leave
-</div>
-
-<hr>
-
-<!-- FENWICK TREE -->
-<p class="sub-head">Fenwick Tree – Visitor Count Updates</p>
-<p>
-Fenwick Tree supports fast updates and queries of visitor counts at attractions,
-enabling real-time crowd statistics.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('fenwick')">View Algorithm</button>
-<div class="code-box" id="fenwick">
-Update visitor count
-Query prefix sum
-Maintain real-time totals
-</div>
-
-<hr>
-
-<!-- GREEDY -->
-<p class="sub-head">Greedy – Queue & Crowd Control</p>
-<p>
-Greedy strategy always directs tourists to the least crowded attraction to balance
-visitor distribution.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('greedyAttr')">View Algorithm</button>
-<div class="code-box" id="greedyAttr">
-Select attraction with minimum crowd
-Redirect tourists accordingly
-</div>
-
-<hr>
-
-<!-- ML PREDICTION -->
-<p class="sub-head">ML Prediction – Demand Forecasting</p>
-<p>
-Machine Learning predicts visitor demand using historical data to plan staff,
-ticket pricing, and safety measures in advance.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('ml')">View Algorithm</button>
-<div class="code-box" id="ml">
-Collect historical data
-Train prediction model
-Forecast future crowd levels
-</div>
-
-</div>
-</div>
-
-<!-- ================= SAFETY & SECURITY PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-   Safety & Security
-  </h1>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-p{
-  color:#cfeee2;
-}
-
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
-
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
-
-.section-grey{
-  background:#2b2b2b;
-  padding:40px 0;
-}
-
-.content{
-  width:80%;
-  margin:auto;
-}
-</style>
-
-<!-- ================= GREY PAGE ================= -->
-<div class="section-grey">
-  <div class="content">
-
-<!-- INTRO DESCRIPTION -->
-<p>
-Safety and security are critical for tourism in smart cities. Real-time monitoring,
-quick emergency response, and efficient crowd control systems ensure the safety of
-tourists. Intelligent algorithms help detect risks early, guide emergency services,
-and manage large crowds during peak tourist seasons.
-</p>
-
-<hr>
-
-<!-- BFS DFS -->
-<p class="sub-head">BFS & DFS – Area Surveillance</p>
-<p>
-BFS and DFS are used to monitor connected areas, enabling authorities to quickly
-detect unsafe zones and navigate through surveillance networks.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('safetyBFSDFS')">View Algorithm</button>
-<div class="code-box" id="safetyBFSDFS">
-Start from control node
-Traverse connected cameras
-Mark visited zones
-Detect unsafe areas
-</div>
-
-<hr>
-
-<!-- SHORTEST PATH TREE -->
-<p class="sub-head">Shortest Path Tree – Emergency Routing</p>
-<p>
-Shortest Path Trees help emergency teams reach incident locations through the
-fastest and safest routes.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('spt')">View Algorithm</button>
-<div class="code-box" id="spt">
-Build shortest path tree
-Select minimum distance routes
-Guide emergency response
-</div>
-
-<hr>
-
-<!-- DP RISK SCORE -->
-<p class="sub-head">Dynamic Programming – Risk Score Evaluation</p>
-<p>
-Dynamic Programming calculates risk scores by combining multiple safety factors
-to prioritize high-risk areas.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('riskDP')">View Algorithm</button>
-<div class="code-box" id="riskDP">
-DP[i] = minimum risk score
-Combine crime, crowd, time factors
-Identify high-risk zones
-</div>
-
-<hr>
-
-<!-- PATTERN DETECTION -->
-<p class="sub-head">Pattern Detection – Threat Identification</p>
-<p>
-Pattern detection algorithms identify suspicious behavior patterns to prevent
-potential security threats.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('pattern')">View Algorithm</button>
-<div class="code-box" id="pattern">
-Collect behavior data
-Match with known patterns
-Trigger alert if matched
-</div>
-
-</div>
-</div>
-
-    
-
-
-
-<!-- ================= CLEANLINESS & SUSTAINABILITY PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-  CLEANLINESS & SUSTAINABILITY
-  </h1>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-p{
-  color:#cfeee2;
-}
-
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
-
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
-
-.section-grey{
-  background:#2b2b2b;
-  padding:40px 0;
-}
-
-.content{
-  width:80%;
-  margin:auto;
-}
-</style>
-
-<!-- ================= GREY PAGE ================= -->
-<div class="section-grey">
-  <div class="content">
-<!-- INTRO DESCRIPTION -->
-<p>
-Cleanliness and sustainability are essential for maintaining healthy and attractive
-tourist destinations. Smart waste management, eco-friendly tourism practices, and
-pollution control systems help protect the environment while enhancing visitor
-experience in smart cities.
-</p>
-
-<hr>
-
-<!-- GREEDY ROUTING -->
-<p class="sub-head">Greedy Routing – Smart Waste Collection</p>
-<p>
-Greedy routing selects the nearest waste bin or collection point to optimize waste
-pickup routes and reduce fuel consumption.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('greedyWaste')">View Algorithm</button>
-<div class="code-box" id="greedyWaste">
-Choose nearest full bin
-Move collection vehicle
-Repeat until all bins cleared
-</div>
-
-<hr>
-
-<!-- DP LOAD BALANCE -->
-<p class="sub-head">Dynamic Programming – Load Balancing</p>
-<p>
-Dynamic Programming balances waste loads across multiple vehicles to minimize
-overflows and ensure efficient collection.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('dpLoad')">View Algorithm</button>
-<div class="code-box" id="dpLoad">
-DP[i][w] = minimum trips
-Distribute waste among vehicles
-Optimize load usage
-</div>
-
-<hr>
-
-<!-- PRIORITY QUEUE -->
-<p class="sub-head">Priority Queue – Waste Bin Priority</p>
-<p>
-Priority queues process waste bins based on fill level, ensuring urgent bins are
-emptied first.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('pqWaste')">View Algorithm</button>
-<div class="code-box" id="pqWaste">
-Insert bins by fill level
-Extract highest priority bin
-Schedule pickup
-</div>
-
-<hr>
-
-<!-- SEGMENT TREE -->
-<p class="sub-head">Segment Tree – Pollution Monitoring</p>
-<p>
-Segment Trees track pollution levels across regions and time intervals, enabling
-fast queries and timely environmental actions.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('segmentPollution')">View Algorithm</button>
-<div class="code-box" id="segmentPollution">
-Build tree on pollution data
-Query pollution range
-Update sensor readings
-</div>
-
-</div>
-</div>
-
-
-
-
-
-
-<!-- ================= LOCAL CULTURE & SHOPPING PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-  LOCAL CULTURE & SHOPPING 
-  </h1>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-p{
-  color:#cfeee2;
-}
-
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
-
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
-
-.section-grey{
-  background:#2b2b2b;
-  padding:40px 0;
-}
-
-.content{
-  width:80%;
-  margin:auto;
-}
-</style>
-
-<!-- ================= GREY PAGE ================= -->
-<div class="section-grey">
-  <div class="content">
-<!-- INTRO DESCRIPTION -->
-<p>
-Local culture and shopping play a vital role in tourism by supporting artisans,
-preserving traditions, and boosting the local economy. Smart cultural platforms
-connect tourists with authentic experiences, local markets, and handcrafted
-products while improving discoverability and engagement.
-</p>
-
-<hr>
-
-<!-- RECOMMENDATION SYSTEM -->
-<p class="sub-head">Recommendation System – Personalized Shopping</p>
-<p>
-Recommends cultural events, handicrafts, and local shops based on tourist interests,
-previous visits, and popular trends.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('recommendCulture')">View Algorithm</button>
-<div class="code-box" id="recommendCulture">
-Collect user preferences
-Analyze past interactions
-Generate ranked recommendations
-</div>
-
-<hr>
-
-<!-- TRIE -->
-<p class="sub-head">Trie – Local Shop & Craft Search</p>
-<p>
-Trie enables fast prefix-based searching of shop names, cultural events, and artisan
-products in tourist applications.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('trieCulture')">View Algorithm</button>
-<div class="code-box" id="trieCulture">
-Insert shop and product names
-Search using prefix
-Display matching results
-</div>
-
-<hr>
-
-<!-- KMP -->
-<p class="sub-head">KMP – Cultural Keyword Matching</p>
-<p>
-KMP efficiently matches keywords like festival names or craft types in large cultural
-databases and descriptions.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('kmpCulture')">View Algorithm</button>
-<div class="code-box" id="kmpCulture">
-Compute LPS array
-Match pattern in cultural text
-Return occurrences
-</div>
-
-<hr>
-
-<!-- HASH MAPS -->
-<p class="sub-head">Hash Maps – Artisan & Product Mapping</p>
-<p>
-Hash Maps store artisan IDs and their products, enabling quick lookups and efficient
-inventory tracking.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('hashCulture')">View Algorithm</button>
-<div class="code-box" id="hashCulture">
-Insert artisanID → product list
-Search artisanID
-Retrieve products
-</div>
-
-<hr>
-
-<!-- CLUSTERING -->
-<p class="sub-head">Clustering – Market & Tourist Behavior Analysis</p>
-<p>
-Clustering groups tourists and shopping areas based on preferences and behavior,
-helping improve market planning and promotions.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('clusterCulture')">View Algorithm</button>
-<div class="code-box" id="clusterCulture">
-Group tourists by interests
-Group shops by category
-Analyze clusters
-</div>
-
-</div>
-</div>
-
-    <!-- ================= TRANSPORTATION & MOBILITY PAGE HEADING ================= -->
-
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="
-    text-align:center;
-    color:#ffcc00;
-    margin:0;
-    font-size:2.4rem;
-  ">
-   TRANSPORTATION & MOBILITY
-  </h1>
-</div>
-
-<!-- ================= STYLES ================= -->
-<style>
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-p{
-  color:#cfeee2;
-}
-
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
-
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
-
-.section-grey{
-  background:#2b2b2b;
-  padding:40px 0;
-}
-
-.content{
-  width:80%;
-  margin:auto;
-}
-</style>
-
-<!-- ================= GREY PAGE ================= -->
-<div class="section-grey">
-  <div class="content">
-
-
-<!-- INTRO DESCRIPTION -->
-<p>
-Transportation and mobility are essential for smooth tourist movement and city
-connectivity. Smart transportation systems reduce congestion, improve travel
-efficiency, and promote sustainable mobility through optimized routing and
-intelligent traffic management.
-</p>
-
-<hr>
-
-<!-- DIJKSTRA -->
-<p class="sub-head">Dijkstra – Shortest Route Planning</p>
-<p>
-Dijkstra’s algorithm finds the shortest path between tourist locations, reducing
-travel time and fuel consumption.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('transDijkstra')">View Algorithm</button>
-<div class="code-box" id="transDijkstra">
-Initialize distances to infinity
-Set source distance to zero
-Relax edges repeatedly
-Select shortest unvisited node
-</div>
-
-<hr>
-
-<!-- FLOYD WARSHALL -->
-<p class="sub-head">Floyd–Warshall – All-Pairs Connectivity</p>
-<p>
-Floyd–Warshall computes shortest paths between all locations, supporting city-wide
-route optimization and transit planning.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('floyd')">View Algorithm</button>
-<div class="code-box" id="floyd">
-Initialize distance matrix
-Update distances via intermediate nodes
-Find shortest paths between all pairs
-</div>
-
-<hr>
-
-<!-- BFS -->
-<p class="sub-head">BFS – Nearby Transport Exploration</p>
-<p>
-BFS explores nearby transit stations level-by-level, helping tourists quickly
-identify closest transport options.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('transBFS')">View Algorithm</button>
-<div class="code-box" id="transBFS">
-Mark start node visited
-Visit all adjacent nodes
-Explore level by level
-</div>
-
-<hr>
-
-<!-- PRIORITY QUEUE -->
-<p class="sub-head">Priority Queue – Traffic Optimization</p>
-<p>
-Priority Queues manage transport requests based on urgency, congestion, or time
-constraints for efficient scheduling.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('pqTrans')">View Algorithm</button>
-<div class="code-box" id="pqTrans">
-Insert routes with priority
-Extract highest priority route
-Update traffic flow
-</div>
-
-<hr>
-
-<!-- GRAPH PARTITIONING -->
-<p class="sub-head">Graph Partitioning – Congestion Control</p>
-<p>
-Graph Partitioning divides transport networks into regions, reducing congestion and
-balancing traffic loads.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('partition')">View Algorithm</button>
-<div class="code-box" id="partition">
-Divide graph into subgraphs
-Minimize edge crossings
-Balance traffic load
-</div>
-
-<hr>
-
-<!-- DYNAMIC PROGRAMMING -->
-<p class="sub-head">Dynamic Programming – Optimal Travel Planning</p>
-<p>
-Dynamic Programming optimizes travel schedules by minimizing cost and time while
-considering multiple travel constraints.
-</p>
-
-<button class="algo-btn" onclick="toggleCode('dpTrans')">View Algorithm</button>
-<div class="code-box" id="dpTrans">
