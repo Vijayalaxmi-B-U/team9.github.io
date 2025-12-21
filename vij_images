@@ -1,5 +1,1 @@
- cd path/to/your/repo   # go to your GitHub repo folder
-mkdir images           # create folder
-git add images         # add folder to Git
-git commit -m "Add images folder"
-git push               # upload to GitHub
+
