@@ -307,9 +307,12 @@
     </div>
 
     <!-- Dijkstra Section -->
-  <div class="page">
-      <h1 class="main-heading">Tourism & Navigation System</h1>
-    <div class="page">
+ <!-- Heading outside the white page -->
+<h1 class="main-heading">Tourism & Navigation System</h1>
+
+<!-- White page container starts -->
+<div class="page">
+
     <h3>1. Introduction and Problem Statement</h3>
     <p>
         Tourism plays a major role in economic development, but tourists often face difficulties
@@ -394,21 +397,19 @@ while unvisited vertices exist
         <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guides the tourist</div>
     </div>
 
-     <h3>8.Tourist Interaction Flow Diagram</h3>
-     
+    <h3>8. Tourist Interaction Flow Diagram</h3>
     <p>
-    This diagram visually represents how a tourist interacts with the navigation
-    system before algorithmic routing begins.
-   </p>
-
- <div style="margin-top:20px; text-align:center;">
-    <img src="tourist and navigation.png" 
-         alt="Tourist Navigation Interaction Flow"
-         style="width:100%; max-width:900px; border-radius:12px;">
-    <p style="font-style:italic; margin-top:8px;">
-        Figure:Tourist Navigation System – User Interaction Flow
+        This diagram visually represents how a tourist interacts with the navigation
+        system before algorithmic routing begins.
     </p>
-</div>
+    <div style="margin-top:20px; text-align:center;">
+        <img src="tourist and navigation.png" 
+             alt="Tourist Navigation Interaction Flow"
+             style="width:100%; max-width:900px; border-radius:12px;">
+        <p style="font-style:italic; margin-top:8px;">
+            Figure:Tourist Navigation System – User Interaction Flow
+        </p>
+    </div>
 
     <h3>9. Advantages and Limitations</h3>
     <p><strong>Advantages:</strong></p>
@@ -431,17 +432,4 @@ while unvisited vertices exist
         integration with accommodation services, and emergency response optimization.
     </p>
 
-</div>
-
-<script>
-const acc = document.querySelector(".accordion");
-if(acc){
-    const panel = document.querySelector(".panel");
-    acc.onclick = function () {
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-    };
-}
-</script>
-
-</body>
-</html>
+</div> <!-- end of .page -->
