@@ -368,42 +368,147 @@ while unvisited vertices exist
     <h2>4.Algorithms Supporting the System</h2>
     <h3>i)Filtering Algorithm 🧰</h3>
     <div class="algorithm-box">
-ALGORITHM FilterServices(services, filters)<br>
-for each service in services<br>
-  match ← true<br>
-  for each filter in filters<br>
-    if service does not satisfy filter<br>
-      match ← false<br>
-  if match<br>
-    add service to filteredList<br>
-return filteredList
+ALGORITHM RealisticFilterServices(services, filters)
+    Initialize filteredList as empty
+    
+    FOR each service in services
+        matchScore ← 0
+        
+        // Mandatory filters (must satisfy)
+        IF service.price NOT IN filters.priceRange OR
+           service.availability = false
+            CONTINUE to next service
+        
+        // Optional filters (increase score if matched)
+        IF service.rating >= filters.minRating
+            matchScore += 2
+        IF service.amenities CONTAINS filters.requiredAmenities
+            matchScore += 1 for each matched amenity
+        IF service.distance <= filters.maxDistance
+            matchScore += 1
+        
+        // Add to filtered list with score
+        Add (service, matchScore) to filteredList
+
+    // Sort by matchScore descending
+    Sort filteredList by matchScore DESC
+    RETURN filteredList
     </div>
     <p>This algorithm filters accommodations/restaurants by user preferences like price, rating, amenities, and location. It ensures tourists see only relevant options efficiently.</p>
 
     <h3>ii)Sorting Algorithm 📊</h3>
     <div class="algorithm-box">
-ALGORITHM SortServices(services, sortKey)<br>
-sort services based on sortKey (price, rating, distance)<br>
-return sortedList
+ALGORITHM RealisticSortServices(services, sortCriteria)
+    // sortCriteria is a list, e.g., ["price", "rating", "distance"]
+
+    FUNCTION Compare(serviceA, serviceB):
+        FOR each criterion in sortCriteria:
+            IF criterion = "price":
+                IF serviceA.price != serviceB.price
+                    RETURN serviceA.price - serviceB.price
+            ELSE IF criterion = "rating":
+                IF serviceA.rating != serviceB.rating
+                    RETURN serviceB.rating - serviceA.rating  // higher rating first
+            ELSE IF criterion = "distance":
+                IF serviceA.distance != serviceB.distance
+                    RETURN serviceA.distance - serviceB.distance  // closer first
+            ELSE IF criterion = "popularity":
+                IF serviceA.bookings != serviceB.bookings
+                    RETURN serviceB.bookings - serviceA.bookings  // more bookings first
+        RETURN 0  // if all criteria equal
+
+    Sort services using Compare function
+    RETURN sorted services
+
     </div>
     <p>This algorithm sorts filtered accommodation results based on criteria such as price, rating, or distance, helping tourists identify the most suitable options.</p>
 
     <h3>iii)Recommendation Algorithm 🤖</h3>
     <div class="algorithm-box">
-ALGORITHM RecommendServices(user, services)<br>
-for each service in services<br>
-  score ← similarity(user.preferences, service.features)<br>
-sort services by score<br>
-return top recommended services
+ALGORITHM RealisticRecommendServices(user, services)
+    recommendedList ← empty list
+
+    FOR each service in services:
+        score ← 0
+
+        // Step 1: Match user preferences
+        IF service.type in user.preferredTypes:
+            score += 30
+        IF service.price in user.budgetRange:
+            score += 20
+        IF service.amenities include all user.requiredAmenities:
+            score += 20
+
+        // Step 2: Consider past behavior
+        IF user has previously booked similar service:
+            score += 10
+
+        // Step 3: Ratings & reviews
+        score += service.rating * 5  // higher rated services get more points
+
+        // Step 4: Proximity to points of interest
+        IF service.distanceToAttractions <= user.maxDistance:
+            score += 10
+
+        // Step 5: Popularity among similar users
+        score += service.similarUserBookings * 2
+
+        // Add to list with calculated score
+        recommendedList.append({service, score})
+
+    // Step 6: Sort by score descending
+    recommendedList.sort(by score descending)
+
+    // Step 7: Return top N recommendations
+    RETURN top N services from recommendedList
+
     </div>
     <p>Provides personalized recommendations based on tourist preferences, past bookings, and similar user behavior, increasing satisfaction and engagement.</p>
 
     <h3>iv)Analytics Algorithm 📈</h3>
     <div class="algorithm-box">
-ALGORITHM GenerateAnalytics(bookingData)<br>
-calculate occupancyTrend, avgRatings, revenuePerService<br>
-display graphs for each metric<br>
-return dashboard
+ALGORITHM RealisticGenerateAnalytics(bookingData)
+    analyticsDashboard ← empty object
+
+    // Step 1: Occupancy Trend
+    occupancyPerMonth ← array of size 12 initialized to 0
+    FOR each booking in bookingData:
+        month ← booking.date.month
+        occupancyPerMonth[month] += 1
+    analyticsDashboard.occupancyTrend ← occupancyPerMonth
+
+    // Step 2: Average Ratings
+    ratingsSum ← 0
+    ratingsCount ← 0
+    FOR each review in bookingData.reviews:
+        ratingsSum += review.rating
+        ratingsCount += 1
+    analyticsDashboard.avgRating ← ratingsSum / ratingsCount
+
+    // Step 3: Revenue Per Service
+    revenueMap ← empty dictionary
+    FOR each booking in bookingData:
+        service ← booking.accommodationID
+        revenueMap[service] += booking.pricePaid
+    analyticsDashboard.revenuePerService ← revenueMap
+
+    // Step 4: Tourist Behavior Analysis
+    behaviorStats ← {}
+    behaviorStats.topPreferredAmenities ← computeMostUsedAmenities(bookingData)
+    behaviorStats.popularAccommodationTypes ← computeMostBookedTypes(bookingData)
+    behaviorStats.avgStayDuration ← computeAverageStay(bookingData)
+    analyticsDashboard.touristBehavior ← behaviorStats
+
+    // Step 5: Data Visualization
+    generateGraphs(analyticsDashboard)
+        // Example graphs:
+        // - Line graph for occupancyTrend
+        // - Bar chart for avgRating distribution
+        // - Pie chart for revenuePerService
+        // - Bar chart for popular accommodation types
+
+    RETURN analyticsDashboard
+
     </div>
     <p>Collects and visualizes data on occupancy trends, ratings, revenue, and tourist behavior to aid hotel managers and city planners in making informed strategic decisions.</p>
      
