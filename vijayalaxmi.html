@@ -4,29 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vijayalakshmi - Tourism Sector</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-        background-color: #e0e0e0;
-        color: #1a1a1a;
-    }
+/* -------------------- VARIABLES -------------------- */
+:root{
+  --text-light: #ffffff;
+  --accent-blue: #4c2fff;
+  --accent-purple: #7a5bff;
+  --accent-orange: #ff7a1a;
+  --accent-orange2: #ff9933;
+}
+
+/* -------------------- BASE -------------------- */
+body{
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e0e0e0;
+  color: #1a1a1a;
+}
+
+/* -------------------- NAVBAR -------------------- */
 .navbar{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;              /* full width */
-  background: #12122a;      /* dark background */
+  width: 100%;
+  background: #12122a;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 60px;       /* wider navbar */
+  padding: 18px 60px;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
-    .navbar h2{
+
+.navbar h2{
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
@@ -34,22 +46,44 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .navbar .nav-links{
   display: flex;
-  gap: 24px;                /* spacing between links */
+  gap: 24px;
 }
-    .navbar .nav-links a{
+
+.navbar .nav-links a{
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   padding: 12px 18px;
   border-radius: 8px;
+  position: relative;
   transition: 0.3s;
 }
-   .navbar .nav-links a:hover{
-  background: rgba(255,255,255,0.12);
-  border-left: 4px solid var(--accent-orange);
+
+/* Gradient underline animation */
+.navbar .nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0%;
+  height:3px;
+  border-radius:2px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple), var(--accent-blue));
+  transition:0.3s;
 }
+.navbar .nav-links a:hover::after{
+  width:100%;
+}
+.navbar .nav-links a.active{
+  color: var(--accent-orange);
+  font-weight:700;
+  border-bottom:3px solid var(--accent-orange2);
+}
+
+/* -------------------- RESPONSIVE NAVBAR -------------------- */
 @media(max-width:860px){
   .navbar{
     flex-direction: column;
@@ -67,192 +101,61 @@
   }
 }
 
-    /* To prevent content from going under navbar */
-    .content {
-        padding-top: 100px; /* same as navbar height + some spacing */
-    }
+/* -------------------- CONTENT -------------------- */
+.content{
+  padding-top: 120px; /* prevent navbar overlap */
+}
 
-    /* Headings and paragraphs */
-    h1, .main-heading {
-        font-size: 2.6rem;
-        text-align: center;
-        color: #ff8800;
-        margin: 25px 0;
-    }
-    h2 {
-        font-size: 2.2rem;
-        text-align: center;
-        color: #3f6f3f;
-        margin: 20px 0 15px 0;
-    }
-    h3 {
-        font-size: 1.8rem;
-        color: #3f6f3f;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-    p {
-        font-size: 20px;
-        line-height: 1.9;
-        text-align: justify;
-        margin-bottom: 20px;
-        color: #1a1a1a;
-    }
-    ul {
-        font-size: 18px;
-        line-height: 1.8;
-        margin-left: 25px;
-        margin-bottom: 20px;
-    }
+/* Headings and paragraphs */
+h1, .main-heading { font-size: 2.6rem; text-align:center; color:#ff8800; margin:25px 0; }
+h2 { font-size:2.2rem; text-align:center; color:#3f6f3f; margin:20px 0 15px 0; }
+h3 { font-size:1.8rem; color:#3f6f3f; margin-top:20px; margin-bottom:10px; }
+p { font-size:20px; line-height:1.9; text-align:justify; margin-bottom:20px; }
+ul { font-size:18px; line-height:1.8; margin-left:25px; margin-bottom:20px; }
 
-    /* White page container */
-    .page {
-        width: 80%;  /* slightly increased width */
-        margin: auto;
-        padding: 40px 50px;
-        background-color: #ffffff;
-        border-radius: 12px;
-        box-sizing: border-box;
-        margin-bottom: 40px;
-    }
+/* White page container */
+.page { width:80%; margin:auto; padding:40px 50px; background:#fff; border-radius:12px; margin-bottom:40px; box-sizing:border-box; }
 
-    /* Highlights */
-    .highlights {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-    .highlight-box {
-        flex: 1 1 calc(25% - 20px);
-        background-color: #fff4cc;
-        color: #1a1a1a;
-        padding: 20px;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        min-width: 200px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .highlight-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-    .highlight-box h3 {
-        margin-top: 10px;
-        font-size: 1.2rem;
-    }
-    .highlight-box p {
-        font-size: 16px;
-        margin-top: 8px;
-    }
+/* Highlights */
+.highlights { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-bottom:40px; }
+.highlight-box { flex:1 1 calc(25% - 20px); background:#fff4cc; color:#1a1a1a; padding:20px; border-radius:12px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.2); min-width:200px; transition:transform 0.3s, box-shadow 0.3s; }
+.highlight-box:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.3); }
+.highlight-box h3 { margin-top:10px; font-size:1.2rem; }
+.highlight-box p { font-size:16px; margin-top:8px; }
 
-    /* Problems Section */
-    .problems-section {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 30px;
-        margin-bottom: 40px;
-        flex-wrap: wrap;
-    }
-    .problems-list { flex: 1 1 45%; }
-    .crowd-image { flex: 1 1 45%; text-align: center; }
-    .crowd-image img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        margin-bottom: 10px;
-    }
-    .crowd-image a {
-        display: block;
-        margin-bottom: 8px;
-        color: #00aaff;
-        text-decoration: underline;
-    }
+/* Problems Section */
+.problems-section { display:flex; justify-content:space-between; align-items:flex-start; gap:30px; margin-bottom:40px; flex-wrap:wrap; }
+.problems-list { flex:1 1 45%; }
+.crowd-image { flex:1 1 45%; text-align:center; }
+.crowd-image img { width:100%; max-width:400px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.3); margin-bottom:10px; }
+.crowd-image a { display:block; margin-bottom:8px; color:#00aaff; text-decoration:underline; }
 
-    /* Sub-Sectors */
-    .sub-sectors {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        overflow-x: auto;
-        padding: 10px;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-    .sub-sectors div {
-        background-color: #000000;
-        color: #fff;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 10px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .sub-sectors div:hover {
-        transform: scale(1.1);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+/* Sub-Sectors */
+.sub-sectors { display:flex; gap:20px; flex-wrap:wrap; overflow-x:auto; padding:10px; justify-content:center; margin-bottom:40px; }
+.sub-sectors div { background:#000; color:#fff; border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; padding:10px; font-weight:bold; cursor:pointer; transition:transform 0.3s, box-shadow 0.3s; }
+.sub-sectors div:hover { transform:scale(1.1); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
 
-    /* Use Case Boxes */
-    .usecase-box {
-        background-color: #ffffff;
-        padding: 22px;
-        border-left: 6px solid #3f6f3f;
-        border-radius: 10px;
-        margin: 15px auto;
-        max-width: 800px;
-    }
-    .usecase-step { 
-        margin-bottom: 10px; 
-        font-size: 16px; 
-    }
+/* Use Case Boxes */
+.usecase-box { background:#fff; padding:22px; border-left:6px solid #3f6f3f; border-radius:10px; margin:15px auto; max-width:800px; }
+.usecase-step { margin-bottom:10px; font-size:16px; }
 
-    /* Algorithm Box */
-    .algorithm-box {
-        background-color: #fff8b3; /* light yellow */
-        border: 2px solid #000;   /* black border */
-        padding: 20px;
-        border-radius: 10px;
-        display: inline-block;     /* width fits content */
-        font-weight: bold;         /* bold text */
-        white-space: pre-wrap;     /* preserves formatting */
-        margin-bottom: 30px;
-    }
+/* Algorithm Box */
+.algorithm-box { background:#fff8b3; border:2px solid #000; padding:20px; border-radius:10px; display:inline-block; font-weight:bold; white-space:pre-wrap; margin-bottom:30px; }
 
-    /* Responsive */
-    @media(max-width:900px){
-        .highlights { flex-direction: column; align-items: center; }
-        .highlight-box { width: 80%; }
-        .problems-section { flex-direction: column; }
-        .problems-list, .crowd-image { flex: 1 1 100%; }
-        .sub-sectors { flex-direction: column; align-items: center; }
-        .navbar { flex-direction: column; align-items: flex-start; padding: 16px 20px; }
-        .navbar a { margin-left: 0; margin-top: 8px; }
-        .page { width: 90%; padding: 20px; }
-    }
+/* Grey heading */
+.grey-heading { background:#e0e0e0; padding:20px 40px; border-radius:12px; width:fit-content; text-align:center; color:#ff8800; font-size:2.6rem; margin:40px auto; }
 
-    /* Grey heading between white pages */
-    .grey-heading {
-        background-color: #e0e0e0;
-        padding: 20px 40px;
-        border-radius: 12px;
-        width: fit-content;
-        text-align: center;
-        color: #ff8800;
-        font-size: 2.6rem;
-        margin: 40px auto;
-    }
-
+/* -------------------- RESPONSIVE -------------------- */
+@media(max-width:900px){
+  .highlights { flex-direction:column; align-items:center; }
+  .highlight-box { width:80%; }
+  .problems-section { flex-direction:column; }
+  .problems-list, .crowd-image { flex:1 1 100%; }
+  .sub-sectors { flex-direction:column; align-items:center; }
+  .navbar { flex-direction:column; align-items:flex-start; padding:16px 20px; }
+  .navbar a { margin-left:0; margin-top:8px; }
+  .page { width:90%; padding:20px; }
+}
 </style>
 </head>
 <body>
@@ -261,7 +164,7 @@
 <div class="navbar">
     <h2>Vijayalakshmi – Smart City</h2>
     <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="project.html">Project</a>
         <a href="vaishnavi.html">Vaishnavi</a>
@@ -272,43 +175,22 @@
     </div>
 </div>
 
-<!-- All content wrapped in .content to avoid navbar overlap -->
 <div class="content">
-
-    <!-- Tourism Heading outside the page -->
     <h1 class="main-heading">Tourism</h1>
 
     <!-- First White Page -->
     <div class="page">
-
         <h2>Why I Chose the Tourism Sector</h2>
-        <p>
-            Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
-            technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
-        </p>
+        <p>Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, technology enhances tourist experiences by optimizing routes and managing attractions efficiently.</p>
 
         <h2>Discover Vritdhara</h2>
-        <p style="text-align:center; font-style:italic; margin-bottom:30px;">
-            Culture • Cinema • Heritage • Nature
-        </p>
+        <p style="text-align:center; font-style:italic; margin-bottom:30px;">Culture • Cinema • Heritage • Nature</p>
 
         <div class="highlights">
-            <div class="highlight-box">
-                🛕<h3>Cultural Emblem</h3>
-                <p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p>
-            </div>
-            <div class="highlight-box">
-                🎬<h3>Eterna Studio (Rajapuri)</h3>
-                <p>A large film city offering studio tours, film shoots, and cinematic experiences.</p>
-            </div>
-            <div class="highlight-box">
-                🏰<h3>Vrithdhara Palace</h3>
-                <p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p>
-            </div>
-            <div class="highlight-box">
-                🌿<h3>National Park</h3>
-                <p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p>
-            </div>
+            <div class="highlight-box">🛕<h3>Cultural Emblem</h3><p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p></div>
+            <div class="highlight-box">🎬<h3>Eterna Studio (Rajapuri)</h3><p>A large film city offering studio tours, film shoots, and cinematic experiences.</p></div>
+            <div class="highlight-box">🏰<h3>Vrithdhara Palace</h3><p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p></div>
+            <div class="highlight-box">🌿<h3>National Park</h3><p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p></div>
         </div>
 
         <h2>Current Problems in the Tourism Sector</h2>
@@ -333,12 +215,7 @@
         </div>
 
         <h2>Why Innovation is Needed</h2>
-        <p>
-            Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
-            Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. 
-            Modern tourists expect digital services, smart navigation, and personalized guidance. 
-            Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.
-        </p>
+        <p>Innovation is needed in the tourism sector to make travel smoother, faster, and safer. Traditional systems cannot handle overcrowding, long waits, or lack of real-time information. Modern tourists expect digital services, smart navigation, and personalized guidance. Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.</p>
 
         <h2>Tourism Sector Sub-Divisions</h2>
         <div class="sub-sectors">
@@ -357,21 +234,10 @@
     <!-- Second White Page -->
     <div class="page">
         <h3>1. Introduction and Problem Statement</h3>
-        <p>
-            Tourism plays a major role in economic development, but tourists often face difficulties
-            navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns,
-            and inefficient routing can negatively impact the tourist experience. The Tourism and
-            Navigation System aims to solve these problems by providing accurate, efficient, and
-            reliable navigation assistance.
-        </p>
+        <p>Tourism plays a major role in economic development, but tourists often face difficulties navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns, and inefficient routing can negatively impact the tourist experience. The Tourism and Navigation System aims to solve these problems by providing accurate, efficient, and reliable navigation assistance.</p>
 
         <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
-        <p>
-            Before applying any algorithm, the system is designed based on real tourist behavior.
-            A tourist typically plans destinations, arrives in the city, navigates between locations,
-            seeks assistance when needed, and finally provides feedback. This behavioral flow
-            forms the conceptual foundation of the system.
-        </p>
+        <p>Before applying any algorithm, the system is designed based on real tourist behavior. A tourist typically plans destinations, arrives in the city, navigates between locations, seeks assistance when needed, and finally provides feedback. This behavioral flow forms the conceptual foundation of the system.</p>
         <ul>
             <li>Destination planning before arrival</li>
             <li>Live location detection using GPS</li>
@@ -381,24 +247,13 @@
         </ul>
 
         <h3>3. System Architecture</h3>
-        <p>
-            The system consists of a tourist interface, GPS module, digital city map database,
-            and a navigation engine. The navigation engine processes routing requests and
-            provides optimized routes in real time.
-        </p>
+        <p>The system consists of a tourist interface, GPS module, digital city map database, and a navigation engine. The navigation engine processes routing requests and provides optimized routes in real time.</p>
 
         <h3>4. Graph-Based Data Representation</h3>
-        <p>
-            The city map is modeled as a weighted graph where intersections represent vertices,
-            roads represent edges, and distance or travel time acts as weights. This structure
-            enables efficient shortest-path computation.
-        </p>
+        <p>The city map is modeled as a weighted graph where intersections represent vertices, roads represent edges, and distance or travel time acts as weights. This structure enables efficient shortest-path computation.</p>
 
         <h3>Role of Dijkstra’s Algorithm</h3>
-        <p>
-            Dijkstra’s algorithm calculates the shortest path from the tourist’s current location
-            to the selected destination by considering distances or travel time as weights.
-        </p>
+        <p>Dijkstra’s algorithm calculates the shortest path from the tourist’s current location to the selected destination by considering distances or travel time as weights.</p>
 
         <h3>5. Dijkstra Algorithm Implementation</h3>
         <div class="algorithm-box">
@@ -417,10 +272,7 @@ while unvisited vertices exist
         </div>
 
         <h3>6. Real-Time Working of the Algorithm</h3>
-        <p>
-            As the tourist moves, the system continuously updates location data. If deviations
-            or changes occur, the algorithm is re-executed to ensure optimal navigation.
-        </p>
+        <p>As the tourist moves, the system continuously updates location data. If deviations or changes occur, the algorithm is re-executed to ensure optimal navigation.</p>
 
         <h3>7. SDG Alignment</h3>
         <ul>
@@ -439,12 +291,8 @@ while unvisited vertices exist
 
         <h3>9. Tourist Interaction Flow Diagram</h3>
         <div style="margin-top:20px; text-align:center;">
-            <img src="tourist and navigation.png" 
-                 alt="Tourist Navigation Interaction Flow"
-                 style="width:100%; max-width:900px; border-radius:12px;">
-            <p style="font-style:italic; margin-top:8px;">
-                Figure:Tourist Navigation System – User Interaction Flow
-            </p>
+            <img src="tourist and navigation.png" alt="Tourist Navigation Interaction Flow" style="width:100%; max-width:900px; border-radius:12px;">
+            <p style="font-style:italic; margin-top:8px;">Figure: Tourist Navigation System – User Interaction Flow</p>
         </div>
 
         <h3>10. Advantages and Limitations</h3>
@@ -463,12 +311,9 @@ while unvisited vertices exist
         </ul>
 
         <h3>11. Future Enhancement</h3>
-        <p>
-            Future improvements may include traffic prediction, AI-assisted personalization,
-            integration with accommodation services, and emergency response optimization.
-        </p>
+        <p>Future improvements may include traffic prediction, AI-assisted personalization, integration with accommodation services, and emergency response optimization.</p>
     </div>
-
 </div>
+
 </body>
 </html>
