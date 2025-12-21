@@ -152,52 +152,50 @@
         color: #00aaff;
         text-decoration: underline;
     }
-/* Sub-Sectors */
-.sub-sectors {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;       /* allow wrapping on smaller screens */
-    overflow-x: auto;
-    padding: 10px;
-    justify-content: center; /* center horizontally */
-    margin-bottom: 40px;
-}
 
-.sub-sectors div {
-    background-color: #000000;
-    color: #fff;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    /* Sub-Sectors */
+    .sub-sectors {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        padding: 10px;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .sub-sectors div {
+        background-color: #000000;
+        color: #fff;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .sub-sectors div:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-.sub-sectors div:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* Use Case Boxes */
-.usecase-box {
-    background-color: #ffffff;
-    padding: 22px;
-    border-left: 6px solid #3f6f3f;
-    border-radius: 10px;
-    margin: 15px auto;     /* center horizontally */
-    max-width: 800px;      /* optional: limit width */
-}
-
-.usecase-step { 
-    margin-bottom: 10px; 
-    font-size: 16px; 
-}
+    /* Use Case Boxes */
+    .usecase-box {
+        background-color: #ffffff;
+        padding: 22px;
+        border-left: 6px solid #3f6f3f;
+        border-radius: 10px;
+        margin: 15px auto;
+        max-width: 800px;
+    }
+    .usecase-step { 
+        margin-bottom: 10px; 
+        font-size: 16px; 
+    }
 
     /* Responsive */
     @media(max-width:900px){
@@ -208,6 +206,18 @@
         .sub-sectors { flex-direction: column; align-items: center; }
         .navbar { flex-direction: column; align-items: flex-start; }
         .navbar a { margin-left: 0; margin-top: 8px; }
+    }
+
+    /* Grey heading between white pages */
+    .grey-heading {
+        background-color: #e0e0e0;
+        padding: 20px 40px;
+        border-radius: 12px;
+        width: fit-content;
+        text-align: center;
+        color: #ff8800;
+        font-size: 2.6rem;
+        margin: 40px auto;
     }
 </style>
 </head>
@@ -226,19 +236,16 @@
     <button class="collapse-btn">Collapse</button>
 </div>
 
-<!-- Main Heading -->
-<h1 class="main-heading">Tourism </h1>
-
+<!-- First White Page -->
 <div class="page">
+    <h1 class="main-heading">Tourism</h1>
 
-    <!-- Section 1 -->
     <h2>Why I Chose the Tourism Sector</h2>
     <p>
         Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
         technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
     </p>
 
-    <!-- Section 2 -->
     <h2>Discover Vritdhara</h2>
     <p style="text-align:center; font-style:italic; margin-bottom:30px;">
         Culture • Cinema • Heritage • Nature
@@ -263,7 +270,6 @@
         </div>
     </div>
 
-    <!-- Problems -->
     <h2>Current Problems in the Tourism Sector</h2>
     <div class="problems-section">
         <div class="problems-list">
@@ -285,7 +291,6 @@
         </div>
     </div>
 
-    <!-- Innovation -->
     <h2>Why Innovation is Needed</h2>
     <p>
         Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
@@ -294,8 +299,6 @@
         Smart solutions help reduce chaos, manage crowds, improve safety, and boost local businesses.
     </p>
 
-    <!-- Sub-Sectors -->
-    
     <h2>Tourism Sector Sub-Divisions</h2>
     <div class="sub-sectors">
         <div>Tourist Info & Navigation</div>
@@ -305,11 +308,13 @@
         <div>Cleanliness & Sustainability</div>
         <div>Local Culture & Shopping</div>
     </div>
+</div>
 
-    <!-- Dijkstra Section -->
- <!-- Heading outside the white page -->
-<h1 class="main-heading">Tourism & Navigation System</h1>
+<!-- Grey Heading -->
+<h1 class="grey-heading">Tourism & Navigation System</h1>
 
+<!-- Second White Page -->
+<div class="page">
     <h3>1. Introduction and Problem Statement</h3>
     <p>
         Tourism plays a major role in economic development, but tourists often face difficulties
@@ -394,11 +399,7 @@ while unvisited vertices exist
         <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guides the tourist</div>
     </div>
 
-    <h3>8. Tourist Interaction Flow Diagram</h3>
-    <p>
-        This diagram visually represents how a tourist interacts with the navigation
-        system before algorithmic routing begins.
-    </p>
+    <h3>9. Tourist Interaction Flow Diagram</h3>
     <div style="margin-top:20px; text-align:center;">
         <img src="tourist and navigation.png" 
              alt="Tourist Navigation Interaction Flow"
@@ -408,7 +409,7 @@ while unvisited vertices exist
         </p>
     </div>
 
-    <h3>9. Advantages and Limitations</h3>
+    <h3>10. Advantages and Limitations</h3>
     <p><strong>Advantages:</strong></p>
     <ul>
         <li>Optimal route selection</li>
@@ -423,10 +424,12 @@ while unvisited vertices exist
         <li>Limited dynamic traffic handling</li>
     </ul>
 
-    <h3>10. Future Enhancement</h3>
+    <h3>11. Future Enhancement</h3>
     <p>
         Future improvements may include traffic prediction, AI-assisted personalization,
         integration with accommodation services, and emergency response optimization.
     </p>
+</div>
 
-</div> <!-- end of .page -->
+</body>
+</html>
