@@ -615,3 +615,148 @@ ALGORITHM RealisticGenerateAnalytics(bookingData)
 
 </div>
 <!-- -------------------- END ACCOMMODATION PAGE -------------------- -->
+
+
+<h1 class="grey-heading">Vritdhara Attractions Business Ideas</h1>
+<div class="page">
+
+<p>Vritdhara is home to unique cultural, cinematic, historical, and eco-tourism attractions. This framework highlights realistic business ideas, algorithms, visuals, and visitor analytics to grow tourism sustainably.</p>
+
+<h3>1. Attractions & Business Ideas</h3>
+<ul>
+    <li>🏛️ <strong>Cultural Emblem:</strong> Guided tours, boat rides, cultural workshops, QR-info kiosks.</li>
+    <li>🎬 <strong>Eterna Studio (Rajapuri):</strong> Studio tours, interactive film-shoot experiences, merchandise, booking slots.</li>
+    <li>🏰 <strong>Vrithdhara Palace:</strong> Heritage tours, audio guides, heritage cafe, souvenir shop.</li>
+    <li>🌿 <strong>National Park:</strong> Wildlife safaris, birdwatching, eco-educational walks, nature photo contests.</li>
+</ul>
+
+<h3>2. Revenue Model</h3>
+<ul>
+    <li>Ticket sales (regular, guided, premium)</li>
+    <li>Souvenir stores & local crafts</li>
+    <li>Photo packages & studio experiences</li>
+    <li>Event hosting (festivals, film fairs)</li>
+    <li>Service partnerships (hotels, transport)</li>
+</ul>
+
+<h3>3. Realistic Algorithms</h3>
+
+<h3>i) Sorting Algorithm 📊</h3>
+<div class="algorithm-box">
+ALGORITHM SortAttractions(attractions, criteria)  
+// Sort attractions by popularity, distance, or rating
+</div>
+<p class="explanation">Organizes attractions by visitor ratings, distance, or popularity so tourists can choose what suits them best.</p>
+
+<h3>ii) Recommendation Algorithm 🤖</h3>
+<div class="algorithm-box">
+ALGORITHM RecommendAttractions(userPreferences, attractions)  
+// Suggest attractions based on interests and past visits
+</div>
+<p class="explanation">Recommends attractions based on preferences (e.g., cultural lovers see Cultural Emblem first), enhancing satisfaction.</p>
+
+<h3>iii) Analytics Algorithm 📈</h3>
+<div class="algorithm-box">
+ALGORITHM GenerateAttractionAnalytics(visitorData)  
+// Track visitor trends, peak hours, and revenue
+</div>
+<p class="explanation">Analyzes visitor patterns to identify peak times and high-revenue attractions, guiding staffing and pricing strategies.</p>
+
+<h3>iv) Queue Management Algorithm ⏳</h3>
+<div class="algorithm-box">
+ALGORITHM ManageVisitorQueue(attraction)  
+// Limit entries and route visitors to quieter times
+</div>
+<p class="explanation">Helps reduce overcrowding by suggesting less busy time slots, improving visitor flow and satisfaction.</p>
+
+<h3>v) Dynamic Pricing Algorithm 💰</h3>
+<div class="algorithm-box">
+ALGORITHM AdjustTicketPrices(time, season, demand)  
+// Adjust prices based on peak/off-peak demand
+</div>
+<p class="explanation">Adjusts pricing dynamically to maximize revenue while managing visitor distribution.</p>
+
+<h3>4. Analytics & Visitor Trends</h3>
+<div style="text-align:center; margin:30px 0;">
+    <canvas id="visitorChart" width="1200" height="650"></canvas>
+</div>
+
+<p class="explanation">
+<strong>Visitor Trends Explained:</strong><br>
+The bar chart shows **monthly visitor counts for each attraction** in Vritdhara. Data is intentionally non-uniform to reflect realistic visitor behavior:  
+<ul style="text-align:left; display:inline-block; font-size:18px; margin-top:10px;">
+    <li><strong>Cultural Emblem:</strong> Peaks in May & July; slight dip in June due to maintenance.</li>
+    <li><strong>Eterna Studio:</strong> High activity in April & August when film shoots are scheduled.</li>
+    <li><strong>Vrithdhara Palace:</strong> Steady flow with surge in February (heritage week), moderate dips in March & June.</li>
+    <li><strong>National Park:</strong> Fluctuates based on wildlife sightings; peak in Mar-Apr, drops in monsoon.</li>
+</ul>
+This messy chart helps optimize **crowd flow, staffing, pricing, and event scheduling**.
+</p>
+
+<script>
+const ctx = document.getElementById('visitorChart').getContext('2d');
+const visitorChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [
+            { label: 'Cultural Emblem', data:[120, 180, 150, 200, 220, 160], backgroundColor:'#FF6384' },
+            { label: 'Eterna Studio', data:[80, 110, 95, 160, 140, 100], backgroundColor:'#36A2EB' },
+            { label: 'Vrithdhara Palace', data:[60, 140, 90, 130, 120, 80], backgroundColor:'#FFCE56' },
+            { label: 'National Park', data:[40, 90, 120, 100, 70, 50], backgroundColor:'#4BC0C0' }
+        ]
+    },
+    options: {
+        responsive:false,
+        plugins: {
+            legend:{position:'top'},
+            title:{display:true, text:'Monthly Visitor Trends for Vritdhara Attractions (Realistic Data)'}
+        },
+        scales: { 
+            y:{beginAtZero:true}
+        }
+    }
+});
+</script>
+
+<h3>5. Advantages & Limitations</h3>
+<ul>
+    <li>✅ Enhances visitor experience and satisfaction</li>
+    <li>✅ Supports data-driven revenue planning</li>
+    <li>❌ Requires initial investment for analytics & apps</li>
+    <li>❌ Needs regular data updates</li>
+</ul>
+
+<h3>6. Future Enhancements</h3>
+<ul>
+    <li>AI-driven personalized tour plans</li>
+    <li>AR experiences at Cultural Emblem & Palace</li>
+    <li>Seasonal festivals & film-themed events</li>
+</ul>
+
+<h3>7. SDG Alignment</h3>
+<ul>
+    <li>🌱 SDG 8: Promote sustainable economic growth through tourism</li>
+    <li>🏙️ SDG 11: Preserve cultural heritage and natural environments</li>
+</ul>
+
+<h3>8. Innovative Technology-Based Implementation Ideas</h3>
+<ul>
+    <li>🕶️ <strong>AR/VR Guided Tours:</strong> Historical reconstructions & interactive hotspots for Cultural Emblem, Palace, or National Park.</li>
+    <li>📊 <strong>Smart Visitor Analytics & Recommendation:</strong> Real-time flow tracking & attraction suggestions based on interests.</li>
+    <li>🔔 <strong>Personalized Event Notifications:</strong> Alerts about workshops, festivals, or wildlife tours per visitor preference.</li>
+    <li>🎯 <strong>Gamification & Tourist Challenges:</strong> Points, badges, and rewards for visiting attractions & completing interactive tasks.</li>
+    <li>🌱 <strong>Eco & Cultural Sustainability Tracker:</strong> Reward eco-friendly behavior and participation in cultural workshops.</li>
+    <li>💰 <strong>Dynamic Pricing & Smart Booking:</strong> Optimize ticket prices based on demand and reduce overcrowding.</li>
+    <li>🖥️ <strong>Interactive Storytelling Kiosks:</strong> AR/VR stories, 3D maps, and personalized audio guides at attractions.</li>
+</ul>
+
+<p class="explanation">
+<strong>Integration into Business Case:</strong><br>
+Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience”</em>, enhancing visitor engagement, optimizing operations, increasing revenue, and supporting sustainable tourism.
+</p>
+
+</div>
+</body>
+</html>
+
