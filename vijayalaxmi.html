@@ -649,131 +649,229 @@ p {
 </body>
 </html>
 <!-- ================= PAGE HEADING (OUTSIDE GREY PAGE) ================= -->
-<div style="background:#121212; padding:40px 0 30px 0;">
-  <h1 style="text-align:center;color:#ffcc00;margin:0;font-size:2.4rem;">
-    Tourist Info & Navigation
-  </h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tourism and Navigation System</title>
 
-<!-- ================= COMMON STYLES ================= -->
 <style>
-.section-grey{
-  width:100%;
-  background:#2a2a2a;
-  padding:50px 20px;
-  box-sizing:border-box;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+    }
 
-.content{
-  max-width:800px;
-  margin:auto;
-  font-family:'Poppins', sans-serif;
-  line-height:1.7;
-}
+    /* Main Heading */
+    h1 {
+        text-align: center;
+        color: orange;
+        margin: 30px 0 20px;
+    }
 
-p{ color:#cfeee2; }
+    /* Grey Page (Page-like breadth) */
+    .page {
+        width: 72%;
+        min-height: 90vh;
+        margin: auto;
+        background-color: #e0e0e0;
+        padding: 40px 50px;
+        box-sizing: border-box;
+    }
 
-.sub-head{
-  color:#5fd3a2;
-  font-weight:600;
-  font-size:1.1rem;
-  border-left:4px solid #5fd3a2;
-  padding-left:10px;
-}
+    h2 {
+        color: #7fbf7f; /* pastel green */
+    }
 
-.algo-btn{
-  background:#5fd3a2;
-  color:#1a1a1a;
-  border:none;
-  padding:10px 22px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0 16px 0;
-}
+    h3 {
+        color: #3f6f3f; /* pastel dark green */
+        margin-top: 28px;
+    }
 
-.code-box{
-  display:none;
-  background:#a9e7cb;
-  color:#1a1a1a;
-  padding:16px;
-  border-radius:10px;
-  font-family:monospace;
-  white-space:pre-wrap;
-  margin-bottom:35px;
-}
+    p {
+        text-align: justify;
+        line-height: 1.6;
+    }
 
-hr{
-  border:0;
-  height:1px;
-  background:#444;
-  margin:35px 0;
-}
+    ul {
+        margin-left: 20px;
+    }
+
+    /* Two Column Layout */
+    .row {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+        align-items: flex-start;
+    }
+
+    .left {
+        width: 55%;
+    }
+
+    .right {
+        width: 45%;
+        text-align: center;
+    }
+
+    .right img {
+        width: 100%;
+        max-width: 360px;
+        border-radius: 10px;
+    }
+
+    /* Flow Styling */
+    .flow p {
+        margin: 10px 0;
+    }
+
+    /* Minimal Aesthetic Algorithm Button */
+    .accordion {
+        background-color: #3f6f3f;
+        color: white;
+        cursor: pointer;
+        padding: 8px 18px;
+        border: none;
+        font-size: 14px;
+        border-radius: 22px;
+        width: fit-content;
+        min-width: 210px;
+        margin-top: 15px;
+    }
+
+    /* Algorithm Panel */
+    .panel {
+        display: none;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 12px;
+        width: 95%;
+    }
+
+    pre {
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 13px;
+    }
 </style>
+</head>
+
+<body>
+
+<h1>Tourism and Navigation System</h1>
+
+<div class="page">
+
+    <!-- SDG Section -->
+    <h2>1. Tourist Info & Navigation</h2>
+    <p><strong>Aligned SDGs:</strong> 9, 11</p>
+    <ul>
+        <li>Real-time routes & updates</li>
+        <li>Reduces overcrowding</li>
+        <li>Improves navigation</li>
+    </ul>
+
+    <!-- Overview -->
+    <h3>Tourism and Navigation Overview</h3>
+    <p>
+        A Tourism and Navigation System is a smart digital solution designed to help tourists easily locate attractions,
+        accommodations, and essential services while navigating through a city efficiently. In real time, the system uses
+        GPS to detect the tourist’s current location and displays it on an interactive digital map along with nearby points
+        of interest such as monuments, hotels, restaurants, hospitals, and transport facilities. For route planning,
+        Dijkstra’s algorithm is used to compute the shortest and most efficient path between the tourist’s location and the
+        selected destination, ensuring minimum distance or travel time.
+    </p>
+
+    <!-- Flow Section -->
+    <h3>Flow of Dijkstra Algorithm in Real-Time Tourist Navigation</h3>
+
+    <div class="row">
+
+        <!-- Flow Left -->
+        <div class="left flow">
+            <p>📍 <strong>Step 1: Tourist Location Detection</strong><br>
+               GPS captures the tourist’s current location and sets it as the source vertex (s).</p>
+
+            <p>🏛️ <strong>Step 2: Destination Selection</strong><br>
+               Tourist selects a destination such as an attraction or hotel.</p>
+
+            <p>🗺️ <strong>Step 3: City Map as Graph</strong><br>
+               Intersections → Vertices (V), Roads → Edges (E), Distance/Time → Weights.</p>
+
+            <p>⚙️ <strong>Step 4: Algorithm Execution</strong><br>
+               Dijkstra’s algorithm computes the shortest path.</p>
+
+            <p>🧭 <strong>Step 5: Route Visualization</strong><br>
+               Optimal route displayed with distance and directions.</p>
+
+            <p>🔄 <strong>Step 6: Real-Time Updates</strong><br>
+               Route recalculated if traffic or deviation occurs.</p>
+        </div>
+
+        <!-- Image Right -->
+        <div class="right">
+            <img src="tourist-navigation-flow.png" alt="Tourist Navigation Flow">
+            <p><em>Tourist Navigation System Flow Diagram</em></p>
+        </div>
+
+    </div>
+
+    <!-- Algorithm Section -->
+    <h3>Dijkstra Algorithm</h3>
+
+    <button class="accordion">View Dijkstra Algorithm</button>
+
+    <div class="panel">
+<pre>
+ALGORITHM Dijkstra(G, s)
+// Dijkstra’s algorithm for single source shortest path
+// Input: A weighted connected graph G(V, E) with non-negative weights and its vertex s
+// Output: the length dv of a shortest path from s to v and its penultimate vertex pv
+// for every vertex v in V
+
+Initialize(Q)          // Initialize vertex priority queue to empty
+
+for every vertex v in V do
+    dv ← ∞
+    pv ← null
+    Insert(Q, v, dv)   // Initialize vertex priority in priority queue
+
+ds ← 0
+Decrease(Q, s, ds)     // Update priority of s with ds
+
+VT ← Ø
+
+for i ← 0 to |V| − 1 do
+    u* ← DeleteMin(Q)
+    VT ← VT ∪ {u*}
+
+    for every vertex u in V − VT that is adjacent to u* do
+        if du* + w(u*, u) < du then
+            du ← du* + w(u*, u)
+            pu ← u*
+            Decrease(Q, u, du)
+</pre>
+    </div>
+
+</div>
 
 <script>
-function toggleCode(id){
-  var box=document.getElementById(id);
-  box.style.display=(box.style.display==="block")?"none":"block";
-}
+const acc = document.querySelector(".accordion");
+const panel = document.querySelector(".panel");
+
+acc.onclick = function () {
+    panel.style.display =
+        panel.style.display === "block" ? "none" : "block";
+};
 </script>
 
-<div class="section-grey">
-<div class="content">
+</body>
+</html>
 
-<p class="sub-head">Dijkstra – Shortest Path</p>
-<p>Finds the shortest route between tourist locations, reducing travel time and improving navigation.</p>
-<button class="algo-btn" onclick="toggleCode('dijkstra')">View Algorithm</button>
-<div class="code-box" id="dijkstra">
-Initialize distances to ∞
-Set source distance = 0
-Use priority queue
-Relax edges
-Update shortest paths
-</div>
-
-<hr>
-
-<p class="sub-head">BFS & DFS – Exploration</p>
-<p>BFS explores nearby places level-by-level, DFS checks deep connectivity.</p>
-<button class="algo-btn" onclick="toggleCode('bfsdfs')">View Algorithm</button>
-<div class="code-box" id="bfsdfs">
-BFS: Queue based traversal
-DFS: Recursive depth traversal
-</div>
-
-<hr>
-
-<p class="sub-head">Trie & KMP – Fast Search</p>
-<p>Trie speeds up place-name search, KMP efficiently matches keywords.</p>
-<button class="algo-btn" onclick="toggleCode('triekmp')">View Algorithm</button>
-<div class="code-box" id="triekmp">
-Trie: Prefix insertion & search
-KMP: LPS based pattern matching
-</div>
-
-<hr>
-
-<p class="sub-head">Greedy – Crowd Control</p>
-<p>Selects least crowded tourist spot to reduce congestion.</p>
-<button class="algo-btn" onclick="toggleCode('greedy')">View Algorithm</button>
-<div class="code-box" id="greedy">
-Choose minimum crowd value
-Recommend location
-</div>
-
-<hr>
-
-<p class="sub-head">Dynamic Programming – Tour Planning</p>
-<p>Optimizes tourist schedules within limited time.</p>
-<button class="algo-btn" onclick="toggleCode('dp')">View Algorithm</button>
-<div class="code-box" id="dp">
-DP[i][t] = max satisfaction
-Choose optimal visits
-</div>
-
-</div>
-</div>
 
 
 
