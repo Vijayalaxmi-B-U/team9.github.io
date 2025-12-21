@@ -328,137 +328,191 @@ while unvisited vertices exist
         <h3>11. Future Enhancement</h3>
         <p>Future improvements may include traffic prediction, AI-assisted personalization, integration with accommodation services, and emergency response optimization.</p>
     </div>
+<!-- -------------------- ACCOMMODATION PAGE -------------------- -->
+<!-- -------------------- ACCOMMODATION PAGE -------------------- -->
+<h1 class="grey-heading">B-City Accommodation System</h1>
+<div class="page">
 
-    <!-- -------------------- ACCOMMODATION PAGE -------------------- -->
-    <h1 class="grey-heading">B-City Accommodation System</h1>
-    <div class="page">
-        <h2>Connection with Navigation</h2>
-        <p>Accommodation and navigation are closely connected in tourism. Tourists need comfortable lodging and efficient routes to reach attractions, restaurants, and cultural sites. By integrating accommodation data with navigation, tourists can select lodging near points of interest, plan itineraries efficiently, and enjoy a seamless travel experience, while also contributing to the local economy.</p>
+    <h2>Connection with Navigation</h2>
+    <p>Accommodation and navigation are closely connected in tourism. Tourists need comfortable lodging and efficient routes to reach attractions, restaurants, and cultural sites. By integrating accommodation data with navigation, tourists can select lodging near points of interest, plan itineraries efficiently, and enjoy a seamless travel experience, while also contributing to the local economy.</p>
 
-        <h2>Importance of Accommodation</h2>
-        <p>Accommodation is crucial for ensuring comfort, safety, and convenience for tourists. Quality lodging encourages longer stays and repeat visits, and directly impacts the perception of the city as a tourist-friendly destination. Diverse options, from budget hostels to luxury hotels, ensure that tourists of all types can find suitable lodging.</p>
+    <h2>Importance of Accommodation</h2>
+    <p>Accommodation is crucial for ensuring comfort, safety, and convenience for tourists. Quality lodging encourages longer stays and repeat visits, and directly impacts the perception of the city as a tourist-friendly destination. Diverse options, from budget hostels to luxury hotels, ensure that tourists of all types can find suitable lodging.</p>
 
-        <h2>Stakeholder Responsibilities</h2>
-        <ul>
-            <li>🧳 <strong>Tourists:</strong> Select suitable accommodation, provide honest reviews, follow guidelines.</li>
-            <li>🏨 <strong>Hotels/Hostels/Resorts:</strong> Maintain accurate listings, hygiene, quality, amenities, and respond to feedback.</li>
-            <li>🍽️ <strong>Restaurants:</strong> Maintain food quality & hygiene, provide accurate location and timing, respond to reviews, collaborate with nearby accommodations.</li>
-            <li>🏙️ <strong>City:</strong> Use collected data for planning, tourism promotion, and sustainable economic growth.</li>
-        </ul>
+    <h2>Stakeholder Responsibilities</h2>
+    <ul>
+        <li>🧳 <strong>Tourists:</strong> Select suitable accommodation, provide honest reviews, follow guidelines.</li>
+        <li>🏨 <strong>Hotels/Hostels/Resorts:</strong> Maintain accurate listings, hygiene, quality, amenities, and respond to feedback.</li>
+        <li>🍽️ <strong>Restaurants:</strong> Maintain food quality & hygiene, provide accurate location and timing, respond to reviews, collaborate with nearby accommodations.</li>
+        <li>🏙️ <strong>City:</strong> Use collected data for planning, tourism promotion, and sustainable economic growth.</li>
+    </ul>
 
-        <h2>Proposed Solution</h2>
-        <p>Tourist accommodation is a critical component of the travel experience, providing safety, comfort, and convenience that directly influence satisfaction and duration of stay. By accessing a centralized system, tourists can explore a wide range of lodging options, filter them based on preferences such as price, rating, amenities, and proximity to attractions, and make informed booking decisions. Hotels and restaurants provide accurate information, maintain quality, offer essential amenities, and respond promptly to feedback. Their performance directly impacts tourist satisfaction and city reputation. Effective integration increases occupancy, boosts tourist spending, and generates employment. Data visualized via graphs—showing occupancy trends, price distributions, ratings, and tourist behavior—helps city planners and service providers optimize infrastructure and promotions. The accommodation system strengthens tourist experience, operational efficiency of hotels/restaurants, and contributes to sustainable economic growth.</p>
-<!-- Images Section -->
-<img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Hotel Lobby">
-<div class="img-caption">Hotel lobby representing organized and modern accommodation facilities.</div>
+    <h2>Proposed Solution</h2>
+    <p>Tourist accommodation is a critical component of the travel experience, providing safety, comfort, and convenience that directly influence satisfaction and duration of stay. By accessing a centralized system, tourists can explore a wide range of lodging options, filter them based on preferences such as price, rating, amenities, and proximity to attractions, and make informed booking decisions. Hotels and restaurants provide accurate information, maintain quality, offer essential amenities, and respond promptly to feedback. Their performance directly impacts tourist satisfaction and city reputation. Effective integration increases occupancy, boosts tourist spending, and generates employment. Data visualized via graphs—showing occupancy trends, price distributions, ratings, and tourist behavior—helps city planners and service providers optimize infrastructure and promotions. The accommodation system strengthens tourist experience, operational efficiency of hotels/restaurants, and contributes to sustainable economic growth.</p>
 
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Homestay">
-<div class="img-caption">Homestay providing a personalized and cultural experience for tourists.</div>
+    <!-- Images Section -->
+   <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" 
+     alt="Hotel Lobby" 
+     style="width:100%; max-width:400px; max-height:250px; object-fit:cover; display:block; margin:auto;">
+<p style="font-size:16px; color:#333; text-align:center; margin-bottom:25px;">
+    <strong>Hotel Lobby:</strong> Modern, organized lobby representing high-quality accommodation facilities. Ensures comfort, convenience, and a positive first impression. Proper layout, cleanliness, and amenities enhance guest satisfaction and encourage repeat visits.
+</p>
 
 
-        <h2>Algorithms Supporting the System</h2>
-        <h3>Filtering Algorithm 🧰</h3>
-        <div class="algorithm-box">
-ALGORITHM FilterServices(services, filters)
-for each service in services
-    match ← true
-    for each filter in filters
-        if service does not satisfy filter
-            match ← false
-    if match
-        add service to filteredList
+
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Homestay" style="width:100%; max-width:600px; display:block; margin:auto;">
+<p style="font-size:16px; color:#333; text-align:center; margin-bottom:25px;">
+    <strong>Homestay Experience:</strong> Personalized and cultural lodging offering tourists an authentic experience. Supports local communities, promotes cultural exchange, and allows visitors to enjoy comfort while connecting with local traditions.
+</p>
+
+
+    <h2>Algorithms Supporting the System</h2>
+    <h3>Filtering Algorithm 🧰</h3>
+    <div class="algorithm-box">
+ALGORITHM FilterServices(services, filters)<br>
+for each service in services<br>
+  match ← true<br>
+  for each filter in filters<br>
+    if service does not satisfy filter<br>
+      match ← false<br>
+  if match<br>
+    add service to filteredList<br>
 return filteredList
-        </div>
-        <p>This algorithm filters accommodations/restaurants by user preferences like price, rating, amenities, and location. It ensures that tourists see only relevant options efficiently, enhancing their decision-making experience.</p>
-
-        <h3>Sorting Algorithm 📊</h3>
-        <div class="algorithm-box">
-ALGORITHM SortServices(services, sortKey)
-sort services based on sortKey (price, rating, distance)
-return sortedList
-        </div>
-        <p>This algorithm sorts filtered accommodation results based on criteria such as price, rating, or distance. It helps tourists quickly identify the most suitable options according to their priorities.</p>
-
-        <h3>Recommendation Algorithm 🤖</h3>
-        <div class="algorithm-box">
-ALGORITHM RecommendServices(user, services)
-for each service in services
-    score ← similarity(user.preferences, service.features)
-sort services by score
-return top recommended services
-        </div>
-        <p>This algorithm provides personalized recommendations based on tourist preferences, past bookings, and similar user behavior. It helps tourists discover accommodations they are most likely to enjoy.</p>
-
-        <h3>Analytics Algorithm 📈</h3>
-        <div class="algorithm-box">
-ALGORITHM GenerateAnalytics(bookingData)
-calculate occupancyTrend, avgRatings, revenuePerService
-display graphs for each metric
-return dashboard
-        </div>
-        <p>This algorithm collects and visualizes data on occupancy trends, ratings, revenue, and tourist behavior. It aids hotel managers and city planners in making informed strategic decisions.</p>
-
-        <h2>Analytics & Insights</h2>
-        <canvas id="occupancyChart" width="700" height="350"></canvas>
-        <p><strong>Explanation:</strong> This line graph shows hotel occupancy trends across months. Peak months are highlighted, helping hotels optimize pricing, staff, and services. The city can plan infrastructure and transport accordingly. Higher occupancy during peak season contributes directly to local economic growth through increased spending.</p>
-
-        <canvas id="ratingChart" width="700" height="350"></canvas>
-        <p><strong>Explanation:</strong> This bar graph shows the distribution of hotel ratings. It highlights quality across the city and helps tourists make informed choices. Hotels can identify areas for improvement. Higher-rated hotels attract more tourists, boosting economic activity.</p>
-
-        <canvas id="priceChart" width="700" height="350"></canvas>
-        <p><strong>Explanation:</strong> This graph shows the price distribution of accommodations. It helps tourists choose budget-friendly or premium options. Hotels can adjust pricing competitively. Affordable lodging attracts diverse tourists, increasing city-wide revenue.</p>
-
-        <script>
-            const occupancyCtx = document.getElementById('occupancyChart').getContext('2d');
-            const occupancyChart = new Chart(occupancyCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-                    datasets: [{label:'Occupancy %', data:[60,70,75,80,85,90,95,90,80,75,65,60], borderColor:'#3498db', fill:false, tension:0.3}]
-                },
-                options:{ responsive:true, plugins:{title:{display:true,text:'Hotel Occupancy Trend', color:'#2c3e50', font:{size:16}}, legend:{labels:{color:'#2c3e50', font:{size:12}}}}, scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}} }
-            });
-
-            const ratingCtx = document.getElementById('ratingChart').getContext('2d');
-            const ratingChart = new Chart(ratingCtx, {
-                type: 'bar',
-                data: { labels:['⭐','⭐⭐','⭐⭐⭐','⭐⭐⭐⭐','⭐⭐⭐⭐⭐'], datasets:[{label:'Number of Hotels', data:[2,5,10,8,4], backgroundColor:'#e67e22'}] },
-                options:{ responsive:true, plugins:{title:{display:true,text:'Hotel Rating Distribution', color:'#2c3e50', font:{size:16}}, legend:{labels:{color:'#2c3e50', font:{size:12}}}}, scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}} }
-            });
-
-            const priceCtx = document.getElementById('priceChart').getContext('2d');
-            const priceChart = new Chart(priceCtx, {
-                type:'bar',
-                data:{ labels:['< $50','$50-100','$100-150','$150-200','> $200'], datasets:[{label:'Number of Hotels', data:[5,12,8,6,3], backgroundColor:'#2ecc71'}] },
-                options:{ responsive:true, plugins:{title:{display:true,text:'Price Distribution of Hotels', color:'#2c3e50', font:{size:16}}, legend:{labels:{color:'#2c3e50', font:{size:12}}}}, scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}} }
-            });
-        </script>
-
-        <h2>Advantages & Limitations</h2>
-        <ul>
-            <li>✅ Centralized information for tourists and service providers</li>
-            <li>✅ Improves booking convenience and satisfaction</li>
-            <li>✅ Personalized recommendations and analytics for business growth</li>
-            <li>❌ Real-time updates require internet & data maintenance</li>
-            <li>❌ Large datasets may slow filtering/sorting if not optimized</li>
-        </ul>
-
-        <h2>Future Enhancements</h2>
-        <ul>
-            <li>AI-driven personalized recommendations and predictive pricing</li>
-            <li>Eco-friendly and sustainable accommodation filters</li>
-            <li>Dynamic availability updates & mobile notifications</li>
-            <li>Integrated city-level analytics dashboard for economic planning</li>
-        </ul>
-
-        <h2>SDG Alignment</h2>
-        <ul>
-            <li>🌱 SDG 8: Promote economic growth and employment through tourism and hospitality</li>
-            <li>🏙️ SDG 11: Sustainable cities & communities</li>
-            <li>🍽️ SDG 12: Responsible consumption & production in accommodations and restaurants</li>
-        </ul>
     </div>
-</div>
+    <p>This algorithm filters accommodations/restaurants by user preferences like price, rating, amenities, and location. It ensures tourists see only relevant options efficiently.</p>
 
-</body>
-</html>
+    <h3>Sorting Algorithm 📊</h3>
+    <div class="algorithm-box">
+ALGORITHM SortServices(services, sortKey)<br>
+sort services based on sortKey (price, rating, distance)<br>
+return sortedList
+    </div>
+    <p>This algorithm sorts filtered accommodation results based on criteria such as price, rating, or distance, helping tourists identify the most suitable options.</p>
+
+    <h3>Recommendation Algorithm 🤖</h3>
+    <div class="algorithm-box">
+ALGORITHM RecommendServices(user, services)<br>
+for each service in services<br>
+  score ← similarity(user.preferences, service.features)<br>
+sort services by score<br>
+return top recommended services
+    </div>
+    <p>Provides personalized recommendations based on tourist preferences, past bookings, and similar user behavior, increasing satisfaction and engagement.</p>
+
+    <h3>Analytics Algorithm 📈</h3>
+    <div class="algorithm-box">
+ALGORITHM GenerateAnalytics(bookingData)<br>
+calculate occupancyTrend, avgRatings, revenuePerService<br>
+display graphs for each metric<br>
+return dashboard
+    </div>
+    <p>Collects and visualizes data on occupancy trends, ratings, revenue, and tourist behavior to aid hotel managers and city planners in making informed strategic decisions.</p>
+
+    <h2>Analytics & Insights</h2>
+
+  <!-- Slightly Bigger Occupancy Chart -->
+<div style="width:500px; height:300px; margin:auto;">
+    <canvas id="occupancyChart"></canvas>
+</div>
+<p style="font-size:16px; color:#333; text-align:center; margin-top:10px; margin-bottom:25px;">
+    <strong>Occupancy Trend:</strong> Line graph showing monthly hotel occupancy. Peaks indicate high tourist influx, helping hotels optimize staffing, pricing, and services. City planners can enhance transport and infrastructure during peak months. Efficient occupancy management directly supports economic growth and improves overall tourist satisfaction.
+</p>
+
+<!-- Rating Chart -->
+<div style="width:500px; height:300px; margin:auto;">
+    <canvas id="ratingChart"></canvas>
+</div>
+<p style="font-size:16px; color:#333; text-align:center; margin-top:10px; margin-bottom:25px;">
+    <strong>Hotel Ratings:</strong> Bar graph showing distribution of hotel ratings. Helps tourists select high-quality accommodations and assists hotels in improving services. Higher-rated hotels attract more visitors, encouraging repeat tourism and boosting local revenue.
+</p>
+
+<!-- Price Chart -->
+<div style="width:500px; height:300px; margin:auto;">
+    <canvas id="priceChart"></canvas>
+</div>
+<p style="font-size:16px; color:#333; text-align:center; margin-top:10px; margin-bottom:25px;">
+    <strong>Price Distribution:</strong> Graph showing hotel pricing ranges. Tourists can plan budgets and select preferred options. Hotels can adjust pricing to attract diverse tourists, promoting inclusive tourism and supporting city-wide economic growth.
+</p>
+
+
+    <script>
+        const occupancyCtx = document.getElementById('occupancyChart').getContext('2d');
+        const occupancyChart = new Chart(occupancyCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                datasets: [{label:'Occupancy %', data:[60,70,75,80,85,90,95,90,80,75,65,60], borderColor:'#3498db', fill:true, backgroundColor:'rgba(52,152,219,0.2)', tension:0.3}]
+            },
+            options: {
+                responsive:true,
+                maintainAspectRatio:false,
+                plugins: {
+                    title:{display:true,text:'Hotel Occupancy Trend', color:'#2c3e50', font:{size:14}},
+                    legend:{labels:{color:'#2c3e50', font:{size:12}}}
+                },
+                scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}}
+            }
+        });
+
+        const ratingCtx = document.getElementById('ratingChart').getContext('2d');
+        const ratingChart = new Chart(ratingCtx, {
+            type: 'bar',
+            data: { labels:['⭐','⭐⭐','⭐⭐⭐','⭐⭐⭐⭐','⭐⭐⭐⭐⭐'], datasets:[{label:'Number of Hotels', data:[2,5,10,8,4], backgroundColor:'#e67e22'}] },
+            options: {
+                responsive:true,
+                maintainAspectRatio:false,
+                plugins: {
+                    title:{display:true,text:'Hotel Rating Distribution', color:'#2c3e50', font:{size:14}},
+                    legend:{labels:{color:'#2c3e50', font:{size:12}}}
+                },
+                scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}}
+            }
+        });
+
+        const priceCtx = document.getElementById('priceChart').getContext('2d');
+        const priceChart = new Chart(priceCtx, {
+            type:'bar',
+            data:{ labels:['< $50','$50-100','$100-150','$150-200','> $200'], datasets:[{label:'Number of Hotels', data:[5,12,8,6,3], backgroundColor:'#2ecc71'}] },
+            options:{
+                responsive:true,
+                maintainAspectRatio:false,
+                plugins:{
+                    title:{display:true,text:'Price Distribution of Hotels', color:'#2c3e50', font:{size:14}},
+                    legend:{labels:{color:'#2c3e50', font:{size:12}}}
+                },
+                scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}}
+            }
+        });
+    </script>
+
+    <h2>Advantages & Limitations</h2>
+    <ul>
+        <li>✅ Centralized information for tourists and service providers</li>
+        <li>✅ Improves booking convenience and satisfaction</li>
+        <li>✅ Personalized recommendations and analytics for business growth</li>
+        <li>❌ Real-time updates require internet & data maintenance</li>
+        <li>❌ Large datasets may slow filtering/sorting if not optimized</li>
+    </ul>
+
+    <h2>Future Enhancements</h2>
+    <ul>
+        <li>AI-driven personalized recommendations and predictive pricing</li>
+        <li>Eco-friendly and sustainable accommodation filters</li>
+        <li>Dynamic availability updates & mobile notifications</li>
+        <li>Integrated city-level analytics dashboard for economic planning</li>
+    </ul>
+
+    <h2>SDG Alignment</h2>
+    <ul>
+        <li>🌱 SDG 8: Promote economic growth and employment through tourism and hospitality</li>
+        <li>🏙️ SDG 11: Sustainable cities & communities</li>
+        <li>🍽️ SDG 12: Responsible consumption & production in accommodations and restaurants</li>
+        <li>🔮 Future: Integrate eco-friendly accommodations & AI-driven smart tourism for sustainability and inclusivity</li>
+    </ul>
+
+</div>
+<!-- -------------------- END ACCOMMODATION PAGE -------------------- -->
+
+
+
+
