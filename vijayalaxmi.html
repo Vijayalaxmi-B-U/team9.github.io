@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vijayalakshmi - Tourism Sector</title>
+<title>Vijayalakshmi - Tourism & Navigation</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
     body {
@@ -14,24 +14,22 @@
         color: #1a1a1a;
     }
 
-    /* Navbar on top */
+    /* Navbar */
     .navbar {
         width: 100%;
-        background-color: #1a237e; /* deep blue */
+        background-color: #1a237e;
         display: flex;
         align-items: center;
         padding: 12px 30px;
         box-sizing: border-box;
         flex-wrap: wrap;
     }
-
     .navbar h2 {
         color: #ffffff;
         margin: 0;
-        font-size: 1.6rem; /* slightly smaller */
+        font-size: 1.6rem;
         flex: 1;
     }
-
     .navbar a {
         color: #ffffff;
         text-decoration: none;
@@ -41,12 +39,10 @@
         border-radius: 8px;
         transition: background 0.3s;
     }
-
     .navbar a:hover {
         background-color: #3949ab;
     }
-
-    .collabz-btn {
+    .collapse-btn {
         background-color: #3949ab;
         color: #fff;
         border: none;
@@ -57,58 +53,50 @@
         font-size: 0.9rem;
     }
 
-    /* Main heading OUTSIDE white page */
-h1, .main-heading {
-    font-size: 2.6rem;   /* largest heading */
-    text-align: center;
-    color: #ff8800;
-    margin: 25px 0;
-}
+    /* Headings and paragraphs */
+    h1, .main-heading {
+        font-size: 2.6rem;
+        text-align: center;
+        color: #ff8800;
+        margin: 25px 0;
+    }
+    h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        color: #3f6f3f;
+        margin: 20px 0 15px 0;
+    }
+    h3 {
+        font-size: 1.8rem;
+        color: #3f6f3f;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 1.9;
+        text-align: justify;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+    }
+    ul {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-left: 25px;
+        margin-bottom: 20px;
+    }
 
-/* White page */
-.page {
-    width: 75%;
-    margin: auto;
-    padding: 40px 50px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-sizing: border-box;
-}
+    /* White page container */
+    .page {
+        width: 75%;
+        margin: auto;
+        padding: 40px 50px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
 
-/* Section headings */
-h2 {
-    font-size: 2.2rem;   /* slightly smaller than h1 */
-    text-align: center;
-    color: #3f6f3f;
-    margin: 20px 0 15px 0;
-}
-
-/* Sub-headings inside sections */
-h3 {
-    font-size: 1.8rem;   /* smaller than h2, readable */
-    color: #3f6f3f;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Paragraphs */
-p {
-    font-size: 22px;      /* readable */
-    line-height: 1.9;     /* good spacing */
-    text-align: justify;
-    margin-bottom: 20px;
-    color: #1a1a1a;
-}
-
-/* Lists */
-ul {
-    font-size: 18px;      /* match paragraph */
-    line-height: 1.8;
-    margin-left: 25px;
-    margin-bottom: 20px;
-}
-
-    /* Highlight Boxes */
+    /* Highlights */
     .highlights {
         display: flex;
         justify-content: space-between;
@@ -116,7 +104,6 @@ ul {
         gap: 20px;
         margin-bottom: 40px;
     }
-
     .highlight-box {
         flex: 1 1 calc(25% - 20px);
         background-color: #fff4cc;
@@ -128,17 +115,14 @@ ul {
         min-width: 200px;
         transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .highlight-box:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
-
     .highlight-box h3 {
         margin-top: 10px;
         font-size: 1.2rem;
     }
-
     .highlight-box p {
         font-size: 16px;
         margin-top: 8px;
@@ -153,16 +137,8 @@ ul {
         margin-bottom: 40px;
         flex-wrap: wrap;
     }
-
-    .problems-list {
-        flex: 1 1 45%;
-    }
-
-    .crowd-image {
-        flex: 1 1 45%;
-        text-align: center;
-    }
-
+    .problems-list { flex: 1 1 45%; }
+    .crowd-image { flex: 1 1 45%; text-align: center; }
     .crowd-image img {
         width: 100%;
         max-width: 400px;
@@ -170,7 +146,6 @@ ul {
         box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         margin-bottom: 10px;
     }
-
     .crowd-image a {
         display: block;
         margin-bottom: 8px;
@@ -188,7 +163,6 @@ ul {
         justify-content: flex-start;
         margin-bottom: 40px;
     }
-
     .sub-sectors div {
         background-color: #000000;
         color: #fff;
@@ -205,7 +179,6 @@ ul {
         cursor: pointer;
         transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .sub-sectors div:hover {
         transform: scale(1.1);
         box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -224,11 +197,7 @@ ul {
         margin-top: 15px;
         transition: 0.3s;
     }
-
-    .accordion:hover {
-        background-color: #2f5a2f;
-    }
-
+    .accordion:hover { background-color: #2f5a2f; }
     .panel {
         display: none;
         background-color: #f5f5f5;
@@ -237,7 +206,6 @@ ul {
         margin-top: 12px;
         width: 95%;
     }
-
     pre {
         background-color: #ffffff;
         padding: 16px;
@@ -245,7 +213,6 @@ ul {
         overflow-x: auto;
         font-size: 14px;
     }
-
     .usecase-box {
         background-color: #ffffff;
         padding: 22px;
@@ -253,11 +220,7 @@ ul {
         border-radius: 10px;
         margin-top: 15px;
     }
-
-    .usecase-step {
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
+    .usecase-step { margin-bottom: 10px; font-size: 16px; }
 
     /* Responsive */
     @media(max-width:900px){
@@ -286,50 +249,44 @@ ul {
     <button class="collapse-btn">Collapse</button>
 </div>
 
-<!-- Main Heading OUTSIDE white page -->
-<h1 class="main-heading">Tourism Sector</h1>
+<!-- Main Heading -->
+<h1 class="main-heading">Tourism Sector & Navigation System</h1>
 
-<!-- White Page -->
 <div class="page">
 
-    <!-- Why Tourism -->
+    <!-- Section 1 -->
     <h2>Why I Chose the Tourism Sector</h2>
     <p>
         Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, 
         technology enhances tourist experiences by optimizing routes and managing attractions efficiently.
     </p>
 
-    <!-- Discover Vritdhara -->
+    <!-- Section 2 -->
     <h2>Discover Vritdhara</h2>
     <p style="text-align:center; font-style:italic; margin-bottom:30px;">
         Culture • Cinema • Heritage • Nature
     </p>
 
-    <!-- Highlights Boxes -->
     <div class="highlights">
         <div class="highlight-box">
-            🛕
-            <h3>Cultural Emblem</h3>
+            🛕<h3>Cultural Emblem</h3>
             <p>Located at the center of the lake, representing the cultural identity and heritage of Vritdhara.</p>
         </div>
         <div class="highlight-box">
-            🎬
-            <h3>Eterna Studio (Rajapuri)</h3>
+            🎬<h3>Eterna Studio (Rajapuri)</h3>
             <p>A large film city offering studio tours, film shoots, and cinematic experiences.</p>
         </div>
         <div class="highlight-box">
-            🏰
-            <h3>Vrithdhara Palace</h3>
+            🏰<h3>Vrithdhara Palace</h3>
             <p>Showcases royal architecture and stands as a symbol of heritage and historical pride.</p>
         </div>
         <div class="highlight-box">
-            🌿
-            <h3>National Park</h3>
+            🌿<h3>National Park</h3>
             <p>Promotes eco-tourism, wildlife conservation, and a peaceful natural experience.</p>
         </div>
     </div>
 
-    <!-- Problems + Crowd Image -->
+    <!-- Problems -->
     <h2>Current Problems in the Tourism Sector</h2>
     <div class="problems-section">
         <div class="problems-list">
@@ -345,13 +302,13 @@ ul {
         </div>
         <div class="crowd-image">
             <img src="crowd.png" alt="Crowd Image">
-            <a href="#" target="_blank">▶ Overtourism & overcrowding explained – YouTube</a>
-            <a href="#" target="_blank">▶ Waste, congestion & environmental issues – YouTube</a>
-            <a href="#" target="_blank">▶ Tourist management failures & long queues – YouTube</a>
+            <a href="#">▶ Overtourism & overcrowding explained – YouTube</a>
+            <a href="#">▶ Waste, congestion & environmental issues – YouTube</a>
+            <a href="#">▶ Tourist management failures & long queues – YouTube</a>
         </div>
     </div>
 
-    <!-- Why Innovation -->
+    <!-- Innovation -->
     <h2>Why Innovation is Needed</h2>
     <p>
         Innovation is needed in the tourism sector to make travel smoother, faster, and safer. 
@@ -371,133 +328,8 @@ ul {
         <div>Local Culture & Shopping</div>
     </div>
 
-</div>
-
-<script>
-const acc = document.querySelector(".accordion");
-const panel = document.querySelector(".panel");
-
-if(acc){
-    acc.onclick = function () {
-        panel.style.display =
-            panel.style.display === "block" ? "none" : "block";
-    };
-}
-</script>
-
-</body>
-</html>
-
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Tourism and Navigation System</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #e0e0e0; /* light grey */
-    }
-
-    h1 {
-        text-align: center;
-        color: orange;
-        margin: 30px 0 20px;
-        font-size: 2.8rem; /* slightly bigger */
-    }
-
-    .page {
-        width: 72%;
-        min-height: 90vh;
-        margin: auto;
-        background-color: #ffffff; /* inner white page */
-        padding: 40px 50px;
-        box-sizing: border-box;
-        border-radius: 12px;
-    }
-
-    h3 {
-        color: #3f6f3f; /* dark pastel */
-        margin-top: 30px;
-        font-size: 1.8rem; /* slightly bigger */
-    }
-
-    p {
-        text-align: justify;
-        line-height: 1.9;
-        font-size: 17px; /* slightly bigger */
-    }
-
-    ul {
-        margin-left: 22px;
-        line-height: 1.8;
-        font-size: 17px;
-    }
-
-    /* Accordion Button */
-    .accordion {
-        background-color: #3f6f3f;
-        color: white;
-        cursor: pointer;
-        padding: 8px 18px;
-        border: none;
-        font-size: 15px;
-        border-radius: 22px;
-        min-width: 220px;
-        margin-top: 15px;
-        transition: 0.3s;
-    }
-
-    .accordion:hover {
-        background-color: #2f5a2f;
-    }
-
-    /* Algorithm Panel */
-    .panel {
-        display: none;
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 12px;
-        width: 95%;
-    }
-
-    pre {
-        background-color: #ffffff;
-        padding: 16px;
-        border-radius: 8px;
-        overflow-x: auto;
-        font-size: 14px; /* slightly bigger */
-    }
-
-    /* Use Case Card */
-    .usecase-box {
-        background-color: #ffffff;
-        padding: 22px;
-        border-left: 6px solid #3f6f3f;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
-
-    .usecase-step {
-        margin-bottom: 10px;
-        font-size: 16px; /* slightly bigger */
-    }
-</style>
-</head>
-
-<body>
-
-<h1>Tourism and Navigation System</h1>
-
-<div class="page">
-
-    <!-- 1 -->
+    <!-- Dijkstra Section -->
+    <h2>Tourism & Navigation System</h2>
     <h3>1. Introduction and Problem Statement</h3>
     <p>
         Tourism plays a major role in economic development, but tourists often face difficulties
@@ -507,7 +339,6 @@ if(acc){
         reliable navigation assistance.
     </p>
 
-    <!-- 2 -->
     <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
     <p>
         Before applying any algorithm, the system is designed based on real tourist behavior.
@@ -515,7 +346,6 @@ if(acc){
         seeks assistance when needed, and finally provides feedback. This behavioral flow
         forms the conceptual foundation of the system.
     </p>
-
     <ul>
         <li>Destination planning before arrival</li>
         <li>Live location detection using GPS</li>
@@ -524,7 +354,6 @@ if(acc){
         <li>Experience feedback</li>
     </ul>
 
-    <!-- 3 -->
     <h3>3. System Architecture</h3>
     <p>
         The system consists of a tourist interface, GPS module, digital city map database,
@@ -532,7 +361,6 @@ if(acc){
         provides optimized routes in real time.
     </p>
 
-    <!-- 4 -->
     <h3>4. Graph-Based Data Representation</h3>
     <p>
         The city map is modeled as a weighted graph where intersections represent vertices,
@@ -540,46 +368,24 @@ if(acc){
         enables efficient shortest-path computation.
     </p>
 
-    <!-- INSERTED ROLE OF DIJKSTRA -->
-    <h3>Role of Dijkstra’s Algorithm in Tourism and Navigation</h3>
+    <h3>Role of Dijkstra’s Algorithm</h3>
     <p>
-        Tourism in a smart city heavily depends on efficient navigation, as tourists frequently
-        move between hotels, attractions, transport hubs, and essential services. To ensure
-        a smooth travel experience, the system must always guide tourists through the
-        shortest and safest routes while minimizing travel time and congestion.
+        Dijkstra’s algorithm calculates the shortest path from the tourist’s current location
+        to the selected destination by considering distances or travel time as weights.
     </p>
 
-    <p>
-        This requirement is fulfilled using Dijkstra’s algorithm, which calculates the shortest
-        path from the tourist’s current location to the selected destination by considering road
-        distances or travel time as weights. By modeling the city as a weighted graph,
-        Dijkstra’s algorithm ensures optimal routing, reduces unnecessary travel, avoids
-        overcrowded paths, and enhances tourist satisfaction.
-    </p>
-
-    <!-- 5 -->
     <h3>5. Dijkstra Algorithm Implementation</h3>
-    <p>
-        Dijkstra’s algorithm computes the shortest path from a source node to all other nodes
-        in a weighted graph. In this system, it guarantees optimal route selection.
-    </p>
-
     <button class="accordion">View Dijkstra Algorithm</button>
-
     <div class="panel">
 <pre>
 ALGORITHM Dijkstra(G, s)
-
 for each vertex v in V
     dist[v] ← ∞
     parent[v] ← null
-
 dist[s] ← 0
-
 while unvisited vertices exist
     u ← vertex with minimum dist
     mark u as visited
-
     for each neighbor v of u
         if dist[u] + w(u,v) < dist[v]
             dist[v] ← dist[u] + w(u,v)
@@ -587,40 +393,35 @@ while unvisited vertices exist
 </pre>
     </div>
 
-    <!-- 6 -->
     <h3>6. Real-Time Working of the Algorithm</h3>
     <p>
         As the tourist moves, the system continuously updates location data. If deviations
         or changes occur, the algorithm is re-executed to ensure optimal navigation.
     </p>
 
-    <!-- 7 -->
     <h3>7. SDG Alignment</h3>
     <ul>
         <li><strong>SDG 9:</strong> Innovation and Infrastructure</li>
         <li><strong>SDG 11:</strong> Sustainable Cities</li>
     </ul>
 
-    <!-- 8 --z
+    <h3>8. Use Case Scenario (Tourist Navigation)</h3>
+    <div class="usecase-box">
+        <div class="usecase-step">📍 <strong>Step 1:</strong> Tourist arrives at Vritdhara Railway Station</div>
+        <div class="usecase-step">📱 <strong>Step 2:</strong> Selects a destination: Vrithdhara Palace</div>
+        <div class="usecase-step">🗺️ <strong>Step 3:</strong> City graph is accessed for navigation</div>
+        <div class="usecase-step">🧮 <strong>Step 4:</strong> Dijkstra computes shortest route</div>
+        <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guides the tourist</div>
+    </div>
 
-  <h3>8. Use Case Scenario (Tourist Navigation)</h3>
-
-<div class="usecase-box">
-    <div class="usecase-step">📍 <strong>Step 1:</strong> Tourist arrives at Vritdhara Railway Station</div>
-    <div class="usecase-step">📱 <strong>Step 2:</strong> Selects a destination: Vrithdhara Palace</div>
-    <div class="usecase-step">🗺️ <strong>Step 3:</strong> City graph is accessed for navigation</div>
-    <div class="usecase-step">🧮 <strong>Step 4:</strong> Dijkstra computes shortest route to Vrithdhara Palace</div>
-    <div class="usecase-step">🚶 <strong>Step 5:</strong> Real-time navigation guides the tourist</div>
-</div>
-
-
-    <h3>Tourist Interaction Flow Diagram</h3>
+     <h3>Tourist Interaction Flow Diagram</h3>
      
     <p>
     This diagram visually represents how a tourist interacts with the navigation
     system before algorithmic routing begins.
    </p>
-<div style="margin-top:20px; text-align:center;">
+
+ <div style="margin-top:20px; text-align:center;">
     <img src="tourist and navigation.png" 
          alt="Tourist Navigation Interaction Flow"
          style="width:100%; max-width:900px; border-radius:12px;">
@@ -629,10 +430,7 @@ while unvisited vertices exist
     </p>
 </div>
 
-
-    <!-- 9 -->
     <h3>9. Advantages and Limitations</h3>
-
     <p><strong>Advantages:</strong></p>
     <ul>
         <li>Optimal route selection</li>
@@ -640,7 +438,6 @@ while unvisited vertices exist
         <li>Improved tourist safety</li>
         <li>Transparent algorithm logic</li>
     </ul>
-
     <p><strong>Limitations:</strong></p>
     <ul>
         <li>Requires GPS and internet</li>
@@ -648,7 +445,6 @@ while unvisited vertices exist
         <li>Limited dynamic traffic handling</li>
     </ul>
 
-    <!-- 10 -->
     <h3>10. Future Enhancement</h3>
     <p>
         Future improvements may include traffic prediction, AI-assisted personalization,
@@ -659,12 +455,12 @@ while unvisited vertices exist
 
 <script>
 const acc = document.querySelector(".accordion");
-const panel = document.querySelector(".panel");
-
-acc.onclick = function () {
-    panel.style.display =
-        panel.style.display === "block" ? "none" : "block";
-};
+if(acc){
+    const panel = document.querySelector(".panel");
+    acc.onclick = function () {
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    };
+}
 </script>
 
 </body>
