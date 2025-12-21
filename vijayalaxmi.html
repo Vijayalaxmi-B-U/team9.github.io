@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,6 +197,18 @@
         font-size: 16px; 
     }
 
+    /* Algorithm Box */
+    .algorithm-box {
+        background-color: #fff8b3; /* light yellow */
+        border: 2px solid #000;   /* black border */
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;     /* width fits content */
+        font-weight: bold;         /* bold text */
+        white-space: pre-wrap;     /* preserves formatting */
+        margin-bottom: 30px;
+    }
+
     /* Responsive */
     @media(max-width:900px){
         .highlights { flex-direction: column; align-items: center; }
@@ -237,9 +248,11 @@
     <button class="collapse-btn">Collapse</button>
 </div>
 
+<!-- Tourism Heading outside the page -->
+<h1 class="main-heading">Tourism</h1>
+
 <!-- First White Page -->
 <div class="page">
-    <h1 class="main-heading">Tourism</h1>
 
     <h2>Why I Chose the Tourism Sector</h2>
     <p>
@@ -361,9 +374,7 @@
     </p>
 
     <h3>5. Dijkstra Algorithm Implementation</h3>
-    <button class="accordion">View Dijkstra Algorithm</button>
-    <div class="panel">
-<pre>
+    <div class="algorithm-box">
 ALGORITHM Dijkstra(G, s)
 for each vertex v in V
     dist[v] ← ∞
@@ -376,7 +387,6 @@ while unvisited vertices exist
         if dist[u] + w(u,v) < dist[v]
             dist[v] ← dist[u] + w(u,v)
             parent[v] ← u
-</pre>
     </div>
 
     <h3>6. Real-Time Working of the Algorithm</h3>
