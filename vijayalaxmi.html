@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vijayalakshmi - Tourism Sector</title>
+<title>Vijayalakshmi - Smart City Tourism & Accommodation</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 /* -------------------- VARIABLES -------------------- */
 :root{
@@ -21,6 +22,7 @@ body{
   font-family: 'Poppins', sans-serif;
   background-color: #e0e0e0;
   color: #1a1a1a;
+  line-height: 1.7;
 }
 
 /* -------------------- NAVBAR -------------------- */
@@ -110,8 +112,8 @@ body{
 h1, .main-heading { font-size: 2.6rem; text-align:center; color:#ff8800; margin:25px 0; }
 h2 { font-size:2.2rem; text-align:center; color:#3f6f3f; margin:20px 0 15px 0; }
 h3 { font-size:1.8rem; color:#3f6f3f; margin-top:20px; margin-bottom:10px; }
-p { font-size:20px; line-height:1.9; text-align:justify; margin-bottom:20px; }
-ul { font-size:18px; line-height:1.8; margin-left:25px; margin-bottom:20px; }
+p { font-size:20px; text-align:justify; margin-bottom:20px; }
+ul { font-size:18px; margin-left:25px; margin-bottom:20px; }
 
 /* White page container */
 .page { width:80%; margin:auto; padding:40px 50px; background:#fff; border-radius:12px; margin-bottom:40px; box-sizing:border-box; }
@@ -144,6 +146,27 @@ ul { font-size:18px; line-height:1.8; margin-left:25px; margin-bottom:20px; }
 
 /* Grey heading */
 .grey-heading { background:#e0e0e0; padding:20px 40px; border-radius:12px; width:fit-content; text-align:center; color:#ff8800; font-size:2.6rem; margin:40px auto; }
+/* Accommodation images */
+img {
+    width: 100%;          /* Makes image responsive */
+    max-width: 400px;     /* Limits maximum width */
+    height: auto;         /* Maintains aspect ratio */
+    border-radius: 12px;  /* Rounded corners */
+    display: block;
+    margin: 20px auto;    /* Centers the image with vertical spacing */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* Subtle shadow */
+}
+
+.img-caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Accommodation Graph Styles */
+canvas { margin-top:20px; border-radius:12px; background: #fdfdfd; padding:15px; box-shadow:0 3px 10px rgba(0,0,0,0.08); }
 
 /* -------------------- RESPONSIVE -------------------- */
 @media(max-width:900px){
@@ -176,9 +199,8 @@ ul { font-size:18px; line-height:1.8; margin-left:25px; margin-bottom:20px; }
 </div>
 
 <div class="content">
+    <!-- -------------------- TOURISM PAGE -------------------- -->
     <h1 class="main-heading">Tourism</h1>
-
-    <!-- First White Page -->
     <div class="page">
         <h2>Why I Chose the Tourism Sector</h2>
         <p>Tourism drives economic growth, creates jobs, and promotes culture. In smart cities, technology enhances tourist experiences by optimizing routes and managing attractions efficiently.</p>
@@ -228,18 +250,14 @@ ul { font-size:18px; line-height:1.8; margin-left:25px; margin-bottom:20px; }
         </div>
     </div>
 
-    <!-- Grey Heading -->
     <h1 class="grey-heading">Tourism & Navigation System</h1>
-
-    <!-- Second White Page -->
     <div class="page">
+        <p>The Tourism and Navigation System is designed to enhance the experience of travelers by providing comprehensive information about tourist destinations and facilitating seamless navigation...</p>
 
-        <p>The Tourism and Navigation System is designed to enhance the experience of travelers by providing comprehensive information about tourist destinations and facilitating seamless navigation. This system integrates features such as interactive maps, location tracking, and route optimization to guide tourists efficiently from one place to another. It provides details about nearby attractions, historical sites, cultural landmarks, restaurants, hotels, and local transportation options. Users can access real-time information about distance, estimated travel time, and suggested itineraries based on their preferences. Additionally, the system can include reviews, images, and ratings of various destinations to help users make informed choices. By combining tourism information with intelligent navigation, this system not only helps tourists explore new places conveniently but also promotes local businesses and cultural heritage. With its user-friendly interface and adaptive recommendations, the Tourism and Navigation System ensures a personalized and engaging travel experience, making exploration both easy and enjoyable for travelers of all kinds.</p>
         <h3>1. Introduction and Problem Statement</h3>
         <p>Tourism plays a major role in economic development, but tourists often face difficulties navigating unfamiliar cities. Lack of local knowledge, traffic congestion, safety concerns, and inefficient routing can negatively impact the tourist experience. The Tourism and Navigation System aims to solve these problems by providing accurate, efficient, and reliable navigation assistance.</p>
 
         <h3>2. Tourist Flow and Conceptual Pre-Idea</h3>
-        <p>Before applying any algorithm, the system is designed based on real tourist behavior. A tourist typically plans destinations, arrives in the city, navigates between locations, seeks assistance when needed, and finally provides feedback. This behavioral flow forms the conceptual foundation of the system.</p>
         <ul>
             <li>Destination planning before arrival</li>
             <li>Live location detection using GPS</li>
@@ -298,22 +316,147 @@ while unvisited vertices exist
         </div>
 
         <h3>10. Advantages and Limitations</h3>
-        <p><strong>Advantages:</strong></p>
         <ul>
             <li>Optimal route selection</li>
             <li>Reduced travel time</li>
             <li>Improved tourist safety</li>
             <li>Transparent algorithm logic</li>
-        </ul>
-        <p><strong>Limitations:</strong></p>
-        <ul>
             <li>Requires GPS and internet</li>
             <li>Less efficient for extremely large maps</li>
-            <li>Limited dynamic traffic handling</li>
         </ul>
 
         <h3>11. Future Enhancement</h3>
         <p>Future improvements may include traffic prediction, AI-assisted personalization, integration with accommodation services, and emergency response optimization.</p>
+    </div>
+
+    <!-- -------------------- ACCOMMODATION PAGE -------------------- -->
+    <h1 class="grey-heading">B-City Accommodation System</h1>
+    <div class="page">
+        <h2>Connection with Navigation</h2>
+        <p>Accommodation and navigation are closely connected in tourism. Tourists need comfortable lodging and efficient routes to reach attractions, restaurants, and cultural sites. By integrating accommodation data with navigation, tourists can select lodging near points of interest, plan itineraries efficiently, and enjoy a seamless travel experience, while also contributing to the local economy.</p>
+
+        <h2>Importance of Accommodation</h2>
+        <p>Accommodation is crucial for ensuring comfort, safety, and convenience for tourists. Quality lodging encourages longer stays and repeat visits, and directly impacts the perception of the city as a tourist-friendly destination. Diverse options, from budget hostels to luxury hotels, ensure that tourists of all types can find suitable lodging.</p>
+
+        <h2>Stakeholder Responsibilities</h2>
+        <ul>
+            <li>🧳 <strong>Tourists:</strong> Select suitable accommodation, provide honest reviews, follow guidelines.</li>
+            <li>🏨 <strong>Hotels/Hostels/Resorts:</strong> Maintain accurate listings, hygiene, quality, amenities, and respond to feedback.</li>
+            <li>🍽️ <strong>Restaurants:</strong> Maintain food quality & hygiene, provide accurate location and timing, respond to reviews, collaborate with nearby accommodations.</li>
+            <li>🏙️ <strong>City:</strong> Use collected data for planning, tourism promotion, and sustainable economic growth.</li>
+        </ul>
+
+        <h2>Proposed Solution</h2>
+        <p>Tourist accommodation is a critical component of the travel experience, providing safety, comfort, and convenience that directly influence satisfaction and duration of stay. By accessing a centralized system, tourists can explore a wide range of lodging options, filter them based on preferences such as price, rating, amenities, and proximity to attractions, and make informed booking decisions. Hotels and restaurants provide accurate information, maintain quality, offer essential amenities, and respond promptly to feedback. Their performance directly impacts tourist satisfaction and city reputation. Effective integration increases occupancy, boosts tourist spending, and generates employment. Data visualized via graphs—showing occupancy trends, price distributions, ratings, and tourist behavior—helps city planners and service providers optimize infrastructure and promotions. The accommodation system strengthens tourist experience, operational efficiency of hotels/restaurants, and contributes to sustainable economic growth.</p>
+<!-- Images Section -->
+<img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Hotel Lobby">
+<div class="img-caption">Hotel lobby representing organized and modern accommodation facilities.</div>
+
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Homestay">
+<div class="img-caption">Homestay providing a personalized and cultural experience for tourists.</div>
+
+
+        <h2>Algorithms Supporting the System</h2>
+        <h3>Filtering Algorithm 🧰</h3>
+        <div class="algorithm-box">
+ALGORITHM FilterServices(services, filters)
+for each service in services
+    match ← true
+    for each filter in filters
+        if service does not satisfy filter
+            match ← false
+    if match
+        add service to filteredList
+return filteredList
+        </div>
+        <p>This algorithm filters accommodations/restaurants by user preferences like price, rating, amenities, and location. It ensures that tourists see only relevant options efficiently, enhancing their decision-making experience.</p>
+
+        <h3>Sorting Algorithm 📊</h3>
+        <div class="algorithm-box">
+ALGORITHM SortServices(services, sortKey)
+sort services based on sortKey (price, rating, distance)
+return sortedList
+        </div>
+        <p>This algorithm sorts filtered accommodation results based on criteria such as price, rating, or distance. It helps tourists quickly identify the most suitable options according to their priorities.</p>
+
+        <h3>Recommendation Algorithm 🤖</h3>
+        <div class="algorithm-box">
+ALGORITHM RecommendServices(user, services)
+for each service in services
+    score ← similarity(user.preferences, service.features)
+sort services by score
+return top recommended services
+        </div>
+        <p>This algorithm provides personalized recommendations based on tourist preferences, past bookings, and similar user behavior. It helps tourists discover accommodations they are most likely to enjoy.</p>
+
+        <h3>Analytics Algorithm 📈</h3>
+        <div class="algorithm-box">
+ALGORITHM GenerateAnalytics(bookingData)
+calculate occupancyTrend, avgRatings, revenuePerService
+display graphs for each metric
+return dashboard
+        </div>
+        <p>This algorithm collects and visualizes data on occupancy trends, ratings, revenue, and tourist behavior. It aids hotel managers and city planners in making informed strategic decisions.</p>
+
+        <h2>Analytics & Insights</h2>
+        <canvas id="occupancyChart" width="700" height="350"></canvas>
+        <p><strong>Explanation:</strong> This line graph shows hotel occupancy trends across months. Peak months are highlighted, helping hotels optimize pricing, staff, and services. The city can plan infrastructure and transport accordingly. Higher occupancy during peak season contributes directly to local economic growth through increased spending.</p>
+
+        <canvas id="ratingChart" width="700" height="350"></canvas>
+        <p><strong>Explanation:</strong> This bar graph shows the distribution of hotel ratings. It highlights quality across the city and helps tourists make informed choices. Hotels can identify areas for improvement. Higher-rated hotels attract more tourists, boosting economic activity.</p>
+
+        <canvas id="priceChart" width="700" height="350"></canvas>
+        <p><strong>Explanation:</strong> This graph shows the price distribution of accommodations. It helps tourists choose budget-friendly or premium options. Hotels can adjust pricing competitively. Affordable lodging attracts diverse tourists, increasing city-wide revenue.</p>
+
+        <script>
+            const occupancyCtx = document.getElementById('occupancyChart').getContext('2d');
+            const occupancyChart = new Chart(occupancyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                    datasets: [{label:'Occupancy %', data:[60,70,75,80,85,90,95,90,80,75,65,60], borderColor:'#3498db', fill:false, tension:0.3}]
+                },
+                options:{ responsive:true, plugins:{title:{display:true,text:'Hotel Occupancy Trend', color:'#2c3e50', font:{size:16}}, legend:{labels:{color:'#2c3e50', font:{size:12}}}}, scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}} }
+            });
+
+            const ratingCtx = document.getElementById('ratingChart').getContext('2d');
+            const ratingChart = new Chart(ratingCtx, {
+                type: 'bar',
+                data: { labels:['⭐','⭐⭐','⭐⭐⭐','⭐⭐⭐⭐','⭐⭐⭐⭐⭐'], datasets:[{label:'Number of Hotels', data:[2,5,10,8,4], backgroundColor:'#e67e22'}] },
+                options:{ responsive:true, plugins:{title:{display:true,text:'Hotel Rating Distribution', color:'#2c3e50', font:{size:16}}, legend:{labels:{color:'#2c3e50', font:{size:12}}}}, scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}} }
+            });
+
+            const priceCtx = document.getElementById('priceChart').getContext('2d');
+            const priceChart = new Chart(priceCtx, {
+                type:'bar',
+                data:{ labels:['< $50','$50-100','$100-150','$150-200','> $200'], datasets:[{label:'Number of Hotels', data:[5,12,8,6,3], backgroundColor:'#2ecc71'}] },
+                options:{ responsive:true, plugins:{title:{display:true,text:'Price Distribution of Hotels', color:'#2c3e50', font:{size:16}}, legend:{labels:{color:'#2c3e50', font:{size:12}}}}, scales:{x:{ticks:{color:'#2c3e50'}}, y:{ticks:{color:'#2c3e50'}, beginAtZero:true}} }
+            });
+        </script>
+
+        <h2>Advantages & Limitations</h2>
+        <ul>
+            <li>✅ Centralized information for tourists and service providers</li>
+            <li>✅ Improves booking convenience and satisfaction</li>
+            <li>✅ Personalized recommendations and analytics for business growth</li>
+            <li>❌ Real-time updates require internet & data maintenance</li>
+            <li>❌ Large datasets may slow filtering/sorting if not optimized</li>
+        </ul>
+
+        <h2>Future Enhancements</h2>
+        <ul>
+            <li>AI-driven personalized recommendations and predictive pricing</li>
+            <li>Eco-friendly and sustainable accommodation filters</li>
+            <li>Dynamic availability updates & mobile notifications</li>
+            <li>Integrated city-level analytics dashboard for economic planning</li>
+        </ul>
+
+        <h2>SDG Alignment</h2>
+        <ul>
+            <li>🌱 SDG 8: Promote economic growth and employment through tourism and hospitality</li>
+            <li>🏙️ SDG 11: Sustainable cities & communities</li>
+            <li>🍽️ SDG 12: Responsible consumption & production in accommodations and restaurants</li>
+        </ul>
     </div>
 </div>
 
