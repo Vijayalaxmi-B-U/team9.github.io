@@ -1041,100 +1041,207 @@ Adjusts ticket prices dynamically to maximize revenue, control visitor flow, and
     <li>💰 <strong>Dynamic Pricing & Smart Booking:</strong> Optimize ticket prices based on demand and reduce overcrowding.</li>
     <li>🖥️ <strong>Interactive Storytelling Kiosks:</strong> AR/VR stories, 3D maps, and personalized audio guides at attractions.</li>
 </ul>
-<h1 class="grey-heading">Cleanliness & Sustainability</h1>
+
+<p class="explanation">
+<strong>Integration into Business Case:</strong><br>
+Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience”</em>, enhancing visitor engagement, optimizing operations, increasing revenue, and supporting sustainable tourism.
+</p>
+</div>
+
+<h1 class="grey-heading">Safety & Cleanliness</h1>
 <div class="page">
 
-    <!-- INTRO -->
-    <p>
-        Cleanliness and sustainability are essential pillars of a smart city. A clean environment improves public health,
-        enhances tourist satisfaction, and supports long-term ecological balance. Smart cleanliness systems reduce waste,
-        control pollution, and ensure efficient use of resources.
-    </p>
 
-    <!-- IMPORTANCE -->
-    <h3>1. Why Cleanliness & Sustainability Matter</h3>
+    <!-- Why Safety -->
+    <h3>1. Importance of Safety</h3>
+    <p>Safety is the foundation of a thriving smart city. For tourists and residents, a secure environment ensures protection, confidence, and better urban experience. Key reasons:</p>
     <ul>
-        <li>🧼 Prevents spread of diseases and infections</li>
-        <li>🌍 Protects natural resources like air, water, and soil</li>
-        <li>🏙️ Improves city image and tourism appeal</li>
-        <li>♻️ Encourages recycling and responsible waste management</li>
-        <li>💰 Reduces long-term municipal maintenance costs</li>
+        <li>🛡️ Protects life and property from accidents, crime, and emergencies</li>
+        <li>🏙️ Enhances city reputation, attracting tourists and investments</li>
+        <li>🚨 Ensures rapid emergency response to incidents</li>
+        <li>📊 Enables data-driven decision-making using algorithms to analyze incidents</li>
+        <li>🏗️ Helps in urban planning by identifying high-risk zones and safety gaps</li>
     </ul>
 
-    <!-- SERVICES -->
-    <h3>2. Clean City Services & Infrastructure</h3>
+    <!-- Why Cleanliness -->
+    <h3>2. Importance of Cleanliness</h3>
+    <p>Cleanliness is critical for public health, environment, and tourist satisfaction. A clean city creates positive perception and reduces disease risk:</p>
     <ul>
-        <li>🧹 Street cleaning teams and mechanized sweepers</li>
-        <li>🗑️ Smart waste bins with fill-level sensors</li>
-        <li>🚛 Garbage collection and waste segregation vehicles</li>
-        <li>🌿 Air & water pollution monitoring stations</li>
-        <li>♻️ Recycling and composting centers</li>
+        <li>🧹 Reduces spread of diseases and maintains hygienic surroundings</li>
+        <li>🌿 Protects environment: rivers, parks, and streets remain unpolluted</li>
+        <li>👀 Improves visual appeal and tourist experience</li>
+        <li>🏙️ Supports smart city IoT systems for waste management and cleanliness monitoring</li>
     </ul>
 
-    <!-- IMAGES -->
-    <div style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:25px 0;">
-        <img src="clean_street.jpg" alt="Clean Streets" style="width:300px; border-radius:12px;">
-        <img src="smart_bins.jpg" alt="Smart Waste Bins" style="width:300px; border-radius:12px;">
-        <img src="garbage_truck.jpg" alt="Garbage Collection" style="width:300px; border-radius:12px;">
-        <img src="recycling.jpg" alt="Recycling System" style="width:300px; border-radius:12px;">
-    </div>
-
-    <!-- ALGORITHMS -->
-    <h3>3. Algorithms Used (From Syllabus)</h3>
-
-    <h4>i) Breadth First Search (BFS) – Area Cleanliness Detection 🌐</h4>
-    <div class="algorithm-box">
-Algorithm: Breadth First Search (BFS)
-Purpose: Traverse city zones to identify dirty or overflowing waste areas.
-Used to find nearest unclean locations for quick cleaning action.
-    </div>
-    <p>
-        BFS helps city authorities systematically scan nearby areas and detect garbage hotspots efficiently.
-    </p>
-
-    <h4>ii) Merge Sort – Waste Collection Scheduling 📊</h4>
-    <div class="algorithm-box">
-Algorithm: Merge Sort
-Purpose: Sort waste collection data by area priority, time, and bin fill level.
-Ensures stable and efficient scheduling of garbage vehicles.
-    </div>
-    <p>
-        Merge Sort is suitable for large datasets and ensures proper planning of waste collection routes.
-    </p>
-
-    <h4>iii) Greedy Algorithm – Resource Optimization ♻️</h4>
-    <div class="algorithm-box">
-Algorithm: Greedy Algorithm
-Purpose: Allocate cleaning resources to areas with maximum waste first.
-Optimizes fuel usage and manpower.
-    </div>
-    <p>
-        Greedy strategy ensures immediate attention to high-need areas, reducing overflow and pollution.
-    </p>
-
-    <!-- ANALYTICS -->
-    <h3>4. Analytics & Monitoring</h3>
-    <p>
-        Smart dashboards analyze cleanliness data such as waste volume, pollution levels, and cleaning frequency.
-        Graphs help city officials identify problem zones and improve sustainability planning.
-    </p>
-
-    <!-- BENEFITS -->
-    <h3>5. City-wide Benefits</h3>
+    <!-- Essential Services -->
+    <h3>3. Essential Services for Safety & Cleanliness</h3>
     <ul>
-        <li>🏥 Improved public health and hygiene</li>
-        <li>🌱 Reduced environmental pollution</li>
-        <li>🚛 Efficient waste collection routes</li>
-        <li>🏙️ Cleaner tourist attractions and public spaces</li>
-        <li>♻️ Long-term sustainable urban development</li>
+        <li>👮 Police stations and patrol units</li>
+        <li>🚑 Hospitals and ambulance services</li>
+        <li>🚒 Fire stations and disaster management</li>
+        <li>🚆 Railway stations and crowd control</li>
+        <li>🛣️ Traffic monitoring and smart streetlights</li>
+        <li>📹 CCTV and emergency alert systems</li>
+        <li>🧹 Waste management and street cleaning teams</li>
     </ul>
+<!-- Algorithms -->
+<h3>4. Algorithms Implementation</h3>
 
-    <!-- SDG -->
-    <h3>6. SDG Alignment</h3>
+<h4>i) Sorting Algorithms 📊</h4>
+
+<h5>Quick Sort (for Incident Severity)</h5>
+<div class="algorithm-box">
+FUNCTION QuickSort(arr, low, high)
+    IF low < high THEN
+        pivotIndex = Partition(arr, low, high)
+        QuickSort(arr, low, pivotIndex - 1)
+        QuickSort(arr, pivotIndex + 1, high)
+END FUNCTION
+
+FUNCTION Partition(arr, low, high)
+    pivot = arr[high].severity
+    i = low - 1
+    FOR j = low TO high - 1
+        IF arr[j].severity >= pivot THEN
+            i = i + 1
+            SWAP arr[i], arr[j]
+    SWAP arr[i+1], arr[high]
+    RETURN i+1
+END FUNCTION
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>Quick Sort</strong> prioritizes incidents by severity, ensuring the most critical emergencies are handled first. It’s efficient for large datasets and helps authorities allocate resources quickly.
+</p>
+
+<h5>Merge Sort (for Time/Location Sorting)</h5>
+<div class="algorithm-box">
+FUNCTION MergeSort(arr)
+    IF length(arr) > 1 THEN
+        mid = length(arr)/2
+        L = arr[0..mid-1]; R = arr[mid..end]
+        MergeSort(L); MergeSort(R)
+        Merge(arr, L, R)
+END FUNCTION
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>Merge Sort</strong> is a stable sorting algorithm used to sort incidents by time or location while preserving order. Useful for chronological tracking of safety reports or cleanliness complaints.
+</p>
+
+<h4>ii) String Search Algorithms 🔍</h4>
+
+<h5>KMP (Knuth-Morris-Pratt) Algorithm</h5>
+<div class="algorithm-box">
+FUNCTION KMPSearch(pattern, text)
+    lps = ComputeLPS(pattern)
+    i = j = 0
+    WHILE i < length(text)
+        IF pattern[j] == text[i]
+            i++; j++
+        IF j == length(pattern)
+            PRINT "Pattern found at index", i-j
+            j = lps[j-1]
+        ELSE IF i < length(text) AND pattern[j] != text[i]
+            IF j != 0 THEN j = lps[j-1]
+            ELSE i++
+END FUNCTION
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>KMP</strong> efficiently searches for keywords in incident or complaint reports, e.g., "fire" or "garbage". It’s faster than naive search for large datasets and helps authorities respond quickly.
+</p>
+
+<h5>Naive String Search Algorithm</h5>
+<div class="algorithm-box">
+FUNCTION NaiveSearch(pattern, text)
+    FOR i = 0 TO length(text)-length(pattern)
+        j = 0
+        WHILE j < length(pattern) AND text[i+j] == pattern[j]
+            j++
+        IF j == length(pattern) THEN PRINT "Pattern found at index", i
+END FUNCTION
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>Naive Search</strong> checks for a pattern at every position in the text. Useful for small datasets or short-term monitoring of reports.
+</p>
+
+<h4>iii) Graph-based Algorithms 🌐</h4>
+
+<h5>Dijkstra’s Algorithm (Shortest Path for Emergency Vehicles)</h5>
+<div class="algorithm-box">
+FUNCTION Dijkstra(graph, source)
+    distance[] = INFINITY; distance[source] = 0
+    visited[] = false
+    FOR i = 0 TO graph.size-1
+        u = MinDistance(distance, visited)
+        visited[u] = true
+        FOR neighbor v of u
+            IF NOT visited[v] AND distance[u]+weight(u,v) < distance[v]
+                distance[v] = distance[u]+weight(u,v)
+END FUNCTION
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>Dijkstra’s Algorithm</strong> calculates the shortest path for ambulances, police, and fire trucks. Minimizing travel time ensures rapid response to emergencies.
+</p>
+
+<h5>Breadth-First Search (BFS) Algorithm</h5>
+<div class="algorithm-box">
+FUNCTION BFS(graph, start)
+    queue = [start]; visited[start]=true
+    WHILE queue not empty
+        node = queue.pop()
+        FOR neighbor in graph[node]
+            IF NOT visited[neighbor]
+                visited[neighbor]=true
+                queue.push(neighbor)
+END FUNCTION
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>BFS</strong> explores all neighboring areas level by level. Useful to detect hotspots for incidents or cleanliness problems, helping plan patrols and cleaning routes.
+</p>
+
+
+    <!-- Analytics -->
+    <h3>5. Analytics & Insights</h3>
+    <div style="width:600px; height:300px; margin:auto;">
+        <canvas id="safetyChart"></canvas>
+    </div>
+    <p style="text-align:center; font-size:18px;">Charts display incident frequency, peak risk hours, hotspots, and response efficiency for all services. Algorithms filter, prioritize, and optimize actions.</p>
+
+    <!-- City-wide Benefits -->
+    <h3>6. City-wide Benefits</h3>
     <ul>
-        <li>🌍 SDG 11: Sustainable Cities & Communities</li>
-        <li>♻️ SDG 12: Responsible Consumption & Production</li>
-        <li>🌱 SDG 13: Climate Action</li>
+        <li>👮 Faster police response and reduced crime</li>
+        <li>🚑 Efficient ambulance and medical aid</li>
+        <li>🧹 Cleaner streets and hygienic public spaces</li>
+        <li>🏙️ Improved urban planning and infrastructure</li>
+        <li>💼 Increased tourism, economic growth, and city reputation</li>
+        <li>🌱 Environmentally sustainable and healthy city</li>
     </ul>
 
 </div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('safetyChart').getContext('2d');
+const safetyChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Police', 'Health', 'Fire', 'Railway', 'Cleanliness'],
+        datasets: [{
+            label: 'Incidents Handled per Month',
+            data: [120, 95, 60, 40, 80],
+            backgroundColor: ['#1e3d59','#ff6e40','#ffa600','#6a67ce','#4db6ac']
+        }]
+    },
+    options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}}}
+});
+</script>
+
+</body>
+</html>
