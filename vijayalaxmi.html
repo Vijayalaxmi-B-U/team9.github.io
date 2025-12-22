@@ -641,40 +641,379 @@ ALGORITHM RealisticGenerateAnalytics(bookingData)
 
 <h3>3. Realistic Algorithms</h3>
 
-<h3>i) Sorting Algorithm 📊</h3>
+<h3><h3>i) Merge_Sorting Algorithm 📊</h3>
 <div class="algorithm-box">
-ALGORITHM SortAttractions(attractions, criteria)  
-// Sort attractions by popularity, distance, or rating
+ALGORITHM MergeSortAttractions(attractions, criteria)  
+BEGIN  
+    // Step 1: Base case
+    IF LENGTH(attractions) <= 1 THEN  
+        RETURN attractions  
+    END IF  
+
+    // Step 2: Divide the list
+    mid = LENGTH(attractions) / 2  
+    leftList = attractions[0..mid-1]  
+    rightList = attractions[mid..END]  
+
+    // Step 3: Recursive sorting
+    sortedLeft = MergeSortAttractions(leftList, criteria)  
+    sortedRight = MergeSortAttractions(rightList, criteria)  
+
+    // Step 4: Merge sorted lists
+    mergedList = EMPTY_LIST  
+    WHILE sortedLeft NOT EMPTY AND sortedRight NOT EMPTY  
+        IF sortedLeft[0][criteria] >= sortedRight[0][criteria] THEN  
+            mergedList.APPEND(sortedLeft[0])  
+            REMOVE sortedLeft[0]  
+        ELSE  
+            mergedList.APPEND(sortedRight[0])  
+            REMOVE sortedRight[0]  
+        END IF  
+    END WHILE  
+
+    // Step 5: Append remaining elements
+    mergedList.APPEND(sortedLeft)  
+    mergedList.APPEND(sortedRight)  
+
+    RETURN mergedList  
+END
 </div>
-<p class="explanation">Organizes attractions by visitor ratings, distance, or popularity so tourists can choose what suits them best.</p>
+
+<p class="explanation">
+<strong>Purpose:</strong><br>
+Efficiently sorts attractions by selected criteria (popularity, rating, distance) to help tourists prioritize their visits.
+</p>
+
+<p class="explanation">
+<strong>Inputs:</strong><br>
+<ul style="text-align:left; display:inline-block; font-size:18px;">
+    <li><strong>attractions:</strong> List of attractions with metadata</li>
+    <li><strong>criteria:</strong> Popularity, rating, or distance</li>
+</ul>
+</p>
+
+<p class="explanation">
+<strong>Benefits:</strong><br>
+✅ Stable and efficient sorting (Merge Sort)<br>
+✅ Works well for large attraction lists<br>
+✅ Ensures visitors see the most relevant attractions first<br>
+✅ Can integrate with recommendation systems
+</p>
 
 <h3>ii) Recommendation Algorithm 🤖</h3>
 <div class="algorithm-box">
-ALGORITHM RecommendAttractions(userPreferences, attractions)  
-// Suggest attractions based on interests and past visits
+ALGORITHM RecommendAttractions(userPreferences, visitorHistory, attractions)  
+BEGIN  
+    INITIALIZE recommendedList = EMPTY_LIST  
+
+    FOR each attraction IN attractions  
+        score = 0  
+
+        // Step 1: Match user interests
+        FOR each interest IN userPreferences  
+            IF interest IN attraction.tags THEN  
+                score += 2   // Strong match with user interest  
+            END IF  
+        END FOR  
+
+        // Step 2: Past visits adjustment
+        IF attraction IN visitorHistory THEN  
+            score -= 1   // Reduce priority if already visited recently  
+        END IF  
+
+        // Step 3: Popularity adjustment
+        popularity = attraction.popularityScore  // e.g., 0-100 scale  
+        score += popularity / 20                  // Normalize popularity  
+
+        // Step 4: Seasonal / special event adjustment
+        IF attraction.hasSpecialEvent THEN  
+            score += 1.5   // Promote attractions with current events  
+        END IF  
+
+        // Step 5: Add to recommendation list with score
+        recommendedList.APPEND({attraction: attraction, score: score})  
+    END FOR  
+
+    // Step 6: Sort by descending score
+    SORT recommendedList BY score DESCENDING  
+
+    RETURN recommendedList  
+END
 </div>
-<p class="explanation">Recommends attractions based on preferences (e.g., cultural lovers see Cultural Emblem first), enhancing satisfaction.</p>
+
+<p class="explanation">
+<strong>Purpose:</strong><br>
+Suggests attractions tailored to visitor interests, previous visits, popularity, and special events to improve satisfaction and engagement.
+</p>
+
+<p class="explanation">
+<strong>Inputs:</strong><br>
+<ul style="text-align:left; display:inline-block; font-size:18px;">
+    <li><strong>userPreferences:</strong> Interests such as cultural, wildlife, heritage, film, etc.</li>
+    <li><strong>visitorHistory:</strong> Record of attractions already visited</li>
+    <li><strong>attractions:</strong> List of attractions with metadata (tags, popularity, special events)</li>
+</ul>
+</p>
+
+<p class="explanation">
+<strong>Benefits:</strong><br>
+✅ Personalized visitor experience<br>
+✅ Encourages exploring lesser-known attractions<br>
+✅ Promotes seasonal events<br>
+✅ Increases satisfaction and engagement<br>
+✅ Can integrate with apps and smart guides
+</p>
 
 <h3>iii) Analytics Algorithm 📈</h3>
 <div class="algorithm-box">
 ALGORITHM GenerateAttractionAnalytics(visitorData)  
-// Track visitor trends, peak hours, and revenue
+BEGIN  
+    INITIALIZE totalVisitors = 0  
+    INITIALIZE revenuePerAttraction = EMPTY_MAP  
+    INITIALIZE peakHours = EMPTY_MAP  
+    INITIALIZE monthlyTrends = EMPTY_MAP  
+
+    FOR each record IN visitorData  
+        attraction = record.attraction  
+        visitors = record.numVisitors  
+        revenue = record.ticketRevenue  
+        visitTime = record.time  
+
+        // Update total visitors
+        totalVisitors += visitors  
+
+        // Update revenue per attraction
+        IF attraction NOT IN revenuePerAttraction THEN  
+            revenuePerAttraction[attraction] = revenue  
+        ELSE  
+            revenuePerAttraction[attraction] += revenue  
+        END IF  
+
+        // Track peak hours
+        hour = EXTRACT_HOUR(visitTime)  
+        IF attraction NOT IN peakHours THEN  
+            peakHours[attraction] = EMPTY_MAP  
+        END IF  
+        IF hour NOT IN peakHours[attraction] THEN  
+            peakHours[attraction][hour] = visitors  
+        ELSE  
+            peakHours[attraction][hour] += visitors  
+        END IF  
+
+        // Track monthly trends
+        month = EXTRACT_MONTH(visitTime)  
+        IF attraction NOT IN monthlyTrends THEN  
+            monthlyTrends[attraction] = EMPTY_MAP  
+        END IF  
+        IF month NOT IN monthlyTrends[attraction] THEN  
+            monthlyTrends[attraction][month] = visitors  
+        ELSE  
+            monthlyTrends[attraction][month] += visitors  
+        END IF  
+    END FOR  
+
+    // Analyze data
+    FOR each attraction IN revenuePerAttraction  
+        peakHour = MAX_KEY(peakHours[attraction])  
+        totalRevenue = revenuePerAttraction[attraction]  
+        monthlyPattern = monthlyTrends[attraction]  
+        OUTPUT attraction, totalRevenue, peakHour, monthlyPattern  
+    END FOR  
+
+END
 </div>
-<p class="explanation">Analyzes visitor patterns to identify peak times and high-revenue attractions, guiding staffing and pricing strategies.</p>
+
+<p class="explanation">
+<strong>Purpose:</strong><br>
+Analyzes visitor trends, peak hours, monthly visitor patterns, and revenue per attraction to guide staffing, pricing, and event planning.
+</p>
+
+<p class="explanation">
+<strong>Inputs:</strong><br>
+<ul style="text-align:left; display:inline-block; font-size:18px;">
+    <li><strong>visitorData:</strong> Records of visitor numbers, time of visit, and revenue per attraction</li>
+</ul>
+</p>
+
+<p class="explanation">
+<strong>Benefits:</strong><br>
+✅ Identifies peak visiting hours for better crowd management<br>
+✅ Helps optimize staffing and scheduling<br>
+✅ Monitors revenue trends per attraction<br>
+✅ Supports data-driven decision making for promotions and events<br>
+✅ Scalable for multiple attractions over different time periods
+</p>
 
 <h3>iv) Queue Management Algorithm ⏳</h3>
 <div class="algorithm-box">
-ALGORITHM ManageVisitorQueue(attraction)  
-// Limit entries and route visitors to quieter times
+ALGORITHM ManageVisitorQueue(attraction, currentVisitors, maxCapacity, timeSlots, visitorPreferences)  
+BEGIN  
+    FOR each visitor IN incomingVisitors  
+        IF currentVisitors[attraction] < maxCapacity THEN  
+            ALLOW entry to visitor  
+            UPDATE currentVisitors[attraction] += 1  
+        ELSE  
+            FIND timeSlot WITH minimum visitors  
+            ASSIGN visitor TO available timeSlot  
+            SEND notification TO visitor about new timeSlot  
+        END IF  
+    END FOR  
+    UPDATE queueStatus REAL-TIME  
+END
 </div>
-<p class="explanation">Helps reduce overcrowding by suggesting less busy time slots, improving visitor flow and satisfaction.</p>
+
+<p class="explanation">
+<strong>Purpose:</strong><br>
+To manage visitor flow efficiently, reduce overcrowding, and improve visitor satisfaction by dynamically allocating time slots.
+</p>
+
+<p class="explanation">
+<strong>Inputs:</strong><br>
+<ul style="text-align:left; display:inline-block; font-size:18px;">
+    <li><strong>attraction:</strong> The attraction for which queue is managed</li>
+    <li><strong>currentVisitors:</strong> Current number of visitors at the attraction</li>
+    <li><strong>maxCapacity:</strong> Maximum allowed visitors at a time</li>
+    <li><strong>timeSlots:</strong> Available time slots for visiting the attraction</li>
+    <li><strong>visitorPreferences:</strong> Optional preferences like preferred timing</li>
+</ul>
+</p>
+
+<p class="explanation">
+<strong>Step-by-Step Logic:</strong><br>
+1. Check each incoming visitor.<br>
+2. If the attraction is not full, allow entry and update current visitor count.<br>
+3. If full, find the time slot with the least visitors and assign the visitor to that slot.<br>
+4. Notify visitor about their assigned time slot.<br>
+5. Continuously update queue status in real-time for better monitoring.
+</p>
+
+<p class="explanation">
+<strong>Benefits:</strong><br>
+✅ Reduces overcrowding and long waiting times<br>
+✅ Improves visitor experience and satisfaction<br>
+✅ Optimizes visitor distribution across different time slots<br>
+✅ Can be integrated with booking systems and mobile notifications<br>
+✅ Scalable for multiple attractions and peak seasons
+</p>
+
+<p class="explanation">
+<strong>Example Scenario:</strong><br>
+If Vrithdhara Palace has a max capacity of 100 and 120 visitors arrive:<br>
+- First 100 are allowed immediately.<br>
+- Remaining 20 are assigned to future time slots with minimum visitors and notified accordingly.
+</p>
+
 
 <h3>v) Dynamic Pricing Algorithm 💰</h3>
 <div class="algorithm-box">
-ALGORITHM AdjustTicketPrices(time, season, demand)  
-// Adjust prices based on peak/off-peak demand
-</div>
-<p class="explanation">Adjusts pricing dynamically to maximize revenue while managing visitor distribution.</p>
+ALGORITHM DynamicPricingMaxRevenue(attraction, basePrice, currentVisitors, maxCapacity, season, dayType, specialEvents)
+    // Inputs:
+    // attraction       : The attraction being analyzed
+    // basePrice        : Standard ticket price
+    // currentVisitors  : Number of visitors expected/queued
+    // maxCapacity      : Maximum allowed visitors per time slot
+    // season           : High, Medium, Low
+    // dayType          : Weekday or Weekend
+    // specialEvents    : Boolean, True if special festival/event is ongoing
+
+    // Step 1: Base multiplier for season
+    IF season == "High" THEN
+        seasonMultiplier = 1.25
+    ELSE IF season == "Medium" THEN
+        seasonMultiplier = 1.0
+    ELSE
+        seasonMultiplier = 0.85
+    END IF
+
+    // Step 2: Day type adjustment
+    IF dayType == "Weekend" THEN
+        dayMultiplier = 1.2
+    ELSE
+        dayMultiplier = 1.0
+    END IF
+
+    // Step 3: Special event adjustment
+    IF specialEvents == True THEN
+        eventMultiplier = 1.3
+    ELSE
+        eventMultiplier = 1.0
+    END IF
+
+    // Step 4: Demand-based adjustment (visitor load)
+    occupancyRate = currentVisitors / maxCapacity
+    IF occupancyRate > 0.9 THEN
+        demandMultiplier = 1.5   // Very high demand
+    ELSE IF occupancyRate > 0.7 THEN
+        demandMultiplier = 1.25  // High demand
+    ELSE IF occupancyRate > 0.4 THEN
+        demandMultiplier = 1.0   // Moderate demand
+    ELSE
+        demandMultiplier = 0.85  // Low demand, encourage visitors
+    END IF
+
+    // Step 5: Calculate final price
+    finalPrice = basePrice * seasonMultiplier * dayMultiplier * eventMultiplier * demandMultiplier
+
+    // Step 6: Round price to nearest convenient value (optional)
+    finalPrice = ROUND(finalPrice, 0)
+
+    RETURN finalPrice
+END ALGORITHM
+
+<p class="explanation">
+<strong>Purpose:</strong>  
+Adjusts ticket prices dynamically to maximize revenue, control visitor flow, and encourage visits during low-demand periods.
+</p>
+
+<p class="explanation">
+<strong>Inputs:</strong><br>
+<ul style="text-align:left; display:inline-block; font-size:18px;">
+    <li><strong>attraction:</strong> Name of the attraction</li>
+    <li><strong>basePrice:</strong> Standard ticket price</li>
+    <li><strong>currentVisitors:</strong> Visitors expected at a time</li>
+    <li><strong>maxCapacity:</strong> Maximum allowed visitors</li>
+    <li><strong>season:</strong> High / Medium / Low</li>
+    <li><strong>dayType:</strong> Weekday / Weekend</li>
+    <li><strong>specialEvents:</strong> True if festival or special event</li>
+</ul>
+</p>
+
+<p class="explanation">
+<strong>Step-by-Step Logic:</strong><br>
+1. <strong>Season Multiplier:</strong> High season ↑25%, Medium 0%, Low ↓15%<br>
+2. <strong>Day Type Adjustment:</strong> Weekends ↑20%, Weekdays 0%<br>
+3. <strong>Special Event Adjustment:</strong> Event happening ↑30%<br>
+4. <strong>Demand-Based Adjustment:</strong>  
+   - Occupancy > 90% → ↑50%  
+   - 70-90% → ↑25%  
+   - 40-70% → base price  
+   - <40% → ↓15%<br>
+5. <strong>Final Price Calculation:</strong> <em>finalPrice = basePrice × seasonMultiplier × dayMultiplier × eventMultiplier × demandMultiplier</em><br>
+6. Optional rounding for convenience.
+</p>
+
+<p class="explanation">
+<strong>Benefits:</strong><br>
+✅ Maximizes revenue during peak demand<br>
+✅ Encourages visitors in low-demand periods<br>
+✅ Controls crowd distribution<br>
+✅ Scalable for multiple attractions<br>
+✅ Integrates with booking and analytics systems
+</p>
+
+<p class="explanation">
+<strong>Example Scenarios:</strong>
+<ul style="text-align:left; display:inline-block; font-size:18px;">
+    <li>Weekend in High Season, 95% occupancy → Base 100 → Final Price 225</li>
+    <li>Weekday in Low Season, 30% occupancy → Base 100 → Final Price 72</li>
+    <li>Festival in Medium Season, 80% occupancy → Base 100 → Final Price 195</li>
+</ul>
+</p>
+
+<p class="explanation">
+<strong>Conclusion:</strong>  
+This realistic dynamic pricing algorithm balances profit, visitor satisfaction, and crowd management, making it ideal for Vritdhara attractions.
+</p>
 
 <h3>4. Analytics & Visitor Trends</h3>
 <div style="text-align:center; margin:30px 0;">
