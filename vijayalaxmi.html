@@ -1024,7 +1024,41 @@ Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience
 </p>
 </div>
 
-  <h1 class="grey-heading">Safety & Cleanliness</h1>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety & Cleanliness - Smart City</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin:0; padding:0; background:#f5f5f5; color:#333;
+    }
+    .grey-heading {
+        background:#d3d3d3; padding:15px; text-align:center; border-radius:10px; font-size:28px;
+    }
+    .page { 
+        padding:20px 40px; background:white; margin:20px auto; border-radius:15px; max-width:1200px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    }
+    h3 { color:#1e3d59; margin-top:25px; }
+    ul { margin-left:20px; }
+    .algorithm-box {
+        background:#fffacd; /* yellow background */
+        border-left:5px solid #f4c542;
+        padding:15px;
+        margin:10px 0;
+        font-family:monospace;
+        white-space: pre-wrap;
+    }
+    canvas { background:#fff; border:1px solid #ccc; border-radius:10px; }
+</style>
+</head>
+<body>
+
+<h1 class="grey-heading">Safety & Cleanliness</h1>
 <div class="page">
 
     <!-- Why Safety -->
@@ -1048,7 +1082,7 @@ Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience
         <li>🏙️ Supports smart city IoT systems for waste management and cleanliness monitoring</li>
     </ul>
 
-    <!-- Basic Services -->
+    <!-- Essential Services -->
     <h3>3. Essential Services for Safety & Cleanliness</h3>
     <ul>
         <li>👮 Police stations and patrol units</li>
@@ -1060,23 +1094,11 @@ Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience
         <li>🧹 Waste management and street cleaning teams</li>
     </ul>
 
-    <!-- Images -->
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin:20px 0;">
-        <img src="police_station.jpg" alt="Police Station" style="width:300px;">
-        <img src="hospital.jpg" alt="Hospital" style="width:300px;">
-        <img src="railway_station.jpg" alt="Railway Station" style="width:300px;">
-        <img src="fire_station.jpg" alt="Fire Station" style="width:300px;">
-        <img src="clean_city.jpg" alt="Clean City" style="width:300px;">
-        <img src="cctv_monitoring.jpg" alt="CCTV Monitoring" style="width:300px;">
-    </div>
-
     <!-- Algorithms -->
     <h3>4. Algorithms Implementation</h3>
 
     <h4>i) Sorting Algorithms 📊</h4>
     <div class="algorithm-box">
-<pre>
-// Quick Sort: Prioritize incidents by severity
 FUNCTION QuickSort(arr, low, high)
     IF low < high THEN
         pivotIndex = Partition(arr, low, high)
@@ -1095,7 +1117,6 @@ FUNCTION Partition(arr, low, high)
     RETURN i+1
 END FUNCTION
 
-// Merge Sort: Stable sorting by location/time
 FUNCTION MergeSort(arr)
     IF length(arr) > 1 THEN
         mid = length(arr)/2
@@ -1103,13 +1124,10 @@ FUNCTION MergeSort(arr)
         MergeSort(L); MergeSort(R)
         Merge(arr, L, R)
 END FUNCTION
-</pre>
-<p>💡 Sorting helps city authorities address high-risk incidents first and plan resources efficiently.</p>
+    </div>
 
     <h4>ii) String Search Algorithms 🔍</h4>
     <div class="algorithm-box">
-<pre>
-// KMP: Search for incident keywords efficiently
 FUNCTION KMPSearch(pattern, text)
     lps = ComputeLPS(pattern)
     i = j = 0
@@ -1124,7 +1142,6 @@ FUNCTION KMPSearch(pattern, text)
             ELSE i++
 END FUNCTION
 
-// Naive Search: Simple search for small datasets
 FUNCTION NaiveSearch(pattern, text)
     FOR i = 0 TO length(text)-length(pattern)
         j = 0
@@ -1132,13 +1149,10 @@ FUNCTION NaiveSearch(pattern, text)
             j++
         IF j == length(pattern) THEN PRINT "Pattern found at index", i
 END FUNCTION
-</pre>
-<p>💡 String search allows fast identification of specific incidents, complaints, or unclean areas.</p>
+    </div>
 
     <h4>iii) Graph-based Algorithms 🌐</h4>
     <div class="algorithm-box">
-<pre>
-// Dijkstra: Shortest path for emergency vehicles
 FUNCTION Dijkstra(graph, source)
     distance[] = INFINITY; distance[source] = 0
     visited[] = false
@@ -1150,7 +1164,6 @@ FUNCTION Dijkstra(graph, source)
                 distance[v] = distance[u]+weight(u,v)
 END FUNCTION
 
-// BFS: Hotspot detection and area exploration
 FUNCTION BFS(graph, start)
     queue = [start]; visited[start]=true
     WHILE queue not empty
@@ -1160,8 +1173,7 @@ FUNCTION BFS(graph, start)
                 visited[neighbor]=true
                 queue.push(neighbor)
 END FUNCTION
-</pre>
-<p>💡 Graph algorithms optimize routes for ambulances, police, fire services, and identify high-risk areas for proactive management.</p>
+    </div>
 
     <!-- Analytics -->
     <h3>5. Analytics & Insights</h3>
@@ -1200,7 +1212,6 @@ const safetyChart = new Chart(ctx, {
     options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}}}
 });
 </script>
-  
+
 </body>
 </html>
-
