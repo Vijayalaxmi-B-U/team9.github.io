@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart City – VRITDHARA</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#000;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    padding:15px;
+    letter-spacing:2px;
+}
+
+/* City container */
+.city-container{
+    position:relative;
+    width:90%;
+    max-width:1000px;
+    margin:20px auto;
+}
+
+.city-container img{
+    width:100%;
+    display:block;
+    border-radius:10px;
+}
+
+/* Common icon style */
+.city-icon{
+    position:absolute;
+    width:55px;
+    height:55px;
+    background:white;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 6px 15px rgba(0,0,0,0.4);
+    transition:transform 0.3s, background 0.3s;
+}
+
+.city-icon i{
+    font-size:26px;
+    color:#333;
+}
+
+/* Hover */
+.city-icon:hover{
+    transform:scale(1.15);
+    background:#ffe082;
+}
+
+/* Tooltip */
+.city-icon span{
+    position:absolute;
+    bottom:-28px;
+    background:black;
+    color:white;
+    font-size:12px;
+    padding:3px 8px;
+    border-radius:6px;
+    opacity:0;
+    pointer-events:none;
+    white-space:nowrap;
+}
+
+.city-icon:hover span{
+    opacity:1;
+}
+/* ===== ICON COLORS BY ZONE ===== */
+
+/* Residential */
+.city-icon.residential{
+    background:#e8f5e9;
+}
+.city-icon.residential i{
+    color:#2e7d32;
+}
+.city-icon.residential:hover{
+    background:#c8e6c9;
+}
+
+/* Industry */
+.city-icon.industry{
+    background:#fff3e0;
+}
+.city-icon.industry i{
+    color:#ef6c00;
+}
+.city-icon.industry:hover{
+    background:#ffe0b2;
+}
+
+/* Agriculture */
+.city-icon.agriculture{
+    background:#f1f8e9;
+}
+.city-icon.agriculture i{
+    color:#558b2f;
+}
+.city-icon.agriculture:hover{
+    background:#dcedc8;
+}
+
+/* Tourism */
+.city-icon.tourism{
+    background:#e3f2fd;
+}
+.city-icon.tourism i{
+    color:#1565c0;
+}
+.city-icon.tourism:hover{
+    background:#bbdefb;
+}
+
+
+/* ===== ICON POSITIONS (ADJUST IF NEEDED) ===== */
+
+/* Residential areas */
+    .r1 { top: 35%; left: 70%; }
+    .r2 { top: 60%; left: 10%; }
+    .r3 { top: 10%; left: 50%; }
+    .r4 { top: 40%; left: 10%; }
+
+
+    /* Industry */
+    .industry { top: 78%; left: 55%; }
+
+    /* Agriculture */
+.agriculture{ top:18%; left:85%; }
+
+/* Tourism */
+.tourism{ top:50%; left:40%; }
+
+
+@media(max-width:600px){
+    .city-icon{
+        width:45px;
+        height:45px;
+    }
+    .city-icon i{
+        font-size:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>SMART CITY – VRITDHARA</h1>
+
+<div class="city-container">
+
+    <!-- City background -->
+    <img src="finalcity.png" alt="Smart City Map">
+
+    <!-- Residential -->
+    <a href="residential.html" class="city-icon residential r1">
+        <i class="fa-solid fa-house"></i>
+        <span style="color: #ef6c00;">Residential R1</span>
+    </a>
+
+    <a href="residential.html" class="city-icon residential r2">
+        <i class="fa-solid fa-house"></i>
+        <span>Residential R2</span>
+    </a>
+
+    <a href="residential.html" class="city-icon residential r3">
+        <i class="fa-solid fa-house"></i>
+        <span>Residential R3</span>
+    </a>
+
+    <a href="residential.html" class="city-icon residential r4">
+        <i class="fa-solid fa-house"></i>
+        <span>Residential R4</span>
+    </a>
+
+
+    <!-- Industry -->
+    <a href="industry.html" class="city-icon industry">
+        <i class="fa-solid fa-industry"></i>
+        <span>Industrial Area</span>
+    </a>
+<a href="agriculture.html" class="city-icon agriculture">
+    <i class="fa-solid fa-seedling"></i>
+    <span>Agricultural Zone</span>
+</a>
+<a href="tourism.html" class="city-icon tourism">
+    <i class="fa-solid fa-mountain-sun"></i>
+    <span>Tourism Zone</span>
+</a>
+
+</div>
+
+</body>
+</html>
