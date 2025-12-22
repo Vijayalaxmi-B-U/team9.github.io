@@ -1157,24 +1157,27 @@ The integration of algorithms ensures efficiency, scalability, and cost-effectiv
 
     <h5>Quick Sort – Incident Severity Prioritization</h5>
     <div class="algorithm-box">
-FUNCTION QuickSort(arr, low, high)
-    IF low < high THEN
-        pivotIndex = Partition(arr, low, high)
-        QuickSort(arr, low, pivotIndex - 1)
-        QuickSort(arr, pivotIndex + 1, high)
-END FUNCTION
+Algorithm: Quick Sort (Incident Prioritization)
 
-FUNCTION Partition(arr, low, high)
-    pivot = arr[high].severity
-    i = low - 1
-    FOR j = low TO high - 1
-        IF arr[j].severity >= pivot THEN
-            i = i + 1
-            SWAP arr[i], arr[j]
-    SWAP arr[i+1], arr[high]
-    RETURN i+1
-END FUNCTION
-    </div>
+Input:
+incidentList[] → {incidentID, severityLevel, location, timeStamp}
+
+Procedure QuickSort(incidentList, low, high)
+    IF low < high THEN
+        pivotIndex ← Partition(incidentList, low, high)
+        QuickSort(incidentList, low, pivotIndex - 1)
+        QuickSort(incidentList, pivotIndex + 1, high)
+
+Procedure Partition(incidentList, low, high)
+    pivot ← incidentList[high].severityLevel
+    i ← low - 1
+    FOR j ← low TO high - 1 DO
+        IF incidentList[j].severityLevel ≥ pivot THEN
+            i ← i + 1
+            SWAP incidentList[i], incidentList[j]
+    SWAP incidentList[i + 1], incidentList[high]
+    RETURN i + 1
+</div>
     <p>
     💡 <strong>Explanation:</strong> <strong>Quick Sort</strong> ranks incidents by severity so
     life-threatening cases are handled first. This helps police, hospitals, and fire services
@@ -1183,14 +1186,21 @@ END FUNCTION
 
     <h5>Merge Sort – Time & Location Based Sorting</h5>
     <div class="algorithm-box">
-FUNCTION MergeSort(arr)
-    IF length(arr) > 1 THEN
-        mid = length(arr)/2
-        L = arr[0..mid-1]; R = arr[mid..end]
-        MergeSort(L); MergeSort(R)
-        Merge(arr, L, R)
-END FUNCTION
-    </div>
+Algorithm: Merge Sort (Chronological & Location Sorting)
+
+Input:
+reportList[] → {reportID, areaCode, timeStamp, type}
+
+Procedure MergeSort(reportList)
+    IF length(reportList) > 1 THEN
+        mid ← length(reportList) / 2
+        left ← reportList[0 .. mid-1]
+        right ← reportList[mid .. end]
+        MergeSort(left)
+        MergeSort(right)
+        Merge(left, right, reportList)
+</div>
+
     <p>
     💡 <strong>Explanation:</strong> <strong>Merge Sort</strong> is used to organize reports
     chronologically or by location, ensuring systematic tracking of safety and cleanliness
@@ -1200,21 +1210,28 @@ END FUNCTION
     <h4>ii) String Search Algorithms 🔍</h4>
 
     <h5>Knuth–Morris–Pratt (KMP) Algorithm</h5>
-    <div class="algorithm-box">
-FUNCTION KMPSearch(pattern, text)
-    lps = ComputeLPS(pattern)
-    i = j = 0
-    WHILE i < length(text)
-        IF pattern[j] == text[i]
-            i++; j++
-        IF j == length(pattern)
-            PRINT "Pattern found at index", i-j
-            j = lps[j-1]
-        ELSE IF i < length(text) AND pattern[j] != text[i]
-            IF j != 0 THEN j = lps[j-1]
-            ELSE i++
-END FUNCTION
-    </div>
+   <div class="algorithm-box">
+Algorithm: KMP (Emergency Keyword Search)
+
+Input:
+text → citizenReports
+pattern → emergencyKeyword
+
+Procedure KMPSearch(pattern, text)
+    lps[] ← ComputeLPS(pattern)
+    i ← 0, j ← 0
+    WHILE i < length(text) DO
+        IF pattern[j] = text[i] THEN
+            i++, j++
+        IF j = length(pattern) THEN
+            ALERT controlCenter(pattern)
+            j ← lps[j - 1]
+        ELSE IF i < length(text) AND pattern[j] ≠ text[i] THEN
+            IF j ≠ 0 THEN
+                j ← lps[j - 1]
+            ELSE
+                i++
+</div>
     <p>
     💡 <strong>Explanation:</strong> <strong>KMP</strong> efficiently searches keywords like
     “fire”, “accident”, “theft”, or “garbage” in reports, enabling faster identification of
@@ -1222,15 +1239,20 @@ END FUNCTION
     </p>
 
     <h5>Naive String Search Algorithm</h5>
-    <div class="algorithm-box">
-FUNCTION NaiveSearch(pattern, text)
-    FOR i = 0 TO length(text)-length(pattern)
-        j = 0
-        WHILE j < length(pattern) AND text[i+j] == pattern[j]
-            j++
-        IF j == length(pattern) THEN PRINT "Pattern found at index", i
-END FUNCTION
-    </div>
+      <div class="algorithm-box">
+Algorithm: Naive String Search
+
+Input:
+text → localAreaReports
+pattern → searchKeyword
+
+FOR i ← 0 TO length(text) - length(pattern)
+    j ← 0
+    WHILE j < length(pattern) AND text[i + j] = pattern[j]
+        j++
+    IF j = length(pattern)
+        DISPLAY "Keyword Found at index", i
+</div>
     <p>
     💡 <strong>Explanation:</strong> <strong>Naive Search</strong> is useful for small datasets
     or manual monitoring systems in low-traffic areas.
@@ -1240,17 +1262,24 @@ END FUNCTION
 
     <h5>Dijkstra’s Algorithm – Emergency Route Optimization</h5>
     <div class="algorithm-box">
-FUNCTION Dijkstra(graph, source)
-    distance[] = INFINITY; distance[source] = 0
-    visited[] = false
-    FOR i = 0 TO graph.size-1
-        u = MinDistance(distance, visited)
-        visited[u] = true
-        FOR neighbor v of u
-            IF NOT visited[v] AND distance[u]+weight(u,v) < distance[v]
-                distance[v] = distance[u]+weight(u,v)
-END FUNCTION
-    </div>
+Algorithm: Dijkstra (Shortest Emergency Route)
+
+Graph:
+Nodes → intersections / hospitals / stations
+Edges → roads with traffic weight
+
+Procedure Dijkstra(graph, source)
+    distance[source] ← 0
+    FOR each node v
+        IF v ≠ source THEN distance[v] ← ∞
+    WHILE unvisited nodes exist
+        u ← node with minimum distance
+        mark u as visited
+        FOR each neighbor v of u
+            IF distance[u] + weight(u,v) < distance[v]
+                distance[v] ← distance[u] + weight(u,v)
+</div>
+
     <p>
     💡 <strong>Explanation:</strong> <strong>Dijkstra’s Algorithm</strong> finds the shortest
     path for ambulances, police, and fire trucks, reducing response time during emergencies.
@@ -1258,16 +1287,24 @@ END FUNCTION
 
     <h5>Breadth First Search (BFS) – Hotspot Detection</h5>
     <div class="algorithm-box">
-FUNCTION BFS(graph, start)
-    queue = [start]; visited[start]=true
+Algorithm: Breadth First Search (BFS)
+
+Input:
+CityGraph, startingZone
+
+Procedure BFS(graph, start)
+    queue ← empty
+    visited[start] ← true
+    enqueue(queue, start)
     WHILE queue not empty
-        node = queue.pop()
-        FOR neighbor in graph[node]
-            IF NOT visited[neighbor]
-                visited[neighbor]=true
-                queue.push(neighbor)
-END FUNCTION
-    </div>
+        zone ← dequeue(queue)
+        ANALYZE(zone)
+        FOR each adjacentZone of zone
+            IF not visited
+                visited ← true
+                enqueue(queue, adjacentZone)
+</div>
+
     <p>
     💡 <strong>Explanation:</strong> <strong>BFS</strong> scans nearby areas level by level to
     identify crime hotspots or dirty zones for patrol and cleaning planning.
