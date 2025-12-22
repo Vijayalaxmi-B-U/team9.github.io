@@ -1067,12 +1067,13 @@ Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience
         <li>📹 CCTV and emergency alert systems</li>
         <li>🧹 Waste management and street cleaning teams</li>
     </ul>
+<!-- Algorithms -->
+<h3>4. Algorithms Implementation</h3>
 
-    <!-- Algorithms -->
-    <h3>4. Algorithms Implementation</h3>
+<h4>i) Sorting Algorithms 📊</h4>
 
-    <h4>i) Sorting Algorithms 📊</h4>
-    <div class="algorithm-box">
+<h5>Quick Sort (for Incident Severity)</h5>
+<div class="algorithm-box">
 FUNCTION QuickSort(arr, low, high)
     IF low < high THEN
         pivotIndex = Partition(arr, low, high)
@@ -1090,7 +1091,14 @@ FUNCTION Partition(arr, low, high)
     SWAP arr[i+1], arr[high]
     RETURN i+1
 END FUNCTION
+</div>
 
+<p>
+💡 <strong>Explanation:</strong> <strong>Quick Sort</strong> prioritizes incidents by severity, ensuring the most critical emergencies are handled first. It’s efficient for large datasets and helps authorities allocate resources quickly.
+</p>
+
+<h5>Merge Sort (for Time/Location Sorting)</h5>
+<div class="algorithm-box">
 FUNCTION MergeSort(arr)
     IF length(arr) > 1 THEN
         mid = length(arr)/2
@@ -1098,10 +1106,16 @@ FUNCTION MergeSort(arr)
         MergeSort(L); MergeSort(R)
         Merge(arr, L, R)
 END FUNCTION
-    </div>
+</div>
 
-    <h4>ii) String Search Algorithms 🔍</h4>
-    <div class="algorithm-box">
+<p>
+💡 <strong>Explanation:</strong> <strong>Merge Sort</strong> is a stable sorting algorithm used to sort incidents by time or location while preserving order. Useful for chronological tracking of safety reports or cleanliness complaints.
+</p>
+
+<h4>ii) String Search Algorithms 🔍</h4>
+
+<h5>KMP (Knuth-Morris-Pratt) Algorithm</h5>
+<div class="algorithm-box">
 FUNCTION KMPSearch(pattern, text)
     lps = ComputeLPS(pattern)
     i = j = 0
@@ -1115,7 +1129,14 @@ FUNCTION KMPSearch(pattern, text)
             IF j != 0 THEN j = lps[j-1]
             ELSE i++
 END FUNCTION
+</div>
 
+<p>
+💡 <strong>Explanation:</strong> <strong>KMP</strong> efficiently searches for keywords in incident or complaint reports, e.g., "fire" or "garbage". It’s faster than naive search for large datasets and helps authorities respond quickly.
+</p>
+
+<h5>Naive String Search Algorithm</h5>
+<div class="algorithm-box">
 FUNCTION NaiveSearch(pattern, text)
     FOR i = 0 TO length(text)-length(pattern)
         j = 0
@@ -1123,10 +1144,16 @@ FUNCTION NaiveSearch(pattern, text)
             j++
         IF j == length(pattern) THEN PRINT "Pattern found at index", i
 END FUNCTION
-    </div>
+</div>
 
-    <h4>iii) Graph-based Algorithms 🌐</h4>
-    <div class="algorithm-box">
+<p>
+💡 <strong>Explanation:</strong> <strong>Naive Search</strong> checks for a pattern at every position in the text. Useful for small datasets or short-term monitoring of reports.
+</p>
+
+<h4>iii) Graph-based Algorithms 🌐</h4>
+
+<h5>Dijkstra’s Algorithm (Shortest Path for Emergency Vehicles)</h5>
+<div class="algorithm-box">
 FUNCTION Dijkstra(graph, source)
     distance[] = INFINITY; distance[source] = 0
     visited[] = false
@@ -1137,7 +1164,14 @@ FUNCTION Dijkstra(graph, source)
             IF NOT visited[v] AND distance[u]+weight(u,v) < distance[v]
                 distance[v] = distance[u]+weight(u,v)
 END FUNCTION
+</div>
 
+<p>
+💡 <strong>Explanation:</strong> <strong>Dijkstra’s Algorithm</strong> calculates the shortest path for ambulances, police, and fire trucks. Minimizing travel time ensures rapid response to emergencies.
+</p>
+
+<h5>Breadth-First Search (BFS) Algorithm</h5>
+<div class="algorithm-box">
 FUNCTION BFS(graph, start)
     queue = [start]; visited[start]=true
     WHILE queue not empty
@@ -1147,7 +1181,12 @@ FUNCTION BFS(graph, start)
                 visited[neighbor]=true
                 queue.push(neighbor)
 END FUNCTION
-    </div>
+</div>
+
+<p>
+💡 <strong>Explanation:</strong> <strong>BFS</strong> explores all neighboring areas level by level. Useful to detect hotspots for incidents or cleanliness problems, helping plan patrols and cleaning routes.
+</p>
+
 
     <!-- Analytics -->
     <h3>5. Analytics & Insights</h3>
