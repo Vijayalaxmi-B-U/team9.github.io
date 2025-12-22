@@ -1022,8 +1022,185 @@ Adjusts ticket prices dynamically to maximize revenue, control visitor flow, and
 <strong>Integration into Business Case:</strong><br>
 Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience”</em>, enhancing visitor engagement, optimizing operations, increasing revenue, and supporting sustainable tourism.
 </p>
+</div>
+
+  <h1 class="grey-heading">Safety & Cleanliness</h1>
+<div class="page">
+
+    <!-- Why Safety -->
+    <h3>1. Importance of Safety</h3>
+    <p>Safety is the foundation of a thriving smart city. For tourists and residents, a secure environment ensures protection, confidence, and better urban experience. Key reasons:</p>
+    <ul>
+        <li>🛡️ Protects life and property from accidents, crime, and emergencies</li>
+        <li>🏙️ Enhances city reputation, attracting tourists and investments</li>
+        <li>🚨 Ensures rapid emergency response to incidents</li>
+        <li>📊 Enables data-driven decision-making using algorithms to analyze incidents</li>
+        <li>🏗️ Helps in urban planning by identifying high-risk zones and safety gaps</li>
+    </ul>
+
+    <!-- Why Cleanliness -->
+    <h3>2. Importance of Cleanliness</h3>
+    <p>Cleanliness is critical for public health, environment, and tourist satisfaction. A clean city creates positive perception and reduces disease risk:</p>
+    <ul>
+        <li>🧹 Reduces spread of diseases and maintains hygienic surroundings</li>
+        <li>🌿 Protects environment: rivers, parks, and streets remain unpolluted</li>
+        <li>👀 Improves visual appeal and tourist experience</li>
+        <li>🏙️ Supports smart city IoT systems for waste management and cleanliness monitoring</li>
+    </ul>
+
+    <!-- Basic Services -->
+    <h3>3. Essential Services for Safety & Cleanliness</h3>
+    <ul>
+        <li>👮 Police stations and patrol units</li>
+        <li>🚑 Hospitals and ambulance services</li>
+        <li>🚒 Fire stations and disaster management</li>
+        <li>🚆 Railway stations and crowd control</li>
+        <li>🛣️ Traffic monitoring and smart streetlights</li>
+        <li>📹 CCTV and emergency alert systems</li>
+        <li>🧹 Waste management and street cleaning teams</li>
+    </ul>
+
+    <!-- Images -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin:20px 0;">
+        <img src="police_station.jpg" alt="Police Station" style="width:300px;">
+        <img src="hospital.jpg" alt="Hospital" style="width:300px;">
+        <img src="railway_station.jpg" alt="Railway Station" style="width:300px;">
+        <img src="fire_station.jpg" alt="Fire Station" style="width:300px;">
+        <img src="clean_city.jpg" alt="Clean City" style="width:300px;">
+        <img src="cctv_monitoring.jpg" alt="CCTV Monitoring" style="width:300px;">
+    </div>
+
+    <!-- Algorithms -->
+    <h3>4. Algorithms Implementation</h3>
+
+    <h4>i) Sorting Algorithms 📊</h4>
+    <div class="algorithm-box">
+<pre>
+// Quick Sort: Prioritize incidents by severity
+FUNCTION QuickSort(arr, low, high)
+    IF low < high THEN
+        pivotIndex = Partition(arr, low, high)
+        QuickSort(arr, low, pivotIndex - 1)
+        QuickSort(arr, pivotIndex + 1, high)
+END FUNCTION
+
+FUNCTION Partition(arr, low, high)
+    pivot = arr[high].severity
+    i = low - 1
+    FOR j = low TO high - 1
+        IF arr[j].severity >= pivot THEN
+            i = i + 1
+            SWAP arr[i], arr[j]
+    SWAP arr[i+1], arr[high]
+    RETURN i+1
+END FUNCTION
+
+// Merge Sort: Stable sorting by location/time
+FUNCTION MergeSort(arr)
+    IF length(arr) > 1 THEN
+        mid = length(arr)/2
+        L = arr[0..mid-1]; R = arr[mid..end]
+        MergeSort(L); MergeSort(R)
+        Merge(arr, L, R)
+END FUNCTION
+</pre>
+<p>💡 Sorting helps city authorities address high-risk incidents first and plan resources efficiently.</p>
+
+    <h4>ii) String Search Algorithms 🔍</h4>
+    <div class="algorithm-box">
+<pre>
+// KMP: Search for incident keywords efficiently
+FUNCTION KMPSearch(pattern, text)
+    lps = ComputeLPS(pattern)
+    i = j = 0
+    WHILE i < length(text)
+        IF pattern[j] == text[i]
+            i++; j++
+        IF j == length(pattern)
+            PRINT "Pattern found at index", i-j
+            j = lps[j-1]
+        ELSE IF i < length(text) AND pattern[j] != text[i]
+            IF j != 0 THEN j = lps[j-1]
+            ELSE i++
+END FUNCTION
+
+// Naive Search: Simple search for small datasets
+FUNCTION NaiveSearch(pattern, text)
+    FOR i = 0 TO length(text)-length(pattern)
+        j = 0
+        WHILE j < length(pattern) AND text[i+j] == pattern[j]
+            j++
+        IF j == length(pattern) THEN PRINT "Pattern found at index", i
+END FUNCTION
+</pre>
+<p>💡 String search allows fast identification of specific incidents, complaints, or unclean areas.</p>
+
+    <h4>iii) Graph-based Algorithms 🌐</h4>
+    <div class="algorithm-box">
+<pre>
+// Dijkstra: Shortest path for emergency vehicles
+FUNCTION Dijkstra(graph, source)
+    distance[] = INFINITY; distance[source] = 0
+    visited[] = false
+    FOR i = 0 TO graph.size-1
+        u = MinDistance(distance, visited)
+        visited[u] = true
+        FOR neighbor v of u
+            IF NOT visited[v] AND distance[u]+weight(u,v) < distance[v]
+                distance[v] = distance[u]+weight(u,v)
+END FUNCTION
+
+// BFS: Hotspot detection and area exploration
+FUNCTION BFS(graph, start)
+    queue = [start]; visited[start]=true
+    WHILE queue not empty
+        node = queue.pop()
+        FOR neighbor in graph[node]
+            IF NOT visited[neighbor]
+                visited[neighbor]=true
+                queue.push(neighbor)
+END FUNCTION
+</pre>
+<p>💡 Graph algorithms optimize routes for ambulances, police, fire services, and identify high-risk areas for proactive management.</p>
+
+    <!-- Analytics -->
+    <h3>5. Analytics & Insights</h3>
+    <div style="width:600px; height:300px; margin:auto;">
+        <canvas id="safetyChart"></canvas>
+    </div>
+    <p style="text-align:center; font-size:18px;">Charts display incident frequency, peak risk hours, hotspots, and response efficiency for all services. Algorithms filter, prioritize, and optimize actions.</p>
+
+    <!-- City-wide Benefits -->
+    <h3>6. City-wide Benefits</h3>
+    <ul>
+        <li>👮 Faster police response and reduced crime</li>
+        <li>🚑 Efficient ambulance and medical aid</li>
+        <li>🧹 Cleaner streets and hygienic public spaces</li>
+        <li>🏙️ Improved urban planning and infrastructure</li>
+        <li>💼 Increased tourism, economic growth, and city reputation</li>
+        <li>🌱 Environmentally sustainable and healthy city</li>
+    </ul>
 
 </div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('safetyChart').getContext('2d');
+const safetyChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Police', 'Health', 'Fire', 'Railway', 'Cleanliness'],
+        datasets: [{
+            label: 'Incidents Handled per Month',
+            data: [120, 95, 60, 40, 80],
+            backgroundColor: ['#1e3d59','#ff6e40','#ffa600','#6a67ce','#4db6ac']
+        }]
+    },
+    options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}}}
+});
+</script>
+  
 </body>
 </html>
 
