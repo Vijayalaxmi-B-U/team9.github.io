@@ -1048,49 +1048,72 @@ Combining these technologies creates a <em>“Vritdhara Smart Tourism Experience
 </p>
 </div>
 
-<h1 class="grey-heading">Safety & Cleanliness</h1>
+<h1 class="grey-heading">Safety, Security & Cleanliness</h1>
 <div class="page">
 
-
-    <!-- Why Safety -->
+    <!-- SAFETY -->
     <h3>1. Importance of Safety</h3>
-    <p>Safety is the foundation of a thriving smart city. For tourists and residents, a secure environment ensures protection, confidence, and better urban experience. Key reasons:</p>
+    <p>
+    Safety is the backbone of a smart city ecosystem. It ensures protection of citizens,
+    tourists, and public assets. A safe environment builds trust, reduces risks, and
+    enables smooth functioning of urban life.
+    </p>
     <ul>
-        <li>🛡️ Protects life and property from accidents, crime, and emergencies</li>
-        <li>🏙️ Enhances city reputation, attracting tourists and investments</li>
-        <li>🚨 Ensures rapid emergency response to incidents</li>
-        <li>📊 Enables data-driven decision-making using algorithms to analyze incidents</li>
-        <li>🏗️ Helps in urban planning by identifying high-risk zones and safety gaps</li>
+        <li>🛡️ Protects life and property from crime, accidents, and disasters</li>
+        <li>🚨 Enables rapid emergency response and disaster preparedness</li>
+        <li>🏙️ Improves city reputation and tourism confidence</li>
+        <li>📊 Helps authorities analyze incident trends using algorithms</li>
+        <li>🏗️ Supports safer urban planning by identifying risk-prone zones</li>
     </ul>
 
-    <!-- Why Cleanliness -->
-    <h3>2. Importance of Cleanliness</h3>
-    <p>Cleanliness is critical for public health, environment, and tourist satisfaction. A clean city creates positive perception and reduces disease risk:</p>
+    <!-- SECURITY -->
+    <h3>2. Importance of Security</h3>
+    <p>
+    Security focuses on prevention, monitoring, and control of threats. A strong security
+    system ensures law enforcement, crowd management, cyber protection, and infrastructure
+    safety in public spaces.
+    </p>
     <ul>
-        <li>🧹 Reduces spread of diseases and maintains hygienic surroundings</li>
-        <li>🌿 Protects environment: rivers, parks, and streets remain unpolluted</li>
-        <li>👀 Improves visual appeal and tourist experience</li>
-        <li>🏙️ Supports smart city IoT systems for waste management and cleanliness monitoring</li>
+        <li>👮 Prevents crimes through visible policing and surveillance</li>
+        <li>📹 Continuous monitoring using CCTV and AI analytics</li>
+        <li>🚆 Crowd control and safety at railway and bus stations</li>
+        <li>🧑‍💻 Cyber security for smart city digital services</li>
+        <li>🚺 Women and child safety using SOS alerts and smart lighting</li>
     </ul>
 
-    <!-- Essential Services -->
-    <h3>3. Essential Services for Safety & Cleanliness</h3>
+    <!-- CLEANLINESS -->
+    <h3>3. Importance of Cleanliness</h3>
+    <p>
+    Cleanliness is essential for public health, environmental safety, and tourism growth.
+    A clean city reduces disease spread, improves living standards, and promotes sustainable
+    development.
+    </p>
     <ul>
-        <li>👮 Police stations and patrol units</li>
-        <li>🚑 Hospitals and ambulance services</li>
-        <li>🚒 Fire stations and disaster management</li>
-        <li>🚆 Railway stations and crowd control</li>
-        <li>🛣️ Traffic monitoring and smart streetlights</li>
-        <li>📹 CCTV and emergency alert systems</li>
-        <li>🧹 Waste management and street cleaning teams</li>
+        <li>🧹 Maintains hygienic public spaces</li>
+        <li>🌿 Protects rivers, parks, and environment</li>
+        <li>👀 Improves city appearance and tourist satisfaction</li>
+        <li>♻️ Supports smart waste management and sustainability goals</li>
     </ul>
-<!-- Algorithms -->
-<h3>4. Algorithms Implementation</h3>
 
-<h4>i) Sorting Algorithms 📊</h4>
+    <!-- ESSENTIAL SERVICES -->
+    <h3>4. Essential Safety, Security & Cleanliness Services</h3>
+    <ul>
+        <li>👮 Police stations, patrol vehicles, and control rooms</li>
+        <li>🚑 Hospitals, emergency wards, and ambulance services</li>
+        <li>🚒 Fire stations and disaster response units</li>
+        <li>🚆 Railway stations and crowd monitoring systems</li>
+        <li>🛣️ Traffic control, smart signals, and streetlights</li>
+        <li>📹 CCTV surveillance and emergency alert systems</li>
+        <li>🧹 Waste collection, sanitation workers, and cleaning vehicles</li>
+    </ul>
 
-<h5>Quick Sort (for Incident Severity)</h5>
-<div class="algorithm-box">
+    <!-- ALGORITHMS -->
+    <h3>5. Algorithms Implementation</h3>
+
+    <h4>i) Sorting Algorithms 📊</h4>
+
+    <h5>Quick Sort – Incident Severity Prioritization</h5>
+    <div class="algorithm-box">
 FUNCTION QuickSort(arr, low, high)
     IF low < high THEN
         pivotIndex = Partition(arr, low, high)
@@ -1108,14 +1131,15 @@ FUNCTION Partition(arr, low, high)
     SWAP arr[i+1], arr[high]
     RETURN i+1
 END FUNCTION
-</div>
+    </div>
+    <p>
+    💡 <strong>Explanation:</strong> <strong>Quick Sort</strong> ranks incidents by severity so
+    life-threatening cases are handled first. This helps police, hospitals, and fire services
+    act faster during emergencies.
+    </p>
 
-<p>
-💡 <strong>Explanation:</strong> <strong>Quick Sort</strong> prioritizes incidents by severity, ensuring the most critical emergencies are handled first. It’s efficient for large datasets and helps authorities allocate resources quickly.
-</p>
-
-<h5>Merge Sort (for Time/Location Sorting)</h5>
-<div class="algorithm-box">
+    <h5>Merge Sort – Time & Location Based Sorting</h5>
+    <div class="algorithm-box">
 FUNCTION MergeSort(arr)
     IF length(arr) > 1 THEN
         mid = length(arr)/2
@@ -1123,16 +1147,17 @@ FUNCTION MergeSort(arr)
         MergeSort(L); MergeSort(R)
         Merge(arr, L, R)
 END FUNCTION
-</div>
+    </div>
+    <p>
+    💡 <strong>Explanation:</strong> <strong>Merge Sort</strong> is used to organize reports
+    chronologically or by location, ensuring systematic tracking of safety and cleanliness
+    complaints.
+    </p>
 
-<p>
-💡 <strong>Explanation:</strong> <strong>Merge Sort</strong> is a stable sorting algorithm used to sort incidents by time or location while preserving order. Useful for chronological tracking of safety reports or cleanliness complaints.
-</p>
+    <h4>ii) String Search Algorithms 🔍</h4>
 
-<h4>ii) String Search Algorithms 🔍</h4>
-
-<h5>KMP (Knuth-Morris-Pratt) Algorithm</h5>
-<div class="algorithm-box">
+    <h5>Knuth–Morris–Pratt (KMP) Algorithm</h5>
+    <div class="algorithm-box">
 FUNCTION KMPSearch(pattern, text)
     lps = ComputeLPS(pattern)
     i = j = 0
@@ -1146,14 +1171,15 @@ FUNCTION KMPSearch(pattern, text)
             IF j != 0 THEN j = lps[j-1]
             ELSE i++
 END FUNCTION
-</div>
+    </div>
+    <p>
+    💡 <strong>Explanation:</strong> <strong>KMP</strong> efficiently searches keywords like
+    “fire”, “accident”, “theft”, or “garbage” in reports, enabling faster identification of
+    emergencies.
+    </p>
 
-<p>
-💡 <strong>Explanation:</strong> <strong>KMP</strong> efficiently searches for keywords in incident or complaint reports, e.g., "fire" or "garbage". It’s faster than naive search for large datasets and helps authorities respond quickly.
-</p>
-
-<h5>Naive String Search Algorithm</h5>
-<div class="algorithm-box">
+    <h5>Naive String Search Algorithm</h5>
+    <div class="algorithm-box">
 FUNCTION NaiveSearch(pattern, text)
     FOR i = 0 TO length(text)-length(pattern)
         j = 0
@@ -1161,16 +1187,16 @@ FUNCTION NaiveSearch(pattern, text)
             j++
         IF j == length(pattern) THEN PRINT "Pattern found at index", i
 END FUNCTION
-</div>
+    </div>
+    <p>
+    💡 <strong>Explanation:</strong> <strong>Naive Search</strong> is useful for small datasets
+    or manual monitoring systems in low-traffic areas.
+    </p>
 
-<p>
-💡 <strong>Explanation:</strong> <strong>Naive Search</strong> checks for a pattern at every position in the text. Useful for small datasets or short-term monitoring of reports.
-</p>
+    <h4>iii) Graph-Based Algorithms 🌐</h4>
 
-<h4>iii) Graph-based Algorithms 🌐</h4>
-
-<h5>Dijkstra’s Algorithm (Shortest Path for Emergency Vehicles)</h5>
-<div class="algorithm-box">
+    <h5>Dijkstra’s Algorithm – Emergency Route Optimization</h5>
+    <div class="algorithm-box">
 FUNCTION Dijkstra(graph, source)
     distance[] = INFINITY; distance[source] = 0
     visited[] = false
@@ -1181,14 +1207,14 @@ FUNCTION Dijkstra(graph, source)
             IF NOT visited[v] AND distance[u]+weight(u,v) < distance[v]
                 distance[v] = distance[u]+weight(u,v)
 END FUNCTION
-</div>
+    </div>
+    <p>
+    💡 <strong>Explanation:</strong> <strong>Dijkstra’s Algorithm</strong> finds the shortest
+    path for ambulances, police, and fire trucks, reducing response time during emergencies.
+    </p>
 
-<p>
-💡 <strong>Explanation:</strong> <strong>Dijkstra’s Algorithm</strong> calculates the shortest path for ambulances, police, and fire trucks. Minimizing travel time ensures rapid response to emergencies.
-</p>
-
-<h5>Breadth-First Search (BFS) Algorithm</h5>
-<div class="algorithm-box">
+    <h5>Breadth First Search (BFS) – Hotspot Detection</h5>
+    <div class="algorithm-box">
 FUNCTION BFS(graph, start)
     queue = [start]; visited[start]=true
     WHILE queue not empty
@@ -1198,29 +1224,31 @@ FUNCTION BFS(graph, start)
                 visited[neighbor]=true
                 queue.push(neighbor)
 END FUNCTION
-</div>
+    </div>
+    <p>
+    💡 <strong>Explanation:</strong> <strong>BFS</strong> scans nearby areas level by level to
+    identify crime hotspots or dirty zones for patrol and cleaning planning.
+    </p>
 
-<p>
-💡 <strong>Explanation:</strong> <strong>BFS</strong> explores all neighboring areas level by level. Useful to detect hotspots for incidents or cleanliness problems, helping plan patrols and cleaning routes.
-</p>
-
-
-    <!-- Analytics -->
-    <h3>5. Analytics & Insights</h3>
+    <!-- ANALYTICS -->
+    <h3>6. Analytics & Insights</h3>
     <div style="width:600px; height:300px; margin:auto;">
         <canvas id="safetyChart"></canvas>
     </div>
-    <p style="text-align:center; font-size:18px;">Charts display incident frequency, peak risk hours, hotspots, and response efficiency for all services. Algorithms filter, prioritize, and optimize actions.</p>
+    <p style="text-align:center; font-size:18px;">
+    Analytical charts help authorities understand incident patterns, response efficiency,
+    and service performance across safety, security, and cleanliness departments.
+    </p>
 
-    <!-- City-wide Benefits -->
-    <h3>6. City-wide Benefits</h3>
+    <!-- BENEFITS -->
+    <h3>7. City-Wide Benefits</h3>
     <ul>
-        <li>👮 Faster police response and reduced crime</li>
-        <li>🚑 Efficient ambulance and medical aid</li>
-        <li>🧹 Cleaner streets and hygienic public spaces</li>
-        <li>🏙️ Improved urban planning and infrastructure</li>
-        <li>💼 Increased tourism, economic growth, and city reputation</li>
-        <li>🌱 Environmentally sustainable and healthy city</li>
+        <li>👮 Reduced crime and improved public safety</li>
+        <li>🚑 Faster medical and emergency response</li>
+        <li>🧹 Clean and hygienic city environment</li>
+        <li>🏙️ Better urban planning and governance</li>
+        <li>💼 Increased tourism, investment, and economic growth</li>
+        <li>🌱 Sustainable, resilient, and smart city development</li>
     </ul>
 
 </div>
@@ -1229,7 +1257,7 @@ END FUNCTION
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 const ctx = document.getElementById('safetyChart').getContext('2d');
-const safetyChart = new Chart(ctx, {
+new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Police', 'Health', 'Fire', 'Railway', 'Cleanliness'],
@@ -1239,9 +1267,10 @@ const safetyChart = new Chart(ctx, {
             backgroundColor: ['#1e3d59','#ff6e40','#ffa600','#6a67ce','#4db6ac']
         }]
     },
-    options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true}}}
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+    }
 });
 </script>
-
-</body>
-</html>
