@@ -156,6 +156,8 @@ h1{
 </head>
 
 <body>
+
+ <div id="content">
 <div class="city-container">
 
     <!-- City background -->
@@ -198,10 +200,19 @@ h1{
 </a>
 
 </div>
+ </div>
+    <script>
+  window.onload = function(){
+    const height = document.body.scrollHeight;
+    parent.document.querySelector('iframe').style.height = height + 'px';
+  }
+</script>
+
 
 
 </body>
 </html>
+
 
 
 
