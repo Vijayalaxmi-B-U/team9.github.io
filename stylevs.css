@@ -62,11 +62,14 @@ body {
 h1 {
   font-size: 30px;
   font-weight: 700;
-  color: #7dd3fc;
+  background: linear-gradient(90deg, #ff9800, #ff5722, #ff1744);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   letter-spacing: 2px;
   margin-bottom: 12px;
 }
+
 
 .divider {
   width: 180px;
@@ -510,3 +513,4 @@ pre {
     border-radius: 14px;
     display: block;
 }
+
