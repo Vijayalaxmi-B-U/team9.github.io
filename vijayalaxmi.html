@@ -906,62 +906,34 @@ If Vrithdhara Palace has a max capacity of 100 and 120 visitors arrive:<br>
 
 <h3>v) Dynamic Pricing Algorithm 💰</h3>
 <div class="algorithm-box">
-ALGORITHM DynamicPricingMaxRevenue(attraction, basePrice, currentVisitors, maxCapacity, season, dayType, specialEvents)
-    // Inputs:
-    // attraction       : The attraction being analyzed
-    // basePrice        : Standard ticket price
-    // currentVisitors  : Number of visitors expected/queued
-    // maxCapacity      : Maximum allowed visitors per time slot
-    // season           : High, Medium, Low
-    // dayType          : Weekday or Weekend
-    // specialEvents    : Boolean, True if special festival/event is ongoing
+ALGORITHM DynamicPricingMaxRevenue(attraction, basePrice, currentVisitors, maxCapacity, season, dayType, specialEvents)  
+    // Inputs: attraction, basePrice, currentVisitors, maxCapacity, season, dayType, specialEvents  
 
-    // Step 1: Base multiplier for season
-    IF season == "High" THEN
-        seasonMultiplier = 1.25
-    ELSE IF season == "Medium" THEN
-        seasonMultiplier = 1.0
-    ELSE
-        seasonMultiplier = 0.85
-    END IF
+    IF season == "High" THEN seasonMultiplier = 1.25  
+    ELSE IF season == "Medium" THEN seasonMultiplier = 1.0  
+    ELSE seasonMultiplier = 0.85 END IF  
 
-    // Step 2: Day type adjustment
-    IF dayType == "Weekend" THEN
-        dayMultiplier = 1.2
-    ELSE
-        dayMultiplier = 1.0
-    END IF
+    IF dayType == "Weekend" THEN dayMultiplier = 1.2  
+    ELSE dayMultiplier = 1.0 END IF  
 
-    // Step 3: Special event adjustment
-    IF specialEvents == True THEN
-        eventMultiplier = 1.3
-    ELSE
-        eventMultiplier = 1.0
-    END IF
+    IF specialEvents == True THEN eventMultiplier = 1.3  
+    ELSE eventMultiplier = 1.0 END IF  
 
-    // Step 4: Demand-based adjustment (visitor load)
-    occupancyRate = currentVisitors / maxCapacity
-    IF occupancyRate > 0.9 THEN
-        demandMultiplier = 1.5   // Very high demand
-    ELSE IF occupancyRate > 0.7 THEN
-        demandMultiplier = 1.25  // High demand
-    ELSE IF occupancyRate > 0.4 THEN
-        demandMultiplier = 1.0   // Moderate demand
-    ELSE
-        demandMultiplier = 0.85  // Low demand, encourage visitors
-    END IF
+    occupancyRate = currentVisitors / maxCapacity  
+    IF occupancyRate > 0.9 THEN demandMultiplier = 1.5  
+    ELSE IF occupancyRate > 0.7 THEN demandMultiplier = 1.25  
+    ELSE IF occupancyRate > 0.4 THEN demandMultiplier = 1.0  
+    ELSE demandMultiplier = 0.85 END IF  
 
-    // Step 5: Calculate final price
-    finalPrice = basePrice * seasonMultiplier * dayMultiplier * eventMultiplier * demandMultiplier
+    finalPrice = basePrice * seasonMultiplier * dayMultiplier * eventMultiplier * demandMultiplier  
+    finalPrice = ROUND(finalPrice, 0)  
 
-    // Step 6: Round price to nearest convenient value (optional)
-    finalPrice = ROUND(finalPrice, 0)
-
-    RETURN finalPrice
+    RETURN finalPrice  
 END ALGORITHM
+</div>
 
 <p class="explanation">
-<strong>Purpose:</strong>  
+<strong>Purpose:</strong><br>
 Adjusts ticket prices dynamically to maximize revenue, control visitor flow, and encourage visits during low-demand periods.
 </p>
 
@@ -1009,54 +981,6 @@ Adjusts ticket prices dynamically to maximize revenue, control visitor flow, and
     <li>Festival in Medium Season, 80% occupancy → Base 100 → Final Price 195</li>
 </ul>
 </p>
-
-<p class="explanation">
-<strong>Conclusion:</strong>  
-This realistic dynamic pricing algorithm balances profit, visitor satisfaction, and crowd management, making it ideal for Vritdhara attractions.
-</p>
-
-<h3>4. Analytics & Visitor Trends</h3>
-<div style="text-align:center; margin:30px 0;">
-    <canvas id="visitorChart" width="1200" height="650"></canvas>
-</div>
-
-<p class="explanation">
-<strong>Visitor Trends Explained:</strong><br>
-The bar chart shows **monthly visitor counts for each attraction** in Vritdhara. Data is intentionally non-uniform to reflect realistic visitor behavior:  
-<ul style="text-align:left; display:inline-block; font-size:18px; margin-top:10px;">
-    <li><strong>Cultural Emblem:</strong> Peaks in May & July; slight dip in June due to maintenance.</li>
-    <li><strong>Eterna Studio:</strong> High activity in April & August when film shoots are scheduled.</li>
-    <li><strong>Vrithdhara Palace:</strong> Steady flow with surge in February (heritage week), moderate dips in March & June.</li>
-    <li><strong>National Park:</strong> Fluctuates based on wildlife sightings; peak in Mar-Apr, drops in monsoon.</li>
-</ul>
-This messy chart helps optimize **crowd flow, staffing, pricing, and event scheduling**.
-</p>
-
-<script>
-const ctx = document.getElementById('visitorChart').getContext('2d');
-const visitorChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
-        datasets: [
-            { label: 'Cultural Emblem', data:[120, 180, 150, 200, 220, 160], backgroundColor:'#FF6384' },
-            { label: 'Eterna Studio', data:[80, 110, 95, 160, 140, 100], backgroundColor:'#36A2EB' },
-            { label: 'Vrithdhara Palace', data:[60, 140, 90, 130, 120, 80], backgroundColor:'#FFCE56' },
-            { label: 'National Park', data:[40, 90, 120, 100, 70, 50], backgroundColor:'#4BC0C0' }
-        ]
-    },
-    options: {
-        responsive:false,
-        plugins: {
-            legend:{position:'top'},
-            title:{display:true, text:'Monthly Visitor Trends for Vritdhara Attractions (Realistic Data)'}
-        },
-        scales: { 
-            y:{beginAtZero:true}
-        }
-    }
-});
-</script>
 
 <h3>5. Advantages & Limitations</h3>
 <ul>
