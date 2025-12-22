@@ -1405,43 +1405,163 @@ and online promotion help small businesses compete with large commercial malls.
 <h3>4. Algorithms Used (From Syllabus)</h3>
 
 <h4>i) Sorting Algorithms – Popularity & Demand Ranking 📊</h4>
-<div class="algorithm-box">
-Algorithm: Merge Sort / Quick Sort
 
-Application:
-• Sorts shops, markets, and products by popularity, sales, and ratings
-• Helps highlight top cultural attractions and shopping zones
+<h5>Quick Sort – Ranking Markets & Shops by Demand</h5>
+<div class="algorithm-box">
+Algorithm: Quick Sort (Demand-Based Ranking)
+
+Input:
+shopList[] → {shopID, dailySales, customerRating, footfall}
+
+Procedure QuickSort(shopList, low, high)
+    IF low < high THEN
+        pivotIndex ← Partition(shopList, low, high)
+        QuickSort(shopList, low, pivotIndex - 1)
+        QuickSort(shopList, pivotIndex + 1, high)
+
+Procedure Partition(shopList, low, high)
+    pivot ← shopList[high].footfall
+    i ← low - 1
+    FOR j ← low TO high - 1 DO
+        IF shopList[j].footfall ≥ pivot THEN
+            i ← i + 1
+            SWAP shopList[i], shopList[j]
+    SWAP shopList[i + 1], shopList[high]
+    RETURN i + 1
 </div>
+
 <p>
-Sorting algorithms help authorities and tourists identify high-demand markets and cultural hotspots,
-allowing better promotion and crowd management.
+💡 <strong>Deep Explanation:</strong>  
+Quick Sort dynamically ranks local shops, street markets, and cultural stalls based on
+<strong>real-time footfall and sales data</strong>. Popular markets automatically appear at the top
+of tourism applications and city dashboards. This helps city authorities promote high-performing
+cultural zones while guiding tourists toward authentic local shopping experiences.
+Its average time complexity of <strong>O(n log n)</strong> makes it suitable for large city datasets.
 </p>
 
-<h4>ii) String Search Algorithms – Cultural & Product Search 🔍</h4>
-<div class="algorithm-box">
-Algorithm: KMP / Naive String Search
+<hr>
 
-Application:
-• Searches cultural event names, handicrafts, food items, or shop names
-• Used in tourism apps and digital directories
+<h5>Merge Sort – Stable Cultural Sales Analysis</h5>
+<div class="algorithm-box">
+Algorithm: Merge Sort (Stable Sales & Time Sorting)
+
+Input:
+salesData[] → {marketID, transactionTime, revenue}
+
+Procedure MergeSort(salesData)
+    IF length(salesData) > 1 THEN
+        mid ← length(salesData) / 2
+        left ← salesData[0 .. mid-1]
+        right ← salesData[mid .. end]
+        MergeSort(left)
+        MergeSort(right)
+        Merge(left, right, salesData)
 </div>
+
 <p>
-String search algorithms allow users to quickly find traditional items like
-“handloom”, “local sweets”, or “festival events”, improving user experience.
+💡 <strong>Deep Explanation:</strong>  
+Merge Sort is used where <strong>data stability is critical</strong>, such as tracking daily revenue
+of handicraft markets and cultural fairs. It preserves the original order of transactions
+while sorting, helping authorities analyze growth trends, festival sales impact, and vendor performance.
+This ensures fair reporting and accurate economic analysis.
 </p>
+
+---
+
+<h4>ii) String Search Algorithms – Cultural & Product Discovery 🔍</h4>
+
+<h5>Knuth–Morris–Pratt (KMP) – Smart Cultural Search</h5>
+<div class="algorithm-box">
+Algorithm: KMP (Cultural Product Search)
+
+Input:
+directoryText → cityCultureDatabase
+pattern → userSearchKeyword
+
+Procedure KMPSearch(pattern, directoryText)
+    lps[] ← ComputeLPS(pattern)
+    i ← 0, j ← 0
+    WHILE i < length(directoryText) DO
+        IF pattern[j] = directoryText[i] THEN
+            i++, j++
+        IF j = length(pattern) THEN
+            DISPLAY "Item Found"
+            j ← lps[j - 1]
+        ELSE IF i < length(directoryText) AND pattern[j] ≠ directoryText[i] THEN
+            IF j ≠ 0 THEN
+                j ← lps[j - 1]
+            ELSE
+                i++
+</div>
+
+<p>
+💡 <strong>Deep Explanation:</strong>  
+KMP enables fast searching of cultural items such as
+<strong>handloom, pottery, folk art, street food, or festival names</strong>.
+It avoids repeated comparisons, making it highly efficient for
+tourism apps where thousands of shops and cultural entries exist.
+This improves user experience and encourages tourists to explore local markets.
+</p>
+
+<hr>
+
+<h5>Naive String Search – Small Market Lookup</h5>
+<div class="algorithm-box">
+Algorithm: Naive Search
+
+Input:
+marketText → localMarketList
+pattern → productName
+
+FOR i ← 0 TO length(marketText) - length(pattern)
+    j ← 0
+    WHILE j < length(pattern) AND marketText[i + j] = pattern[j]
+        j++
+    IF j = length(pattern)
+        DISPLAY "Product Found"
+</div>
+
+<p>
+💡 <strong>Deep Explanation:</strong>  
+Naive search is suitable for small villages, weekly bazaars, or offline kiosks
+where datasets are limited. It is simple to implement and cost-effective,
+supporting digital inclusion for small vendors.
+</p>
+
+---
 
 <h4>iii) Graph Algorithms – Shopping & Cultural Route Planning 🌐</h4>
-<div class="algorithm-box">
-Algorithm: Dijkstra’s Algorithm
 
-Application:
-• Finds shortest routes between markets, cultural sites, and food streets
-• Optimizes tourist movement and time utilization
+<h5>Dijkstra’s Algorithm – Optimized Cultural Tour Routes</h5>
+<div class="algorithm-box">
+Algorithm: Dijkstra (Tourist Route Optimization)
+
+Graph:
+Nodes → markets, museums, food streets
+Edges → walking/driving paths with distance/time weight
+
+Procedure Dijkstra(graph, source)
+    distance[source] ← 0
+    FOR each node v ≠ source
+        distance[v] ← ∞
+    WHILE unvisited nodes exist
+        u ← node with minimum distance
+        mark u as visited
+        FOR each neighbor v of u
+            IF distance[u] + weight(u,v) < distance[v]
+                distance[v] ← distance[u] + weight(u,v)
 </div>
+
 <p>
-Graph algorithms help tourists efficiently explore multiple markets and cultural locations,
-increasing spending and reducing congestion.
+💡 <strong>Deep Explanation:</strong>  
+Dijkstra’s Algorithm creates optimized shopping and cultural routes,
+allowing tourists to visit <strong>multiple markets and cultural sites efficiently</strong>.
+By minimizing travel time and distance, tourists can explore more locations,
+increasing spending on local goods and boosting city revenue while reducing congestion.
 </p>
+
+---
+
 
 <h3>5. Economic Impact on the City</h3>
 <ul>
