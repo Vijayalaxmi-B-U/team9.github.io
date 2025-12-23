@@ -17,19 +17,20 @@ body{
 
 /* Section wrapper */
 .section{
-    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:60px 40px;
+     min-height:80vh;      /* was 100vh */
+    padding:30px 40px;
 }
 
 /* 3D content box */
 .content-box{
-    max-width:1100px;
+    max-width:1000px;   /* slightly smaller */
+    gap:30px;           /* was 50px */
+    padding:35px;       /* was 50px */
+  
     display:flex;
-    gap:50px;
-    padding:50px;
     border-radius:35px;
     background:linear-gradient(145deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03));
     backdrop-filter:blur(14px);
@@ -107,14 +108,14 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:80px 20px;
     perspective:1200px;
+      padding:40px 20px;
 }
 
 /* Animated Card */
 .city-image-card{
-    width:75%;
-    max-width:900px;
+    width:60%;          /* was 75% */
+    max-width:650px; 
     border-radius:30px;
     overflow:hidden;
     background:linear-gradient(145deg,#0f172a,#020617);
@@ -193,14 +194,100 @@ body{
     background:rgba(255,165,0,0.12);
     box-shadow:0 0 12px rgba(255,165,0,0.4);
 }
+/* Algorithm Button */
+.run-btn{
+    margin-top:20px;
+    padding:12px 28px;
+    font-size:16px;
+    font-weight:600;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:#fff;
+    background:linear-gradient(135deg,#f59e0b,#ea580c);
+    box-shadow:0 0 18px rgba(255,140,0,0.6);
+    transition:0.3s ease;
+}
 
+.run-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px rgba(255,140,0,0.9);
+}
 
+/* Algorithm Output Box */
+.algo-output{
+    margin-top:25px;
+    padding:25px;
+    background:#020617;
+    border-radius:18px;
+    color:#a7f3d0;
+    font-size:14px;
+    line-height:1.7;
+    box-shadow:inset 0 0 12px rgba(0,0,0,0.9);
+    max-height:320px;
+    overflow-y:auto;
+    font-family:"Consolas", monospace;
+}
+.sidebar {
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(180deg, #0c1015, #0b0e11);
+  border-right: 2px solid rgba(210, 120, 45, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.sidebar h2 {
+  color: #7dd3fc;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 30px 25px;
+  letter-spacing: 2px;
+}
+
+.sidebar a {
+  color: #cfd8dc;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 14px 15px;
+  width: 90%;
+  transition: 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(125, 211, 252, 0.08);
+  color: #7dd3fc;
+}
+.main {
+  margin-left: 260px;
+  padding: 40px;
+  min-height: 100vh;
+}
 </style>
 </head>
 
 <body>
 
-    <div class="navbar"> <div class="logo">Smart City</div> <div class="nav-container"> <a href="home.html" class="nav-item">Home</a> <a href="about.html" class="nav-item">About</a> <a href="project.html" class="nav-item">Project</a> <a href="vaishnavi.html" class="nav-item">Vaishnavi</a> <a href="vijayalaxmi.html" class="nav-item">Vijayalaxmi</a> <a href="sushant.html" class="nav-item">Sushant</a> <a href="sunil.html" class="nav-item">Sunil</a></div> </div>
+   <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Smart City</h2>
+    <a href="index.html"> Home</a>
+    <a href="about.html">About</a>
+    <a href="project.html">Project</a>
+    <a href="vaishnavi.html">Vaishnavi</a>
+    <a href="vijayalaxmi.html">Vijayalaxmi</a>
+    <a href="sushant.html">Sushant</a>
+    <a href="sunil.html">Sunil</a>
+    <a href="collabz.html">Collabz</a>
+  </div>
+
+<div class="main">
     <!-- Smart City Collaboration Headline -->
 <div class="collab-heading">
     <h1>
@@ -343,7 +430,73 @@ body{
 
     </div>
 </div>
+<!-- SECTION 4 : ALGORITHM IMPLEMENTATION -->
+<div class="section">
+  <div class="content-box">
+    <div class="text-box">
+      <h2>Algorithmic Implementation (Simulation)</h2>
 
+      <p>
+        The following simulation demonstrates how algorithms
+        are applied to smart environmental management, economic planning,
+        and heritage route optimization.
+      </p>
+
+      <button class="run-btn" onclick="runSmartCityAlgorithm()">
+        Run Smart City Algorithm
+      </button>
+
+      <pre id="algoOutput" class="algo-output"></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+function runSmartCityAlgorithm() {
+
+    let output = "";
+
+    // Environmental Data (Pollution Levels)
+    let zones = [
+        {name:"Zone A", pollution:80},
+        {name:"Zone B", pollution:45},
+        {name:"Zone C", pollution:60}
+    ];
+
+    // Greedy Algorithm – Pollution Control
+    zones.sort((a,b) => b.pollution - a.pollution);
+    output += "Greedy Algorithm (Pollution Control):\n";
+    zones.forEach(z =>
+        output += `✔ Cleaning resources allocated to ${z.name} (Pollution: ${z.pollution})\n`
+    );
+
+    // Economic Planning – Dynamic Programming (simplified)
+    let demand = [30, 50, 40];
+    let supply = [40, 60, 45];
+    output += "\nDynamic Programming (Economic Planning):\n";
+    for(let i=0;i<demand.length;i++){
+        output += `✔ Demand ${demand[i]} matched with Supply ${supply[i]}\n`;
+    }
+
+    // Heritage Routes – Graph & Shortest Path
+    let heritageSites = ["Entrance","Mine","Factory","Museum"];
+    output += "\nGraph Algorithm (Heritage Route Planning):\n";
+    output += `✔ Optimal Route: ${heritageSites.join(" → ")}\n`;
+
+    // Queue Management
+    output += "\nQueueing Model (Visitor Management):\n";
+    let visitors = ["V1","V2","V3","V4"];
+    visitors.forEach(v =>
+        output += `✔ Visitor ${v} served\n`
+    );
+
+    // Final Result
+    output += "\n✔ Smart City System Optimized Successfully";
+
+    document.getElementById("algoOutput").textContent = output;
+}
+</script>
+
+</div>
 </body>
 </html>
-
