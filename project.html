@@ -283,6 +283,23 @@ iframe {
     object-fit: contain;
     border-radius: 6px;
   }
+  /* Increase size of all images slightly */
+.image-box img {
+  max-height: 320px;  /* was 260px */
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Specifically increase topography, resources, climate images */
+.image-box:first-of-type img {  /* topography */
+  max-height: 360px;
+}
+
+.image-row:first-of-type .image-box img {  /* resources & climate */
+  max-height: 340px;
+}
+
 
   /* Horizontal two-images row */
   .image-row {
