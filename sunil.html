@@ -64,8 +64,8 @@
       • Whether the signal should be extended or reduced<br><br>
       <b>Algorithms Used Here</b><br>
       Used to prioritize lanes:<br>
-      • Quick Sort / Merge Sort — Sorts directions by highest vehicle density → highest gets priority.<br>
-      • Heap Sort — Maintains a priority queue:<br>
+      • Quick Sort — Sorts directions by highest vehicle density → highest gets priority.<br>
+      Maintains a priority queue:<br>
       &nbsp;&nbsp;o Emergency vehicles → highest priority<br>
       &nbsp;&nbsp;o Congested lanes → next priority<br>
       &nbsp;&nbsp;o Low-density lanes → lowest<br>
@@ -85,10 +85,8 @@
       • Sudden congestion spikes<br>
       • Unbalanced flow<br><br>
       <b>Graph Algorithms Here</b><br>
-      • BFS / DFS → To check if any path is blocked and traffic needs rerouting<br>
       • Dijkstra’s Algorithm → Predict travel time between signals<br>
-      • Bellman-Ford → Adjust decisions when sudden congestion appears<br>
-      • Floyd-Warshall → City-wide congestion prediction
+      • Traffic optimizer function manages the traffic flow.
       </p>
 
       <h3><b>4. Emergency Vehicle Priority System</b></h3>
@@ -104,7 +102,7 @@
       This ensures uninterrupted, fast movement for emergency services.
       </p>
       <div class="center-img">
-        <img src="img/1_3.png" width="400" height="400">
+        <img src="img/1_3.png" width="500" height="400">
       </div>
   <h3>Real-time code and its input data:</h3>
 <div class="button-group">
@@ -121,29 +119,666 @@
 </div>
     </section>
 
-    <!-- Future projects -->
-    <section id="future-projects" class="project-section">
-      <div class="section-head">
-        <h2>Other Main Ideas (Add more)</h2>
-        <div class="meta">Add new sections below or duplicate this block</div>
-      </div>
-    </section>
+    <!-- SMART CITY POLLUTION MONITORING -->
+<section id="pollution-monitoring" class="project-section" style="max-width:980px;margin:24px auto;padding:18px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.06)">
+  <h2><b>2. SMART CITY POLLUTION MONITORING</b></h2>
 
-    <section id="notes" class="project-section">
-      <h2>Notes &amp; Next steps</h2>
-      <ul class="clean">
-        <li>Dataset &amp; sensors: list sensor types and sampling rate (2–5s) before prototyping.</li>
-        <li>Start with a small grid (3x3 intersections) to test algorithms offline/simulated.</li>
-        <li>Use SUMO or a custom simulator for validation before field tests.</li>
-      </ul>
-    </section>
+  <p>
+    <h3><b>Concept: Interconnected Environmental Monitoring Network</b></h3><br>
+    In our smart city, pollution monitoring is designed as an interconnected system that continuously observes
+    environmental conditions across different zones. Sensors installed throughout the city collect real-time data
+    and share it with nearby zones and a central control system. This enables early detection, prediction, and
+    coordinated control of pollution.
+  </p>
+
+  <hr>
+
+  <!-- AIR POLLUTION -->
+  <p>
+    <h2><b>2.1 Air Pollution Monitoring</b></h2><br>
+    The air pollution monitoring system focuses on detecting, analyzing, and predicting air quality variations
+    across the city. Each zone is equipped with sensors that measure pollutants and environmental factors, allowing
+    the system to understand how pollution spreads and affects neighboring areas.
+  </p>
+
+  <p>
+    <b>Data Collected:</b><br>
+    • PM2.5 and PM10 concentration<br>
+    • CO and other harmful gases<br>
+    • Wind speed and wind direction<br>
+    • Temperature and humidity<br>
+    • Pollution spike indicators (threshold-based)<br>
+  </p>
+
+  <p>
+    <h3><b>1. Real-Time Air Quality Data Sharing Between Zones</b></h3><br>
+    • Each zone sends sensor data every few seconds to nearby zones.<br>
+    • The city is modeled as a graph where:<br>
+    &nbsp;&nbsp;a. Zones = Nodes<br>
+    &nbsp;&nbsp;b. Airflow paths = Edges<br>
+    &nbsp;&nbsp;c. Edge weights = pollution transfer intensity<br>
+    This structure helps understand how pollution in one zone influences others.
+  </p>
+  <div>
+        <img src="img/2_1_1.jpg" width="900" height="270">
+      </div>
+
+  <p>
+    <h3><b>2. Air Quality Evaluation & Zone Prioritization</b></h3><br>
+    • AQI (Air Quality Index) is calculated for every zone.<br>
+    AQI CALCULATION MODEL<br>
+    Formula used: AQI=((PM2.5×3)+(PM10×2)+(CO×4))/9<br>	​
+    • Zones are sorted based on severity using sorting algorithms.
+    <div>
+      <h4>AQI Anomaly Levels</h4>
+  <table class="aqi-table">
+    <thead>
+      <tr>
+        <th>AQI Range</th>
+        <th>Anomaly Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AQI &lt; 100</td>
+        <td>0 (Normal)</td>
+      </tr>
+      <tr>
+        <td>100 ≤ AQI &lt; 180</td>
+        <td>1 (Moderate)</td>
+      </tr>
+      <tr>
+        <td>AQI ≥ 180</td>
+        <td>2 (Severe Spike)</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </p>
+
+  <p>
+    <b>Algorithms Used:</b><br>
+    • Quick Sort — Sort zones by AQI value.<br>
+    &nbsp;&nbsp;o Highly polluted zones → highest priority<br>
+    &nbsp;&nbsp;o Moderate zones → medium priority<br>
+    &nbsp;&nbsp;o Clean zones → lowest priority<br>
+  </p>
+  <div>
+        <img src="img/2_1_4.png" width="800" height="400">
+      </div>
+
+  <p>
+    <h3><b>3. Pollution Spread Prediction Across Zones</b></h3><br>
+    Pollution does not remain confined to one zone. Wind direction and airflow cause it to spread.
+  </p>
+
+  <p>
+    <b>Graph Algorithms Used:</b><br>
+    • DFS (Depth First Search) — Tracks deep and long-range pollution spread paths.<br>
+    • BFS (Breadth First Search) — Identifies immediate neighboring zones at risk.<br>
+    This allows early warnings and preventive actions.
+  </p>
+  <div>
+        <img src="img/2_1_2.jpg" width="500" height="400">
+      </div>
+    <div>
+        <img src="img/2_1_6.png" width="600" height="350">
+      </div>
+
+  <p>
+    <h3><b>4. Sudden Pollution Spike Detection</b></h3><br>
+    Sudden spikes in pollution may occur due to accidents, fires, industrial releases, or traffic surges.
+  </p>
+
+  <p>
+    <b>Algorithm Used:</b><br>
+    • Bellman–Ford Algorithm — Detects abnormal AQI increases across zones and flags dangerous regions.
+  </p>
+  <div>
+        <img src="img/2_1_3.png" width="800" height="450">
+      </div>
+
+  <p>
+    <h3><b>5. Pollution-Aware Routing & Decision Support</b></h3><br>
+    Once dangerous zones are detected, safe routing decisions are made.
+  </p>
+
+  <p>
+    <b>Algorithm Used:</b><br>
+    • Modified Dijkstra’s Algorithm — Finds least-polluted paths while avoiding high-risk zones.
+  </p>
+  <div>
+        <img src="img/2_1_5.jpg" width="500" height="350">
+      </div>
+    <h3>Real-time code and its input data:</h3>
+<div class="button-group">
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/AirQ_Moniter.cpp" class="btn" target="_blank">Code (C++)</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/air_sensors.csv" class="btn" target="_blank">Sensor Data</a><br>
+</div>
+
+<!-- Space and Time Efficiency -->
+<h3>Space and Time Efficiency:</h3>
+<div class="button-group">
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/algorithms_efficiency.csv" class="btn" target="_blank">Algorithms Efficiency</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/algorithms_purpose.csv" class="btn" target="_blank">Algorithms Purpose</a><br>
+  <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/system_efficiency.csv" class="btn" target="_blank">Overall system Efficiency</a>
+</div>
+<hr>
+  <!-- WATER POLLUTION -->
+  <h2><b>2.2 Water Pollution Monitoring System</b></h2>
+  <p>
+    Water is a critical natural resource used for drinking, agriculture, fishing, industry, and power generation.
+    However, rapid industrialization, untreated drainage, climate change, and sudden rainfall events lead to:
+    <br>• Water pollution
+    <br>• Flood risks near dams and rivers
+    <br>• Ecological imbalance
+    <br>• Threats to human life and aquatic species
+    <br><br>
+    This project proposes a Smart Water Pollution and Flood Monitoring System that continuously monitors
+    water quality and water level across different river zones connected to a dam and takes real-time
+    decisions using algorithms.
+  </p>
+
+  <h3><b>How the system works:</b></h3>
+
+  <h3><b>1. Real-World Zonal Classification</b></h3>
+  <p>
+    The river–dam system is divided into four main zones, each further divided into 5 subzones for accuracy:
+    <br><br>
+    • <b>Upstream Zone</b> — Natural water inflow from rainfall, hills, and tributaries<br>
+    • <b>Dam Zone</b> — Primary water collection area (drinking & domestic use)<br>
+    • <b>Downstream Zone 1</b> — Agriculture, fishing, non-drinking usage<br>
+    • <b>Downstream Zone 2</b> — Industrial discharge and treated drainage release
+  </p>
+  <div>
+    <img src="img/2_2_1.png" width="600" height="400">
+  </div>
+
+  <h3><b>2. Subzone-Based Monitoring Concept</b></h3>
+  <p>
+    Each zone is divided into 5 subzones to:
+    <br>• Capture localized pollution
+    <br>• Detect sudden changes early
+    <br>• Reduce error due to single sensor failure
+    <br><br>
+    <b>Why subzones?</b><br>
+    • Sudden spikes may occur in only one part of a zone<br>
+    • Enables precise alerts and responses<br>
+    • Supports graph-based algorithms like Bellman–Ford
+  </p>
+
+  <h3><b>3. Real-Time Data Collection & Storage</b></h3>
+  <p>
+    Each subzone is equipped with sensors that collect:
+    <br>• Water Level (%)<br>
+    • Pollution Index (TDS, chemicals, biological waste)<br>
+    • Time-based readings<br><br>
+    All sensor data from all zones and subzones is stored in a single CSV file,
+    representing real-time environmental conditions and allowing easy integration
+    with IoT systems.
+  </p>
+  <div>
+    <img src="img/2_2_2.jpg" width="600" height="400">
+  </div>
+
+  <h3><b>4. Sudden Spike & Flood Detection</b></h3>
+  <p>
+    <b>Bellman–Ford Algorithm</b> is used to detect sudden spikes in water level or pollution
+    across upstream subzones.
+    <br><br>
+    <b>Why Bellman–Ford?</b><br>
+    • Handles sudden rises or drops in readings<br>
+    • Detects abnormal spike patterns<br>
+    • Suitable for multi-subzone dependency analysis
+    <br><br>
+    <b>Flood Detection Logic:</b><br>
+    If 3 or more upstream subzones exceed the safe water level threshold,
+    a FLOOD ALERT is generated.
+  </p>
+  <div>
+    <img src="img/2_2_3.jpeg" width="400" height="300">
+  </div>
+  <h3><b>5. Dam Water Management Strategy</b></h3>
+  <p>
+    Based on pollution levels at the dam zone:
+    <br>• Low pollution → Store water<br>
+    • Moderate pollution → Partial water release<br>
+    • High pollution → Immediate water release<br><br>
+    <b>Purpose:</b><br>
+    • Maintain clean reservoir water<br>
+    • Prevent long-term contamination<br>
+    • Ensure drinking water safety
+  </p>
+
+  <h3><b>6. Industrial & Drainage Pollution Control</b></h3>
+  <p>
+    Downstream Zone 2 is continuously monitored for:
+    <br>• Chemical discharge<br>
+    • Treated sewage overflow<br><br>
+    <b>Alert Condition:</b><br>
+    If pollution index exceeds the safe threshold, an industrial alert is triggered
+    and notifications are sent to industries and pollution control authorities.
+  </p>
+   <div>
+    <img src="img/2_2_4.jpeg" width="400" height="300">
+  </div>
+
+  <h3><b>7. Fishing Zone Identification</b></h3>
+  <p>
+    Fishing activities are permitted only in Downstream Zone 1 when:
+    <br>• Pollution levels are below the safe limit<br>
+    • Oxygen content is sufficient<br><br>
+    <b>Decision Logic:</b><br>
+    Pollution &lt; threshold → Fishing Allowed<br>
+    Pollution ≥ threshold → Fishing Banned
+  </p>
+   <div>
+    <img src="img/2_2_5.jpg" width="600" height="400">
+  </div>
+
+  <h3><b>8. Priority-Based Decision Making</b></h3>
+  <p>
+    A Priority Queue (Max Heap) is used to assign immediate attention to:
+    <br>• Zones with high pollution<br>
+    • Flood-prone upstream areas<br>
+    • Industrial contamination regions<br><br>
+    Highest-risk zones are handled first to ensure quick response.
+  </p>
+
+  <h3>Real-time code and its input data:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/waterQ.cpp" class="btn" target="_blank">Code (C++)</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/water_zone_data.csv" class="btn" target="_blank">Sensor Data from all zones</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/Algorithms_purpose.csv" class="btn" target="_blank">Algoritms purpose</a>
+  </div>
+
+  <h3>Space and Time Efficiency:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/Algorithms_efficiency.csv" class="btn" target="_blank">Functions Efficiency</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/system_efficiency1.csv" class="btn" target="_blank">Overall System Efficiency</a>
+  </div>
+
+ <hr>
+
+
+  
+  <h2><b>2.3 Land Pollution Monitoring System</b></h2>
+  <p>
+    Land is a vital resource for agriculture, habitation, industry, and recreation. However, improper waste management, industrial discharge, chemical spills, and urbanization lead to:
+    <br>• Land pollution
+    <br>• Soil degradation and loss of fertility
+    <br>• Ecological imbalance
+    <br>• Threats to human health and crops
+    <br>
+    This project proposes a <b>Smart Land Pollution and Waste Management System</b> that continuously monitors land quality and pollution across different city zones and takes real-time decisions using algorithms.
+  </p>
+   <div>
+    <img src="img/2_3_1.jpg" width="550" height="400">
+  </div>
+
+  <h3><b>How the system works:</b></h3>
+
+  <h3><b>1. Real-World Zonal Classification</b></h3>
+  <p>
+    The city’s land area is divided into <b>four main zones</b>, each further divided into <b>5 subzones</b> for precision:
+    <br>• Residential Zone — Houses, parks, and urban areas
+    <br>• Industrial Zone — Factories, workshops, hazardous waste areas
+    <br>• Agricultural Zone — Farmland and plantations
+    <br>• Landfill / Depot Zone — Central collection point for waste
+  </p>
+
+  <h3><b>2. Subzone-Based Monitoring Concept</b></h3>
+  <p>
+    Each zone contains 5 subzones to:
+    <br>• Capture localized pollution and soil degradation
+    <br>• Detect sudden changes early
+    <br>• Reduce errors due to single sensor failures
+    <br><br>
+    <b>Importance of subzones</b>
+    <br>• Pollution or contamination may occur in only part of a zone
+    <br>• Enables precise alerts and cleanup scheduling
+    <br>• Supports graph-based algorithms like <b>Bellman–Ford</b> for sudden spike detection
+  </p>
+   <div>
+    <img src="img/2_3_2.png" width="600" height="400">
+  </div>
+
+  <h3><b>3. Real-Time Data Collection & Storage</b></h3>
+  <p>
+    Each subzone's:
+    <br>• Pollution Level (0–100 scale)
+    <br>• Soil Toxicity Index
+    <br>• Moisture Content (%)
+    <br>• Heavy Metal Index (Lead, Mercury, Cadmium, etc.)
+    <br>• Time-based readings
+    <br><br>
+    All sensor data from all zones and subzones is stored in a single CSV file, representing real-time environmental conditions and allowing easy integration with IoT or city management systems.
+  </p>
+
+  <h3><b>4. Land Quality & Priority Computation</b></h3>
+  <p>
+    <b>Land Quality Score</b> is computed for each subzone:
+    <br>
+    <code>LandQualityScore = 100 - (0.5*PollutionLevel + 0.3*SoilToxicity + 0.2*HeavyMetalIndex)</code>
+    <br>
+    Scale: 0–100 (higher = better quality)
+    <br>Subzones with <b>LandQualityScore &lt; 50</b> are marked critical
+    <br><br>
+    <b>Algorithms Used:</b>
+    <br>• Bellman–Ford → Detects sudden spikes in pollution or soil toxicity across subzones
+    <br>• Max Heap (Priority Queue) → Determines which subzones need immediate cleanup
+    <br>• Dijkstra Algorithm → Computes shortest path for waste collection vehicle between subzones
+  </p>
+
+  <h3><b>5. Waste Collection Strategy</b></h3>
+  <p>
+    • Waste collection vehicles start at the <b>Landfill/Depot</b>.
+    <br>• <b>Traversal Strategy:</b>
+    <br>&nbsp;&nbsp;1. Select subzone with highest priority from Max Heap
+    <br>&nbsp;&nbsp;2. Move to subzone using shortest path (Dijkstra)
+    <br>&nbsp;&nbsp;3. Mark subzone as visited
+    <br>&nbsp;&nbsp;4. Repeat until all subzones are serviced
+    <br>&nbsp;&nbsp;5. Return to depot
+    <br>• Ensures critical zones are serviced first and all subzones are visited efficiently.
+  </p>
+
+   <div>
+    <img src="img/2_3_3.jpeg" width="500" height="400">
+  </div>
+
+  <h3><b>6. Alerts & Notifications</b></h3>
+  <p>
+    • Critical Land Quality: LandQualityScore &lt; 50 → Immediate cleanup alert
+    <br>• High Pollution: Pollution Level &gt; threshold → Priority cleanup
+    <br>• Industrial Subzones: Hazardous waste detected → Alert authorities
+    <br><br>
+    Notifications are sent to:
+    <br>• Waste management teams
+    <br>• Environmental authorities
+    <br>• City administration
+  </p>
+
+  <h3><b>7. Priority-Based Decision Making</b></h3>
+  <p>
+    A <b>Priority Queue (Max Heap)</b> assigns immediate attention to:
+    <br>• Subzones with high pollution
+    <br>• Subzones with low land quality
+    <br>• Industrial areas with hazardous waste
+    <br><br>
+    Highest-risk subzones are handled first to ensure <b>fast and efficient cleanup</b>.
+  </p>
+
+  <h3>Real-time code and its input data:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/LandQ.cpp" class="btn" target="_blank">Code (C++)</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/land_pol_data.csv" class="btn" target="_blank">Land Pollution Data</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/algorithm_purpose2.csv" class="btn" target="_blank">Algorithms Purpose</a>
+  </div>
+
+  <!-- Space and Time Efficiency -->
+  <h3>Space and Time Efficiency:</h3>
+  <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/algorithms_efficiency2.csv" class="btn" target="_blank">Functions efficiency</a><br>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/system_efficiency2.csv" class="btn" target="_blank">Overall System efficiency</a>
+  </div>
+
+  <hr>
+
+  <h2>2.4 Smart City Pollution Monitoring App</h2>
+
+  <p>
+    The Smart City Pollution Monitoring App is a unified platform that allows
+    city users to search their area and instantly view real-time pollution
+    information related to air, water, and land. The system integrates
+    algorithm-driven analysis to provide alerts, safety decisions, and
+    optimization recommendations for both citizens and authorities.
+  </p>
+
+  <h3>How the App Works</h3>
+  <p>
+    Users enter their locality or zone name in the search bar. The system
+    automatically identifies the selected area and fetches pollution data from
+    a centralized database. Based on this data, the website displays pollution
+    levels, risk alerts, and suggested actions such as flood warnings, health
+    advisories, or waste cleanup priorities.
+  </p>
+
+  <h3>Pollution Domains Covered</h3>
+  <ul>
+    <li><strong>Air Pollution:</strong> AQI levels, spike detection, and spread analysis</li>
+    <li><strong>Water Pollution:</strong> Flood risk, dam water safety, industrial discharge monitoring</li>
+    <li><strong>Land Pollution:</strong> Soil quality, waste accumulation, cleanup optimization</li>
+  </ul>
+
+  <h3>Algorithms and Data Structures Used</h3>
+
+  <h4>1. Trie</h4>
+  <p>
+    A Trie is used for the search bar auto-completion feature. It enables fast
+    prefix-based searching when users type area or zone names.
+    <br>
+    <strong>Why Trie?</strong> Provides efficient search in O(L) time, where L is
+    the length of the search string, ensuring a smooth user experience.
+  </p>
+
+  <h4>2. Hashing</h4>
+  <p>
+    Hash tables store pollution data for each zone and subzone. Once an area is
+    selected, pollution information is fetched instantly.
+    <br>
+    <strong>Why Hashing?</strong> Allows O(1) average-time data retrieval, which
+    is critical for real-time monitoring systems.
+  </p>
+
+  <h4>3. Sorting Algorithms</h4>
+  <p>
+    Sorting is used to rank zones based on pollution severity, helping authorities
+    identify the most affected regions.
+    <br>
+    <strong>Why Sorting?</strong> Enables prioritized decision-making and clear
+    comparison between polluted areas.
+  </p>
+
+  <h4>4. Bellman–Ford Algorithm</h4>
+  <p>
+    Bellman–Ford is used to detect sudden spikes in pollution levels or water
+    levels across interconnected subzones.
+    <br>
+    <strong>Why Bellman–Ford?</strong> It can detect abnormal changes across
+    multiple dependent nodes and handles sudden increases effectively.
+  </p>
+
+  <h4>5. Heap (Priority Queue)</h4>
+  <p>
+    A Max Heap is used to prioritize alerts such as flood warnings, industrial
+    contamination, or severe air pollution.
+    <br>
+    <strong>Why Heap?</strong> Ensures that the highest-risk situations are
+    handled first.
+  </p>
+
+  <h4>6. BFS / DFS</h4>
+  <p>
+    Graph traversal algorithms are used to analyze pollution spread patterns,
+    such as air pollution spreading through wind direction or water pollution
+    flowing downstream.
+    <br>
+    <strong>Why BFS/DFS?</strong> Efficiently explores connected zones and
+    identifies affected regions.
+  </p>
+
+  <h4>7. Union–Find (Disjoint Set)</h4>
+  <p>
+    Union–Find is used to identify zone connectivity, especially during floods
+    or land contamination events that isolate certain areas.
+    <br>
+    <strong>Why Union–Find?</strong> Quickly determines connected and disconnected
+    components within the city map.
+  </p>
+
+  <h4>8. Dijkstra’s Algorithm</h4>
+  <p>
+    Dijkstra’s algorithm is used to compute the shortest waste collection routes
+    in land pollution management.
+    <br>
+    <strong>Why Dijkstra?</strong> Minimizes distance, time, and fuel consumption
+    for waste management vehicles.
+  </p>
+
+  <h4>9. Segment Tree</h4>
+  <p>
+    Segment Trees are used to analyze pollution trends over time, such as AQI
+    changes or water level variations.
+    <br>
+    <strong>Why Segment Tree?</strong> Supports fast range queries and updates
+    for historical data analysis.
+  </p>
+
+  <h4>10. Lookup Table</h4>
+  <p>
+    Lookup tables map pollution levels to predefined actions such as health
+    advisories or evacuation alerts.
+    <br>
+    <strong>Why Lookup Table?</strong> Enables instant decision-making without
+    recomputation.
+  </p>
+
+  <h3>System Advantages</h3>
+  <ul>
+    <li>Real-time pollution monitoring</li>
+    <li>Fast and optimized decision-making</li>
+    <li>User-friendly area-based search</li>
+    <li>Algorithm-driven accuracy and reliability</li>
+    <li>Scalable for smart city applications</li>
+  </ul>
+
+
+   <div>
+    <img src="img/2_4_1.png" width="550" height="400">
+  </div>
+  
+  <h3>System Workflow</h3>
+
+  <pre style="font-family: monospace; font-size: 15px;">
+User Types Area
+      ↓
+Trie (Auto-complete)
+      ↓
+Hash Table (Fetch Pollution Data)
+      ↓
+Algorithms (Analysis & Optimization)
+      ↓
+Heap (Priority Alerts)
+      ↓
+Segment Tree (Trend Analysis)
+      ↓
+Union–Find (Zone Connectivity)
+      ↓
+Dashboard Display
+    </pre>
+
+    <h4>9. Prototype:</h4>
+  <p>
+    A simple c++ code prototype for a working app model 
+    <br>
+    <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/App/app.cpp" class="btn" target="_blank">App prototype code</a>
+  </div>
+    
+     <h4>10. Space and Time efficiency:</h4>
+  <p>
+    Efficiency of all the functions/algorithms in the app.
+    <br>
+    <div class="button-group">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/App/algorithm_efficiency3.csv" class="btn" target="_blank">Algorithms Efficiency</a>
+    </div>
+  </p>
+    
+  </section>
+    <section id="air-traffic-collaboration" class="project-section">
+  <h2><b>Smart Traffic Optimization using Air Pollution Data (COLLABZ Of Idea 1 and 2.1) </b></h2>
+
+  <h3><b>Concept: Traffic Management Integrated with Air Pollution Monitoring</b></h3>
+  <p>
+    In a smart city, traffic congestion is one of the major contributors to air pollution,
+    especially increased CO₂ levels. Instead of managing traffic only based on vehicle density,
+    this system collaborates <b>Air Pollution Monitoring</b> with <b>Traffic Management</b>.
+    <br><br>
+    Each traffic zone continuously receives CO₂ data from air quality sensors.
+    When pollution in a zone crosses a safe threshold, the traffic optimizer automatically:
+    <br>• Reduces vehicle inflow into the polluted zone  
+    <br>• Reroutes traffic to nearby cleaner zones  
+    <br>• Adjusts green signal timings to disperse congestion  
+    <br><br>
+    This collaboration helps in reducing pollution hotspots while maintaining smooth traffic flow.
+  </p>
+
+  <h3><b>Simple Traffic Optimization Logic (C++ Prototype)</b></h3>
+  <p>
+    The following C++ code demonstrates a basic prototype where traffic decisions are made
+    based on CO₂ levels in a zone.
+  </p>
+
+  <!-- Code Box -->
+  <div class="code-box">
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+// Traffic optimizer based on CO2 level
+void trafficOptimizer(string zone, int vehicleCount, float co2Level)
+{
+    cout &lt;&lt; "Zone: " &lt;&lt; zone &lt;&lt; endl;
+    cout &lt;&lt; "CO2 Level: " &lt;&lt; co2Level &lt;&lt; " ppm" &lt;&lt; endl;
+
+    if (co2Level &gt; 180.0)
+    {
+        cout &lt;&lt; "Status: HIGH POLLUTION\n";
+        cout &lt;&lt; "Action: Reduce green time\n";
+        cout &lt;&lt; "Action: Reroute traffic to nearby zones\n";
+    }
+    else if (co2Level &gt; 120.0)
+    {
+        cout &lt;&lt; "Status: MODERATE POLLUTION\n";
+        cout &lt;&lt; "Action: Maintain flow but avoid congestion\n";
+    }
+    else
+    {
+        cout &lt;&lt; "Status: SAFE\n";
+        cout &lt;&lt; "Action: Normal traffic flow\n";
+    }
+
+    cout &lt;&lt; "---------------------------------\n";
+}
+
+int main()
+{
+    // Example sensor inputs
+    trafficOptimizer("Zone A", 120, 195.5);
+    trafficOptimizer("Zone B", 80, 135.2);
+    trafficOptimizer("Zone C", 60, 90.0);
+
+    return 0;
+}
+</code></pre>
+  </div>
+
+  <h3><b>How This Collaboration Helps</b></h3>
+  <p>
+    • Prevents long-term pollution buildup at busy junctions<br>
+    • Protects public health by responding to air quality in real time<br>
+    • Optimizes traffic without completely blocking movement<br>
+    • Enables future extensions using graph algorithms and AI models
+  </p>
+</section>
+
 
   </main>
 
   <footer>
     <div class="container">
-      <div>Made for: DAA — Design & Analysis of Algorithms projects. File: <code>smart-traffic-management.html</code></div>
-      <div style="margin-top:8px;color:var(--muted)">How to use: commit this file to your repo, push to GitHub. For GitHub Pages enable it on the repository settings or place file in <code>docs/</code> and serve.</div>
+<div class="thank-you">
+  THANK YOU !!!
+</div>
     </div>
   </footer>
 
