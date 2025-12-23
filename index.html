@@ -4,7 +4,240 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Smart City Design</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ================== GLOBAL RESET ================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Poppins", Arial, sans-serif;
+  background:#000;
+  color:#e5e7eb;
+  overflow-x:hidden;
+  perspective:1200px;
+}
+
+/* ================== BACKGROUND ================== */
+.bg-city{
+  position:fixed;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      120deg,
+      rgba(76,47,255,0.06),
+      rgba(76,47,255,0.06) 2px,
+      transparent 2px,
+      transparent 60px
+    ),
+    radial-gradient(circle at 15% 10%, rgba(76,47,255,0.45), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(122,91,255,0.35), transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(0,255,200,0.18), transparent 55%),
+    linear-gradient(180deg, #000 0%, #020617 60%, #000 100%);
+  z-index:-5;
+  animation:bgPulse 12s ease-in-out infinite alternate,
+           dataMove 60s linear infinite;
+}
+
+@keyframes bgPulse{
+  from{filter:brightness(0.9);}
+  to{filter:brightness(1.1);}
+}
+
+@keyframes dataMove{
+  from{background-position:0 0;}
+  to{background-position:1000px 800px;}
+}
+
+/* ================== OVERLAY ================== */
+.overlay{
+  display:flex;
+  min-height:100vh;
+  position:relative;
+}
+
+.overlay::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size:70px 70px;
+  z-index:-2;
+  mask-image:radial-gradient(circle at center, black 35%, transparent 75%);
+  pointer-events:none;
+}
+
+.overlay::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle, rgba(122,91,255,0.12) 1px, transparent 2px),
+    radial-gradient(circle, rgba(76,47,255,0.12) 1px, transparent 2px);
+  background-size:120px 120px, 180px 180px;
+  animation:particlesMove 40s linear infinite;
+  z-index:-1;
+  pointer-events:none;
+}
+
+@keyframes particlesMove{
+  from{background-position:0 0, 0 0;}
+  to{background-position:1000px 600px, -800px 400px;}
+}
+
+/* ================== DEPTH FOG ================== */
+.fog{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.15),
+    transparent
+  );
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar{
+  width:240px;
+  background:linear-gradient(160deg, #020617, #020617ee);
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  transform:translateZ(20px);
+  box-shadow:10px 0 30px rgba(0,0,0,0.8),
+             inset -1px 0 0 rgba(255,255,255,0.08);
+}
+
+.sidebar h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#7a5bff;
+  letter-spacing:2px;
+  text-shadow:0 0 12px rgba(122,91,255,0.7);
+}
+
+.sidebar a{
+  display:block;
+  padding:12px;
+  margin:10px 0;
+  color:#c7c9d1;
+  text-decoration:none;
+  border-radius:10px;
+  background:linear-gradient(145deg, #020617, #050b2e);
+  box-shadow:4px 4px 10px rgba(0,0,0,0.8);
+  transition:all 0.4s ease;
+}
+
+.sidebar a:hover{
+  transform:translateX(6px) translateZ(15px);
+  background:linear-gradient(145deg, #4c2fff, #7a5bff);
+  color:#fff;
+  box-shadow:0 0 22px rgba(122,91,255,0.9);
+}
+
+/* ================== MAIN ================== */
+.main{
+  flex:1;
+  padding:40px;
+  transform-style:preserve-3d;
+}
+
+.main h1{
+  text-align:center;
+  font-size:3rem;
+  letter-spacing:4px;
+  margin-bottom:10px;
+  background:linear-gradient(90deg, #4c2fff, #7a5bff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 35px rgba(122,91,255,0.6);
+}
+
+.tagline{
+  text-align:center;
+  margin-bottom:40px;
+  color:#c7c9d1;
+}
+
+/* ================== CARDS ================== */
+.card{
+  position:relative;
+  background:linear-gradient(
+    145deg,
+    rgba(15,23,42,0.9),
+    rgba(2,6,23,0.85)
+  );
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+  padding:30px;
+  margin-bottom:40px;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 25px 60px rgba(0,0,0,0.8);
+  transform:translateZ(30px);
+  transition:all 0.6s ease;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  background:linear-gradient(120deg, transparent, rgba(122,91,255,0.5), transparent);
+  opacity:0;
+  transition:opacity 0.6s ease;
+  z-index:-1;
+}
+
+.card:hover{
+  transform:translateZ(70px) rotateX(3deg) rotateY(-3deg);
+  box-shadow:0 45px 90px rgba(0,0,0,0.9),
+             0 0 45px rgba(122,91,255,0.5);
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+/* ================== TABLE ================== */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:rgba(2,6,23,0.9);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+th{
+  background:linear-gradient(90deg, #4c2fff, #7a5bff);
+  color:#fff;
+  padding:10px;
+}
+
+td{
+  padding:10px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+tbody tr{
+  transition:all 0.4s ease;
+}
+
+tbody tr:hover{
+  background:rgba(122,91,255,0.15);
+  transform:scale(1.02);
+}
+
+a{color:inherit;}
+html{scroll-behavior:smooth;}
+
+  </style>
 </head>
 
 <body>
