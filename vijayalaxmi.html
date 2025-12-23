@@ -25,63 +25,67 @@ body{
   line-height: 1.7;
 }
 /* -------------------- NAVBAR -------------------- */
-.navbar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #12122a;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 60px;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+/* -------------------- VERTICAL NAVBAR -------------------- */
+.navbar-vertical {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background: #1a4fff; /* solid blue */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.3);
+    z-index: 1000;
 }
 
-.navbar h2{
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple), var(--accent-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.navbar-vertical h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.navbar .nav-links{
-  display: flex;
-  gap: 24px;
+.nav-links-vertical {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
 }
 
-.navbar .nav-links a{
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 12px 18px;
-  border-radius: 8px;
-  position: relative;
-  transition: 0.3s;
+.nav-links-vertical a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    position: relative;
+    transition: 0.3s;
 }
 
-/* Gradient underline animation */
-.navbar .nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0%;
-  height:3px;
-  border-radius:2px;
-  background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple), var(--accent-blue));
-  transition:0.3s;
+/* Blue animated hover underline from left */
+.nav-links-vertical a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    border-radius: 2px;
+    background: #00ffff; /* cyan underline */
+    transition: 0.4s;
 }
-.navbar .nav-links a:hover::after{
-  width:100%;
+
+.nav-links-vertical a:hover::after {
+    width: 100%;
 }
-.navbar .nav-links a.active{
-  color: var(--accent-orange);
-  font-weight:700;
-  border-bottom:3px solid var(--accent-orange2);
+
+.nav-links-vertical a.active {
+    background: #0033cc; /* darker blue for active */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 
