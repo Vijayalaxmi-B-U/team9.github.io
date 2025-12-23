@@ -1,11 +1,7 @@
-System Component,Efficiency Metric,Performance,Explanation
-Real-Time Monitoring,Response Time,High,Sensor data processed instantly from CSV
-Flood Detection,Accuracy,High,Multiple subzone validation reduces false alarms
-Water Quality Management,Decision Speed,Very High,Greedy logic enables fast dam control
-Pollution Control,Alert Reliability,High,Threshold-based alerts ensure correctness
-Priority Handling,Processing Order,Optimal,Max Heap ensures critical zones handled first
-Scalability,Zone Expansion,Good,Subzones allow easy system scaling
-Fault Tolerance,Sensor Failure Handling,High,Multiple subzones reduce dependency on single sensor
-Computational Load,CPU Usage,Moderate,Algorithms optimized for limited zones
-Memory Usage,RAM Consumption,Low,Uses simple data structures
-Overall System Efficiency,Performance Rating,Excellent,Balanced accuracy, speed, and reliability
+System Component,Operations,Average Time Complexity,Remarks
+Sensor Data Processing,Read & parse CSV,O(n),Real-time compatible
+Spike Detection,Graph analysis,O(V × E),Limited to upstream subzones
+Flood Detection,Threshold checking,O(n),Fast alert generation
+Pollution Analysis,Sorting & scanning,O(n log n),Accurate unsafe zone detection
+Priority Handling,Heap operations,O(log n),Efficient emergency response
+Overall System Performance,All modules combined,O(n log n),Scalable for smart city deployment
