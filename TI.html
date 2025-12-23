@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Collaboration Concepts</title>
+
+<style>
+body{
+    margin:0;
+    font-family:"Segoe UI",sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, #1e293b, transparent 60%),
+        radial-gradient(circle at 80% 30%, #312e81, transparent 55%),
+        linear-gradient(#020617, #000);
+    color:#e5e7eb;
+}
+
+/* Section wrapper */
+.section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 40px;
+}
+
+/* 3D content box */
+.content-box{
+    max-width:1100px;
+    display:flex;
+    gap:50px;
+    padding:50px;
+    border-radius:35px;
+    background:linear-gradient(145deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03));
+    backdrop-filter:blur(14px);
+    box-shadow:
+        0 35px 70px rgba(0,0,0,0.9),
+        inset 0 1px 2px rgba(255,255,255,0.2);
+    transform:rotateX(5deg);
+}
+
+
+/* Text content */
+.text-box h2{
+    font-size:26px;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.text-box h3{
+    margin-top:22px;
+    margin-bottom:10px;
+    color:#fbbf24;
+}
+
+.text-box p{
+    font-size:15.5px;
+    line-height:1.7;
+    color:#d1d5db;
+}
+
+.text-box ul{
+    margin-left:18px;
+}
+
+.text-box li{
+    margin-bottom:8px;
+}
+/* Collaboration Heading Style */
+.collab-heading{
+    text-align:center;
+    padding:70px 20px 50px;
+    background:
+        radial-gradient(circle at top, rgba(255,140,0,0.25), transparent 60%),
+        linear-gradient(180deg, #020617, #000);
+}
+
+.collab-heading h1{
+    font-size:42px;
+    font-weight:700;
+    color:#f9fafb;
+    letter-spacing:1px;
+    text-shadow:
+        0 6px 18px rgba(0,0,0,0.9),
+        0 0 25px rgba(255,140,0,0.6);
+}
+
+/* Highlight Names */
+.collab-heading h1 span{
+    color:#fbbf24;
+    text-shadow:
+        0 0 20px rgba(255,165,0,0.9),
+        0 4px 12px rgba(0,0,0,0.8);
+}
+
+/* Subheading */
+.collab-heading p{
+    margin-top:14px;
+    font-size:20px;
+    color:#d1d5db;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-shadow:0 3px 10px rgba(0,0,0,0.8);
+}
+/* Image Wrapper */
+.city-image-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+    perspective:1200px;
+}
+
+/* Animated Card */
+.city-image-card{
+    width:75%;
+    max-width:900px;
+    border-radius:30px;
+    overflow:hidden;
+    background:linear-gradient(145deg,#0f172a,#020617);
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.9),
+        0 0 40px rgba(255,140,0,0.6);
+    transform-style:preserve-3d;
+    animation:float3d 6s ease-in-out infinite;
+    transition:transform 0.6s ease;
+}
+
+/* Hover Effect */
+.city-image-card:hover{
+    transform:rotateY(10deg) rotateX(8deg) scale(1.03);
+}
+
+/* Image Styling */
+.city-image-card img{
+    width:100%;
+    height:auto;
+    display:block;
+    filter:brightness(1.05) contrast(1.1);
+}
+
+/* Floating Animation */
+@keyframes float3d{
+    0%,100%{
+        transform:translateY(0) rotateX(4deg);
+    }
+    50%{
+        transform:translateY(-18px) rotateX(8deg);
+    }
+}
+/* ---------- NAVBAR ---------- */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 40px;
+    background:rgba(2,6,23,0.9);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.75);
+}
+
+/* Logo */
+.logo{
+    font-size:20px;
+    font-weight:600;
+    color:#fbbf24;
+    letter-spacing:1px;
+    text-shadow:0 0 12px rgba(255,165,0,0.6);
+}
+
+/* Nav container */
+.nav-container{
+    display:flex;
+    gap:22px;
+}
+
+/* Nav links */
+.nav-item{
+    text-decoration:none;
+    font-size:14px;
+    color:#e5e7eb;
+    padding:6px 10px;
+    border-radius:8px;
+    transition:all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-item:hover{
+    color:#fbbf24;
+    background:rgba(255,165,0,0.12);
+    box-shadow:0 0 12px rgba(255,165,0,0.4);
+}
+
+
+</style>
+</head>
+
+<body>
+
+    <div class="navbar"> <div class="logo">Smart City</div> <div class="nav-container"> <a href="home.html" class="nav-item">Home</a> <a href="about.html" class="nav-item">About</a> <a href="project.html" class="nav-item">Project</a> <a href="vaishnavi.html" class="nav-item">Vaishnavi</a> <a href="vijayalaxmi.html" class="nav-item">Vijayalaxmi</a> <a href="sushant.html" class="nav-item">Sushant</a> <a href="sunil.html" class="nav-item">Sunil</a></div> </div>
+    <!-- Smart City Collaboration Headline -->
+<div class="collab-heading">
+    <h1>
+        Smart City Collaboration by 
+        <span>Vaishnavi</span> &amp; <span>Vijayalaxmi</span>
+    </h1>
+    <p>Where Tourism Meets Industry</p>
+</div>
+
+<!-- Animated Image Section -->
+<div class="city-image-wrapper">
+    <div class="city-image-card">
+        <img src="ti.png" alt="Smart City Tourism and Industry View">
+    </div>
+</div>
+
+
+<!-- SECTION 1 -->
+<div class="section">
+    <div class="content-box">
+
+
+        <div class="text-box">
+            <h2>Smart Environmental Management for Sustainable Destinations</h2>
+
+            <p>
+                Clean air, water, and surroundings are essential for places that attract large
+                numbers of visitors. At the same time, manufacturing and production activities
+                generate emissions, waste, and noise that must be carefully managed.
+            </p>
+
+            <p>
+                By applying algorithms, environmental impact can be monitored, analyzed, and
+                minimized efficiently. Sensor data is continuously collected to detect pollution
+                levels. Optimization techniques help select effective waste-treatment methods,
+                while scheduling algorithms ensure emission-intensive activities occur at safer times.
+            </p>
+
+            <p>
+                Data from multiple locations is analyzed to identify sensitive zones, and places
+                are ranked based on cleanliness and environmental quality.
+            </p>
+
+            <h3>Technical Perspective</h3>
+            <ul>
+                <li>Greedy techniques for minimizing pollution with limited resources</li>
+                <li>Graph models for air and water pollutant spread</li>
+                <li>Sorting and searching methods for ranking locations</li>
+            </ul>
+
+            <h3>Impact & Significance</h3>
+            <ul>
+                <li>Healthier and cleaner public spaces</li>
+                <li>Balanced environmental and economic development</li>
+                <li>Enhanced overall visitor satisfaction</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+    <div class="content-box">
+
+
+        <div class="text-box">
+            <h2>Intelligent Planning for Economic Support Systems</h2>
+
+            <p>
+                Visitor movement creates demand for food, accommodation, transport, and local
+                products. Meeting this demand efficiently requires careful planning of production,
+                storage, and distribution systems.
+            </p>
+
+            <p>
+                Algorithms play a key role in forecasting demand, managing inventories, and
+                scheduling services. Data-driven approaches help predict peak seasons, optimize
+                supply chains, and reduce wastage. Recommendation techniques promote locally
+                produced goods by matching preferences with availability.
+            </p>
+
+            <p>
+                Service systems are designed to handle large crowds efficiently, reducing waiting
+                time and improving the overall experience.
+            </p>
+
+            <h3>Technical Perspective</h3>
+            <ul>
+                <li>Dynamic programming for resource allocation</li>
+                <li>Queueing models for crowd and service management</li>
+                <li>Hashing for fast access to service and product data</li>
+            </ul>
+
+            <h3>Impact & Significance</h3>
+            <ul>
+                <li>Stronger local economic structure</li>
+                <li>Increased employment opportunities</li>
+                <li>Efficient use of available resources</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+    <div class="content-box">
+
+
+        <div class="text-box">
+            <h2>Heritage Experience Design Through Smart Planning</h2>
+
+            <p>
+                Old production sites, factories, and mines hold historical and educational value.
+                With careful planning, these spaces can be transformed into informative experience
+                centers while ensuring safety and smooth visitor movement.
+            </p>
+
+            <p>
+                Graph-based methods are used to design optimal routes, manage visitor flow, and
+                ensure important sections are covered within limited time. Risk analysis helps
+                identify unsafe areas, while traversal techniques guide layout planning.
+            </p>
+
+            <h3>Technical Perspective</h3>
+            <ul>
+                <li>Shortest path methods for route planning</li>
+                <li>BFS / DFS for site exploration design</li>
+                <li>Greedy approaches for maximum coverage</li>
+            </ul>
+
+            <h3>Impact & Significance</h3>
+            <ul>
+                <li>Development of educational experience centers</li>
+                <li>Preservation of historical value</li>
+                <li>Enhanced cultural awareness and learning</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
