@@ -25,49 +25,45 @@ body{
   line-height: 1.7;
 }
 /* -------------------- NAVBAR -------------------- */
-/* -------------------- VERTICAL NAVBAR -------------------- */
-.navbar-vertical {
+/* -------------------- HORIZONTAL NAVBAR -------------------- */
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 220px;
-    height: 100%;
-    background: #1a4fff; /* solid blue */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 10px;
-    box-shadow: 2px 0 12px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-.navbar-vertical h2 {
-    color: #fff;
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.nav-links-vertical {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    gap: 15px;
+    background: #000; /* black background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.nav-links-vertical a {
-    display: block;
-    color: #fff;
+.navbar h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .nav-links a {
+    color: #a3d2f2; /* pastel blue color */
     text-decoration: none;
     font-weight: 600;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 10px 16px;
+    border-radius: 6px;
     position: relative;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-/* Blue animated hover underline from left */
-.nav-links-vertical a::after {
+/* Animated underline on hover */
+.navbar .nav-links a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -75,18 +71,39 @@ body{
     width: 0%;
     height: 3px;
     border-radius: 2px;
-    background: #00ffff; /* cyan underline */
-    transition: 0.4s;
+    background: #ffffff; /* white underline */
+    transition: width 0.4s ease;
 }
 
-.nav-links-vertical a:hover::after {
+.navbar .nav-links a:hover::after {
     width: 100%;
 }
 
-.nav-links-vertical a.active {
-    background: #0033cc; /* darker blue for active */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* Active link highlight */
+.navbar .nav-links a.active {
+    color: #ffffff;
+    font-weight: 700;
+    border-bottom: 3px solid #a3d2f2;
 }
+
+/* Responsive Navbar */
+@media(max-width:860px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .navbar .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 
 /* -------------------- RESPONSIVE NAVBAR -------------------- */
@@ -188,11 +205,10 @@ canvas { margin-top:20px; border-radius:12px; background: #fdfdfd; padding:15px;
 <body>
 
 <!-- Navbar -->
-<!-- Navbar -->
-<!-- Vertical Navbar -->
-<div class="navbar-vertical">
+<!-- Horizontal Navbar -->
+<div class="navbar">
     <h2>Vijayalakshmi</h2>
-    <div class="nav-links-vertical">
+    <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="project.html">Project</a>
@@ -203,6 +219,7 @@ canvas { margin-top:20px; border-radius:12px; background: #fdfdfd; padding:15px;
         <a href="collabz.html">Collabz</a>
     </div>
 </div>
+
 
 <div class="content">
     <!-- -------------------- TOURISM PAGE -------------------- -->
