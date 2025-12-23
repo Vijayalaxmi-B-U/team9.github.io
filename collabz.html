@@ -1,28 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" 
-   href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collabz - CITY DESIGN</title>
-</head>
-<body>
-  <div class="sidebar">
-  <h2>Smart City</h2>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="project.html">Project</a>
-  <a href="vaishnavi.html">Vaishnavi</a>
-  <a href="vijayalaxmi.html">Vijayalaxmi</a>
-  <a href="sushant.html">Sushant</a>
-  <a href="sunil.html">Sunil</a>
-  <a href="collabz.html">Collabz</a>
-</div>
-<div class="main">
-  <h1>Collabz</h1>
-   <p>This page shows collaborations and partnerships of CITY DESIGN.</p>
+<meta charset="UTF-8">
+<title>Smart City</title>
 
+<style>
+ body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #1f2937, transparent 60%),
+        radial-gradient(circle at 80% 30%, #312e81, transparent 55%),
+        radial-gradient(circle at 50% 80%, #020617, #000);
+}
+
+/* ===== NAVBAR (UNCHANGED) ===== */
+.sidebar {
+  width: 260px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(180deg, #0c1015, #0b0e11);
+  border-right: 2px solid rgba(210, 120, 45, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.sidebar h2 {
+  color: #7dd3fc;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 30px 25px;
+  letter-spacing: 2px;
+}
+
+.sidebar a {
+  color: #cfd8dc;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 14px 15px;
+  width: 90%;
+  transition: 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(125, 211, 252, 0.08);
+  color: #7dd3fc;
+}
+/* ===== COLLAB PAGE ===== */
+.collab-page{
+    margin-left:260px; /* space for sidebar */
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Container */
+.collab-container{
+    display:flex;
+    gap:60px;
+}
+
+/* Collab Buttons (same shape, non-rectangle) */
+.collab-btn{
+    width:220px;
+    height:220px;
+    border-radius:45% 55% 50% 50%; /* organic shape */
+    border:none;
+    cursor:pointer;
+
+    font-size:22px;
+    font-weight:600;
+    color:#fff;
+
+    background:linear-gradient(145deg, #111827, #020617);
+    box-shadow:
+        0 0 25px rgba(255,140,0,0.6),
+        inset 0 0 15px rgba(255,165,0,0.25),
+        0 20px 40px rgba(0,0,0,0.9);
+
+    transition:all 0.4s ease;
+}
+
+/* Hover 3D Effect */
+.collab-btn:hover{
+    transform:translateY(-12px) scale(1.05);
+    box-shadow:
+        0 0 40px rgba(255,140,0,0.9),
+        inset 0 0 20px rgba(255,165,0,0.4),
+        0 30px 60px rgba(0,0,0,1);
+}
+/* ===== COLLAB PAGE LAYOUT ===== */
+.collab-page{
+    margin-left:260px; /* sidebar space */
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===== GLASS CONTAINER ===== */
+/* ===== GLASS CONTAINER (INCREASED SIZE) ===== */
+.collab-glass{
+    display:flex;
+    justify-content:center;   /* CENTER horizontally */
+    align-items:center;       /* CENTER vertically */
+
+    gap:70px;
+    padding:70px 100px;
+
+    min-width:900px;
+    min-height:220px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.03)
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius:35px;
+    box-shadow:
+        inset 0 0 1px rgba(255,255,255,0.3),
+        0 30px 70px rgba(0,0,0,0.9);
+}
+
+
+
+/* ===== PILL BUTTONS ===== */
+.pill-btn{
+    width:220px;
+    height:100px;
+
+    border:none;
+    border-radius:999px; /* perfect pill */
+    cursor:pointer;
+
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    color:white;
+
+    background:radial-gradient(
+        circle at top left,
+        #0f172a,
+        #020617
+    );
+
+    box-shadow:
+        0 0 22px rgba(255,140,0,0.55),
+        inset 0 0 12px rgba(255,165,0,0.25),
+        0 15px 35px rgba(0,0,0,0.9);
+
+    transition:all 0.35s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.pill-btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:
+        0 0 35px rgba(255,140,0,0.9),
+        inset 0 0 18px rgba(255,165,0,0.4),
+        0 25px 55px rgba(0,0,0,1);
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR (SAME AS EARLIER) -->
+ <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Smart City</h2>
+    <a href="index.html"> Home</a>
+    <a href="about.html">About</a>
+    <a href="project.html">Project</a>
+    <a href="vaishnavi.html">Vaishnavi</a>
+    <a href="vijayalaxmi.html">Vijayalaxmi</a>
+    <a href="sushant.html">Sushant</a>
+    <a href="sunil.html">Sunil</a>
   </div>
+
+<!-- COLLAB SECTION -->
+<!-- COLLAB SECTION -->
+<div class="collab-page">
+  <div class="collab-glass">
+    <button class="pill-btn">Collab 1</button>
+    <button class="pill-btn">Collab 2</button>
+    <button class="pill-btn">Collab 3</button>
+  </div>
+</div>
+
+
 </body>
 </html>
