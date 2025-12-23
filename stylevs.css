@@ -15,47 +15,91 @@ body {
 
 
 /* -------- INDUSTRIAL SIDEBAR -------- */
-.sidebar {
-  width: 260px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  background: linear-gradient(180deg, #0c1015, #0b0e11);
-  border-right: 2px solid rgba(210, 120, 45, 0.45);
-
-  display: flex;
-  flex-direction: column;
-  padding-top: 40px;
+/* -------------------- HORIZONTAL NAVBAR -------------------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000; /* black background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.sidebar h2 {
-  color: #7dd3fc;
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0 0 30px 25px;
-  letter-spacing: 2px;
+.navbar h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
 }
 
-.sidebar a {
-  color: #cfd8dc;
-  text-decoration: none;
-  font-size: 22px;
-  padding: 14px 15px;
-  width: 90%;
-  transition: 0.2s ease;
+.navbar .nav-links {
+    display: flex;
+    gap: 25px;
 }
 
-.sidebar a:hover {
-  background: rgba(125, 211, 252, 0.08);
-  color: #7dd3fc;
+.navbar .nav-links a {
+    color: #a3d2f2; /* pastel blue color */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Animated underline on hover */
+.navbar .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    border-radius: 2px;
+    background: #ffffff; /* white underline */
+    transition: width 0.4s ease;
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Active link highlight */
+.navbar .nav-links a.active {
+    color: #ffffff;
+    font-weight: 700;
+    border-bottom: 3px solid #a3d2f2;
+}
+
+/* Responsive Navbar */
+@media(max-width:860px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 20px;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .navbar .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* -------- MAIN CONTENT -------- */
+/* -------- MAIN CONTENT -------- */
 .main {
-  margin-left: 260px;
-  padding: 40px;
+  margin-left: 0;
+  margin-top: 90px;
+  padding: 40px 60px;
   min-height: 100vh;
 }
 
@@ -513,4 +557,5 @@ pre {
     border-radius: 14px;
     display: block;
 }
+
 
