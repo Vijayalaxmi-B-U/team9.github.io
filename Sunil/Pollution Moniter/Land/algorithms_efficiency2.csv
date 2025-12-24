@@ -3,4 +3,4 @@ Data Collection,High,Real-time sensor readings with historical + current data st
 Trend Analysis,High,Sliding Window computes average over historical + current pollution for unsafe zones
 Priority Assignment,High,Max Heap efficiently selects subzones needing immediate cleanup
 Waste Collection Routing,Moderate,Shortest path (Dijkstra) ensures minimum travel distance
-Overall System,High,Real-time monitoring, alert generation, and cleanup prioritization across all zones
+
