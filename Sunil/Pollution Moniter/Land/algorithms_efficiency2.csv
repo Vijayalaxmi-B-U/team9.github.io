@@ -1,6 +1,7 @@
-Aspect,Efficiency,Notes
-Data Collection,High,Real-time sensor readings with historical + current data stored in single CSV
-Trend Analysis,High,Sliding Window computes average over historical + current pollution for unsafe zones
-Priority Assignment,High,Max Heap efficiently selects subzones needing immediate cleanup
-Waste Collection Routing,Moderate,Shortest path (Dijkstra) ensures minimum travel distance
-
+Algorithm,Time Complexity,Space Complexity,Notes
+Sliding Window,O(n),O(k),Efficiently computes moving averages/trends over k historical + current data points
+Max Heap,O(log n) per insertion,O(n),Assigns priority to subzones needing immediate cleanup
+Dijkstra,O(n^2) or O((V+E)log V) with set or priority queue,O(n^2) or O(V+E),Computes shortest path for waste collection from depot
+Bellman-Ford (Optional),O(V*E),O(V),Detects spikes in pollution or soil toxicity for multi-subzone graphs
+CSV Storage,O(n),O(n),Stores historical and current pollution readings for analysis
+Adjacency Matrix,O(1) access,O(n^2),Used for distance lookup between subzones
