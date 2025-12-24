@@ -168,7 +168,7 @@
        <h3><b>Flow Chart:</b></h3>
         <p>This chart represents how Traffic system works:</p>
          <div>
-        <img src="img/fc1.png" width="550" height="600">
+        <img src="img/fc1.png" width="550" height="650">
       </div>
     </section>
 
@@ -671,7 +671,8 @@
     <br>Subzones with <b>LandQualityScore &lt; 50</b> are marked critical
     <br><br>
     <b>Algorithms Used:</b>
-    <br>• Bellman–Ford → Detects sudden spikes in pollution or soil toxicity across subzones
+    <br>• Sliding Window Algorithm: Detect long-term land pollution trends <br>
+    <strong>Why used:</strong>Land pollution is cumulative & Prevents false alarms & Suitable for time-series sensor data
     <br>• Max Heap (Priority Queue) → Determines which subzones need immediate cleanup
     <br>• Dijkstra Algorithm → Computes shortest path for waste collection vehicle between subzones
   </p>
