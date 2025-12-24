@@ -93,7 +93,7 @@ vector<int> dijkstra(vector<vector<double>> &graph, int start){
 }
 
 int main(){
-    vector<Subzone> subzones = readCSV("land_pollution_data.csv");
+    vector<Subzone> subzones = readCSV("land_pol_data.csv");
 
     // Sliding Window Trend
     cout << "--- Sliding Window Trend Analysis ---\n";
