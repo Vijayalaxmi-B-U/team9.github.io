@@ -316,6 +316,77 @@
   <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/algorithms_purpose.csv" class="btn" target="_blank">Algorithms Purpose</a><br>
   <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Air/system_efficiency.csv" class="btn" target="_blank">Overall system Efficiency</a>
 </div>
+
+<div class="flowchart-section">
+  <h3>Air Pollution Monitoring System – Working flowchart</h3>
+
+  <div class="flowchart-box">
+
+    <div class="step">START</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Read air_sensors.csv</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Collect Sensor Data<br>
+      • PM2.5<br>
+      • PM10<br>
+      • CO<br>
+      • Wind Direction
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Calculate AQI<br>
+      AQI = (PM2.5×3 + PM10×2 + CO×4) / 9
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Detect Anomaly Level<br>
+      AQI &lt; 100 → Normal<br>
+      100–180 → Moderate<br>
+      &gt; 180 → Severe
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Sort Zones by AQI (Quick Sort)</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      DFS – Pollution Chain Analysis<br>
+      (Deep pollution penetration w.r.t wind direction)
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      BFS – Pollution Spread Analysis<br>
+      (Level-wise zone impact)
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Bellman–Ford Algorithm<br>
+      Detect anomaly escalation (spikes) & block zones
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Dijkstra Algorithm<br>
+      Safe routing avoiding blocked zones
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Display Alerts & Safe Routes</div>
+    <div class="arrow">↓</div>
+
+    <div class="step end">END</div>
+
+  </div> <!-- flowchart-box -->
+</div>   <!-- flowchart-section -->
+
+
 <hr>
   <!-- WATER POLLUTION -->
   <h2><b>2.2 Water Pollution Monitoring System</b></h2>
@@ -327,7 +398,7 @@
     <br>• Ecological imbalance
     <br>• Threats to human life and aquatic species
     <br><br>
-    This project proposes a Smart Water Pollution and Flood Monitoring System that continuously monitors
+    This project proposes a Smart Water Pollution Monitoring System mainly focuses on the River that is flowing near our city ,that continuously monitors
     water quality and water level across different river zones connected to a dam and takes real-time
     decisions using algorithms.
   </p>
@@ -450,6 +521,88 @@
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/Algorithms_efficiency.csv" class="btn" target="_blank">Functions Efficiency</a><br>
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Water/system_efficiency1.csv" class="btn" target="_blank">Overall System Efficiency</a>
   </div>
+    <div class="flowchart-section">
+  <h3>Water Pollution Monitoring System – Workflow</h3>
+
+  <div class="flowchart-box">
+
+    <div class="step">START</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">Read water_zones_data.csv</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Collect Sensor Data<br>
+      • Water Level<br>
+      • Surface Pollution<br>
+      • Groundwater Pollution<br>
+      • Rainfall Contamination
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Calculate Total Pollution<br>
+      (Surface + Ground + Rain)
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Zone Classification<br>
+      • Upstream<br>
+      • Dam<br>
+      • Downstream-1<br>
+      • Downstream-2
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Bellman–Ford Algorithm<br>
+      Detect Sudden Water / Pollution Spikes
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Flood Detection<br>
+      ≥ 3 Upstream Subzones Exceed Threshold
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Dam Water Management<br>
+      Release water if pollution is high
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Industrial Pollution Alert<br>
+      Trigger alert for Downstream-2
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Fishing Advisory System<br>
+      Allow / Ban Fishing in Downstream-1
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Merge Sort Subzones<br>
+      Identify Unsafe Zones
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Priority Queue (Max Heap)<br>
+      Emergency Action Order
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step end">END</div>
+
+  </div>
+</div>
+
 
  <hr>
 
@@ -596,6 +749,86 @@ After sorting, zones exceeding the safe pollution threshold are marked as unsafe
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/algorithms_efficiency2.csv" class="btn" target="_blank">Functions efficiency</a><br>
     <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Pollution%20Moniter/Land/system_efficiency2.csv" class="btn" target="_blank">Overall System efficiency</a>
   </div>
+
+  <div class="flowchart-section">
+  <h3>Land Pollution Monitoring System – Workflow</h3>
+
+  <div class="flowchart-box">
+
+    <div class="step">START</div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Read land_pollution_data.csv
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Collect Land Sensor Data<br>
+      • Pollution Level<br>
+      • Soil Toxicity<br>
+      • Soil Moisture<br>
+      • Heavy Metal Concentration
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Compute Land Quality Index<br>
+      (Pollution + Toxicity + Heavy Metals)
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Assign Subzone Index<br>
+      (For Graph Processing)
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Construct Subzone Distance Graph<br>
+      (Waste Collection Network)
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Bellman–Ford Algorithm<br>
+      Detect Sudden Pollution / Toxicity Spikes
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Spike Detected?<br>
+      → Generate Alert
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Priority Queue (Max Heap)<br>
+      Rank Zones by Pollution & Land Quality
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Determine Waste Collection Priority
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Dijkstra’s Algorithm<br>
+      Compute Shortest Waste Collection Routes
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step">
+      Display Routes from Central Depot
+    </div>
+    <div class="arrow">↓</div>
+
+    <div class="step end">END</div>
+
+  </div>
+</div>
+
 
   <hr>
 
