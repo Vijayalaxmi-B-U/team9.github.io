@@ -165,6 +165,11 @@
       </tr>
     </tbody>
   </table>
+       <h3><b>Flow Chart:<b/></h3>
+        <p>This chart represents how Traffic system works:</p>
+         <div>
+        <img src="img/fc1.png" width="400" height="500">
+      </div>
     </section>
 
     <!-- SMART CITY POLLUTION MONITORING -->
@@ -555,6 +560,28 @@
     <br><br>
     Highest-risk subzones are handled first to ensure <b>fast and efficient cleanup</b>.
   </p>
+  
+ <h3><b>8. Merge Sort for unsafe zone</b></h3>
+  <p>
+    Merge Sort is applied to all subzones based on their total pollution index (surface + groundwater + rainfall).
+After sorting, zones exceeding the safe pollution threshold are marked as unsafe.
+    <br><br>
+    <b>Why Merge Sort?</b><br>
+    • Guarantees O(n log n) performance<br>
+    • Works efficiently on large environmental datasets<br>
+    • Stable and predictable (important for reporting & audits)
+    <br><br>
+    <b>System Benefit:</b><br>
+    • Quickly identifies the most polluted zones<br>
+    • Helps authorities focus cleanup efforts<br>
+    • Enables ranking of zones by severity<br>
+  </p>
+
+  <h3><b>9. Total pollution:</b></h3>
+  <p>
+     Total pollution is calculated by adding surface level pollution and groundwater pollution and rainfall pollution.<br>
+  Total pollution = surface level pollution + groundwater pollution + rainfall pollution.</p>
+    <br>
 
   <h3>Real-time code and its input data:</h3>
   <div class="button-group">
